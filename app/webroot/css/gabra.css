@@ -1,0 +1,194 @@
+
+/* --- Top-level ---------------------------------------------------------- */
+
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.navbar-default .navbar-brand.red {
+  color:firebrick;
+}
+
+@media (max-width: 768px) {
+.navbar-form {
+    margin:-2px 55px 0 0;
+    border:0;
+}
+}
+
+@media (min-width: 992px) {
+.navbar-form[role=search] .input-group {
+    width:300px;
+}
+}
+
+/* Remove space between keyboard toggle and search box */
+.navbar-form .input-group .input-group-btn {
+    width:1%;
+}
+
+/* overridden to 60px on screen width > 768px */
+.jumbotron {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* --- General layout ----------------------------------------------------- */
+
+.div-striped > div {
+    padding:1em 0;
+}
+.div-striped > div:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pagination>li:nth-last-child(2)>a {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pagination>li:last-child>span {
+    border:none;
+    background:none;
+    color:inherit;
+}
+
+.striped {
+    background-color:#f9f9f9;
+}
+
+.table-width-auto {
+    width: auto;
+}
+
+/* --- Keyboard element --------------------------------------------------- */
+
+.keyboard ul {
+    padding:0.5em;
+}
+.keyboard ul li {
+    display:inline-block;
+}
+.keyboard ul li a {
+    padding: 0.3em 0.8em;
+    margin: 0 0.05em;
+}
+
+/* --- Search element ----------------------------------------------------- */
+
+.roots.index label {
+    margin-left:1em;
+    margin-right:1em;
+}
+
+/* --- Language switcher -------------------------------------------------- */
+
+.navbar-default .navbar-nav>li.language-switcher>a {
+  /* color:#428bca; /\* primary *\/ */
+  /* color:#8a6d3b; /\* warning *\/ */
+  /* color:#31708f; /\* info *\/ */
+  /* color:#d9534f /\* danger *\/ */
+  color:firebrick; /* same as title */
+}
+
+/* --- Edit wordforms table ----------------------------------------------- */
+
+form#WordformSaveManyForm table input[type='text'] {
+    width:100%;
+}
+
+/* --- Smaller ------------------------------------------------------------ */
+
+.loading {
+    background-image: url('data:image/gif;base64,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');
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height:16px;
+}
+.loading.right {
+    background-position: 95% center;
+}
+
+/* .feedback { */
+/*   opacity:0.7; */
+/* } */
+/* .feedback .glyphicon { */
+/*   opacity:0.4; */
+/* } */
+/* .word_form .feedback .glyphicon { */
+/*   color:#666; */
+/* } */
+/* .feedback .glyphicon:hover { */
+/*   opacity:1; */
+/* } */
+
+.hypothetical, a.hypothetical {
+  color:firebrick;
+}
+
+.root {
+  white-space:nowrap;
+}
+
+.root sup {
+  color:#999;
+  padding-left:2px;
+}
+
+.surface_form {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 110%;
+  text-shadow: 1px 1px 0px #eee;
+}
+.alt {
+  color:#999;
+  text-shadow: 1px 1px 0px #eee;
+}
+
+.generated {
+  border-bottom: 1px dashed #666;
+}
+
+.bigword {
+  font-size: 3.5em;
+  color: #333;
+  text-shadow: 1px 1px 1px #aaa;
+}
+
+.word_form .features {
+  color: #777; /* .text-muted */
+}
+
+mark, .mark {
+  padding-left:0px; padding-right:1px;
+  margin-left:0px; margin-right:-1px;
+  border-radius:0.3em;
+  color: inherit;
+}
+
+ul.inline-comma {
+  display: inline;
+  list-style: none;
+  padding:0;
+}
+ul.inline-comma li {
+  display: inline;
+  white-space: nowrap;
+}
+ul.inline-comma li:after {
+  content: ", ";
+}
+ul.inline-comma li:last-child:after {
+    content: "";
+}
+
+#add-field {
+  border:1px dotted #eee;
+  background:#f3f3f3;
+  padding:1em;
+}
+
+.modal .help-block {
+  margin-bottom: 0;
+}

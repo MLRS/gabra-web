@@ -1,0 +1,1087 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ġabra\n"
+"POT-Creation-Date: 2015-08-18 10:16+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: John J. Camilleri <john@johnjcamilleri.com>\n"
+"Language-Team: \n"
+"Language: mt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: Controller/APIController.php:55;72
+#: Controller/LexemesController.php:136;193;224;320;358;431;440;450;531
+#: Controller/MessagesController.php:42;59 Controller/RootsController.php:29
+#: Controller/SourcesController.php:11 Controller/UsersController.php:40;61;83
+#: Controller/WordformsController.php:89
+msgid "Invalid ID"
+msgstr "ID ħażin"
+
+#: Controller/APIController.php:188
+msgid "Empty query"
+msgstr "Query vojt"
+
+#: Controller/AppController.php:71
+msgid "adjective"
+msgstr "aġġettiv"
+
+#: Controller/AppController.php:72
+msgid "adposition"
+msgstr "apposizzjoni"
+
+#: Controller/AppController.php:73
+msgid "adverb"
+msgstr "avverb"
+
+#: Controller/AppController.php:74
+msgid "auxiliary verb"
+msgstr "verb awżiljarju"
+
+#: Controller/AppController.php:75
+msgid "coordinating conjunction"
+msgstr "konġunzjoni koordinanti"
+
+#: Controller/AppController.php:76
+msgid "determiner"
+msgstr "determinant"
+
+#: Controller/AppController.php:77
+msgid "interjection"
+msgstr "inteġrezzjoni"
+
+#: Controller/AppController.php:78
+msgid "noun"
+msgstr "nom"
+
+#: Controller/AppController.php:79
+msgid "numeral"
+msgstr "numeral"
+
+#: Controller/AppController.php:80
+msgid "particle"
+msgstr "partiċipju"
+
+#: Controller/AppController.php:81
+msgid "pronoun"
+msgstr "pronom"
+
+#: Controller/AppController.php:82
+msgid "proper noun"
+msgstr "nom propju"
+
+#: Controller/AppController.php:83
+msgid "punctuation"
+msgstr "punteġġatura"
+
+#: Controller/AppController.php:84
+msgid "subordinating conjunction"
+msgstr "konġunzjoni subordinenti"
+
+#: Controller/AppController.php:85
+msgid "symbol"
+msgstr "simbolu"
+
+#: Controller/AppController.php:86
+msgid "verb"
+msgstr "verb"
+
+#: Controller/AppController.php:87
+msgid "other"
+msgstr "oħrajn"
+
+#: Controller/AppController.php:90
+msgid "strong"
+msgstr "sħiħ"
+
+#: Controller/AppController.php:91
+msgid "geminated"
+msgstr "trux"
+
+#: Controller/AppController.php:92
+msgid "weak initial"
+msgstr "dgħajjef assimilattiv"
+
+#: Controller/AppController.php:93
+msgid "weak medial"
+msgstr "dgħajjef moħfi"
+
+#: Controller/AppController.php:94
+msgid "weak final"
+msgstr "dgħajjef nieqes"
+
+#: Controller/AppController.php:95
+msgid "irregular"
+msgstr "irregolari"
+
+#: Controller/LexemesController.php:72 View/Layouts/default.ctp:160
+msgid "Flagged"
+msgstr "Entrati mmarkati"
+
+#: Controller/LexemesController.php:90 View/Layouts/default.ctp:159
+msgid "Pending"
+msgstr "Pendenti"
+
+#: Controller/LexemesController.php:199
+msgid "Invalid message"
+msgstr "Messaġġ ħażin"
+
+#: Controller/LexemesController.php:211
+msgid "Thank you, we have received your feedback"
+msgstr "Grazzi, il-kummenti tiegħek ġew irrekordjati"
+
+#: Controller/LexemesController.php:214;235;308;328;364;480;518;539
+#: Controller/MessagesController.php:34;49;64
+#: Controller/UsersController.php:52;68;89
+#: Controller/WordformsController.php:14;53
+msgid "Error"
+msgstr "Problema"
+
+#: Controller/LexemesController.php:233
+msgid "Feedback cleared"
+msgstr "Il-kummenti tneħħew"
+
+#: Controller/LexemesController.php:305 Controller/WordformsController.php:12
+msgid "Item saved"
+msgstr "L-entrata ġiet issejvjata"
+
+#: Controller/LexemesController.php:325 Controller/MessagesController.php:31;46
+#: Controller/UsersController.php:49;65 Controller/WordformsController.php:51
+msgid "Changes saved"
+msgstr "Tibdiliet ssejvjati"
+
+#: Controller/LexemesController.php:362 Controller/MessagesController.php:62
+#: Controller/WordformsController.php:93
+msgid "Entry deleted"
+msgstr "L-entrata tħassret"
+
+#: Controller/LexemesController.php:415
+msgid "No duplicates found for: "
+msgstr "L-ebda entrata doppja għal: "
+
+#: Controller/LexemesController.php:476;516
+msgid "Entries merged"
+msgstr "Entrati magħqudin"
+
+#: Controller/LexemesController.php:537
+msgid "Entry marked as non-duplicate"
+msgstr "Entrata ġiet mmarkata li m'hix doppja"
+
+#: Controller/UsersController.php:24
+msgid "Invalid username or password, try again"
+msgstr "Username jew password ħażina, erġa' prova."
+
+#: Controller/UsersController.php:86
+msgid "User deleted"
+msgstr "Il-user tħassar"
+
+#: Controller/WordformsController.php:95
+msgid "Delete failed"
+msgstr "It-tħassir ma rnexxiex"
+
+#: View/API/index.ctp:1 View/API/pre.php:1 View/Layouts/default.ctp:139
+msgid "API"
+msgstr "API"
+
+#: View/API/index.ctp:4 View/API/pre.php:4 View/Pages/schema.ctp:4
+msgid "This page is only available in English."
+msgstr "Din il-paġna teżisti biss bl-Ingliż."
+
+#: View/Elements/navbar-search.ctp:12
+msgid "Search all of Ġabra"
+msgstr "Fittex f'Ġabra kollha"
+
+#: View/Elements/navbar-search.ctp:15
+msgid "Search for a word"
+msgstr "Fittex kelma"
+
+#: View/Elements/root-search.ctp:26;75
+msgid "Search roots"
+msgstr "Fittex fl-għeruq"
+
+#: View/Elements/root-search.ctp:34
+msgid "or"
+msgstr "jew"
+
+#: View/Elements/root-search.ctp:40
+msgid "j/w"
+msgstr "j/w"
+
+#: View/Elements/root-search.ctp:46
+msgid "none"
+msgstr "ebda"
+
+#: View/Elements/root-search.ctp:48 View/Roots/index.ctp:21
+msgid "Radicals"
+msgstr "Radikali"
+
+#: View/Elements/root-search.ctp:55 View/Roots/view.ctp:16
+msgid "Class"
+msgstr "Klassi"
+
+#: View/Elements/root-search.ctp:81
+msgid "Help"
+msgstr "Għajnuna"
+
+#: View/Elements/root-search.ctp:98
+msgid "Legend"
+msgstr "Spjegazzjoni"
+
+#: View/Elements/root-search.ctp:101
+msgid "Superscript numbers %s beside roots indicate multiple meanings"
+msgstr ""
+"Numri f'sopraskritt %s ħdejn l-għeruq jindikaw iktar minn tifsira waħda"
+
+#: View/Elements/root-search.ctp:102
+msgid "Entries in %s(parenthesis)%s indicate variants"
+msgstr "Affarjiet ġo %s(parenteżi)%s juru varjanti"
+
+#: View/Elements/root-search.ctp:103
+msgid ""
+"Items in %sred%s are hypothetical, unused or obsolete forms listed in "
+"dictionaries"
+msgstr ""
+"Affarijiet mmarkati %sbl-aħmar%s huma dawk li għandhom jitqiesu bħala "
+"ipotetiċi, jew m'għadhomx jintużaw."
+
+#: View/Elements/root-search.ctp:106 View/Layouts/default.ctp:130
+#: View/Roots/index.ctp:1
+msgid "Root search"
+msgstr "Fittex fl-għeruq"
+
+#: View/Elements/root-search.ctp:109
+msgid ""
+"Use the root search when you want to filter the roots by some specific "
+"criteria."
+msgstr "Fittex fost l-għeruq meta għandek ċerti kriterji speċifiċi."
+
+#: View/Elements/root-search.ctp:110
+msgid ""
+"It acts as a convenient shortcut for the more advanced search syntax (below)."
+msgstr ""
+"Tista' tużaha bħala alternattiva konvenjenti għas-sintassi avvanzata (ara "
+"iktar 'l isfel)"
+
+#: View/Elements/root-search.ctp:112
+msgid "Selecting nothing from a dropdown will match anything in that position."
+msgstr ""
+"Fejn ma tagħżel l-ebda għażla, tgħodd bħala kull possibiltà f'dik il-"
+"posizzjoni."
+
+#: View/Elements/root-search.ctp:113
+msgid "Select %s to match either a <em>j</em> or a <em>w</em>"
+msgstr "Għażel %s biex ssib jew <em>j</em> inkella <em>w</em>"
+
+#: View/Elements/root-search.ctp:114
+msgid "The apostrophe %s indicates a missing radical, in irregular roots."
+msgstr ""
+"L'apostrofu %s jissimboliza radikali nieqes, bħalma nsibu fl-għeruq "
+"irregolari."
+
+#: View/Elements/root-search.ctp:119 View/Lexemes/advanced-search.ctp:114
+msgid "Advanced search syntax"
+msgstr "Sintassi tat-tfittxija avvanzata"
+
+#: View/Elements/root-search.ctp:121 View/Lexemes/advanced-search.ctp:116
+msgid "Queries follow regular expression syntax:"
+msgstr "Tfittxiet jużaw sintassi ta' <em>regular expressions</em>: "
+
+#: View/Elements/root-search.ctp:123 View/Lexemes/advanced-search.ctp:118
+msgid "%s matches any single letter (including <em>ie</em> and <em>għ</em>)"
+msgstr "%s jsib ittra waħedha (tinkludi <em>ie</em> u <em>għ</em>)"
+
+#: View/Elements/root-search.ctp:124 View/Lexemes/advanced-search.ctp:119
+msgid "%s matches beginning of string"
+msgstr "%s jfisser il-bidu tal-kelma"
+
+#: View/Elements/root-search.ctp:125 View/Lexemes/advanced-search.ctp:120
+msgid "%s matches the end of string"
+msgstr "%s jfisser it-tarf tal-kelma"
+
+#: View/Elements/root-search.ctp:126 View/Lexemes/advanced-search.ctp:121
+msgid "%s matches 1 or more repetitions of the previous expression"
+msgstr "%s jfisser repetizzjoni ta' l-inqas darba mill-espressjoni preċedenti"
+
+#: View/Elements/root-search.ctp:127 View/Lexemes/advanced-search.ctp:122
+msgid "%s matches 0 or more repetitions of the previous expression"
+msgstr ""
+"%s jfisser repetizzjoni ta' żero jew iktar drabi mill-espressjoni preċedenti"
+
+#: View/Elements/root-search.ctp:128 View/Lexemes/advanced-search.ctp:123
+msgid "%s matches 0 or 1 occurances of the previous expression"
+msgstr ""
+"%s jfisser repetizzjoni ta' 0 jew darba waħda mill-espressjoni preċedenti"
+
+#: View/Elements/root-search.ctp:129 View/Lexemes/advanced-search.ctp:124
+msgid "Character classes can be enclosed in %s"
+msgstr "Settijiet ta' karattri għandhom jkunu mdawrin bi %s"
+
+#: View/Elements/root-search.ctp:132 View/Lexemes/advanced-search.ctp:127
+msgid "Examples"
+msgstr "Eżempji"
+
+#: View/Elements/root-search.ctp:138 View/Lexemes/advanced-search.ctp:133
+msgid "%s matches <em>k</em> as first radical and <em>b</em> as third radical"
+msgstr ""
+"%s jsib kull għerq bl-ittra <em>k</em> bħala l-ewwel radikali u <em>b</em> "
+"bħala t-tielet radikali"
+
+#: View/Elements/root-search.ctp:139 View/Lexemes/advanced-search.ctp:134
+msgid "%s matches any weak-final root"
+msgstr "%s jsib l-għeruq neqsin kollha"
+
+#: View/Elements/root-search.ctp:140;144
+#: View/Lexemes/advanced-search.ctp:135;139
+msgid "%s matches any item beginning with <em>għar</em>"
+msgstr "%s jsib kull ħaġa li tibda bis-sekwenza <em>għar</em>"
+
+#: View/Elements/root-search.ctp:145 View/Lexemes/advanced-search.ctp:140
+msgid ""
+"%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
+msgstr ""
+"%s jsib kull entrata li tibda bis-sekwenza <em>kit</em> u li tispiċċa bi "
+"<em>hom</em>"
+
+#: View/Elements/root-search.ctp:146 View/Lexemes/advanced-search.ctp:141
+msgid "%s matches both <em>sama'</em> and <em>sema'</em>"
+msgstr "%s jirritorna"
+
+#: View/Helper/CustomPaginatorHelper.php:19 View/Lexemes/duplicates.ctp:57
+msgid "first"
+msgstr "tal-ewwel"
+
+#: View/Helper/CustomPaginatorHelper.php:25 View/Lexemes/duplicates.ctp:66
+msgid "previous"
+msgstr "ta' qabel"
+
+#: View/Helper/CustomPaginatorHelper.php:35 View/Lexemes/duplicates.ctp:87
+msgid "next"
+msgstr "li jmiss"
+
+#: View/Helper/CustomPaginatorHelper.php:41 View/Lexemes/duplicates.ctp:96
+msgid "last"
+msgstr "tal-aħħar"
+
+#: View/Helper/CustomPaginatorHelper.php:48
+msgid ""
+"Page {:page} of {:pages}, showing records {:start} to {:end} out of {:count} "
+"total."
+msgstr ""
+"Paġna {:page} minn {:pages}, entrati {:start} sa {:end} minn total ta' {:"
+"count}."
+
+#: View/Helper/UIHelper.php:8;256 View/Lexemes/edit.ctp:118
+msgid "Surface form"
+msgstr "Forma miktuba"
+
+#: View/Helper/UIHelper.php:9 View/Lexemes/edit.ctp:120
+msgid "Gender"
+msgstr "Sess"
+
+#: View/Helper/UIHelper.php:10 View/Lexemes/edit.ctp:119
+msgid "Number"
+msgstr "Numru"
+
+#: View/Helper/UIHelper.php:11
+msgid "Phonetic"
+msgstr "Fonetiku"
+
+#: View/Helper/UIHelper.php:12
+msgid "Pattern"
+msgstr "Mudell"
+
+#: View/Helper/UIHelper.php:13
+msgid "Derived form"
+msgstr "Forma mnissla"
+
+#: View/Helper/UIHelper.php:14 View/Lexemes/edit.ctp:121
+msgid "Form"
+msgstr "Forma"
+
+#: View/Helper/UIHelper.php:15
+msgid "Aspect"
+msgstr "Aspett"
+
+#: View/Helper/UIHelper.php:16
+msgid "Subject"
+msgstr "Suġġett"
+
+#: View/Helper/UIHelper.php:19
+msgid "Direct Object"
+msgstr "Oġġett dirett"
+
+#: View/Helper/UIHelper.php:20
+msgid "Indirect Object"
+msgstr "Oġġett indirett"
+
+#: View/Helper/UIHelper.php:21
+msgid "Polarity"
+msgstr "Polarità"
+
+#: View/Helper/UIHelper.php:26 View/Lexemes/edit.ctp:207
+msgid "Masc"
+msgstr "Mask"
+
+#: View/Helper/UIHelper.php:27 View/Lexemes/edit.ctp:208
+msgid "Fem"
+msgstr "Fem"
+
+#: View/Helper/UIHelper.php:28 View/Lexemes/edit.ctp:209
+msgid "Masc/Fem"
+msgstr "Mask/Fem"
+
+#: View/Helper/UIHelper.php:29 View/Lexemes/edit.ctp:194
+msgid "Singular"
+msgstr "Singular"
+
+#: View/Helper/UIHelper.php:30 View/Lexemes/edit.ctp:195
+msgid "Dual"
+msgstr "Doppju"
+
+#: View/Helper/UIHelper.php:31 View/Lexemes/edit.ctp:196
+msgid "Plural"
+msgstr "Plural"
+
+#: View/Helper/UIHelper.php:32
+msgid "Singular/Plural"
+msgstr "Singular/Plural"
+
+#: View/Helper/UIHelper.php:33 View/Lexemes/edit.ctp:197
+msgid "Singulative"
+msgstr "Singulattiv"
+
+#: View/Helper/UIHelper.php:34 View/Lexemes/edit.ctp:198
+msgid "Collective"
+msgstr "Kollettiv"
+
+#: View/Helper/UIHelper.php:35
+msgid "Perfective"
+msgstr "Perfett"
+
+#: View/Helper/UIHelper.php:36
+msgid "Imperfective"
+msgstr "Imperfett"
+
+#: View/Helper/UIHelper.php:37
+msgid "Imperative"
+msgstr "Imperattiv"
+
+#: View/Helper/UIHelper.php:38
+msgid "Past Participle"
+msgstr "Partiċipju passiv"
+
+#: View/Helper/UIHelper.php:39
+msgid "Present Participle"
+msgstr "Partiċipju attiv"
+
+#: View/Helper/UIHelper.php:40
+msgid "Positive"
+msgstr "Posittiv"
+
+#: View/Helper/UIHelper.php:41
+msgid "Negative"
+msgstr "Negattiv"
+
+#: View/Helper/UIHelper.php:42 View/Lexemes/edit.ctp:218
+msgid "Diminutive"
+msgstr "Diminuttiv"
+
+#: View/Helper/UIHelper.php:43 View/Lexemes/edit.ctp:219
+msgid "Comparative"
+msgstr "Komparattiv"
+
+#: View/Helper/UIHelper.php:44 View/Lexemes/edit.ctp:220
+msgid "Superlative"
+msgstr "Superlattiv"
+
+#: View/Helper/UIHelper.php:85
+msgid "Lookup in MLRS corpus"
+msgstr "Fittex fil-korpus tal-MLRS"
+
+#: View/Layouts/default.ctp:62
+msgid "e.g."
+msgstr "eż."
+
+#: View/Layouts/default.ctp:63
+msgid "%s more matches"
+msgstr "%s risultati oħra"
+
+#: View/Layouts/default.ctp:64
+msgid "What is wrong with this entry?"
+msgstr "X'hemm ħażin f'din l-entrata?"
+
+#: View/Layouts/default.ctp:65
+msgid "This item has been marked as incorrect"
+msgstr "Din l-entrata ġiet immarkata ħażina"
+
+#: View/Layouts/default.ctp:66
+msgid "You must select at least one entry to merge"
+msgstr "Agħżel mill-inqas entrata waħda biex tgħaqqadhom"
+
+#: View/Layouts/default.ctp:67
+msgid "This will ONLY merge glosses into this entry. Continue?"
+msgstr "Hekk ħa tgħaqqad biss it-traduzzjonijiet. Trid tkompli?"
+
+#: View/Layouts/default.ctp:68 View/Lexemes/admin-index.ctp:66
+#: View/Lexemes/duplicates.ctp:166 View/Lexemes/edit.ctp:61
+msgid "Are you sure you want to delete this entry?"
+msgstr "Ċert li trid tħassar din l-entrata?"
+
+#: View/Layouts/default.ctp:69
+msgid "Did you mean:"
+msgstr "Forsi ridt tfisser:"
+
+#: View/Layouts/default.ctp:71
+msgid "Submit"
+msgstr "Issottometti"
+
+#: View/Layouts/default.ctp:72 View/Messages/add.ctp:29
+#: View/Messages/edit.ctp:29 View/Users/edit.ctp:23
+msgid "Cancel"
+msgstr "Ikkanċella"
+
+#: View/Layouts/default.ctp:73
+msgid "Click here to suggest that %s is added to the database."
+msgstr "Ikklikja hawn biex tissuġġerixxi li nżidu %s fil-ġabradata."
+
+#: View/Layouts/default.ctp:74
+msgid "Suggest a new entry"
+msgstr "Suġġeriment għal entrata ġdida"
+
+#: View/Layouts/default.ctp:75 View/Lexemes/duplicates.ctp:123
+#: View/Lexemes/merge.ctp:91
+msgid "Lemma"
+msgstr "Kelma"
+
+#: View/Layouts/default.ctp:76
+msgid "Word in Maltese"
+msgstr "Kelma bil-Malti"
+
+#: View/Layouts/default.ctp:77
+msgid "Gloss"
+msgstr "Traduzzjoni"
+
+#: View/Layouts/default.ctp:78
+msgid "Translation in English"
+msgstr "Traduzzjoni bl-Ingliż"
+
+#: View/Layouts/default.ctp:79 View/Lexemes/advanced-search.ctp:75
+#: View/Lexemes/view.ctp:25
+msgid "Part of speech"
+msgstr "Kategorija"
+
+#: View/Layouts/default.ctp:80
+msgid "Noun, verb, adjective or other"
+msgstr "Nom, verb, aġġettiv jew xi ħaġa oħra"
+
+#: View/Layouts/default.ctp:81
+msgid "Your suggestion has been added."
+msgstr "Is-suġġeriment tiegħek ġie rrekordjat."
+
+#: View/Layouts/default.ctp:83
+msgid "An error occurred"
+msgstr "Xi ħaġa ma ħadmitx"
+
+#: View/Layouts/default.ctp:87
+msgid "Any"
+msgstr "Kollha"
+
+#: View/Layouts/default.ctp:88
+msgid "Empty"
+msgstr "Vojt"
+
+#: View/Layouts/default.ctp:115
+msgid "Toggle navigation"
+msgstr "Ara/aħbi l-menu"
+
+#: View/Layouts/default.ctp:127 View/Lexemes/advanced-search.ctp:1;4
+msgid "Advanced search"
+msgstr "Tfittxija avvanzata"
+
+#: View/Layouts/default.ctp:134
+msgid "More"
+msgstr "Iktar"
+
+#: View/Layouts/default.ctp:136 View/Pages/about.ctp:1
+msgid "About"
+msgstr "Dwar dan is-sit"
+
+#: View/Layouts/default.ctp:137 View/Pages/home.ctp:99
+#: View/Sources/index.ctp:1;4 View/Sources/view.ctp:1
+msgid "Sources"
+msgstr "Sorsi"
+
+#: View/Layouts/default.ctp:138 View/Pages/home.ctp:72
+msgid "Random entry"
+msgstr "Sib kelma għall-għarrieda"
+
+#: View/Layouts/default.ctp:140
+msgid "Schema"
+msgstr "Skema"
+
+#: View/Layouts/default.ctp:141 View/Pages/download.ctp:1;2
+msgid "Download"
+msgstr "Niżżel"
+
+#: View/Layouts/default.ctp:145 View/Users/login.ctp:1;4;22
+msgid "Login"
+msgstr "Idħol fil-Kont"
+
+#: View/Layouts/default.ctp:161 View/Lexemes/duplicates.ctp:1;5
+msgid "Duplicates"
+msgstr "Entrati doppji"
+
+#: View/Layouts/default.ctp:163
+msgid "Logout"
+msgstr "Oħroġ mill-kont"
+
+#: View/Layouts/default.ctp:174
+msgid "bil-Malti"
+msgstr "bil-Malti"
+
+#: View/Layouts/default.ctp:179
+msgid "in English"
+msgstr "in English"
+
+#: View/Layouts/error.ctp:3
+msgid "Ġabra: an opportunistic collection of Maltese lexical resources"
+msgstr "Ġabra ta' risorsi lessikali bil-Malti"
+
+#: View/Lexemes/add.ctp:1;5
+msgid "Add lexeme"
+msgstr "Żid entrata"
+
+#: View/Lexemes/add.ctp:14 View/Lexemes/edit.ctp:20
+msgid "Use commas to separate multiple alternatives"
+msgstr "Uża komma biex tissepara l-alternattivi"
+
+#: View/Lexemes/add.ctp:23 View/Lexemes/edit.ctp:34 View/Lexemes/merge.ctp:27
+#: View/Lexemes/view.ctp:38 View/Roots/view.ctp:2;6
+msgid "Root"
+msgstr "Għerq"
+
+#: View/Lexemes/add.ctp:43 View/Lexemes/edit.ctp:98
+msgid "New field with name:"
+msgstr "Dettal ġdid bl-isem:"
+
+#: View/Lexemes/add.ctp:45 View/Lexemes/edit.ctp:100;226
+#: View/Messages/add.ctp:27
+msgid "Add"
+msgstr "Żid"
+
+#: View/Lexemes/admin-index.ctp:13 View/Lexemes/index.ctp:12
+msgid "Use the field above to search"
+msgstr "Fittex permezz tal-kaxxa t'hawn fuq"
+
+#: View/Lexemes/admin-index.ctp:19
+msgid "No results found."
+msgstr "Ma nstab l-ebda rizultat."
+
+#: View/Lexemes/admin-index.ctp:20
+msgid "%s to let us know that \"%s\" should be added to the database."
+msgstr "%s biex nżidu \"%s\" fil-ġabradata."
+
+#: View/Lexemes/admin-index.ctp:20
+msgid "Click here"
+msgstr "Ikklikkja hawn"
+
+#: View/Lexemes/admin-index.ctp:44 View/Lexemes/advanced-search.ctp:25;94
+#: View/Lexemes/index.ctp:3;5
+msgid "Search"
+msgstr "Fittex"
+
+#: View/Lexemes/admin-index.ctp:50 View/Lexemes/duplicates.ctp:157
+#: View/Messages/index.ctp:31 View/Users/index.ctp:26
+msgid "Edit"
+msgstr "Biddel"
+
+#: View/Lexemes/admin-index.ctp:56
+msgid "Clear feedback"
+msgstr "Neħħi l-kummenti"
+
+#: View/Lexemes/admin-index.ctp:59
+msgid "Clear feedback for this entry?"
+msgstr "Neħħi l-kummenti għal din l-entrata?"
+
+#: View/Lexemes/admin-index.ctp:63 View/Lexemes/duplicates.ctp:163
+#: View/Lexemes/edit.ctp:58 View/Messages/index.ctp:32 View/Users/index.ctp:27
+msgid "Delete"
+msgstr "Ħassar"
+
+#: View/Lexemes/advanced-search.ctp:37
+msgid "Search lemmas"
+msgstr "Fittex fil-lessemi"
+
+#: View/Lexemes/advanced-search.ctp:47
+msgid "Search wordforms"
+msgstr "Fittex fili-forom verbali"
+
+#: View/Lexemes/advanced-search.ctp:57
+msgid "Regex search in wordforms (slow)"
+msgstr "Fittex bir-regular expressions (tieħu iktar ħin)"
+
+#: View/Lexemes/advanced-search.ctp:67
+msgid "Search in English glosses"
+msgstr "Fittex fit-traduzzjonijiet bl-Ingliż"
+
+#: View/Lexemes/advanced-search.ctp:76;86
+msgid "All"
+msgstr "Kollha"
+
+#: View/Lexemes/advanced-search.ctp:85 View/Sources/view.ctp:5
+msgid "Source"
+msgstr "Sors"
+
+#: View/Lexemes/advanced-search.ctp:104
+msgid "Search help"
+msgstr "Għajnuna biex tfittex"
+
+#: View/Lexemes/advanced-search.ctp:107
+msgid ""
+"The search is sensitive to Maltese characters. This means that %s is not the "
+"same as %s."
+msgstr ""
+"Ara li tuża l-karattri propji tal-Malti. Dan ifisser li %s m'huwiex l-istess "
+"bħal %s."
+
+#: View/Lexemes/advanced-search.ctp:108
+msgid ""
+"Use the buttons to the right of the search to insert Maltese characters into "
+"the search box."
+msgstr "Uża l-buttuni ħdejn il-kaxxa tat-tfittix biex iddaħħal ittri Maltin"
+
+#: View/Lexemes/advanced-search.ctp:109
+msgid ""
+"To search by English translation, check the <strong>Search in English "
+"glosses</strong> box."
+msgstr ""
+"Biex tfittex fit-traduzzjonijiet bl-Ingliż, immarka l-kaxxa <strong>Fittex "
+"fit-traduzzjonijiet</strong>."
+
+#: View/Lexemes/advanced-search.ctp:110
+msgid ""
+"Currently, one can only search by substring from the start of a word. This "
+"means that %s will not match %s."
+msgstr ""
+"Bħalissa tista' tfittex biss għall-bidu ta' kelma. Dan ifisser li %s m'hix "
+"ħa tirritornalek %s."
+
+#: View/Lexemes/duplicates.ctp:12
+msgid "%d entries for this lemma"
+msgstr "%d entrati għal din il-lemma"
+
+#: View/Lexemes/duplicates.ctp:18
+msgid "%s lemmas found with multiple entries"
+msgstr "%s lemmas b'iktar minn entrata waħda"
+
+#: View/Lexemes/duplicates.ctp:19
+msgid "%s lemmas total"
+msgstr "%s b'kollox"
+
+#: View/Lexemes/duplicates.ctp:25
+msgid "Search as lexeme"
+msgstr "Fittex bħala lessimu"
+
+#: View/Lexemes/duplicates.ctp:110
+msgid "Search in duplicates"
+msgstr "Fittex fl-entrati doppji"
+
+#: View/Lexemes/duplicates.ctp:124 View/Lexemes/view.ctp:42
+msgid "Features"
+msgstr "Karatteristiċi"
+
+#: View/Lexemes/duplicates.ctp:125 View/Lexemes/merge.ctp:1
+msgid "Merge"
+msgstr "Għaqqad"
+
+#: View/Lexemes/duplicates.ctp:126 View/Messages/index.ctp:17
+#: View/Users/index.ctp:13
+msgid "Actions"
+msgstr "Għażliet"
+
+#: View/Lexemes/duplicates.ctp:144
+msgid "merge this"
+msgstr "għaqqad din"
+
+#: View/Lexemes/duplicates.ctp:146
+msgid "into this"
+msgstr "ma' din"
+
+#: View/Lexemes/duplicates.ctp:151
+msgid "Not duplicate"
+msgstr "M'hix doppja"
+
+#: View/Lexemes/edit.ctp:1
+msgid "Edit lexeme"
+msgstr "Mmodifika kelma"
+
+#: View/Lexemes/edit.ctp:5
+msgid "Lexeme"
+msgstr "Lessimu"
+
+#: View/Lexemes/edit.ctp:51
+msgid "Use commas to separate multiple sources"
+msgstr "Uża komma biex tissepara s-sorsijiet"
+
+#: View/Lexemes/edit.ctp:64 View/Users/index.ctp:25
+msgid "View"
+msgstr "Ara"
+
+#: View/Lexemes/edit.ctp:111 View/Lexemes/merge.ctp:101
+msgid "Wordforms"
+msgstr "Forom verbali"
+
+#: View/Lexemes/edit.ctp:147
+msgid "Are your sure you want to delete this wordform?"
+msgstr "Ħassar din il-forma verbali?"
+
+#: View/Lexemes/edit.ctp:155
+msgid "Save wordforms"
+msgstr "Issejvja forom verbali"
+
+#: View/Lexemes/edit.ctp:159
+msgid "No manual wordforms"
+msgstr "Ebda forma manwali"
+
+#: View/Lexemes/edit.ctp:164
+msgid "Add wordform"
+msgstr "Żid forma verbali"
+
+#: View/Lexemes/edit.ctp:166
+msgid "Copy lemma"
+msgstr "Ikkopja l-lemma"
+
+#: View/Lexemes/index.ctp:19 View/Roots/index.ctp:13
+msgid "Results: %s"
+msgstr "Riżultati: %s"
+
+#: View/Lexemes/index.ctp:42 View/Roots/index.ctp:44
+msgid "Load more results"
+msgstr "Ara iktar resultati"
+
+#: View/Lexemes/merge.ctp:6
+msgid "Merge into (keep this entry):"
+msgstr "Żomm din l-entrata:"
+
+#: View/Lexemes/merge.ctp:57
+msgid "Swap"
+msgstr "Eqleb l-ordni"
+
+#: View/Lexemes/merge.ctp:88
+msgid "Merge from (delete this entry):"
+msgstr "Ħassar din l-entrata:"
+
+#: View/Lexemes/merge.ctp:102
+msgid "On merging, these will be associated with the remaining entry"
+msgstr "Meta tgħaqqad l-entrati, dawn jiġu assoċjati mal-entrata l-oħra"
+
+#: View/Lexemes/view.ctp:20
+msgid "This entry has been flagged and may contain errors."
+msgstr "Din l-entrata hija mmarkata bħala ħażina u tista' tinkludi xi żbalji."
+
+#: View/Lexemes/view.ctp:33
+msgid "English gloss"
+msgstr "Traduzzjoni bl-Ingliż"
+
+#: View/Lexemes/view.ctp:54 View/Roots/view.ctp:26
+msgid "Source(s)"
+msgstr "Sors(i)"
+
+#: View/Lexemes/view.ctp:65 View/Users/view.ctp:17
+msgid "Created"
+msgstr "Kkreat"
+
+#: View/Lexemes/view.ctp:69 View/Pages/download.ctp:31 View/Users/view.ctp:21
+msgid "Modified"
+msgstr "Mibdul"
+
+#: View/Lexemes/view.ctp:86
+msgid "Provide feedback about this entry"
+msgstr "Ħalli kumment fuq din l-entrata"
+
+#: View/Lexemes/view.ctp:99
+msgid "Edit entry"
+msgstr "Biddel entrata"
+
+#: View/Lexemes/view.ctp:108
+msgid "Related entries"
+msgstr "Entrati relatati"
+
+#: View/Lexemes/view.ctp:128 View/Pages/home.ctp:126
+msgid "Word forms"
+msgstr "Forom verbali"
+
+#: View/Lexemes/view.ctp:131
+msgid "Show all forms"
+msgstr "Ara l-forom kollha"
+
+#: View/Messages/add.ctp:4
+msgid "Add message"
+msgstr "Messaġġ ġdid"
+
+#: View/Messages/edit.ctp:4
+msgid "Edit message"
+msgstr "Biddel il-messaġġ"
+
+#: View/Messages/edit.ctp:27
+msgid "Save"
+msgstr "Issejvja"
+
+#: View/Messages/index.ctp:4
+msgid "Messages"
+msgstr "Messaġġi"
+
+#: View/Messages/index.ctp:5
+msgid "New message"
+msgstr "Messaġġ ġdid"
+
+#: View/Messages/index.ctp:13
+msgid "English"
+msgstr "Ingliż"
+
+#: View/Messages/index.ctp:14
+msgid "Maltese"
+msgstr "Malti"
+
+#: View/Messages/index.ctp:32 View/Users/index.ctp:27
+msgid "Are you sure you want to delete # %s?"
+msgstr "Ċert li trid tħassar # %s?"
+
+#: View/Pages/download.ctp:29
+msgid "File name"
+msgstr "Isem il-fajl"
+
+#: View/Pages/download.ctp:30
+msgid "Size"
+msgstr "Daqs"
+
+#: View/Pages/download.ctp:39
+msgid "Latest"
+msgstr "Ta' l-aħħar"
+
+#: View/Pages/home.ctp:1
+msgid "Ġabra: a collection of Maltese lexical resources"
+msgstr "Ġabra ta' risorsi lessikali bil-Malti"
+
+#: View/Pages/home.ctp:46
+msgid "Search in Maltese or English, e.g. \"%s\" or \"%s\""
+msgstr "Fittex bil-Malti jew bl-Ingliż, eż. \"%s\" jew \"%s\""
+
+#: View/Pages/home.ctp:85 View/Pages/news.ctp:1;2
+msgid "News"
+msgstr "Aħbarijiet"
+
+#: View/Pages/home.ctp:85
+msgid "See all"
+msgstr "Kollha"
+
+#: View/Pages/home.ctp:115
+msgid "Statistics"
+msgstr "Statistika"
+
+#: View/Pages/home.ctp:122
+msgid "Roots"
+msgstr "Għeruq"
+
+#: View/Pages/home.ctp:124
+msgid "Lexeme entries"
+msgstr "Kliem"
+
+#: View/Pages/home.ctp:139
+msgid "Mistakes/missing information"
+msgstr "Żbalji/informazzjoni nieqsa"
+
+#: View/Pages/home.ctp:157
+msgid "Citing Ġabra"
+msgstr "Biex tiċċita dan is-sit"
+
+#: View/Pages/schema.ctp:1
+msgid "Database schema"
+msgstr "Skema tal-ġabradata"
+
+#: View/Roots/index.ctp:22
+msgid "Type"
+msgstr "Klassi"
+
+#: View/Roots/view.ctp:20
+msgid "Quad."
+msgstr "Kwad."
+
+#: View/Roots/view.ctp:20
+msgid "Tri."
+msgstr "Tri."
+
+#: View/Roots/view.ctp:36
+msgid "Related"
+msgstr "Relatati"
+
+#: View/Sources/index.ctp:13 View/Sources/view.ctp:19
+msgid "Note"
+msgstr "Noti"
+
+#: View/Sources/view.ctp:10
+msgid "Title"
+msgstr "Titlu"
+
+#: View/Sources/view.ctp:13
+msgid "Authors"
+msgstr "Awturi"
+
+#: View/Sources/view.ctp:16
+msgid "Year"
+msgstr "Sena"
+
+#: View/Users/add.ctp:1;5
+msgid "Add user"
+msgstr "Żid user"
+
+#: View/Users/edit.ctp:1;5
+msgid "Edit user"
+msgstr "Biddel dan il-user"
+
+#: View/Users/index.ctp:1;4
+msgid "Users"
+msgstr "Users"
+
+#: View/Users/login.ctp:6
+msgid "Please enter your username and password"
+msgstr "Daħħal il-username u password tiegħek"
+
+#: View/Users/login.ctp:12 View/Users/view.ctp:9
+msgid "Username"
+msgstr "Username"
+
+#: View/Users/login.ctp:19
+msgid "Password"
+msgstr "Password"
+
+#: View/Users/view.ctp:1;3
+msgid "User"
+msgstr "User"
+
+#: View/Users/view.ctp:5
+msgid "ID"
+msgstr "ID"
+
+#: View/Users/view.ctp:13
+msgid "Role"
+msgstr "Rwol"
+
+#: Model/User.php:validation for field username
+msgid "A username is required"
+msgstr "Jeħtieġ username"
+
+#: Model/User.php:validation for field password
+msgid "A password is required"
+msgstr "Jeħtieġ password"
+
+#: Model/User.php:validation for field role
+msgid "Please enter a valid role"
+msgstr "Agħżel rwol validu"
+
+#~ msgid "Lemma (Maltese)"
+#~ msgstr "Kelma (bil-Malti)"
+
+#~ msgid "Gloss (English)"
+#~ msgstr "Traduzzjoni bl-Ingliż"

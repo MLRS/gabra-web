@@ -1,0 +1,12 @@
+[submodule "app/Plugin/Mongodb"]
+	path = app/Plugin/Mongodb
+	url = https://github.com/ichikaway/cakephp-mongodb.git
+[submodule "app/Plugin/DebugKit"]
+	path = app/Plugin/DebugKit
+	url = https://github.com/cakephp/debug_kit.git
+[submodule "app/Plugin/Minify"]
+	path = app/Plugin/Minify
+	url = git://github.com/johnjcamilleri/minify-cakephp.git
+[submodule "app/Plugin/Markdown"]
+	path = app/Plugin/Markdown
+	url = git://github.com/maurymmarques/markdown-cakephp.git
