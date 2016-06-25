@@ -75,13 +75,14 @@ class UIHelper extends HtmlHelper {
   }
 
   public function corpusLink($query) {
+    $base = 'http://mlrs.research.um.edu.mt/CQPweb/malti03';
     $urls = array(
       // Word lookup
-      'lookup'      => "http://mlrs.research.um.edu.mt/corpusquery/malti02/redirect.php?lookupString=".urlencode($query)."&lookupType=begin&lookupShowWithTags=1&pp=50&redirect=lookup&uT=y",
+      'lookup'      => "{$base}/redirect.php?lookupString=".urlencode($query)."&lookupType=begin&lookupShowWithTags=1&pp=50&redirect=lookup&uT=y",
       // Concordance
-      'concordance' => "http://mlrs.research.um.edu.mt/corpusquery/malti02/concordance.php?theData=".urlencode($query)."&qmode=sq_nocase&pp=50&del=begin&del=end&uT=y",
+      'concordance' => "{$base}/concordance.php?theData=".urlencode($query)."&qmode=sq_nocase&pp=50&del=begin&del=end&uT=y",
       // Frequency (begins with)
-      'frequency'   => "http://mlrs.research.um.edu.mt/corpusquery/malti02/freqlist.php?flTable=__entire_corpus&flAtt=word&flFilterType=begin&flFilterString=".urlencode($query)."&pp=50&flOrder=desc&uT=y",
+      'frequency'   => "{$base}/freqlist.php?flTable=__entire_corpus&flAtt=word&flFilterType=begin&flFilterString=".urlencode($query)."&pp=50&flOrder=desc&uT=y",
     );
     // $out = $this->icon('new-window').' '.__('MLRS corpus').':';
     // $out .= ' '.$this->link(
