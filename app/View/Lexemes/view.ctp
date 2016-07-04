@@ -122,33 +122,120 @@
   <?php endif; ?>
 
 </div>
-<div class="col-md-8">
+<div class="col-md-8" role="tabpanel">
 
-  <?php if (@$item['Wordforms']): ?>
-  <h4 class="text-muted">
-    <?php echo __('Word forms'); ?>
-    <?php if ($item['Lexeme']['pos'] == 'VERB') : ?>
-    <small>
-      (<a href="#" onclick="$('tr:hidden').show(); return false;";><?php echo __('Show all forms') ?></a>)
-    </small>
-    <?php endif; ?>
-  </h4>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#tab-wordforms" aria-controls="tab-wordforms" role="tab" data-toggle="tab">
+        <?php echo __('Word forms') ?>
+        <span class="badge"><?php echo count($item['Wordforms'])?></span>
+      </a>
+    </li>
+    <li role="presentation" class="hidden">
+      <a href="#tab-etymology" aria-controls="tab-etymology" role="tab" data-toggle="tab">
+        <?php echo __('Etymology') ?>
+        <span class="badge">&hellip;</span>
+      </a>
+    </li>
+    <!--li role="presentation">
+      <a href="#tab-corpus" aria-controls="tab-corpus" role="tab" data-toggle="tab">
+        <?php echo __('Corpus') ?>
+        <span class="badge">&hellip;</span>
+      </a>
+    </li-->
+  </ul>
 
-  <?php
-  if ($item['Lexeme']['pos'] == 'VERB') {
-    echo $this->UI->wordFormTable(
-      $item['Wordforms'],
-      array(
-        'fields'=>array('aspect','subject','dir_obj','ind_obj','polarity'),
-        'filter_fields'=>array('dir_obj','ind_obj','polarity'),
-      )
-    );
-  } else {
-    echo $this->UI->wordFormTable($item['Wordforms']);
-  } /* if V else */
-  ?>
+  <!-- Tab panes -->
+  <div class="tab-content">
 
-  <?php endif; /* if wordforms */ ?>
+    <!-- Wordforms -->
+    <div role="tabpanel" class="tab-pane active" id="tab-wordforms">
+      <?php if (@$item['Wordforms']): ?>
+      <p>
+        <?php if ($item['Lexeme']['pos'] == 'VERB') : ?>
+        <a href="#" onclick="$(this).parent().hide(); $('tr:hidden').show(); return false;";><?php echo __('Show all forms') ?></a>
+        <?php endif; ?>
+      </p>
+      <?php
+      if ($item['Lexeme']['pos'] == 'VERB') {
+        echo $this->UI->wordFormTable(
+          $item['Wordforms'],
+          array(
+            'fields'=>array('aspect','subject','dir_obj','ind_obj','polarity'),
+            'filter_fields'=>array('dir_obj','ind_obj','polarity'),
+          )
+        );
+      } else {
+        echo $this->UI->wordFormTable($item['Wordforms']);
+      } /* if V else */
+      ?>
+      <?php endif; /* if wordforms */ ?>
+    </div><!-- wordforms -->
 
-</div><!-- col 6 -->
+    <!-- Etymology -->
+    <div role="tabpanel" class="tab-pane" id="tab-etymology">
+      <?php
+      $data = json_encode(array(
+        'lemma' => $item['Lexeme']['lemma'],
+        'pos' => $item['Lexeme']['pos'],
+      ));
+      $this->Js->buffer(<<<JS
+        $(document).ready(function(){
+          var tab = $('a[href="#tab-etymology"]').parent();
+          var badge = $('a[href="#tab-etymology"] span.badge');
+          $.ajax({
+            url: Gabra.minsel_url+"entries/search",
+            data: ${data},
+            dataType: "json",
+            type: "GET",
+            success: function(data) {
+              if (data.length > 0) {
+                var langs = {};
+
+                // Get language list too
+                $.ajax({
+                  url: Gabra.minsel_url+"languages",
+                  data: {},
+                  dataType: "json",
+                  type: "GET",
+                  success: function(_langs) {
+                    for (let x in _langs) {
+                      langs[_langs[x].abbrev] = _langs[x].name;
+                    }
+                  },
+                  error: function (err) {
+                    console.log(err.responseJSON);
+                  },
+                  complete: function () {
+                    tab.removeClass('hidden');
+                    badge.text(data[0].etymology.length);
+                    var out = Gabra.UI.etymology(data[0], langs); // assume first entry?
+                    $('#tab-etymology').html(out); // replacing ourselves - is that ok?
+                    $('[data-toggle="tooltip"]').tooltip();
+                  }
+                });
+
+              } else {
+                badge.text(0);
+              }
+            },
+            error: function(err){
+              console.log(err.responseJSON);
+            }
+          });
+        });
+JS
+); ?>
+    </div><!-- etymology -->
+
+    <!-- Corpus -->
+    <!--
+    <div role="tabpanel" class="tab-pane" id="tab-corpus">
+      <iframe src="<?php echo CORPUS_URL ?>concordance.php?newPostP=rand&pp=20&uT=y&qmode=sq_nocase&theData=<?php echo $item['Lexeme']['lemma']?>"></iframe>
+    </div><!-- corpus -->
+
+  </div><!-- tab-content -->
+</div><!-- tabpanel, col 8 -->
+
 </div><!-- lexemes view -->

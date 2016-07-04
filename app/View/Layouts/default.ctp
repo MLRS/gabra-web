@@ -2,7 +2,7 @@
 $title = $this->fetch('title');
 if ($this->request->here != '/') {
   if ($title)
-    $title .= " — Ġabra";
+    $title .= " · Ġabra";
   else
     $title  = "Ġabra";
 }
@@ -26,7 +26,7 @@ if ($this->request->here != '/') {
     echo $this->fetch('meta');
     echo $this->Html->meta(
       'favicon.ico',
-      '/img/gabra-icon-trans-16.png',
+      '/img/favicon-bold.ico',
       array('type' => 'icon')
     );
 
@@ -37,18 +37,52 @@ if ($this->request->here != '/') {
         user : <?php echo @$common['user'] ? json_encode($common['user']) : 'null' ?>,
         base_url : "<?php echo $this->Html->url('/') ?>",
         api_url : "<?php echo API_URL ?>",
+        minsel_url : "<?php echo MINSEL_URL ?>",
+        corpus_url : "<?php echo CORPUS_URL ?>",
         i18n : {
-          localise : function(type, key) {
-            var thing = Gabra.i18n[type][key];
-            return thing ? thing : key;
+          // key: string or array of nested keys
+          // replacements: string or array, in order
+          localise : function(key, replacements) {
+            // Load val from key
+            if (key instanceof Array) {
+              // nothing
+            } else if (typeof key === "string") {
+              key = key.split('.');
+            }
+            var val = Gabra.i18n;
+            for (let x in key) {
+              if (val.hasOwnProperty(key[x])) {
+                val = val[key[x]];
+              } else {
+                val = key[x];
+                break;
+              }
+            }
+
+            // Handle replacements
+            if (replacements) {
+              if (typeof replacements === "string") {
+                replacements = [replacements];
+              }
+              else if (typeof replacements === "number") {
+                replacements = [replacements.toString()];
+              }
+              for (let x in replacements) {
+                val = val.replace('%s', replacements[x]);
+              }
+            }
+
+            return val;
           },
           updates: "<?php echo h(__("Updates")); ?>",
           eg: "<?php echo h(__("e.g.")); ?>",
           x_more: "<?php echo h(__("%s more matches")); ?>",
           feedback_dialog_title: "<?php echo h(__("What is wrong with this entry?")); ?>",
           marked_as_incorrect: "<?php echo h(__("This item has been marked as incorrect")); ?>",
-          merge_no_selection: "<?php echo h(__("You must select at least one entry to merge")); ?>",
-          merge_confirm: "<?php echo h(__("This will ONLY merge glosses into this entry. Continue?")); ?>",
+          merge: {
+            no_selection: "<?php echo h(__("You must select at least one entry to merge")); ?>",
+            confirm: "<?php echo h(__("This will ONLY merge glosses into this entry. Continue?")); ?>",
+          },
           delete_confirm: "<?php echo h(__('Are you sure you want to delete this entry?')); ?>",
           did_you_mean: "<?php echo h(__('Did you mean:')); ?>",
           suggest: {
@@ -63,6 +97,10 @@ if ($this->request->here != '/') {
             pos: "<?php echo h(__("Part of speech")); ?>",
             pos_help: "<?php echo h(__("Noun, verb, adjective or other")); ?>",
             added: "<?php echo h(__("Your suggestion has been added.")); ?>",
+          },
+          etymology: {
+             occurs_in: "<?php echo h(__("Occurs in %s languages, grouped into %s senses")); ?>",
+             more_link: "<?php echo h(__("See the full etymological information at <a href=\"%s\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>")); ?>",
           },
           error_occurred: "<?php echo h(__("An error occurred")); ?>",
           pos: <?php echo json_encode($common['parts_of_speech']) ?>,
@@ -88,7 +126,7 @@ if ($this->request->here != '/') {
     <?php endif; ?>
 
     <?php
-    if (defined('USE_CDN')) {
+    if (defined('USE_CDN') && USE_CDN===true) {
       echo $this->Html->css('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
       echo $this->Html->css('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css');
     } else {
@@ -99,7 +137,7 @@ if ($this->request->here != '/') {
     echo $this->Minify->css(array('gabra'));
     echo $this->fetch('css');
 
-    if (defined('USE_CDN')) {
+    if (defined('USE_CDN') && USE_CDN===true) {
       echo $this->Html->script('//code.jquery.com/jquery-1.11.3.min.js');
       echo $this->Html->script('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', array('defer' => true));
     } else {

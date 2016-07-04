@@ -78,7 +78,7 @@ Gabra.UI.searchResultRoot = function(item, match) {
         ),
         // Type
         $('<td>').append(
-            Gabra.i18n.localise('root_types', root.type)
+            Gabra.i18n.localise(['root_types', root.type])
         )
     );
     var verbs = {}
@@ -223,7 +223,7 @@ Gabra.UI.posTag = function(tag, options) {
     var opts = $.extend({
         capitalise : false,
     }, options);
-    var s = Gabra.i18n.localise('pos', tag);
+    var s = Gabra.i18n.localise(['pos', tag]);
     return opts.capitalise ? s.toProperCase() : s;
 };
 
@@ -299,4 +299,56 @@ Gabra.UI.gloss = function(lexeme, options) {
 
 Gabra.UI.icon = function(name, title) {
     return $('<span>').attr({'title':title, 'class':'glyphicon glyphicon-'+name});
+};
+
+Gabra.UI.etymology = function(etym, langs={}) {
+    var out = $('<div>').addClass('etymology');
+    $('<p>').html(
+        Gabra.i18n.localise('etymology.occurs_in', [etym.etymology.length, etym.senses.length])+':'
+    ).appendTo(out);
+    var ol = $('<ol>').appendTo(out);
+
+    var getEtymLang = function (lang) {
+        for (let x in etym.etymology) {
+            if (etym.etymology[x].language === lang) {
+                return etym.etymology[x];
+            }
+        }
+        return null;
+    }
+    var getLangName = function (lang) {
+        return langs.hasOwnProperty(lang) ? langs[lang] : lang;
+    }
+
+    for (let s in etym.senses) {
+        let sense = etym.senses[s];
+        let etyms = $('<div>').addClass('text-muted');
+        for (let e in sense.etymologies) {
+            let etymlang = getEtymLang(sense.etymologies[e]);
+            if (etymlang) {
+                let langname = getLangName(etymlang.language);
+                let tooltip = langname + ': ' + etymlang.word; // + lang.reference;
+                if (etymlang.word_native)
+                    tooltip += ' (' + etymlang.word_native + ')';
+                etyms.append($('<span>').text(etymlang.language).attr({
+                    'data-toggle':'tooltip',
+                    'data-placement':'bottom',
+                    'title': tooltip
+                }));
+                if (e < sense.etymologies.length-1) {
+                    etyms.append(', ');
+                }
+            }
+        }
+        ol.append(
+            $('<li>')
+                .append($('<div>').text(sense.description))
+                .append(etyms)
+            );
+    }
+
+    var link = Gabra.i18n.localise('etymology.more_link', [Gabra.minsel_url + '?s=' + etym.lemma]);
+    $('<p>').html(decodeEntities(link)).appendTo(out);
+
+    return out;
 };

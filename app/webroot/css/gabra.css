@@ -61,6 +61,14 @@ body {
     width: auto;
 }
 
+.tab-pane {
+    margin-top: 1em;
+}
+
+[data-toggle=tooltip] {
+    border-bottom: 1px dotted #ccc;
+}
+
 /* --- Keyboard element --------------------------------------------------- */
 
 .keyboard ul {

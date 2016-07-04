@@ -75,14 +75,14 @@ class UIHelper extends HtmlHelper {
   }
 
   public function corpusLink($query) {
-    $base = 'http://mlrs.research.um.edu.mt/CQPweb/malti03';
+    $base = CORPUS_URL;
     $urls = array(
       // Word lookup
-      'lookup'      => "{$base}/redirect.php?lookupString=".urlencode($query)."&lookupType=begin&lookupShowWithTags=1&pp=50&redirect=lookup&uT=y",
+      'lookup'      => "{$base}redirect.php?lookupString=".urlencode($query)."&lookupType=begin&lookupShowWithTags=1&pp=50&redirect=lookup&uT=y",
       // Concordance
-      'concordance' => "{$base}/concordance.php?theData=".urlencode($query)."&qmode=sq_nocase&pp=50&del=begin&del=end&uT=y",
+      'concordance' => "{$base}concordance.php?theData=".urlencode($query)."&qmode=sq_nocase&pp=50&del=begin&del=end&uT=y",
       // Frequency (begins with)
-      'frequency'   => "{$base}/freqlist.php?flTable=__entire_corpus&flAtt=word&flFilterType=begin&flFilterString=".urlencode($query)."&pp=50&flOrder=desc&uT=y",
+      'frequency'   => "{$base}freqlist.php?flTable=__entire_corpus&flAtt=word&flFilterType=begin&flFilterString=".urlencode($query)."&pp=50&flOrder=desc&uT=y",
     );
     // $out = $this->icon('new-window').' '.__('MLRS corpus').':';
     // $out .= ' '.$this->link(
@@ -170,7 +170,7 @@ class UIHelper extends HtmlHelper {
         'capitalise' => false,
       ), $options);
     $pos = $this->_View->viewVars['common']['parts_of_speech']; // is this hackey?
-    $s = (array_key_exists($tag, $pos)) ? $pos[$tag] : $tag;
+    $s = (array_key_exists($tag, $pos)) ? $pos[$tag] : h($tag);
     return ($opts['capitalise'])? ucfirst($s) : $s;
   }
 
@@ -188,8 +188,8 @@ class UIHelper extends HtmlHelper {
       9 => 'IX',
       10 => 'X'
     );
-    if (@$item['derived_form'])
-      return $forms[@$item['derived_form']];
+    if (isset($item['derived_form']) && array_key_exists((int)$item['derived_form'], $forms))
+      return $forms[(int)$item['derived_form']];
     else
       return '';
   }
@@ -222,8 +222,7 @@ class UIHelper extends HtmlHelper {
     // }
     return $this->tag(
       'span',
-      '('.$s.')',
-      // '('.h($s).')',
+      '('.h($s).')',
       array_merge(array(), $options)
     );
   }

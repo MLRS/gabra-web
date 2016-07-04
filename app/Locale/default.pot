@@ -5,7 +5,6 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-08-18 10:15+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,8 +13,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/APIController.php:55;72
-#: Controller/LexemesController.php:136;193;224;320;358;431;440;450;531
+#: Controller/AppController.php:72
+msgid "adjective"
+msgstr ""
+
+#: Controller/AppController.php:73
+msgid "adposition"
+msgstr ""
+
+#: Controller/AppController.php:74
+msgid "adverb"
+msgstr ""
+
+#: Controller/AppController.php:75
+msgid "auxiliary verb"
+msgstr ""
+
+#: Controller/AppController.php:76
+msgid "coordinating conjunction"
+msgstr ""
+
+#: Controller/AppController.php:77
+msgid "determiner"
+msgstr ""
+
+#: Controller/AppController.php:78
+msgid "interjection"
+msgstr ""
+
+#: Controller/AppController.php:79
+msgid "noun"
+msgstr ""
+
+#: Controller/AppController.php:80
+msgid "numeral"
+msgstr ""
+
+#: Controller/AppController.php:81
+msgid "particle"
+msgstr ""
+
+#: Controller/AppController.php:82
+msgid "pronoun"
+msgstr ""
+
+#: Controller/AppController.php:83
+msgid "proper noun"
+msgstr ""
+
+#: Controller/AppController.php:84
+msgid "punctuation"
+msgstr ""
+
+#: Controller/AppController.php:85
+msgid "subordinating conjunction"
+msgstr ""
+
+#: Controller/AppController.php:86
+msgid "symbol"
+msgstr ""
+
+#: Controller/AppController.php:87
+msgid "verb"
+msgstr ""
+
+#: Controller/AppController.php:88
+msgid "other"
+msgstr ""
+
+#: Controller/AppController.php:91
+msgid "strong"
+msgstr ""
+
+#: Controller/AppController.php:92
+msgid "geminated"
+msgstr ""
+
+#: Controller/AppController.php:93
+msgid "weak initial"
+msgstr ""
+
+#: Controller/AppController.php:94
+msgid "weak medial"
+msgstr ""
+
+#: Controller/AppController.php:95
+msgid "weak final"
+msgstr ""
+
+#: Controller/AppController.php:96
+msgid "irregular"
+msgstr ""
+
+#: Controller/LexemesController.php:72
+#: View/Layouts/default.ctp:200
+msgid "Flagged"
+msgstr ""
+
+#: Controller/LexemesController.php:90
+#: View/Layouts/default.ctp:199
+msgid "Pending"
+msgstr ""
+
+#: Controller/LexemesController.php:110;167;198;294;332;405;413;422;502
 #: Controller/MessagesController.php:42;59
 #: Controller/RootsController.php:29
 #: Controller/SourcesController.php:11
@@ -24,158 +124,52 @@ msgstr ""
 msgid "Invalid ID"
 msgstr ""
 
-#: Controller/APIController.php:188
-msgid "Empty query"
-msgstr ""
-
-#: Controller/AppController.php:71
-msgid "adjective"
-msgstr ""
-
-#: Controller/AppController.php:72
-msgid "adposition"
-msgstr ""
-
-#: Controller/AppController.php:73
-msgid "adverb"
-msgstr ""
-
-#: Controller/AppController.php:74
-msgid "auxiliary verb"
-msgstr ""
-
-#: Controller/AppController.php:75
-msgid "coordinating conjunction"
-msgstr ""
-
-#: Controller/AppController.php:76
-msgid "determiner"
-msgstr ""
-
-#: Controller/AppController.php:77
-msgid "interjection"
-msgstr ""
-
-#: Controller/AppController.php:78
-msgid "noun"
-msgstr ""
-
-#: Controller/AppController.php:79
-msgid "numeral"
-msgstr ""
-
-#: Controller/AppController.php:80
-msgid "particle"
-msgstr ""
-
-#: Controller/AppController.php:81
-msgid "pronoun"
-msgstr ""
-
-#: Controller/AppController.php:82
-msgid "proper noun"
-msgstr ""
-
-#: Controller/AppController.php:83
-msgid "punctuation"
-msgstr ""
-
-#: Controller/AppController.php:84
-msgid "subordinating conjunction"
-msgstr ""
-
-#: Controller/AppController.php:85
-msgid "symbol"
-msgstr ""
-
-#: Controller/AppController.php:86
-msgid "verb"
-msgstr ""
-
-#: Controller/AppController.php:87
-msgid "other"
-msgstr ""
-
-#: Controller/AppController.php:90
-msgid "strong"
-msgstr ""
-
-#: Controller/AppController.php:91
-msgid "geminated"
-msgstr ""
-
-#: Controller/AppController.php:92
-msgid "weak initial"
-msgstr ""
-
-#: Controller/AppController.php:93
-msgid "weak medial"
-msgstr ""
-
-#: Controller/AppController.php:94
-msgid "weak final"
-msgstr ""
-
-#: Controller/AppController.php:95
-msgid "irregular"
-msgstr ""
-
-#: Controller/LexemesController.php:72
-#: View/Layouts/default.ctp:160
-msgid "Flagged"
-msgstr ""
-
-#: Controller/LexemesController.php:90
-#: View/Layouts/default.ctp:159
-msgid "Pending"
-msgstr ""
-
-#: Controller/LexemesController.php:199
+#: Controller/LexemesController.php:173
 msgid "Invalid message"
 msgstr ""
 
-#: Controller/LexemesController.php:211
+#: Controller/LexemesController.php:185
 msgid "Thank you, we have received your feedback"
 msgstr ""
 
-#: Controller/LexemesController.php:214;235;308;328;364;480;518;539
+#: Controller/LexemesController.php:188;209;282;302;338;451;489;510
 #: Controller/MessagesController.php:34;49;64
 #: Controller/UsersController.php:52;68;89
 #: Controller/WordformsController.php:14;53
 msgid "Error"
 msgstr ""
 
-#: Controller/LexemesController.php:233
+#: Controller/LexemesController.php:207
 msgid "Feedback cleared"
 msgstr ""
 
-#: Controller/LexemesController.php:305
+#: Controller/LexemesController.php:279
 #: Controller/WordformsController.php:12
 msgid "Item saved"
 msgstr ""
 
-#: Controller/LexemesController.php:325
+#: Controller/LexemesController.php:299
 #: Controller/MessagesController.php:31;46
 #: Controller/UsersController.php:49;65
 #: Controller/WordformsController.php:51
 msgid "Changes saved"
 msgstr ""
 
-#: Controller/LexemesController.php:362
+#: Controller/LexemesController.php:336
 #: Controller/MessagesController.php:62
 #: Controller/WordformsController.php:93
 msgid "Entry deleted"
 msgstr ""
 
-#: Controller/LexemesController.php:415
+#: Controller/LexemesController.php:389
 msgid "No duplicates found for: "
 msgstr ""
 
-#: Controller/LexemesController.php:476;516
+#: Controller/LexemesController.php:447;487
 msgid "Entries merged"
 msgstr ""
 
-#: Controller/LexemesController.php:537
+#: Controller/LexemesController.php:508
 msgid "Entry marked as non-duplicate"
 msgstr ""
 
@@ -189,18 +183,6 @@ msgstr ""
 
 #: Controller/WordformsController.php:95
 msgid "Delete failed"
-msgstr ""
-
-#: View/API/index.ctp:1
-#: View/API/pre.php:1
-#: View/Layouts/default.ctp:139
-msgid "API"
-msgstr ""
-
-#: View/API/index.ctp:4
-#: View/API/pre.php:4
-#: View/Pages/schema.ctp:4
-msgid "This page is only available in English."
 msgstr ""
 
 #: View/Elements/navbar-search.ctp:12
@@ -258,7 +240,7 @@ msgid "Items in %sred%s are hypothetical, unused or obsolete forms listed in dic
 msgstr ""
 
 #: View/Elements/root-search.ctp:106
-#: View/Layouts/default.ctp:130
+#: View/Layouts/default.ctp:173
 #: View/Roots/index.ctp:1
 msgid "Root search"
 msgstr ""
@@ -284,77 +266,77 @@ msgid "The apostrophe %s indicates a missing radical, in irregular roots."
 msgstr ""
 
 #: View/Elements/root-search.ctp:119
-#: View/Lexemes/advanced-search.ctp:114
+#: View/Lexemes/advanced-search.ctp:116
 msgid "Advanced search syntax"
 msgstr ""
 
 #: View/Elements/root-search.ctp:121
-#: View/Lexemes/advanced-search.ctp:116
+#: View/Lexemes/advanced-search.ctp:118
 msgid "Queries follow regular expression syntax:"
 msgstr ""
 
 #: View/Elements/root-search.ctp:123
-#: View/Lexemes/advanced-search.ctp:118
+#: View/Lexemes/advanced-search.ctp:120
 msgid "%s matches any single letter (including <em>ie</em> and <em>għ</em>)"
 msgstr ""
 
 #: View/Elements/root-search.ctp:124
-#: View/Lexemes/advanced-search.ctp:119
+#: View/Lexemes/advanced-search.ctp:121
 msgid "%s matches beginning of string"
 msgstr ""
 
 #: View/Elements/root-search.ctp:125
-#: View/Lexemes/advanced-search.ctp:120
+#: View/Lexemes/advanced-search.ctp:122
 msgid "%s matches the end of string"
 msgstr ""
 
 #: View/Elements/root-search.ctp:126
-#: View/Lexemes/advanced-search.ctp:121
+#: View/Lexemes/advanced-search.ctp:123
 msgid "%s matches 1 or more repetitions of the previous expression"
 msgstr ""
 
 #: View/Elements/root-search.ctp:127
-#: View/Lexemes/advanced-search.ctp:122
+#: View/Lexemes/advanced-search.ctp:124
 msgid "%s matches 0 or more repetitions of the previous expression"
 msgstr ""
 
 #: View/Elements/root-search.ctp:128
-#: View/Lexemes/advanced-search.ctp:123
+#: View/Lexemes/advanced-search.ctp:125
 msgid "%s matches 0 or 1 occurances of the previous expression"
 msgstr ""
 
 #: View/Elements/root-search.ctp:129
-#: View/Lexemes/advanced-search.ctp:124
+#: View/Lexemes/advanced-search.ctp:126
 msgid "Character classes can be enclosed in %s"
 msgstr ""
 
 #: View/Elements/root-search.ctp:132
-#: View/Lexemes/advanced-search.ctp:127
+#: View/Lexemes/advanced-search.ctp:129
 msgid "Examples"
 msgstr ""
 
 #: View/Elements/root-search.ctp:138
-#: View/Lexemes/advanced-search.ctp:133
+#: View/Lexemes/advanced-search.ctp:135
 msgid "%s matches <em>k</em> as first radical and <em>b</em> as third radical"
 msgstr ""
 
 #: View/Elements/root-search.ctp:139
-#: View/Lexemes/advanced-search.ctp:134
+#: View/Lexemes/advanced-search.ctp:136
 msgid "%s matches any weak-final root"
 msgstr ""
 
 #: View/Elements/root-search.ctp:140;144
-#: View/Lexemes/advanced-search.ctp:135;139
+#: View/Lexemes/advanced-search.ctp:137;141
 msgid "%s matches any item beginning with <em>għar</em>"
 msgstr ""
 
 #: View/Elements/root-search.ctp:145
-#: View/Lexemes/advanced-search.ctp:140
+#: View/Lexemes/advanced-search.ctp:142
 msgid "%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
 msgstr ""
 
 #: View/Elements/root-search.ctp:146
-#: View/Lexemes/advanced-search.ctp:141
+#: View/Lexemes/advanced-search.ctp:143
 msgid "%s matches both <em>sama'</em> and <em>sema'</em>"
 msgstr ""
 
@@ -382,337 +364,337 @@ msgstr ""
 msgid "Page {:page} of {:pages}, showing records {:start} to {:end} out of {:count} total."
 msgstr ""
 
-#: View/Helper/UIHelper.php:8;256
-#: View/Lexemes/edit.ctp:118
+#: View/Helper/UIHelper.php:26;275
+#: View/Lexemes/edit.ctp:123
 msgid "Surface form"
 msgstr ""
 
-#: View/Helper/UIHelper.php:9
-#: View/Lexemes/edit.ctp:120
+#: View/Helper/UIHelper.php:27
+#: View/Lexemes/edit.ctp:125
 msgid "Gender"
 msgstr ""
 
-#: View/Helper/UIHelper.php:10
-#: View/Lexemes/edit.ctp:119
+#: View/Helper/UIHelper.php:28
+#: View/Lexemes/edit.ctp:124
 msgid "Number"
 msgstr ""
 
-#: View/Helper/UIHelper.php:11
+#: View/Helper/UIHelper.php:29
 msgid "Phonetic"
 msgstr ""
 
-#: View/Helper/UIHelper.php:12
+#: View/Helper/UIHelper.php:30
 msgid "Pattern"
 msgstr ""
 
-#: View/Helper/UIHelper.php:13
+#: View/Helper/UIHelper.php:31
 msgid "Derived form"
 msgstr ""
 
-#: View/Helper/UIHelper.php:14
-#: View/Lexemes/edit.ctp:121
+#: View/Helper/UIHelper.php:32
+#: View/Lexemes/edit.ctp:126
 msgid "Form"
 msgstr ""
 
-#: View/Helper/UIHelper.php:15
+#: View/Helper/UIHelper.php:33
 msgid "Aspect"
 msgstr ""
 
-#: View/Helper/UIHelper.php:16
+#: View/Helper/UIHelper.php:34
 msgid "Subject"
 msgstr ""
 
-#: View/Helper/UIHelper.php:19
+#: View/Helper/UIHelper.php:37
 msgid "Direct Object"
 msgstr ""
 
-#: View/Helper/UIHelper.php:20
+#: View/Helper/UIHelper.php:38
 msgid "Indirect Object"
 msgstr ""
 
-#: View/Helper/UIHelper.php:21
+#: View/Helper/UIHelper.php:39
 msgid "Polarity"
 msgstr ""
 
-#: View/Helper/UIHelper.php:26
-#: View/Lexemes/edit.ctp:207
+#: View/Helper/UIHelper.php:44
+#: View/Lexemes/edit.ctp:212
 msgid "Masc"
 msgstr ""
 
-#: View/Helper/UIHelper.php:27
-#: View/Lexemes/edit.ctp:208
+#: View/Helper/UIHelper.php:45
+#: View/Lexemes/edit.ctp:213
 msgid "Fem"
 msgstr ""
 
-#: View/Helper/UIHelper.php:28
-#: View/Lexemes/edit.ctp:209
+#: View/Helper/UIHelper.php:46
+#: View/Lexemes/edit.ctp:214
 msgid "Masc/Fem"
 msgstr ""
 
-#: View/Helper/UIHelper.php:29
-#: View/Lexemes/edit.ctp:194
+#: View/Helper/UIHelper.php:47
+#: View/Lexemes/edit.ctp:199
 msgid "Singular"
 msgstr ""
 
-#: View/Helper/UIHelper.php:30
-#: View/Lexemes/edit.ctp:195
+#: View/Helper/UIHelper.php:48
+#: View/Lexemes/edit.ctp:200
 msgid "Dual"
 msgstr ""
 
-#: View/Helper/UIHelper.php:31
-#: View/Lexemes/edit.ctp:196
+#: View/Helper/UIHelper.php:49
+#: View/Lexemes/edit.ctp:201
 msgid "Plural"
 msgstr ""
 
-#: View/Helper/UIHelper.php:32
+#: View/Helper/UIHelper.php:50
 msgid "Singular/Plural"
 msgstr ""
 
-#: View/Helper/UIHelper.php:33
-#: View/Lexemes/edit.ctp:197
+#: View/Helper/UIHelper.php:51
+#: View/Lexemes/edit.ctp:202
 msgid "Singulative"
 msgstr ""
 
-#: View/Helper/UIHelper.php:34
-#: View/Lexemes/edit.ctp:198
+#: View/Helper/UIHelper.php:52
+#: View/Lexemes/edit.ctp:203
 msgid "Collective"
 msgstr ""
 
-#: View/Helper/UIHelper.php:35
+#: View/Helper/UIHelper.php:53
 msgid "Perfective"
 msgstr ""
 
-#: View/Helper/UIHelper.php:36
+#: View/Helper/UIHelper.php:54
 msgid "Imperfective"
 msgstr ""
 
-#: View/Helper/UIHelper.php:37
+#: View/Helper/UIHelper.php:55
 msgid "Imperative"
 msgstr ""
 
-#: View/Helper/UIHelper.php:38
+#: View/Helper/UIHelper.php:56
 msgid "Past Participle"
 msgstr ""
 
-#: View/Helper/UIHelper.php:39
+#: View/Helper/UIHelper.php:57
 msgid "Present Participle"
 msgstr ""
 
-#: View/Helper/UIHelper.php:40
+#: View/Helper/UIHelper.php:58
 msgid "Positive"
 msgstr ""
 
-#: View/Helper/UIHelper.php:41
+#: View/Helper/UIHelper.php:59
 msgid "Negative"
 msgstr ""
 
-#: View/Helper/UIHelper.php:42
-#: View/Lexemes/edit.ctp:218
+#: View/Helper/UIHelper.php:60
+#: View/Lexemes/edit.ctp:223
 msgid "Diminutive"
 msgstr ""
 
-#: View/Helper/UIHelper.php:43
-#: View/Lexemes/edit.ctp:219
+#: View/Helper/UIHelper.php:61
+#: View/Lexemes/edit.ctp:224
 msgid "Comparative"
 msgstr ""
 
-#: View/Helper/UIHelper.php:44
-#: View/Lexemes/edit.ctp:220
+#: View/Helper/UIHelper.php:62
+#: View/Lexemes/edit.ctp:225
 msgid "Superlative"
 msgstr ""
 
-#: View/Helper/UIHelper.php:85
+#: View/Helper/UIHelper.php:104
 msgid "Lookup in MLRS corpus"
 msgstr ""
 
-#: View/Layouts/default.ctp:62
+#: View/Layouts/default.ctp:76
+msgid "Updates"
+msgstr ""
+
+#: View/Layouts/default.ctp:77
 msgid "e.g."
 msgstr ""
 
-#: View/Layouts/default.ctp:63
+#: View/Layouts/default.ctp:78
 msgid "%s more matches"
 msgstr ""
 
-#: View/Layouts/default.ctp:64
+#: View/Layouts/default.ctp:79
 msgid "What is wrong with this entry?"
 msgstr ""
 
-#: View/Layouts/default.ctp:65
+#: View/Layouts/default.ctp:80
 msgid "This item has been marked as incorrect"
 msgstr ""
 
-#: View/Layouts/default.ctp:66
+#: View/Layouts/default.ctp:82
 msgid "You must select at least one entry to merge"
 msgstr ""
 
-#: View/Layouts/default.ctp:67
+#: View/Layouts/default.ctp:83
 msgid "This will ONLY merge glosses into this entry. Continue?"
 msgstr ""
 
-#: View/Layouts/default.ctp:68
-#: View/Lexemes/admin-index.ctp:66
+#: View/Layouts/default.ctp:85
+#: View/Lexemes/admin-index.ctp:67
 #: View/Lexemes/duplicates.ctp:166
-#: View/Lexemes/edit.ctp:61
+#: View/Lexemes/edit.ctp:66
 msgid "Are you sure you want to delete this entry?"
 msgstr ""
 
-#: View/Layouts/default.ctp:69
+#: View/Layouts/default.ctp:86
 msgid "Did you mean:"
 msgstr ""
 
-#: View/Layouts/default.ctp:71
+#: View/Layouts/default.ctp:88
 msgid "Submit"
 msgstr ""
 
-#: View/Layouts/default.ctp:72
-#: View/Messages/add.ctp:29
-#: View/Messages/edit.ctp:29
+#: View/Layouts/default.ctp:89
+#: View/Messages/add.ctp:31
+#: View/Messages/edit.ctp:31
 #: View/Users/edit.ctp:23
 msgid "Cancel"
 msgstr ""
 
-#: View/Layouts/default.ctp:73
+#: View/Layouts/default.ctp:90
 msgid "Click here to suggest that %s is added to the database."
 msgstr ""
 
-#: View/Layouts/default.ctp:74
+#: View/Layouts/default.ctp:91
 msgid "Suggest a new entry"
 msgstr ""
 
-#: View/Layouts/default.ctp:75
+#: View/Layouts/default.ctp:92
 #: View/Lexemes/duplicates.ctp:123
 #: View/Lexemes/merge.ctp:91
 msgid "Lemma"
 msgstr ""
 
-#: View/Layouts/default.ctp:76
+#: View/Layouts/default.ctp:93
 msgid "Word in Maltese"
 msgstr ""
 
-#: View/Layouts/default.ctp:77
+#: View/Layouts/default.ctp:94
 msgid "Gloss"
 msgstr ""
 
-#: View/Layouts/default.ctp:78
+#: View/Layouts/default.ctp:95
 msgid "Translation in English"
 msgstr ""
 
-#: View/Layouts/default.ctp:79
+#: View/Layouts/default.ctp:96
 #: View/Lexemes/advanced-search.ctp:75
 #: View/Lexemes/view.ctp:25
 msgid "Part of speech"
 msgstr ""
 
-#: View/Layouts/default.ctp:80
+#: View/Layouts/default.ctp:97
 msgid "Noun, verb, adjective or other"
 msgstr ""
 
-#: View/Layouts/default.ctp:81
+#: View/Layouts/default.ctp:98
 msgid "Your suggestion has been added."
 msgstr ""
 
-#: View/Layouts/default.ctp:83
+#: View/Layouts/default.ctp:101
+msgid "Occurs in %s languages, grouped into %s senses"
+msgstr ""
+
+#: View/Layouts/default.ctp:102
+msgid "See the full etymological information at <a href=\"%s\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>"
+msgstr ""
+
+#: View/Layouts/default.ctp:104
 msgid "An error occurred"
 msgstr ""
 
-#: View/Layouts/default.ctp:87
+#: View/Layouts/default.ctp:108
 msgid "Any"
 msgstr ""
 
-#: View/Layouts/default.ctp:88
+#: View/Layouts/default.ctp:109
 msgid "Empty"
 msgstr ""
 
-#: View/Layouts/default.ctp:115
+#: View/Layouts/default.ctp:158
 msgid "Toggle navigation"
 msgstr ""
 
-#: View/Layouts/default.ctp:127
+#: View/Layouts/default.ctp:170
 #: View/Lexemes/advanced-search.ctp:1;4
 msgid "Advanced search"
 msgstr ""
 
-#: View/Layouts/default.ctp:134
+#: View/Layouts/default.ctp:177
 msgid "More"
 msgstr ""
 
-#: View/Layouts/default.ctp:136
-#: View/Pages/about.ctp:1
-msgid "About"
-msgstr ""
-
-#: View/Layouts/default.ctp:137
-#: View/Pages/home.ctp:99
+#: View/Layouts/default.ctp:179
 #: View/Sources/index.ctp:1;4
 #: View/Sources/view.ctp:1
 msgid "Sources"
 msgstr ""
 
-#: View/Layouts/default.ctp:138
-#: View/Pages/home.ctp:72
+#: View/Layouts/default.ctp:180
 msgid "Random entry"
 msgstr ""
 
-#: View/Layouts/default.ctp:140
-msgid "Schema"
+#: View/Layouts/default.ctp:181
+msgid "API"
 msgstr ""
 
-#: View/Layouts/default.ctp:141
-#: View/Pages/download.ctp:1;2
+#: View/Layouts/default.ctp:181
 msgid "Download"
 msgstr ""
 
-#: View/Layouts/default.ctp:145
+#: View/Layouts/default.ctp:185
 #: View/Users/login.ctp:1;4;22
 msgid "Login"
 msgstr ""
 
-#: View/Layouts/default.ctp:161
+#: View/Layouts/default.ctp:201
 #: View/Lexemes/duplicates.ctp:1;5
 msgid "Duplicates"
 msgstr ""
 
-#: View/Layouts/default.ctp:163
+#: View/Layouts/default.ctp:203
 msgid "Logout"
 msgstr ""
 
-#: View/Layouts/default.ctp:174
+#: View/Layouts/default.ctp:214
 msgid "bil-Malti"
 msgstr ""
 
-#: View/Layouts/default.ctp:179
+#: View/Layouts/default.ctp:219
 msgid "in English"
 msgstr ""
 
-#: View/Layouts/error.ctp:3
-msgid "Ġabra: an opportunistic collection of Maltese lexical resources"
-msgstr ""
-
-#: View/Lexemes/add.ctp:1;5
+#: View/Lexemes/add.ctp:6;10
 msgid "Add lexeme"
 msgstr ""
 
-#: View/Lexemes/add.ctp:14
-#: View/Lexemes/edit.ctp:20
+#: View/Lexemes/add.ctp:19
+#: View/Lexemes/edit.ctp:25
 msgid "Use commas to separate multiple alternatives"
 msgstr ""
 
-#: View/Lexemes/add.ctp:23
-#: View/Lexemes/edit.ctp:34
+#: View/Lexemes/add.ctp:28
+#: View/Lexemes/edit.ctp:39
 #: View/Lexemes/merge.ctp:27
 #: View/Lexemes/view.ctp:38
 #: View/Roots/view.ctp:2;6
 msgid "Root"
 msgstr ""
 
-#: View/Lexemes/add.ctp:43
-#: View/Lexemes/edit.ctp:98
+#: View/Lexemes/add.ctp:48
+#: View/Lexemes/edit.ctp:103
 msgid "New field with name:"
 msgstr ""
 
-#: View/Lexemes/add.ctp:45
-#: View/Lexemes/edit.ctp:100;226
-#: View/Messages/add.ctp:27
+#: View/Lexemes/add.ctp:50
+#: View/Lexemes/edit.ctp:105;231
+#: View/Messages/add.ctp:29
 msgid "Add"
 msgstr ""
 
@@ -741,23 +723,23 @@ msgstr ""
 
 #: View/Lexemes/admin-index.ctp:50
 #: View/Lexemes/duplicates.ctp:157
-#: View/Messages/index.ctp:31
+#: View/Messages/index.ctp:29
 #: View/Users/index.ctp:26
 msgid "Edit"
 msgstr ""
 
-#: View/Lexemes/admin-index.ctp:56
+#: View/Lexemes/admin-index.ctp:57
 msgid "Clear feedback"
 msgstr ""
 
-#: View/Lexemes/admin-index.ctp:59
+#: View/Lexemes/admin-index.ctp:60
 msgid "Clear feedback for this entry?"
 msgstr ""
 
-#: View/Lexemes/admin-index.ctp:63
+#: View/Lexemes/admin-index.ctp:64
 #: View/Lexemes/duplicates.ctp:163
-#: View/Lexemes/edit.ctp:58
-#: View/Messages/index.ctp:32
+#: View/Lexemes/edit.ctp:63
+#: View/Messages/index.ctp:30
 #: View/Users/index.ctp:27
 msgid "Delete"
 msgstr ""
@@ -768,10 +750,6 @@ msgstr ""
 
 #: View/Lexemes/advanced-search.ctp:47
 msgid "Search wordforms"
-msgstr ""
-
-#: View/Lexemes/advanced-search.ctp:57
-msgid "Regex search in wordforms (slow)"
 msgstr ""
 
 #: View/Lexemes/advanced-search.ctp:67
@@ -855,45 +833,45 @@ msgstr ""
 msgid "Not duplicate"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:1
+#: View/Lexemes/edit.ctp:6
 msgid "Edit lexeme"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:5
+#: View/Lexemes/edit.ctp:10
 msgid "Lexeme"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:51
+#: View/Lexemes/edit.ctp:56
 msgid "Use commas to separate multiple sources"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:64
+#: View/Lexemes/edit.ctp:69
 #: View/Users/index.ctp:25
 msgid "View"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:111
+#: View/Lexemes/edit.ctp:116
 #: View/Lexemes/merge.ctp:101
 msgid "Wordforms"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:147
+#: View/Lexemes/edit.ctp:152
 msgid "Are your sure you want to delete this wordform?"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:155
+#: View/Lexemes/edit.ctp:160
 msgid "Save wordforms"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:159
+#: View/Lexemes/edit.ctp:164
 msgid "No manual wordforms"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:164
+#: View/Lexemes/edit.ctp:169
 msgid "Add wordform"
 msgstr ""
 
-#: View/Lexemes/edit.ctp:166
+#: View/Lexemes/edit.ctp:171
 msgid "Copy lemma"
 msgstr ""
 
@@ -942,7 +920,6 @@ msgid "Created"
 msgstr ""
 
 #: View/Lexemes/view.ctp:69
-#: View/Pages/download.ctp:31
 #: View/Users/view.ctp:21
 msgid "Modified"
 msgstr ""
@@ -955,16 +932,23 @@ msgstr ""
 msgid "Edit entry"
 msgstr ""
 
-#: View/Lexemes/view.ctp:108
+#: View/Lexemes/view.ctp:109
 msgid "Related entries"
 msgstr ""
 
-#: View/Lexemes/view.ctp:128
-#: View/Pages/home.ctp:126
+#: View/Lexemes/view.ctp:131
 msgid "Word forms"
 msgstr ""
 
-#: View/Lexemes/view.ctp:131
+#: View/Lexemes/view.ctp:137
+msgid "Etymology"
+msgstr ""
+
+#: View/Lexemes/view.ctp:143
+msgid "Corpus"
+msgstr ""
+
+#: View/Lexemes/view.ctp:157
 msgid "Show all forms"
 msgstr ""
 
@@ -976,7 +960,7 @@ msgstr ""
 msgid "Edit message"
 msgstr ""
 
-#: View/Messages/edit.ctp:27
+#: View/Messages/edit.ctp:29
 msgid "Save"
 msgstr ""
 
@@ -988,70 +972,21 @@ msgstr ""
 msgid "New message"
 msgstr ""
 
-#: View/Messages/index.ctp:13
+#: View/Messages/index.ctp:15
 msgid "English"
 msgstr ""
 
-#: View/Messages/index.ctp:14
+#: View/Messages/index.ctp:16
 msgid "Maltese"
 msgstr ""
 
-#: View/Messages/index.ctp:32
+#: View/Messages/index.ctp:30
 #: View/Users/index.ctp:27
 msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
-#: View/Pages/download.ctp:29
-msgid "File name"
-msgstr ""
-
-#: View/Pages/download.ctp:30
-msgid "Size"
-msgstr ""
-
-#: View/Pages/download.ctp:39
-msgid "Latest"
-msgstr ""
-
-#: View/Pages/home.ctp:1
-msgid "Ġabra: a collection of Maltese lexical resources"
-msgstr ""
-
-#: View/Pages/home.ctp:46
-msgid "Search in Maltese or English, e.g. \"%s\" or \"%s\""
-msgstr ""
-
-#: View/Pages/home.ctp:85
 #: View/Pages/news.ctp:1;2
 msgid "News"
-msgstr ""
-
-#: View/Pages/home.ctp:85
-msgid "See all"
-msgstr ""
-
-#: View/Pages/home.ctp:115
-msgid "Statistics"
-msgstr ""
-
-#: View/Pages/home.ctp:122
-msgid "Roots"
-msgstr ""
-
-#: View/Pages/home.ctp:124
-msgid "Lexeme entries"
-msgstr ""
-
-#: View/Pages/home.ctp:139
-msgid "Mistakes/missing information"
-msgstr ""
-
-#: View/Pages/home.ctp:157
-msgid "Citing Ġabra"
-msgstr ""
-
-#: View/Pages/schema.ctp:1
-msgid "Database schema"
 msgstr ""
 
 #: View/Roots/index.ctp:22

@@ -35,7 +35,7 @@ Gabra.loadWordForms = function(id, match, div, limit) {
                     out.push(
                         $('<a>')
                             .attr('href',Gabra.base_url+'lexemes/view/'+id)
-                            .html( Gabra.i18n.x_more.replace("%s", remaining)+'...' )
+                            .html( Gabra.i18n.localise('x_more', remaining)+'...' )
                     );
                 break;
             }

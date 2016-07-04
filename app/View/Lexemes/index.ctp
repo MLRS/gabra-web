@@ -28,7 +28,7 @@ else
         load_search_suggest('${q}');
       });
 JS
-    );
+);
 //  endif;
   ?>
   <div id="search-suggestions" class="lead" style="margin-bottom:0.2em"></div>
