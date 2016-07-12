@@ -301,7 +301,7 @@ Gabra.UI.icon = function(name, title) {
     return $('<span>').attr({'title':title, 'class':'glyphicon glyphicon-'+name});
 };
 
-Gabra.UI.etymology = function(etym, langs={}) {
+Gabra.UI.etymology = function(etym, langs) {
     var out = $('<div>').addClass('etymology');
     $('<p>').html(
         Gabra.i18n.localise('etymology.occurs_in', [etym.etymology.length, etym.senses.length])+':'
@@ -309,7 +309,7 @@ Gabra.UI.etymology = function(etym, langs={}) {
     var ol = $('<ol>').appendTo(out);
 
     var getEtymLang = function (lang) {
-        for (let x in etym.etymology) {
+        for (var x in etym.etymology) {
             if (etym.etymology[x].language === lang) {
                 return etym.etymology[x];
             }
@@ -317,17 +317,17 @@ Gabra.UI.etymology = function(etym, langs={}) {
         return null;
     }
     var getLangName = function (lang) {
-        return langs.hasOwnProperty(lang) ? langs[lang] : lang;
+        return (typeof langs !== 'undefined' && langs.hasOwnProperty(lang)) ? langs[lang] : lang;
     }
 
-    for (let s in etym.senses) {
-        let sense = etym.senses[s];
-        let etyms = $('<div>').addClass('text-muted');
-        for (let e in sense.etymologies) {
-            let etymlang = getEtymLang(sense.etymologies[e]);
+    for (var s in etym.senses) {
+        var sense = etym.senses[s];
+        var etyms = $('<div>').addClass('text-muted');
+        for (var e in sense.etymologies) {
+            var etymlang = getEtymLang(sense.etymologies[e]);
             if (etymlang) {
-                let langname = getLangName(etymlang.language);
-                let tooltip = langname + ': ' + etymlang.word; // + lang.reference;
+                var langname = getLangName(etymlang.language);
+                var tooltip = langname + ': ' + etymlang.word; // + lang.reference;
                 if (etymlang.word_native)
                     tooltip += ' (' + etymlang.word_native + ')';
                 etyms.append($('<span>').text(etymlang.language).attr({

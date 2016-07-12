@@ -200,7 +200,7 @@
                   dataType: "json",
                   type: "GET",
                   success: function(_langs) {
-                    for (let x in _langs) {
+                    for (var x in _langs) {
                       langs[_langs[x].abbrev] = _langs[x].name;
                     }
                   },

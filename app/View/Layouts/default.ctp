@@ -50,7 +50,7 @@ if ($this->request->here != '/') {
               key = key.split('.');
             }
             var val = Gabra.i18n;
-            for (let x in key) {
+            for (var x in key) {
               if (val.hasOwnProperty(key[x])) {
                 val = val[key[x]];
               } else {
@@ -67,7 +67,7 @@ if ($this->request->here != '/') {
               else if (typeof replacements === "number") {
                 replacements = [replacements.toString()];
               }
-              for (let x in replacements) {
+              for (x in replacements) {
                 val = val.replace('%s', replacements[x]);
               }
             }
