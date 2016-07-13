@@ -69,9 +69,7 @@ function __k($t, $k, $p=null, $o=array()) {
   <h5>
     <?php echo $this->UI->date($item['Message']['created'], array('format'=>'jS F Y')) ?>
   </h5>
-  <p>
-    <?php echo h($item['Message'][$language]) ?>
-  </p>
+  <?php echo $this->Markdown->transform($item['Message'][$language]) ?>
   <?php endif ?>
   <?php endforeach ?>
 

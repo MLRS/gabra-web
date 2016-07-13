@@ -23,12 +23,11 @@ echo $this->Form->input('s', array(
     'class'=>'form-control',
     'id' => 'advanced-search',
     'placeholder' => __('Search'),
+    'autofocus' => true,
 ));
 ?>
 </div><!-- input-group -->
 <?php
-$this->Js->buffer("$('input#advanced-search').focus()");
-
 // Search lemma
 echo $this->Form->input('l', array(
     'type' => 'checkbox',
@@ -91,7 +90,7 @@ echo $this->Form->input('source', array(
 
 // Search
 echo $this->Form->button(
-  $this->UI->icon('search').' '.__('Search'),
+  $this->UI->icon('search', __('Search')),
   array("class" => "btn btn-primary")
 );
 

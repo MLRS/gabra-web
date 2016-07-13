@@ -179,7 +179,7 @@ if ($this->request->here != '/') {
               <ul class="dropdown-menu" role="menu">
                 <li><?php echo $this->Html->link(__('Sources'), '/sources') ?></li>
                 <li><?php echo $this->Html->link(__('Random entry'), '/lexemes/random') ?></li>
-                <li><?php echo $this->Html->link(__('API').' & '.__('Download'), API_URL); ?></li>
+                <li><?php echo $this->Html->link($this->UI->icon('transfer', __('API').' & '.__('Download')), API_URL, array('escape'=>false)); ?></li>
 
                 <?php if (!@$common['user']): ?>
                 <li class="divider"></li>
@@ -197,6 +197,7 @@ if ($this->request->here != '/') {
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
+                <li><?php echo $this->Html->link(__("Messages"), '/messages'); ?></li>
                 <li><?php echo $this->Html->link(__("Pending"), '/lexemes/pending'); ?></li>
                 <li><?php echo $this->Html->link(__("Flagged"), '/lexemes/flagged'); ?></li>
                 <li><?php echo $this->Html->link(__("Duplicates"), '/lexemes/duplicates'); ?></li>

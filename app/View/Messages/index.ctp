@@ -2,7 +2,21 @@
 
   <h3>
     <?php echo __('Messages'); ?>
-    <?php echo $this->Html->link(__('New message'), 'add', array('class'=>'btn btn-default')); ?>
+    <?php echo $this->Html->link($this->UI->icon('plus',__('New message')), 'add', array('class'=>'btn btn-success', 'escape'=>false)); ?>
+
+    <form role="search" class="form-inline" action="<?php echo $this->Html->url('/messages') ?>" type="get" style="display: inline-block">
+      <div class="input-group">
+        <input type="search" name="s" class="form-control" id="message-search" autofocus="true"
+               value="<?php echo @$queryObj->raw_query ?>"
+               placeholder="<?php echo __("Search messages") ?>"
+        />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary"><?php echo $this->UI->icon('search') ?></button>
+        </div><!-- input-group-btn -->
+
+      </div><!-- input-group -->
+    </form>
+
   </h3>
 
   <?php echo $this->CustomPaginator->links(); ?>

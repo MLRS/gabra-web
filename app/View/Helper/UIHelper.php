@@ -63,12 +63,20 @@ class UIHelper extends HtmlHelper {
     );
   }
 
-  public function icon($name, $title=null) {
-    return $this->tag('span', '', array('title'=>$title, 'class'=>"glyphicon glyphicon-$name"));
+  public function icon($name, $text=null, $options=array()) {
+    $opts = array_merge(array(
+      'title' => null,
+      'sep' => ' ',
+    ), $options);
+    $icon = $this->tag('span', '', array('title'=>$opts['title'], 'class'=>"glyphicon glyphicon-$name"));
+    if ($text)
+      return $icon.$opts['sep'].$text;
+    else
+      return $icon;
   }
 
   public function date($date, $options=array()) {
-   $opts = array_merge(array(
+    $opts = array_merge(array(
       'format' => 'Y-m-d H:i O',
     ), $options);
    return $date ? date($opts['format'],$date->sec) : '';

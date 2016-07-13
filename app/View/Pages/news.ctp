@@ -14,9 +14,7 @@
       </p>
     </div>
     <div class="col-sm-10">
-      <p>
-        <?php echo h($item['Message'][$language]) ?>
-      </p>
+      <?php echo $this->Markdown->transform($item['Message'][$language]) ?>
     </div>
   </div><!-- row -->
 <?php endif ?>

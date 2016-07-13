@@ -24,8 +24,8 @@ echo $this->Form->create('Root', array(
         'class'=>'form-control',
         'id' => 'root-search',
         'placeholder' => __('Search roots'),
+        'autofocus' => true,
     ));
-    $this->Js->buffer("$('input#root-search').focus()");
     ?>
   </div><!-- input-group -->
 </div><!-- form-group -->
@@ -72,7 +72,7 @@ echo $this->Form->input('r', array(
 
 // Search
 echo $this->Form->button(
-  $this->UI->icon('search').' '.__('Search roots'),
+  $this->UI->icon('search', __('Search roots')),
   array("class" => "btn btn-primary")
 );
 

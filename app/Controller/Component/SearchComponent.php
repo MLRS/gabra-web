@@ -18,7 +18,11 @@ class SearchComponent extends Component {
       return $default;
   }
 
-  public function getQuery() {
+  public function getQuery($options=array()) {
+    $opts = array_merge(array(
+      'replace_dot' => true,
+    ), $options);
+
     $q = $this->RequestHandler->request->query;
     $query = null;
 
@@ -44,7 +48,10 @@ class SearchComponent extends Component {
     }
 
     $obj = new SearchQuery();
-    $obj->query = str_replace('.', $this->dot, $query);
+    if ($opts['replace_dot'])
+      $obj->query = str_replace('.', $this->dot, $query);
+    else
+      $obj->query = $query;
     $obj->raw_query = $query;
     $obj->regex_search = $this->boolItem('r', false);
     $obj->search_lemma = $this->boolItem('l', true);

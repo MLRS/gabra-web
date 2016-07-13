@@ -13,7 +13,19 @@ class MessagesController extends AppController {
   }
 
   public function index() {
-    $this->set('messages', $this->paginate());
+    $queryObj = $this->Search->getQuery(array('replace_dot'=>false));
+    $this->set('queryObj', $queryObj);
+    if ($queryObj->query) {
+      $this->set('messages', $this->paginate('Message', array(
+        '$or'=>array(
+          array('Message.type'=>$queryObj->query),
+          array('Message.key'=>array('$regex'=>$queryObj->query)),
+          array('Message.eng'=>array('$regex'=>$queryObj->query)),
+          array('Message.mlt'=>array('$regex'=>$queryObj->query)),
+        ))));
+    } else {
+      $this->set('messages', $this->paginate());
+    }
   }
 
   // public function view($id = null) {

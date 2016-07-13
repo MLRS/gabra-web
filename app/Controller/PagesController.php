@@ -47,6 +47,8 @@ class PagesController extends AppController {
   */
   public $uses = array();
 
+  public $helpers = array('Markdown.Markdown');
+
   /**
   * Displays a view
   *
