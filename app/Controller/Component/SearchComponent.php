@@ -20,6 +20,7 @@ class SearchComponent extends Component {
 
   public function getQuery($options=array()) {
     $opts = array_merge(array(
+      'fix_case' => true,
       'replace_dot' => true,
     ), $options);
 
@@ -43,7 +44,7 @@ class SearchComponent extends Component {
     }
 
     // If someone has CAPS LOCK on...
-    if ($query == strtoupper($query)) {
+    if ($opts['fix_case'] && $query == strtoupper($query)) {
       $query = strtolower($query);
     }
 

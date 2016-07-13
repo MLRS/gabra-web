@@ -13,7 +13,10 @@ class MessagesController extends AppController {
   }
 
   public function index() {
-    $queryObj = $this->Search->getQuery(array('replace_dot'=>false));
+    $queryObj = $this->Search->getQuery(array(
+      'replace_dot'=>false,
+      'fix_case'=>false,
+    ));
     $this->set('queryObj', $queryObj);
     if ($queryObj->query) {
       $this->set('messages', $this->paginate('Message', array(
