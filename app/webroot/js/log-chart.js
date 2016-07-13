@@ -10,10 +10,13 @@
         table.addColumn('date', 'Date')
 
         // Just totals
+        var empty = true
         table.addColumn('number', Gabra.i18n.updates)
         for (var day in data) {
+          if (data[day]['total'] > 0) empty = false
           table.addRow([new Date(day), data[day]['total']])
         }
+        if (empty) return
 
         var options = {
           legend: {
