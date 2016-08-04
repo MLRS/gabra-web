@@ -132,18 +132,22 @@
         <span class="badge"><?php echo count($item['Wordforms'])?></span>
       </a>
     </li>
+    <?php /*
     <li role="presentation" class="hidden">
       <a href="#tab-etymology" aria-controls="tab-etymology" role="tab" data-toggle="tab">
         <?php echo __('Etymology') ?>
         <span class="badge">&hellip;</span>
       </a>
     </li>
-    <!--li role="presentation">
+    */ ?>
+    <?php /*
+    <li role="presentation">
       <a href="#tab-corpus" aria-controls="tab-corpus" role="tab" data-toggle="tab">
         <?php echo __('Corpus') ?>
         <span class="badge">&hellip;</span>
       </a>
-    </li-->
+    </li>
+    */ ?>
   </ul>
 
   <!-- Tab panes -->
@@ -173,6 +177,7 @@
       <?php endif; /* if wordforms */ ?>
     </div><!-- wordforms -->
 
+    <?php /*
     <!-- Etymology -->
     <div role="tabpanel" class="tab-pane" id="tab-etymology">
       <?php
@@ -228,12 +233,13 @@
 JS
 ); ?>
     </div><!-- etymology -->
-
+    */ ?>
+    <?php /*
     <!-- Corpus -->
-    <!--
     <div role="tabpanel" class="tab-pane" id="tab-corpus">
       <iframe src="<?php echo CORPUS_URL ?>concordance.php?newPostP=rand&pp=20&uT=y&qmode=sq_nocase&theData=<?php echo $item['Lexeme']['lemma']?>"></iframe>
     </div><!-- corpus -->
+    */ ?>
 
   </div><!-- tab-content -->
 </div><!-- tabpanel, col 8 -->
