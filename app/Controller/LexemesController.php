@@ -170,7 +170,7 @@ class LexemesController extends AppController {
     // Get and check message
     $message = @$this->RequestHandler->request->query['message'];
     if (!$message) {
-      throw new Exception(__('Invalid message'));
+      throw new BadRequestException(__('Invalid message'));
     }
     $message = substr($message, 0, 200); // max 200 chars
     if ($old_msg = $this->Lexeme->field('feedback')) {
@@ -185,7 +185,7 @@ class LexemesController extends AppController {
       $this->set('message', __('Thank you, we have received your feedback'));
       $this->set('_serialize', array('response', 'message'));
     } else {
-      throw new Exception(__('Error'));
+      throw new Exception(__('Error saving feedback'));
     }
   }
 
