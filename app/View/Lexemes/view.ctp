@@ -14,7 +14,7 @@
 
 <div class="col-md-4">
 
-  <?php if (@$item['Lexeme']['pending'] || @$item['Lexeme']['feedback']): ?>
+  <?php if (@$item['Lexeme']['pending']): ?>
   <div class="alert alert-warning" role="alert">
   <?php echo $this->UI->icon('exclamation-sign') ?>
   <?php echo __('This entry has been flagged and may contain errors.'); ?>
@@ -73,21 +73,6 @@
   </dl>
 
   <div class="entry-meta">
-
-    <?php /* if (@$item['Lexeme']['pending'] || @$item['Lexeme']['feedback']): ?>
-    <div class="text-warning">
-    <?php echo $this->UI->icon('exclamation-sign') ?>
-    <?php echo __('This entry is pending review'); ?>
-    </div>
-    <?php endif; */ ?>
-
-    <div class="lexeme feedback">
-      <?php echo $this->Html->link(
-        $this->UI->icon('comment').' '.__('Provide feedback about this entry'),
-        array('controller'=>'lexemes', 'action'=>'feedback', $item['Lexeme']['_id']),
-        array('escape'=>false, 'rel'=>'nofollow')) ?>
-      <span class="message"></span>
-    </div>
 
     <div>
       <?php echo $this->UI->corpusLink($item['Lexeme']['lemma']); ?>

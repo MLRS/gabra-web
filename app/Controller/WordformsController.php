@@ -56,26 +56,6 @@ class WordformsController extends AppController {
   }
 
   /**
-   * Feedback (report something is wrong)
-   */
-  // public function feedback($id = null, $type = "incorrect") {
-  //   $this->Wordform->id = $id;
-  //   if (!$this->Wordform->exists()) {
-  //     throw new NotFoundException(__('Invalid ID'));
-  //   }
-  //   // Set flag in wordform
-  //   $this->Wordform->read(null, $id);
-  //   $this->Wordform->set('feedback', 'incorrect');
-  //   if ($this->Wordform->save()) {
-  //     $this->set('response', "OK");
-  //     $this->set('message', __('Thank you, this entry has been marked as incorrect.'));
-  //     $this->set('_serialize', array('response', 'message'));
-  //   } else {
-  //     throw new Exception(__('Error'));
-  //   }
-  // }
-
-  /**
    * Delete
    * This is called from lexemes/edit
    */

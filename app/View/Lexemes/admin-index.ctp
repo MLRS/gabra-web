@@ -54,13 +54,6 @@
         );
         echo ' ';
         echo $this->Html->link(
-          $this->UI->icon('ok').' '.__('Clear feedback'),
-          array('action'=>'clear_feedback', $item['Lexeme']['_id']),
-          array('escape'=>false, 'class'=>'text-success text-nowrap'),
-          __('Clear feedback for this entry?')
-        );
-        echo ' ';
-        echo $this->Html->link(
           $this->UI->icon('remove').' '.__('Delete'),
           array('action'=>'delete', $item['Lexeme']['_id']),
           array('escape'=>false, 'class'=>'text-danger'),
@@ -89,11 +82,7 @@
           echo $this->UI->date(@$item['Lexeme']['modified']);
         else
           echo $this->UI->date(@$item['Lexeme']['created']);
-      ?><br />
-      <span class="text-muted">
-        <?php echo nl2br(h(@$item['Lexeme']['feedback'])); ?>
-      </span>
-    </div>
+      ?>    </div>
     <?php /*
     <div class="col-sm-2 loading">
       <?php $limit = max(3,substr_count(@$item['Lexeme']['gloss'], "\n")-2); ?>

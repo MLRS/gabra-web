@@ -202,10 +202,10 @@ $(document).ready(function(){
   $('a.merge').click(function(){
     var selected = $('input[type=checkbox][name=merge2]:checked');
     if (selected.length == 0) {
-      alert(Gabra.i18n.localise('merge.no_selection');
+      alert(Gabra.i18n.localise('merge.no_selection'));
       return false;
     } else if (selected.length > 1) {
-      return confirm(Gabra.i18n.localise('merge.confirm');
+      return confirm(Gabra.i18n.localise('merge.confirm'));
     }
   });
 

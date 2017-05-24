@@ -77,7 +77,6 @@ if ($this->request->here != '/') {
           updates: "<?php echo h(__("Updates")); ?>",
           eg: "<?php echo h(__("e.g.")); ?>",
           x_more: "<?php echo h(__("%s more matches")); ?>",
-          feedback_dialog_title: "<?php echo h(__("What is wrong with this entry?")); ?>",
           marked_as_incorrect: "<?php echo h(__("This item has been marked as incorrect")); ?>",
           merge: {
             no_selection: "<?php echo h(__("You must select at least one entry to merge")); ?>",
@@ -199,7 +198,6 @@ if ($this->request->here != '/') {
               <ul class="dropdown-menu" role="menu">
                 <li><?php echo $this->Html->link(__("Messages"), '/messages'); ?></li>
                 <li><?php echo $this->Html->link(__("Pending"), '/lexemes/pending'); ?></li>
-                <li><?php echo $this->Html->link(__("Flagged"), '/lexemes/flagged'); ?></li>
                 <li><?php echo $this->Html->link(__("Duplicates"), '/lexemes/duplicates'); ?></li>
                 <li class="divider"></li>
                 <li><?php echo $this->Html->link($this->UI->icon('off').' '.__('Logout'), '/users/logout', array('escape'=>false)); ?></li>
@@ -249,7 +247,7 @@ if ($this->request->here != '/') {
     <!-- end main -->
 
     <?php
-      echo $this->Minify->script(array('common', 'ui', 'async', 'filter', 'feedback', 'cursor', 'edit'), array('defer' => true));
+      echo $this->Minify->script(array('common', 'ui', 'async', 'filter', 'cursor', 'edit'), array('defer' => true));
       echo $this->fetch('script');
       echo $this->Js->writeBuffer();
     ?>

@@ -264,7 +264,6 @@ class UIHelper extends HtmlHelper {
         '_id',
         'lexeme_id',
         'sources',
-        'feedback',
         'modified',
         'created',
         'generated',

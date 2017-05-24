@@ -31,12 +31,6 @@ Gabra.UI.searchResult = function(result, match) {
                         .append(Gabra.UI.icon('pencil'),' ','Edit'),
                     ' ',
                     $('<a>')
-                        .attr('href',link('clear_feedback'))
-                        .addClass('text-success text-nowrap')
-                        .append(Gabra.UI.icon('ok'),' ','Clear feedback')
-                        .click(function(){return confirm('Clear feedback for this entry?')}),
-                    ' ',
-                    $('<a>')
                         .attr('href',link('delete'))
                         .addClass('text-danger text-nowrap')
                         .append(Gabra.UI.icon('remove'),' ','Delete')

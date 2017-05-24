@@ -117,19 +117,6 @@ form#WordformSaveManyForm table input[type='text'] {
     background-position: 95% center;
 }
 
-/* .feedback { */
-/*   opacity:0.7; */
-/* } */
-/* .feedback .glyphicon { */
-/*   opacity:0.4; */
-/* } */
-/* .word_form .feedback .glyphicon { */
-/*   color:#666; */
-/* } */
-/* .feedback .glyphicon:hover { */
-/*   opacity:1; */
-/* } */
-
 .hypothetical, a.hypothetical {
   color:firebrick;
 }

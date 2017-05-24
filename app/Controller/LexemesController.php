@@ -11,7 +11,7 @@ class LexemesController extends AppController {
 
   public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('search', /*'suggest',*/ 'random', 'feedback');
+    $this->Auth->allow('search', 'random');
     $this->loadModel('Root');
     $this->loadModel('Source');
   }
@@ -50,28 +50,6 @@ class LexemesController extends AppController {
   public function search() {
     $this->set('sources', $this->Source->options()); // for dropdown
     $this->render('advanced-search');
-  }
-
-  /**
-   * Flagged as incorrect
-   */
-  public function flagged() {
-    $this->loadModel('Wordform');
-    // $ids = $this->Wordform->find('list', array(
-    //   'fields'=>array('lexeme_id'),
-    //   'conditions'=>array('feedback'=>array('$exists'=>true)),
-    // ));
-    $conditions['$or'] = array(
-      array('feedback' => array('$exists'=>true,'$nin'=>array('',null))),
-      // array('_id' => array('$in' => $ids)),
-    );
-    $this->paginate['order'] = array(
-      'modified' => 'DESC'
-    );
-    $data = $this->paginate('Lexeme', $conditions);
-    $this->set('page_title', __('Flagged'));
-    $this->set('lexemes', $data);
-    $this->render('admin-index');
   }
 
   /**
@@ -158,59 +136,6 @@ class LexemesController extends AppController {
     $this->set('_serialize', array('lexeme')); // used by duplicates view
   }
 
-  /**
-   * Leave feedback (report something is wrong)
-   */
-  public function feedback($id = null) {
-    $this->Lexeme->id = $id;
-    if (!$this->Lexeme->exists()) {
-      throw new NotFoundException(__('Invalid ID'));
-    }
-
-    // Get and check message
-    $message = @$this->RequestHandler->request->query['message'];
-    if (!$message) {
-      throw new BadRequestException(__('Invalid message'));
-    }
-    $message = substr($message, 0, 200); // max 200 chars
-    if ($old_msg = $this->Lexeme->field('feedback')) {
-      $message = $old_msg."\n".$message;
-    }
-
-    // Set message
-    $this->Lexeme->read(null, $id);
-    $this->Lexeme->set('feedback', $message);
-    if ($this->Lexeme->save()) {
-      $this->set('response', "OK");
-      $this->set('message', __('Thank you, we have received your feedback'));
-      $this->set('_serialize', array('response', 'message'));
-    } else {
-      throw new Exception(__('Error saving feedback'));
-    }
-  }
-
-  /**
-   * Clear feedback (admin only)
-   */
-  public function clear_feedback($id = null) {
-    $this->Lexeme->id = $id;
-    if (!$this->Lexeme->exists()) {
-      throw new NotFoundException(__('Invalid ID'));
-    }
-
-    // Clear feedback field
-    $this->Lexeme->read(null, $id);
-    $this->Lexeme->set('feedback', null);
-    $ok = $this->Lexeme->save();
-
-    if ($ok) {
-      $msg = __('Feedback cleared');
-    } else {
-      $msg = __('Error');
-    }
-    $this->complete($ok, $msg);
-  }
-
   // Prepare data from add/edit
   private function prepareData() {
     // Make alternatives an array
@@ -253,17 +178,6 @@ class LexemesController extends AppController {
     foreach($boolean_fields as $k)
     if (null !== @$this->request->data['Lexeme'][$k]) {
       $this->request->data['Lexeme'][$k] = (bool) $this->request->data['Lexeme'][$k];
-    }
-
-    // Remove empty fields
-    $removable_fields = array(
-      'feedback'
-    );
-    foreach($removable_fields as $k)
-    if (!@$this->request->data['Lexeme'][$k]) {
-      // TODO: using unset() doesn't work here
-      // unset($this->request->data['Lexeme'][$k]);
-      $this->request->data['Lexeme'][$k] = null;
     }
 
   }
