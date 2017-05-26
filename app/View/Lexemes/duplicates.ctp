@@ -133,7 +133,7 @@
     <?php foreach ($item['value']['ids'] as $id): ?>
     <tr id="<?php echo $id ?>" class="<?php if ($i%2==0) echo "striped" ?>">
       <td class="surface_form">
-        <?php echo $this->Html->link($item['_id'], array('action'=>'view',$id)); ?>
+        <?php echo $this->Html->link($item['_id']['lemma'], array('action'=>'view',$id)); ?>
       </td>
       <td class="loading">
         <?php $this->Js->buffer("Gabra.loadLexeme('{$id}', '#{$id} td:eq(1)')"); ?>
@@ -147,12 +147,6 @@
       </td>
       <td>
       <?php
-        echo $this->Html->link(
-          $this->UI->icon('ok').' '.__('Not duplicate'),
-          array('action'=>'not_duplicate', $id),
-          array('escape'=>false, 'class'=>'text-success text-nowrap')
-        );
-        echo ' ';
         echo $this->Html->link(
           $this->UI->icon('pencil').' '.__('Edit'),
           array('action'=>'edit',$id),

@@ -258,36 +258,51 @@ class LexemesController extends AppController {
    * Show duplicates
    */
   public function duplicates($page=1) {
+    $MR_COLL = 'duplicate_lemmas'; // formerly 'mr_dupes'
     $ds = $this->Lexeme->getDataSource();
     $mr = array(
       'mapreduce' => 'lexemes',
       'map' => new MongoCode(<<<JS
 function(){
-    if (!this.not_duplicate)
-        emit(this.lemma, this._id);
+  if (this.pending) return
+  var obj = {
+    lemma: this.lemma,
+    pos: this.pos, // could be null
+    root: null
+  }
+  if (this.root) {
+    obj.root = {
+      radicals: this.root.radicals,
+      variant: this.root.variant // could be null
+    }
+  }
+  emit(obj, this._id)
 }
 JS
 ),
       // 'reduce' => new MongoCode('function(keys, vals){ return {"ids":vals, "count":NumberInt(vals.length)}; }'),
       'reduce' => new MongoCode(<<<JS
 function(keys, vals){
-    var ret = { ids:[], count:0 };
-    vals.forEach(function(v){
-        if (v.ids) {
-          ret.ids = ret.ids.concat(v.ids);
-          ret.count+=v.ids.length;
-        }
-        else {
-          ret.ids.push(v);
-          ret.count++;
-        }
-    });
-    ret.count = NumberInt(ret.count);
-    return ret;
+  var ret = {
+    ids:[],
+    count:0
+  }
+  vals.forEach(function(v) {
+    if (v.ids) {
+      ret.ids = ret.ids.concat(v.ids)
+      ret.count += v.ids.length
+    }
+    else {
+      ret.ids.push(v)
+      ret.count++
+    }
+  })
+  ret.count = NumberInt(ret.count)
+  return ret
 }
 JS
 ),
-      'out' => array('replace' => 'mr_dupes'),
+      'out' => array('replace' => $MR_COLL),
     );
 
     if ($this->Search->hasQuery()) {
@@ -296,8 +311,8 @@ JS
       $this->set('queryObj', $queryObj);
     }
     $ds->mapreduce($mr);
-    $cursor = $ds->getMongoDb()->selectCollection('mr_dupes')->find(array('value.count'=>array('$gt'=>1)))->sort(array('value.count'=>-1));
-    $dupes = array_values(iterator_to_array($cursor));
+    $cursor = $ds->getMongoDb()->selectCollection($MR_COLL)->find(array('value.count'=>array('$gt'=>1)))->sort(array('value.count'=>-1));
+    $dupes = array_values(iterator_to_array($cursor, false));
 
     if ($this->Search->hasQuery() && count($dupes)==0) {
       $new_msg  = __('No duplicates found for: ') . $this->Search->getQuery()->query;
@@ -404,26 +419,6 @@ JS
     }
 
     $this->redirect(array('controller'=>'lexemes', 'action'=>'duplicates', '?'=>array('s'=>$data['Lexeme']['lemma'])));
-  }
-
-  /**
-   * Mark as non-duplicate
-   */
-  public function not_duplicate($id = null) {
-    $ok = false;
-    $msg = '';
-    if (!$id) {
-      $msg = __('Invalid ID');
-    }
-
-    $this->Lexeme->id = $id;
-    $ok = $this->Lexeme->saveField('not_duplicate', true);
-    if ($ok) {
-      $msg = __('Entry marked as non-duplicate');
-    } else {
-      $msg = __('Error');
-    }
-    $this->complete($ok, $msg);
   }
 
 }
