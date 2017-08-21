@@ -109,7 +109,7 @@ class UIHelper extends HtmlHelper {
     //   array('target' => '_blank', 'escape'=>false)
     // );
     $out = $this->link(
-      $this->icon('new-window').' '.__('Lookup in MLRS corpus'),
+      $this->icon('new-window').' '.__('Look up in corpus'),
       $urls['lookup'],
       array('target' => '_blank', 'escape'=>false)
     );

@@ -19,6 +19,8 @@ function load_search_suggest(q) {
         if (ix < lemmas.length-1) elem.append(", ")
       })
       elem.append("?")
+    },
+    error:function(){
     }
   })
 }
@@ -45,6 +47,7 @@ return function() {
               elem.remove()
           }
           Gabra.page = data.query.page
+          button.show()
       } else {
           elem.remove() // no [more] results
           if (data.query.page === 1) {
@@ -149,7 +152,11 @@ return function() {
     },
     complete:function(){
       elem.removeClass('loading')
-      button.show()
+    },
+    error:function(){
+      $('div.lexemes.index').prepend(
+        $('<div>').addClass('alert alert-danger').attr('role', 'alert').text(Gabra.i18n.error_occurred)
+      )
     }
   })
 }
