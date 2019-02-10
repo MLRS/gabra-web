@@ -1,0 +1,6 @@
+.*
+tmp
+webroot/files
+Config/core.php
+Config/database.php
+deploy*
