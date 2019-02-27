@@ -132,7 +132,7 @@ class AppController extends Controller
 
         // Localised web content
         $this->loadModel('Message');
-        $this->set('content', $this->Message->webContent($language));
+        // $this->set('content', $this->Message->webContent($language)); // TODO
 
         // General stuff
         $this->enums();
@@ -156,7 +156,7 @@ class AppController extends Controller
         $this->set('common', $common);
 
         // Save referrer in session for possible future redirect
-        $this->Referer->set();
+        // $this->Referer->set(); // TODO
     }
 
     /* Wrappers over Session->setFlash */

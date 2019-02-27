@@ -1,7 +1,8 @@
 <?php
 namespace App\Model\Table;
 
-use Cake\ORM\Table;
+use Hayko\Mongodb\ORM\Table;
+
 class SourcesTable extends Table {
 
   public $primaryKey = '_id';

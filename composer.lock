@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32760e8a171dfd583adaca92290363a1",
+    "content-hash": "5cbf96d4cc51566a80becec452254df4",
     "packages": [
         {
             "name": "aura/intl",
@@ -293,6 +293,49 @@
             "time": "2017-12-24T21:09:29+00:00"
         },
         {
+            "name": "hayko/mongodb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tiaguinho/mongodb-cakephp3.git",
+                "reference": "4ce6cb41ed91d52bd74e4eaa86aee9c201379d9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tiaguinho/mongodb-cakephp3/zipball/4ce6cb41ed91d52bd74e4eaa86aee9c201379d9f",
+                "reference": "4ce6cb41ed91d52bd74e4eaa86aee9c201379d9f",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.5",
+                "ext-mongodb": "^1.3",
+                "mongodb/mongodb": "^1.2",
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Hayko\\Mongodb\\": "src",
+                    "Hayko\\Mongodb\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tiaguinho",
+                    "email": "tiaguinhocab@gmail.com"
+                }
+            ],
+            "description": "An Mongodb datasource for CakePHP 3.0",
+            "time": "2019-01-14T21:56:07+00:00"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.33",
             "source": {
@@ -343,6 +386,71 @@
                 "php mobile detect"
             ],
             "time": "2018-09-01T15:05:15+00:00"
+        },
+        {
+            "name": "mongodb/mongodb",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library.git",
+                "reference": "bd148eab0493e38354e45e2cd7db59b90fdcad79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/bd148eab0493e38354e45e2cd7db59b90fdcad79",
+                "reference": "bd148eab0493e38354e45e2cd7db59b90fdcad79",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mongodb": "^1.5.0",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Derick Rethans",
+                    "email": "github@derickrethans.nl"
+                },
+                {
+                    "name": "Katherine Walker",
+                    "email": "katherine.walker@mongodb.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2018-07-18T14:33:41+00:00"
         },
         {
             "name": "psr/http-message",
@@ -4222,6 +4330,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "hayko/mongodb": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

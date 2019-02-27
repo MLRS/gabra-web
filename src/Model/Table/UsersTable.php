@@ -2,7 +2,8 @@
 namespace App\Model\Table;
 
 use App\Controller\Component\AuthComponent;
-use Cake\ORM\Table;
+use Hayko\Mongodb\ORM\Table;
+
 class UsersTable extends Table {
 
   public $name = 'User';

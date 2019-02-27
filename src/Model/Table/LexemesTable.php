@@ -1,7 +1,8 @@
 <?php
 namespace App\Model\Table;
 
-use Cake\ORM\Table;
+use Hayko\Mongodb\ORM\Table;
+
 class LexemesTable extends Table {
 
   public $primaryKey = '_id';

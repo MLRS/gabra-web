@@ -22,7 +22,6 @@ namespace App\Model\Table;
 
 use App\Model\Model;
 
-
 /**
  * Application model for Cake.
  *
