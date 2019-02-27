@@ -1,12 +1,12 @@
 <?php
 $title = $this->fetch('title');
-// TODO check
 if ($this->request->getRequestTarget() != '/') {
   if ($title)
     $title .= " · Ġabra";
   else
     $title  = "Ġabra";
 }
+use Cake\Routing\Router;
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo ($language=='eng')?'en':'mt' ?>">
@@ -21,7 +21,7 @@ if ($this->request->getRequestTarget() != '/') {
     echo $this->Html->meta(array('name' => 'og:title', 'content' => $title));
     echo $this->Html->meta(array('name' => 'og:type', 'content' => 'website'));
     echo $this->Html->meta(array('name' => 'og:image', 'content' => ''));
-    echo $this->Html->meta(array('name' => 'og:url', 'content' => FULL_BASE_URL . $_SERVER['REQUEST_URI']));
+    echo $this->Html->meta(array('name' => 'og:url', 'content' => Router::fullBaseUrl() . $_SERVER['REQUEST_URI']));
 
     // Other meta
     echo $this->fetch('meta');
@@ -210,17 +210,18 @@ if ($this->request->getRequestTarget() != '/') {
           <ul class="nav navbar-nav navbar-right">
             <li class="language-switcher">
             <?php
+
               if ($language=='eng') {
                 echo $this->Html->link(
                   __("bil-Malti"),
                   // TODO check
-                  array_merge($this->request->$params, array('?'=>array_merge($_GET, array('lang'=>'mlt'))))
+                  array_merge($this->request->getQueryParams(), array('?'=>array_merge($_GET, array('lang'=>'mlt'))))
                 );
               } else {
                 echo $this->Html->link(
                   __("in English"),
                   // TODO check
-                  array_merge($this->request->$params, array('?'=>array_merge($_GET, array('lang'=>'eng'))))
+                  array_merge($this->request->getQueryParams(), array('?'=>array_merge($_GET, array('lang'=>'eng'))))
                 );
               }
             ?>

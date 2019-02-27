@@ -5,8 +5,6 @@ use Hayko\Mongodb\ORM\Table;
 
 class RootsTable extends Table {
 
-  public $primaryKey = '_id';
-
   public $hasMany = array('Lexeme');
 
   public $displayField = 'radicals';

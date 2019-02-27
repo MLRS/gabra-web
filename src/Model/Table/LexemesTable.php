@@ -5,9 +5,8 @@ use Hayko\Mongodb\ORM\Table;
 
 class LexemesTable extends Table {
 
-  public $primaryKey = '_id';
-
   public $belongsTo = 'Root';
+
   public $hasMany = 'Wordform';
 
   // Get conditions for search/pagination

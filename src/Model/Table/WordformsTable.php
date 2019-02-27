@@ -5,8 +5,6 @@ use Hayko\Mongodb\ORM\Table;
 
 class WordformsTable extends Table {
 
-  public $primaryKey = '_id';
-
   public $belongsTo = 'Lexeme';
 
   public function beforeSave(Event $event, Entity $entity, ArrayObject $options) {

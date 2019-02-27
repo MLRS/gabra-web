@@ -131,8 +131,8 @@ class AppController extends Controller
         $this->set('language',  $language);
 
         // Localised web content
-        $this->loadModel('Message');
-        // $this->set('content', $this->Message->webContent($language)); // TODO
+        $this->loadModel('Messages');
+        $this->set('content', $this->Messages->webContent($language));
 
         // General stuff
         $this->enums();
