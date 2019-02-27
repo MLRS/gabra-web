@@ -6,7 +6,7 @@ use Cake\View\Helper\HtmlHelper;
 
 class UIHelper extends HtmlHelper {
 
-  public $helpers = array('Markdown.Markdown');
+  public $helpers = array('Tanuck/Markdown.Markdown');
 
   public function content($key, $replacements=null, $options=array()) {
     $opts = array_merge(array(

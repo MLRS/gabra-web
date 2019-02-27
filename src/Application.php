@@ -56,6 +56,7 @@ class Application extends BaseApplication
         }
 
         $this->addPlugin('Hayko/Mongodb');
+        $this->addPlugin('Tanuck/Markdown');
     }
 
     /**

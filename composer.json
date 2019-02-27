@@ -10,7 +10,8 @@
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
         "hayko/mongodb": "dev-master",
-        "mobiledetect/mobiledetectlib": "2.*"
+        "mobiledetect/mobiledetectlib": "2.*",
+        "tanuck/cakephp-markdown": "dev-master"
     },
     "require-dev": {
         "cakephp/bake": "^1.9.0",
