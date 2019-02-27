@@ -1,51 +1,81 @@
-# CakePHP Application Skeleton
+Web site for Ġabra
+------------------
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+Ġabra is an open lexicon for Maltese.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
+This repository contains the source code for the Ġabra web site at
+<http://mlrs.research.um.edu.mt/resources/gabra/>
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## Requirements
+
+- PHP
+- MongoDB (see <http://mlrs.research.um.edu.mt/resources/gabra-api/download> for data dumps you can use to get started).
+- **Ġabra API** web service running locally, see <https://github.com/MLRS/gabra-api>.
+
+In addition to the data obtainable above, you will also need the following collections:
+
+### `users`
+
+Example document:
+
+```
+{
+  "_id" : ObjectId("..."),
+  "password" : "...",
+  "role" : "admin",
+  "username" : "..."
+}
+```
+
+Where `password` is an SHA-1 hash of your salted password.
+
+### `messages`
+
+Example documents:
+
+```
+{
+    "_id" : ObjectId("..."),
+    "type" : "news"
+    "key" : "",
+    "eng" : "...",
+    "mlt" : "...",
+    "created" : ISODate("..."),
+    "modified" : ISODate("..."),
+}
+
+{
+    "_id" : ObjectId("..."),
+    "type" : "i18n",
+    "key" : "pos.ADJ",
+    "eng" : "adjective",
+    "mlt" : "aġġettiv"
+}
+
+{
+    "_id" : ObjectId("..."),
+    "type" : "web"
+    "key" : "home.title",
+    "eng" : "Ġabra: an open lexicon for Maltese",
+    "mlt" : "Ġabra lessikali għall-ilsien Malti",
+    "modified" : ISODate("..."),
+    "created" : ISODate("..."),
+}
+```
 
 ## Installation
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+After cloning this repository, you will need to:
 
-If Composer is installed globally, run
+- Copy `config/app.php.default` to `config/app.php` and customise its values
+- Install plugin dependencies with `composer.phar install`
 
-```bash
-composer create-project --prefer-dist cakephp/app
+## Running
+
+You can now either use your machine's webserver to view the default home page, or start up the built-in webserver with:
+
 ```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
 bin/cake server -p 8765
 ```
 
 Then visit `http://localhost:8765` to see the welcome page.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the `'Datasources'` and any other
-configuration relevant for your application.
-
-## Layout
-
-The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5) CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
