@@ -16,11 +16,11 @@
     <tbody>
     <?php foreach ($sources as $source): ?>
     <tr>
-      <td><?php echo h($source->source['key']); ?>&nbsp;</td>
-      <td><?php echo h($source->source['title']); ?>&nbsp;</td>
-      <td><?php echo h($source->source['author']); ?>&nbsp;</td>
-      <td><?php echo h($source->source['year']); ?>&nbsp;</td>
-      <td><?php echo h($source->source['note']); ?>&nbsp;</td>
+      <td><?php echo h($source['key']); ?>&nbsp;</td>
+      <td><?php echo h($source['title']); ?>&nbsp;</td>
+      <td><?php echo h($source['author']); ?>&nbsp;</td>
+      <td><?php echo h($source['year']); ?>&nbsp;</td>
+      <td><?php echo h($source['note']); ?>&nbsp;</td>
     </tr>
     <?php endforeach; ?>
     </tbody>

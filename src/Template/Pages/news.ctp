@@ -3,18 +3,18 @@
 
 <div>
 
-<?php foreach($news as $item): ?>
-  <?php if (@$item->message[$language]): ?>
+<?php foreach($news as $message): ?>
+  <?php if (@$message[$language]): ?>
   <div class="row">
     <div class="col-sm-2">
       <p class="text-right">
         <strong>
-          <?php echo $this->UI->date($item->message['created'], array('format'=>'Y-m-d')) ?>
+          <?php echo $message['created']->format('Y-m-d') ?>
         </strong>
       </p>
     </div>
     <div class="col-sm-10">
-      <?php echo $this->Markdown->transform($item->message[$language]) ?>
+      <?php echo $this->Markdown->transform($message[$language]) ?>
     </div>
   </div><!-- row -->
 <?php endif ?>

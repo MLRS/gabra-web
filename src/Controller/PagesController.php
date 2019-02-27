@@ -57,6 +57,10 @@ class PagesController extends AppController
         }
         $this->set(compact('page', 'subpage'));
 
+        if (method_exists($this, $page)) {
+          $this->$page();
+        }
+
         try {
             $this->render(implode('/', $path));
         } catch (MissingTemplateException $exception) {
@@ -69,18 +73,18 @@ class PagesController extends AppController
 
     public function home() {
       // For stats
-      $this->loadModel('Root');
-      $this->loadModel('Lexeme');
-      $this->loadModel('Wordform');
-      $this->loadModel('Message');
+      $this->loadModel('Roots');
+      $this->loadModel('Lexemes');
+      $this->loadModel('Wordforms');
+      $this->loadModel('Messages');
       $this->set('stats', array(
-        'lexemes' => $this->Lexeme->find('count', array('conditions'=>array('pending'=>array('$ne'=>true)))),
-        'roots' => $this->Root->find('count'),
-        'wordforms' =>  $this->Wordform->find('count'),
+        'lexemes' => $this->Lexemes->count(array('conditions'=>array('pending'=>array('$ne'=>true)))),
+        'roots' => $this->Roots->count(),
+        'wordforms' => $this->Wordforms->count(),
       ));
       $this->set(
         'news',
-        $this->Message->find('all', array(
+        $this->Messages->find('all', array(
           'conditions'=> array('type'=>'news'),
           'order'=> array('created'=>'DESC'),
           'limit'=> 3,
@@ -89,10 +93,11 @@ class PagesController extends AppController
     }
 
     public function news() {
-      $this->loadModel('Message');
+      $this->helpers[] = 'Tanuck/Markdown.Markdown';
+      $this->loadModel('Messages');
       $this->set(
         'news',
-        $this->Message->find('all', array(
+        $this->Messages->find('all', array(
           'conditions'=> array('type'=>'news'),
           'order'=> array('created'=>'DESC'),
         ))

@@ -64,12 +64,12 @@ function __k($t, $k, $p=null, $o=array()) {
 
   <div id="log-chart"></div>
 
-  <?php foreach($news as $item): ?>
-  <?php if (@$item->message[$language]): ?>
+  <?php foreach($news as $message): ?>
+  <?php if (@$message[$language]): ?>
   <h5>
-    <?php echo $this->UI->date($item->message['created'], array('format'=>'jS F Y')) ?>
+    <?php echo $message['created']->format('jS F Y') ?>
   </h5>
-  <?php echo $this->Markdown->transform($item->message[$language]) ?>
+  <?php echo $this->Markdown->transform($message[$language]) ?>
   <?php endif ?>
   <?php endforeach ?>
 
