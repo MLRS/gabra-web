@@ -2,20 +2,9 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Http\Exception\NotFoundException;
 
 class RootsController extends AppController {
-
-  public $paginate = array(
-    'limit' => 20,
-    'order' => array(
-      'radicals' => 'ASC',
-      'variant' => 'ASC',
-    )
-  );
-
-  public function beforeFilter(Event $event) {
-    parent::beforeFilter($event);
-  }
 
   public function index($letter=null) {
     $queryObj = $this->Search->getQuery();
@@ -32,12 +21,11 @@ class RootsController extends AppController {
     if (!$root) {
       throw new NotFoundException(__('Invalid ID'));
     }
-    $this->loadModel('Lexeme');
-    $related = $this->Lexeme->find('all',array(
-      'fields' => array('wordforms' => 0),
+    $this->loadModel('Lexemes');
+    $related = $this->Lexemes->find('all',array(
       'conditions' => array(
-        'root.radicals' => $root->root['radicals'],
-        'root.variant' => @$root->root['variant'],
+        'root.radicals' => $root['radicals'],
+        'root.variant' => @$root['variant'],
       )
     ));
     $this->set('root', $root);

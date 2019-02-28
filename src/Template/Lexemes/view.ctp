@@ -1,20 +1,19 @@
-<?php $item = $lexeme; ?>
-<?php $this->assign('title', h($item->lexeme['lemma'])) ?>
-<div class="lexemes view" id="<?php echo $item->lexeme['_id'] ?>">
+<?php $this->assign('title', h($lexeme['lemma'])) ?>
+<div class="lexemes view" id="<?php echo $lexeme['_id'] ?>">
 
 <div class="col-md-12">
   <h2 class="surface_form bigword">
-    <?php echo h($item->lexeme['lemma']); ?>
+    <?php echo h($lexeme['lemma']); ?>
 
-    <?php if (@$item->lexeme['alternatives']): ?>
-    <small class="alt"><?php echo $this->UI->alternatives(@$item->lexeme['alternatives'], array()); ?></small>
+    <?php if (@$lexeme['alternatives']): ?>
+    <small class="alt"><?php echo $this->UI->alternatives(@$lexeme['alternatives'], array()); ?></small>
     <?php endif; ?>
   </h2>
 </div>
 
 <div class="col-md-4">
 
-  <?php if (@$item->lexeme['pending']): ?>
+  <?php if (@$lexeme['pending']): ?>
   <div class="alert alert-warning" role="alert">
   <?php echo $this->UI->icon('exclamation-sign') ?>
   <?php echo __('This entry has been flagged and may contain errors.'); ?>
@@ -24,50 +23,50 @@
   <dl>
     <dt><?php echo __('Part of speech'); ?></dt>
     <dd>
-      <?php echo $this->UI->posTag(@$item->lexeme['pos'], array('capitalise'=>true)); ?>
-      <?php echo $this->UI->derivedForm($item['Lexeme']); ?>
+      <?php echo $this->UI->posTag(@$lexeme['pos'], array('capitalise'=>true)); ?>
+      <?php echo $this->UI->derivedForm($lexeme); ?>
       &nbsp;
     </dd>
 
-    <?php if (@$item->lexeme['gloss']): ?>
+    <?php if (@$lexeme['gloss']): ?>
     <dt><?php echo __('English gloss'); ?></dt>
-    <dd><div><?php echo $this->UI->gloss($item['Lexeme'], true); ?>&nbsp;</div></dd>
+    <dd><div><?php echo $this->UI->gloss($lexeme, true); ?>&nbsp;</div></dd>
     <?php endif; ?>
 
-    <?php if (@$item->lexeme['root']): ?>
+    <?php if (@$lexeme['root']): ?>
     <dt><?php echo __('Root'); ?></dt>
-    <dd><?php echo $this->UI->root($item['Lexeme']); ?>&nbsp;</dd>
+    <dd><?php echo $this->UI->root($lexeme['root']); ?>&nbsp;</dd>
     <?php endif; ?>
 
     <dt><?php echo __('Features'); ?></dt>
     <dd>
-      <?php echo $this->UI->maybeField($item['Lexeme'], 'frequency'); ?>
-      <?php echo $this->UI->maybeField($item['Lexeme'], 'onomastic_type'); ?>
-      <?php echo $this->UI->booleanField($item['Lexeme'], 'transitive', 'trans.'); ?>
-      <?php echo $this->UI->booleanField($item['Lexeme'], 'intransitive', 'intrans.'); ?>
-      <?php echo $this->UI->booleanField($item['Lexeme'], 'ditransitive', 'ditrans.'); ?>
-      <?php echo $this->UI->booleanField($item['Lexeme'], 'hypothetical', 'hyp.'); ?>
+      <?php echo $this->UI->maybeField($lexeme, 'frequency'); ?>
+      <?php echo $this->UI->maybeField($lexeme, 'onomastic_type'); ?>
+      <?php echo $this->UI->booleanField($lexeme, 'transitive', 'trans.'); ?>
+      <?php echo $this->UI->booleanField($lexeme, 'intransitive', 'intrans.'); ?>
+      <?php echo $this->UI->booleanField($lexeme, 'ditransitive', 'ditrans.'); ?>
+      <?php echo $this->UI->booleanField($lexeme, 'hypothetical', 'hyp.'); ?>
       &nbsp;
     </dd>
 
-    <?php if (@$item->lexeme['sources']): ?>
+    <?php if (@$lexeme['sources']): ?>
     <dt><?php echo __('Source(s)'); ?></dt>
     <dd><?php
-        foreach ($item->lexeme['sources'] as $i=>$source) {
+        foreach ($lexeme['sources'] as $i=>$source) {
           $s = $source;
           echo $this->Html->link($s, array('controller' => 'Sources','action' => 'view',$s));
-          if ($i < count($item->lexeme['sources'])-1) echo ', ';
+          if ($i < count($lexeme['sources'])-1) echo ', ';
         }
     ?></dd>
     <?php endif; ?>
 
-    <?php if (@$item->lexeme['created']): ?>
+    <?php if (@$lexeme['created']): ?>
     <dt><?php echo __('Created'); ?></dt>
-    <dd><?php echo $this->UI->date($item->lexeme['created']); ?></dd>
+    <dd><?php echo $this->UI->date($lexeme['created']); ?></dd>
     <?php endif; ?>
-    <?php if (@$item->lexeme['modified'] && @$item->lexeme['modified'] != @$item->lexeme['created']): ?>
+    <?php if (@$lexeme['modified'] && @$lexeme['modified'] != @$lexeme['created']): ?>
     <dt><?php echo __('Modified'); ?></dt>
-    <dd><?php echo $this->UI->date($item->lexeme['modified']); ?></dd>
+    <dd><?php echo $this->UI->date($lexeme['modified']); ?></dd>
     <?php endif; ?>
 
   </dl>
@@ -75,31 +74,31 @@
   <div class="entry-meta">
 
     <div>
-      <?php echo $this->UI->corpusLink($item->lexeme['lemma']); ?>
+      <?php echo $this->UI->corpusLink($lexeme['lemma']); ?>
     </div>
 
     <?php
       if ($common['user']):
         echo $this->UI->link(
           $this->UI->icon('pencil').' '.__('Edit entry'),
-          (API_URL . 'lexemes/view/' . $item->lexeme['_id']),
-          //array('action'=>'edit', $item->lexeme['_id']),
+          (API_URL . 'lexemes/view/' . $lexeme['_id']),
+          //array('action'=>'edit', $lexeme['_id']),
           array('class'=>'edit','escape'=>false)
         );
       endif;
     ?>
   </div><!-- entry-meta -->
 
-  <?php if (@$item['Related']): ?>
+  <?php if (@$related): ?>
   <h4 class="text-muted"><?php echo __('Related entries'); ?></h4>
   <ul class="list-unstyled">
-    <?php foreach (@$item['Related'] as $link): ?>
+    <?php foreach (@$related as $lexeme): ?>
     <li>
-      <?php echo $this->Html->link($link->lexeme['lemma'], '/lexemes/view/'.$link->lexeme['_id'], array('class'=>'surface_form')); ?>
+      <?php echo $this->Html->link($lexeme['lemma'], '/lexemes/view/'.$lexeme['_id'], array('class'=>'surface_form')); ?>
       <span class="text-muted">
         &nbsp;
-        <?php echo $this->UI->posTag(@$link->lexeme['pos']); ?>
-        <?php if (@$link->lexeme['derived_form']) echo $this->UI->derivedForm($link['Lexeme']); ?>
+        <?php echo $this->UI->posTag(@$lexeme['pos']); ?>
+        <?php if (@$lexeme['derived_form']) echo $this->UI->derivedForm($lexeme); ?>
       </span>
     </li>
     <?php endforeach; ?>
@@ -114,7 +113,7 @@
     <li role="presentation" class="active">
       <a href="#tab-wordforms" aria-controls="tab-wordforms" role="tab" data-toggle="tab">
         <?php echo __('Word forms') ?>
-        <span class="badge"><?php echo count($item['Wordforms'])?></span>
+        <span class="badge"><?php echo count($wordforms)?></span>
       </a>
     </li>
     <?php /*
@@ -140,23 +139,23 @@
 
     <!-- Wordforms -->
     <div role="tabpanel" class="tab-pane active" id="tab-wordforms">
-      <?php if (@$item['Wordforms']): ?>
+      <?php if (@$wordforms): ?>
       <p>
-        <?php if ($item->lexeme['pos'] == 'VERB') : ?>
+        <?php if ($lexeme['pos'] == 'VERB') : ?>
         <a href="#" onclick="$(this).parent().hide(); $('tr:hidden').show(); return false;";><?php echo __('Show all forms') ?></a>
         <?php endif; ?>
       </p>
       <?php
-      if ($item->lexeme['pos'] == 'VERB') {
+      if ($lexeme['pos'] == 'VERB') {
         echo $this->UI->wordFormTable(
-          $item['Wordforms'],
+          $wordforms,
           array(
             'fields'=>array('aspect','subject','dir_obj','ind_obj','polarity'),
             'filter_fields'=>array('dir_obj','ind_obj','polarity'),
           )
         );
       } else {
-        echo $this->UI->wordFormTable($item['Wordforms']);
+        echo $this->UI->wordFormTable($wordforms);
       } /* if V else */
       ?>
       <?php endif; /* if wordforms */ ?>
@@ -167,10 +166,10 @@
     <div role="tabpanel" class="tab-pane" id="tab-etymology">
       <?php
       $data = json_encode(array(
-        'lemma' => $item->lexeme['lemma'],
-        'pos' => $item->lexeme['pos'],
+        'lemma' => $lexeme['lemma'],
+        'pos' => $lexeme['pos'],
       ));
-      $this->Js->buffer(<<<JS
+      echo $this->Html->scriptBlock(<<<JS
         $(document).ready(function(){
           var tab = $('a[href="#tab-etymology"]').parent();
           var badge = $('a[href="#tab-etymology"] span.badge');
@@ -222,7 +221,7 @@ JS
     <?php /*
     <!-- Corpus -->
     <div role="tabpanel" class="tab-pane" id="tab-corpus">
-      <iframe src="<?php echo CORPUS_URL ?>concordance.php?newPostP=rand&pp=20&uT=y&qmode=sq_nocase&theData=<?php echo $item->lexeme['lemma']?>"></iframe>
+      <iframe src="<?php echo CORPUS_URL ?>concordance.php?newPostP=rand&pp=20&uT=y&qmode=sq_nocase&theData=<?php echo $lexeme['lemma']?>"></iframe>
     </div><!-- corpus -->
     */ ?>
 

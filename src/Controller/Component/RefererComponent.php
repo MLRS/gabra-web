@@ -6,7 +6,7 @@ use Cake\Controller\Controller;
 
 class RefererComponent extends Component {
 
-  var $ignore_actions = array('add', 'edit', 'login', 'merge');
+  var $ignore_actions = array('add', 'edit', 'login');
 
   public $components = array('Session');
 

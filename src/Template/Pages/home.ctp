@@ -81,5 +81,5 @@ function __k($t, $k, $p=null, $o=array()) {
 
 <?php
   $this->Html->script('//www.google.com/jsapi', array('inline' => false, 'defer' => false));
-  $this->Html->script(array('log-chart'), array('inline' => false, 'defer' => false)); // TODO minify
+  $this->Html->script(array('log-chart'), array('inline' => false, 'defer' => false));
 ?>

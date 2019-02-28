@@ -81,7 +81,7 @@ if (!@$hide_help) {
     __('Help').'&hellip;', '',
     array('id'=>'search-help-toggle', 'escape'=>false, 'class'=>'btn btn-link')
   );
-  echo $this->Js->buffer(<<<JS
+  echo $this->Html->scriptBlock(<<<JS
   $('#search-help-toggle').click(function(){
      $('#search-help').slideToggle();
      return false;
@@ -132,7 +132,7 @@ echo $this->Form->end();
   <p>
     <ul>
       <?php
-      if ($this->params['controller'] == 'roots') {
+      if ($this->request->getParam('controller') == 'roots') {
         $search_suggestions = array(
           'k-.-b' => __('%s matches <em>k</em> as first radical and <em>b</em> as third radical'),
           '-[wj]$' => __('%s matches any weak-final root'),

@@ -2,11 +2,14 @@
 namespace App\View\Helper;
 
 use Cake\Core\App;
-use Cake\View\Helper\HtmlHelper;
+use Cake\View\Helper;
 
-class UIHelper extends HtmlHelper {
+class UIHelper extends Helper {
 
-  public $helpers = array('Tanuck/Markdown.Markdown');
+  public $helpers = [
+    'Html',
+    'Tanuck/Markdown.Markdown'
+  ];
 
   public function content($key, $replacements=null, $options=array()) {
     $opts = array_merge(array(
@@ -71,7 +74,7 @@ class UIHelper extends HtmlHelper {
       'title' => null,
       'sep' => ' ',
     ), $options);
-    $icon = $this->tag('span', '', array('title'=>$opts['title'], 'class'=>"glyphicon glyphicon-$name"));
+    $icon = $this->Html->tag('span', '', array('title'=>$opts['title'], 'class'=>"glyphicon glyphicon-$name"));
     if ($text)
       return $icon.$opts['sep'].$text;
     else
@@ -96,25 +99,25 @@ class UIHelper extends HtmlHelper {
       'frequency'   => "{$base}freqlist.php?flTable=__entire_corpus&flAtt=word&flFilterType=begin&flFilterString=".urlencode($query)."&pp=50&flOrder=desc&uT=y",
     );
     // $out = $this->icon('new-window').' '.__('MLRS corpus').':';
-    // $out .= ' '.$this->link(
+    // $out .= ' '.$this->Html->link(
     //   __('word lookup'),
     //   $urls['lookup'],
     //   array('target' => '_blank', 'escape'=>false)
     // );
-    // $out .= ' / '.$this->link(
+    // $out .= ' / '.$this->Html->link(
     //   __('concordance'),
     //   $urls['concordance'],
     //   array('target' => '_blank', 'escape'=>false)
     // );
-    // $out .= ' / '.$this->link(
+    // $out .= ' / '.$this->Html->link(
     //   __('frequency'),
     //   $urls['frequency'],
     //   array('target' => '_blank', 'escape'=>false)
     // );
-    $out = $this->link(
+    $out = $this->Html->link(
       $this->icon('new-window').' '.__('Look up in corpus'),
       $urls['lookup'],
-      array('target' => '_blank', 'escape'=>false)
+      array('target' => '_blank', 'escape' => false)
     );
     return $out;
   }
@@ -157,21 +160,21 @@ class UIHelper extends HtmlHelper {
         'include_link' => true,
         'include_variant' => true,
       ), $options);
-    $r = @$root['Root'] ? @$root['Root'] : @$root['root'] ;
+    $r = $root;
     if (!@$r) return '';
-    $display = h($r['radicals']);
-    if ($opts['include_variant'] && @$r['variant']){
-      $display .= $this->tag('sup', h($r['variant']));
+    $display = h($r->radicals);
+    if ($opts['include_variant'] && @$r->variant){
+      $display .= $this->Html->tag('sup', h($r->variant));
     }
-    // $display = '√'.(strtoupper(str_replace('-','',$r['radicals'])));
+    // $display = '√'.(strtoupper(str_replace('-','',$r->radicals)));
     if ($opts['include_link']) {
-       return $this->link($display, array(
+       return $this->Html->link($display, array(
          'controller'=>'roots',
          'action'=>'view',
-         $r['radicals'], @$r['variant'],
+         $r->radicals, @$r->variant,
        ), array('class'=>'root', 'escape'=>false));
     } else {
-       return $this->tag('span', $display, array('class'=>'root'));
+       return $this->Html->tag('span', $display, array('class'=>'root'));
     }
   }
 
@@ -220,7 +223,7 @@ class UIHelper extends HtmlHelper {
     }
     // Special case for p-x-p-x / p-x-x ...
     // if (preg_match('/(see|cf\.?)\s*(.+)/', $s, $match)) {
-    //   $s = 'cf. ' . $this->link(
+    //   $s = 'cf. ' . $this->Html->link(
     //     $match[2],
     //     array(
     //       'controller' => 'roots',
@@ -231,7 +234,7 @@ class UIHelper extends HtmlHelper {
     //     )
     //   );
     // }
-    return $this->tag(
+    return $this->Html->tag(
       'span',
       '('.h($s).')',
       array_merge(array(), $options)
@@ -346,11 +349,11 @@ class UIHelper extends HtmlHelper {
   //   $s = '';
   //   foreach ($options as $key=>$lin) {
   //     if ($key == $verbWordForm->verbWordForm[$field]) {
-  //       $s .= $this->tag('strong', $options[$verbWordForm->verbWordForm[$field]]);
+  //       $s .= $this->Html->tag('strong', $options[$verbWordForm->verbWordForm[$field]]);
   //     } elseif (!$this->isValidVerbParamCombo($verbWordForm, array($field=>$key))) {
   //       $s .= $lin;
   //     } else {
-  //       $s .= $this->link($lin, array(
+  //       $s .= $this->Html->link($lin, array(
   //         'action'=>'vary',
   //         $verbWordForm->verbWordForm['id'],
   //       			      '?' => array(

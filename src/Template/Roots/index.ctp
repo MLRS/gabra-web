@@ -48,8 +48,8 @@
   <?php
   $data = $queryObj->json;
   $term = addslashes($queryObj->raw_query);
-  echo $this->script(array('root-search')); // TODO minify
-  $this->Js->buffer(<<<JS
+  echo $this->Html->script(array('root-search'));
+  echo $this->Html->scriptBlock(<<<JS
     $('#load-more button').click( load_results_function(${data}, '${term}') );
     $(document).ready(function(){
       $('#load-more button').trigger('click');
@@ -57,8 +57,6 @@
 JS
 );
   ?>
-
-  <?php //if (count($roots) > 5) echo $this->CustomPaginator->links(true); ?>
 
   <?php endif; ?>
 

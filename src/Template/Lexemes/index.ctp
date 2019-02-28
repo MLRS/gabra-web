@@ -23,7 +23,7 @@ else
   <?php
 //  if (!preg_match('/[ċħġż]/', $queryObj->query)):
     $q = addslashes($queryObj->query);
-    $this->Js->buffer(<<<JS
+    echo $this->Html->scriptBlock(<<<JS
       $(document).ready(function(){
         load_search_suggest('${q}');
       });
@@ -46,8 +46,8 @@ JS
   <?php
   $data = $queryObj->json;
   $term = addslashes($queryObj->raw_query);
-  echo $this->Minify->script(array('search'));
-  $this->Js->buffer(<<<JS
+  echo $this->Html->script(array('search'));
+  echo $this->Html->scriptBlock(<<<JS
     $('#load-more button').click( load_results_function(${data}, '${term}') );
     $(document).ready(function(){
       $('#load-more button').trigger('click');

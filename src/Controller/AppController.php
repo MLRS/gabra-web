@@ -170,12 +170,7 @@ class AppController extends Controller
         return $this->setMessage($message, 'info');
     }
     private function setMessage($message, $class) {
-        return $this->Flash->message(
-            $message,
-            'default',
-            array(),
-            $class
-        );
+        return $this->Flash->set($message, [ 'params' => [ 'class' => $class ] ]);
     }
 
 }

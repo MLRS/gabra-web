@@ -15,7 +15,7 @@ class CustomPaginatorHelper extends PaginatorHelper {
   }
 
   public function links($suppress_sorting=false, $show_msg=true, $show_first=true) {
-    $this->options['url'] = array_merge($this->params->pass, array('?' => $this->params->query));
+    $this->options['url'] = $this->request->getQueryParams(); // TODO check
     $out = '<ul class="pagination">';
 
     if ($show_first)

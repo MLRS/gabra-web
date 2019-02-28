@@ -31,9 +31,7 @@ echo $this->Form->input('s', array(
 // Search lemma
 echo $this->Form->input('l', array(
     'type' => 'checkbox',
-    'label' => false,
-    'before' => '<label>',
-    'after' => __('Search lemmas').'</label>',
+    'label' => __('Search lemmas'),
     'hiddenField' => true,
     'checked' => true,
 ));
@@ -41,9 +39,7 @@ echo $this->Form->input('l', array(
 // Search wordforms
 echo $this->Form->input('wf', array(
     'type' => 'checkbox',
-    'label' => false,
-    'before' => '<label>',
-    'after' => __('Search wordforms').'</label>',
+    'label' => __('Search wordforms'),
     'hiddenField' => true,
     'checked' => true,
 ));
@@ -61,9 +57,7 @@ echo $this->Form->input('wf', array(
 // Search gloss
 echo $this->Form->input('g', array(
     'type' => 'checkbox',
-    'label' => false,
-    'before' => '<label>',
-    'after' => __('Search in English glosses').'</label>',
+    'label' => __('Search in English glosses'),
     'hiddenField' => true,
     'checked' => true,
 ));
@@ -129,7 +123,7 @@ echo $this->Form->end();
   <p>
     <ul>
       <?php
-      if ($this->params['controller'] == 'roots') {
+      if ($this->request->getParam('controller') == 'roots') {
         $search_suggestions = array(
           'k-.-b' => __('%s matches <em>k</em> as first radical and <em>b</em> as third radical'),
           '-[wj]$' => __('%s matches any weak-final root'),

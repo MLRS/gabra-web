@@ -134,7 +134,7 @@ use Cake\Routing\Router;
       echo $this->Html->css('/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css');
     }
 
-    echo $this->Html->css(array('gabra')); // TODO minify
+    echo $this->Html->css(array('gabra'));
     echo $this->fetch('css');
 
     if (defined('USE_CDN') && USE_CDN===true) {
@@ -198,8 +198,6 @@ use Cake\Routing\Router;
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><?php echo $this->Html->link(__("Messages"), '/messages'); ?></li>
-                <li><?php echo $this->Html->link(__("Pending"), '/lexemes/pending'); ?></li>
-                <li><?php echo $this->Html->link(__("Duplicates"), '/lexemes/duplicates'); ?></li>
                 <li class="divider"></li>
                 <li><?php echo $this->Html->link($this->UI->icon('off').' '.__('Logout'), '/users/logout', array('escape'=>false)); ?></li>
               </ul>
@@ -251,9 +249,8 @@ use Cake\Routing\Router;
     <!-- end main -->
 
     <?php
-      echo $this->Html->script(array('common', 'ui', 'async', 'filter', 'cursor', 'edit'), array('defer' => true)); // TODO minify
+      echo $this->Html->script(array('common', 'ui', 'async', 'filter', 'cursor', 'edit'), array('defer' => true));
       echo $this->fetch('script');
-      // echo $this->Js->writeBuffer(); // TODO
     ?>
   </body>
 </html>
