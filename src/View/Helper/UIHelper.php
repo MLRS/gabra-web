@@ -257,7 +257,7 @@ class UIHelper extends Helper {
       foreach ($wordforms as $wf) {
         // $keys = array_keys($wf['Wordform']);
         $keys = array();
-        foreach ($wf['Wordform'] as $k=>$v) {
+        foreach ($wf as $k=>$v) {
           if ($v) $keys[] = $k;
         }
         // $cols += $keys; // array union
@@ -306,14 +306,15 @@ class UIHelper extends Helper {
   <?php foreach ($wordforms as $wordform): ?>
     <tr>
       <td>
-        <span class="surface_form <?php if ($opts['show_generated'] && @$wordform->wordform['generated']) echo 'generated'; ?>">
-          <?php echo h($wordform->wordform['surface_form']) ?>
-          <?php echo $this->alternatives(@$wordform->wordform['alternatives'], array('class'=>'alt')); ?>
+        <span class="surface_form <?php if ($opts['show_generated'] && @$wordform['generated']) echo 'generated'; ?>">
+          <?php echo h($wordform['surface_form']) ?>
+          <?php echo $this->alternatives(@$wordform['alternatives'], array('class'=>'alt')); ?>
         </span>
       </td>
     <?php foreach ($cols as $col): ?>
-      <?php $val = @$wordform->wordform[$col] ?>
+      <?php $val = @$wordform[$col] ?>
       <td class="text-muted">
+        <?php // TODO if object ?>
         <?php if (is_array($val)): ?>
         <?php echo $this->agr($val); ?>
         <?php else: ?>
@@ -333,10 +334,10 @@ class UIHelper extends Helper {
   public function agr($agr) {
     $known_vals = $this->knownValues();
     $out = '';
-    $out .= ucfirst(@$agr['person']).' ';
-    $out .= ucfirst(@$agr['number']).' ';
-    if (@$agr['gender'] && $agr['gender']!='mf')
-      $out .= $known_vals[$agr['gender']];
+    $out .= ucfirst(@$agr->person).' ';
+    $out .= ucfirst(@$agr->number).' ';
+    if (@$agr->gender && $agr->gender!='mf')
+      $out .= $known_vals[$agr->gender];
     return h($out);
   }
 
