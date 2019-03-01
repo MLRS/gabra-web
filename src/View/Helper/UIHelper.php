@@ -160,18 +160,18 @@ class UIHelper extends Helper {
         'include_link' => true,
         'include_variant' => true,
       ), $options);
-    $r = $root;
+    $r = (array) $root;
     if (!@$r) return '';
-    $display = h($r->radicals);
-    if ($opts['include_variant'] && @$r->variant){
-      $display .= $this->Html->tag('sup', h($r->variant));
+    $display = h($r['radicals']);
+    if ($opts['include_variant'] && @$r['variant']){
+      $display .= $this->tag('sup', h($r['variant']));
     }
-    // $display = '√'.(strtoupper(str_replace('-','',$r->radicals)));
+    // $display = '√'.(strtoupper(str_replace('-','',$r['radicals'])));
     if ($opts['include_link']) {
        return $this->Html->link($display, array(
          'controller'=>'roots',
          'action'=>'view',
-         $r->radicals, @$r->variant,
+         $r['radicals'], @$r['variant'],
        ), array('class'=>'root', 'escape'=>false));
     } else {
        return $this->Html->tag('span', $display, array('class'=>'root'));
@@ -257,7 +257,7 @@ class UIHelper extends Helper {
       foreach ($wordforms as $wf) {
         // $keys = array_keys($wf['Wordform']);
         $keys = array();
-        foreach ($wf as $k=>$v) {
+        foreach ($wf->toArray() as $k=>$v) {
           if ($v) $keys[] = $k;
         }
         // $cols += $keys; // array union
@@ -314,8 +314,7 @@ class UIHelper extends Helper {
     <?php foreach ($cols as $col): ?>
       <?php $val = @$wordform[$col] ?>
       <td class="text-muted">
-        <?php // TODO if object ?>
-        <?php if (is_array($val)): ?>
+        <?php if (is_array($val) || is_object($val)): ?>
         <?php echo $this->agr($val); ?>
         <?php else: ?>
         <?php echo h(@$known_vals[$val]?$known_vals[$val]:$val) ?>
@@ -332,12 +331,13 @@ class UIHelper extends Helper {
 
   // Agreemnet object
   public function agr($agr) {
+    $agr = (array) $agr;
     $known_vals = $this->knownValues();
     $out = '';
-    $out .= ucfirst(@$agr->person).' ';
-    $out .= ucfirst(@$agr->number).' ';
-    if (@$agr->gender && $agr->gender!='mf')
-      $out .= $known_vals[$agr->gender];
+    $out .= ucfirst(@$agr['person']).' ';
+    $out .= ucfirst(@$agr['number']).' ';
+    if (@$agr['gender'] && $agr['gender']!='mf')
+      $out .= $known_vals[$agr['gender']];
     return h($out);
   }
 

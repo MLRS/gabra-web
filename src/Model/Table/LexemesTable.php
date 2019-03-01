@@ -7,19 +7,23 @@ class LexemesTable extends Table {
 
   // Used for sorting word forms
   public function compareWordForms($a, $b, $fields) {
+    // get field to sort on
     $f = array_shift($fields);
     if (!$f) return 0;
-    // $x = @$a['Wordform'][$f];
-    // $y = @$b['Wordform'][$f];
+
+    // get values
     $x = @$a[$f];
     $y = @$b[$f];
 
-    if ($x===$y) return $this->compareWordForms($a,$b,$fields);
+    if ($x===$y) return $this->compareWordForms($a,$b,$fields); // sort on next field
     if (empty($x)&&$y) return -1;
     if ($x&&empty($y)) return 1;
 
     if (is_array($x) && is_array($y)) {
       return $this->compareWordForms($x,$y,$fields);
+    }
+    if (is_object($x) && is_object($y)) {
+      return $this->compareWordForms((array)$x,(array)$y,$fields);
     }
 
     $ranks = array(

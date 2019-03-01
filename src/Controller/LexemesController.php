@@ -51,39 +51,29 @@ class LexemesController extends AppController {
   /**
    * View
    */
-  public function view($id = null) {
-    $lexeme = $this->Lexemes->find('first', ['id' => $id]);
+  public function view($id) {
+    $_id = new \MongoDB\BSON\ObjectId($id);
+    $lexeme = $this->Lexemes->find('first', array(
+      'conditions' => array (
+        '_id' => $_id,
+      )
+    ));
     if (!$lexeme) {
       throw new NotFoundException(__('Invalid ID'));
     }
 
     // Get, sort, add wordforms
-    // TODO resturns empty
     $wordforms = $this->Wordforms->find('all', array(
       'conditions' => array(
-        'lexeme_id' => new \MongoDB\BSON\ObjectId($id),
+        'lexeme_id' => $_id,
         // 'dir_obj' => null, 'ind_obj' => null, 'polarity' => 'pos' // minimised table
       ),
     ));
 
-    // TODO
-    // $host = $lexeme;
-    // usort($wordforms, function($a, $b) use ($host) {
-    //   return $host->compareWordForms($a['Wordform'], $b['Wordform'], array('aspect', 'subject', 'dir_obj', 'ind_obj','number', 'person', 'gender', 'polarity'));
-    // });
-
-    // Get entries with same root (using root._id)
-    // if (@$lexeme['root']['_id']) {
-    //   $related = $this->Lexemes->find('all', array(
-    //     'conditions' => array(
-    //       'root._id'=>$lexeme['root']['_id'],
-    //       '_id'=>array('$ne'=>$lexeme['_id']),
-    //     ),
-    //     'fields' => array('lemma','pos','derived_form'),
-    //     'order' => array('pos'=>'ASC'),
-    //   ));
-    //   $lexeme['Related'] = $related;
-    // }
+    $host = $this->Lexemes;
+    usort($wordforms, function($a, $b) use ($host) {
+      return $host->compareWordForms($a, $b, array('aspect', 'subject', 'dir_obj', 'ind_obj','number', 'person', 'gender', 'polarity'));
+    });
 
     // Get entries with same root (using root.radicals and root.variant)
     if (@$lexeme['root']) {

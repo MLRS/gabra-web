@@ -92,13 +92,13 @@
   <?php if (@$related): ?>
   <h4 class="text-muted"><?php echo __('Related entries'); ?></h4>
   <ul class="list-unstyled">
-    <?php foreach (@$related as $lexeme): ?>
+    <?php foreach (@$related as $r_lexeme): ?>
     <li>
-      <?php echo $this->Html->link($lexeme['lemma'], '/lexemes/view/'.$lexeme['_id'], array('class'=>'surface_form')); ?>
+      <?php echo $this->Html->link($r_lexeme['lemma'], '/lexemes/view/'.$r_lexeme['_id'], array('class'=>'surface_form')); ?>
       <span class="text-muted">
         &nbsp;
-        <?php echo $this->UI->posTag(@$lexeme['pos']); ?>
-        <?php if (@$lexeme['derived_form']) echo $this->UI->derivedForm($lexeme); ?>
+        <?php echo $this->UI->posTag(@$r_lexeme['pos']); ?>
+        <?php if (@$r_lexeme['derived_form']) echo $this->UI->derivedForm($r_lexeme); ?>
       </span>
     </li>
     <?php endforeach; ?>
