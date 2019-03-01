@@ -40,24 +40,23 @@ echo $this->Form->create('Root', array(
     $opts['(j|w)'] = __('j/w');
     $opts["'"] = "'";
     for ($i=1;$i<=4;$i++)
-    echo $this->Form->input('c'.$i, array(
+    echo $this->Form->control('c'.$i, array(
       'type' => 'select',
-      'empty' => '',
+      'empty' => true,
       'options' => $i==4 ? array_merge(array('none'=>__('none')), $opts) : $opts,
-      'selected' => @$_GET['c'.$i],
+      'value' => @$_GET['c'.$i],
       'label' => $i==1 ? __('Radicals') : false,
-      'before'=> $i==1 ? false : '',
       'class'=>'form-control',
-      'div'=>false//array('class'=>'form-group'),
+      'templates'=> ['inputContainer' => '{{content}}'], // do not wrap with div
     ));
-    echo $this->Form->input('t', array(
+    echo $this->Form->control('t', array(
       'type' => 'select',
       'label' => __('Class'),
-      'empty' => '',
+      'empty' => true,
       'options' => $common['root_types'],
-      'selected' => @$_GET['t'],
+      'value' => @$_GET['t'],
       'class'=>'form-control',
-      'div'=>false
+      'templates'=> ['inputContainer' => '{{content}}'], // do not wrap with div
     ));
   ?>
 </div> <!-- .form-group -->
