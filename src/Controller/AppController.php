@@ -48,7 +48,6 @@ class AppController extends Controller
         $this->loadComponent('Flash');
 
         // $this->loadComponent('Session');
-        $this->loadComponent('Referer');
         $this->loadComponent('Search');
         $this->loadComponent('Auth', [
             'loginRedirect'  => '/',
@@ -154,9 +153,6 @@ class AppController extends Controller
         //   );
         // }
         $this->set('common', $common);
-
-        // Save referrer in session for possible future redirect
-        // $this->Referer->set(); // TODO
     }
 
     /* Wrappers over Session->setFlash */
