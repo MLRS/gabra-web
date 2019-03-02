@@ -1,4 +1,4 @@
-<?php /* TODO check */ $hidden = ($this->request->getRequestTarget() == $this->request->getAttribute('webroot') || $this->request->getParam('action') == 'search') ?>
+<?php $hidden = ($this->request->getRequestTarget() == $this->request->getAttribute('webroot') || $this->request->getParam('action') == 'search') ?>
 <form role="search" class="navbar-form navbar-left <?php if ($hidden) echo 'hidden'?>" action="<?php echo $this->Url->build('/lexemes') ?>">
   <div class="input-group">
 

@@ -15,8 +15,10 @@
     <dt><?php echo __('Class'); ?></dt>
     <dd>
       <?php
-        if ($root['type'] != 'irregular')
-        echo (($root['radical_count'] == 4) ? __('Quad.') : __('Tri.')).' ';
+        if ($root['type'] != 'irregular') {
+          $radical_count = 1 + substr_count(@$root['radicals'], '-');
+          echo (($radical_count == 4) ? __('Quad.') : __('Tri.')).' ';
+        }
         echo $common['root_types'][$root['type']];
       ?>
     </dd>

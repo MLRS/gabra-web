@@ -160,7 +160,7 @@ class UIHelper extends Helper {
         'include_link' => true,
         'include_variant' => true,
       ), $options);
-    $r = (array) $root;
+    $r = is_a($root,'stdClass') ? (array) $root : $root;
     if (!@$r) return '';
     $display = h($r['radicals']);
     if ($opts['include_variant'] && @$r['variant']){
