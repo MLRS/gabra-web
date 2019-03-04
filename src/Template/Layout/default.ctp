@@ -208,18 +208,15 @@ use Cake\Routing\Router;
           <ul class="nav navbar-nav navbar-right">
             <li class="language-switcher">
             <?php
-
               if ($language=='eng') {
                 echo $this->Html->link(
                   __("bil-Malti"),
-                  // TODO check
-                  array_merge($this->request->getQueryParams(), array('?'=>array_merge($_GET, array('lang'=>'mlt'))))
+                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'mlt']) ]
                 );
               } else {
                 echo $this->Html->link(
                   __("in English"),
-                  // TODO check
-                  array_merge($this->request->getQueryParams(), array('?'=>array_merge($_GET, array('lang'=>'eng'))))
+                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'eng']) ]
                 );
               }
             ?>

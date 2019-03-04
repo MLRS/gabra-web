@@ -46,8 +46,6 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-
-        // $this->loadComponent('Session');
         $this->loadComponent('Search');
         $this->loadComponent('Auth', [
             'loginRedirect'  => '/',
@@ -117,15 +115,13 @@ class AppController extends Controller
         $this->Auth->allow(['index', 'view', 'display']);
 
         // Language
-        // TODO
-        $language = 'eng';
-        // if (isset($this->request->query['lang'])) {
-        //     $this->Session->write('Config.language', $this->request->query['lang']);
-        // }
-        // if (!$this->Session->read('Config.language')) {
-        //     $this->Session->write('Config.language', 'eng'); // default is English
-        // }
-        // $language = $this->Session->read('Config.language');
+        if ($this->request->getQuery('lang')) {
+            $this->request->getSession()->write('Config.language', $this->request->getQuery('lang'));
+        }
+        if (!$this->request->getSession()->read('Config.language')) {
+            $this->request->getSession()->write('Config.language', 'eng'); // default is English
+        }
+        $language = $this->request->getSession()->read('Config.language');
         Configure::write('Config.language', $language);
         $this->set('language',  $language);
 
