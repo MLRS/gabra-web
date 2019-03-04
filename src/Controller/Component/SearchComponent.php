@@ -11,13 +11,13 @@ class SearchComponent extends Component {
   private $dot = "('|a|b|ċ|d|e|f|ġ|g|għ|h|ħ|i|ie|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|ż|z)";
 
   public function hasQuery() {
-    $q = $this->RequestHandler->request->query;
+    $q = $this->RequestHandler->request->getQueryParams();
     return isset($q) && !empty($q);
   }
 
   private function boolItem($key, $default) {
-    if (isset($this->RequestHandler->request->query[$key]))
-      return (bool) $this->RequestHandler->request->query[$key];
+    if ($this->RequestHandler->request->getQuery($key))
+      return (bool) $this->RequestHandler->request->getQuery($key);
     else
       return $default;
   }
@@ -28,7 +28,7 @@ class SearchComponent extends Component {
       'replace_dot' => true,
     ), $options);
 
-    $q = $this->RequestHandler->request->query;
+    $q = $this->RequestHandler->request->getQueryParams();
     $query = null;
 
     if (@$q['c1'] || @$q['c2'] || @$q['c3'] || @$q['c4']) {
@@ -62,35 +62,16 @@ class SearchComponent extends Component {
     $obj->search_lemma = $this->boolItem('l', true);
     $obj->search_wordforms = $this->boolItem('wf', true);
     $obj->search_gloss = $this->boolItem('g', true);
-    $obj->pos = @$this->RequestHandler->request->query['pos'];
-    $obj->root_type = @$this->RequestHandler->request->query['t'];
-    $obj->source = @$this->RequestHandler->request->query['source'];
+    $obj->pos = @$this->RequestHandler->request->getQuery('pos');
+    $obj->root_type = @$this->RequestHandler->request->getQuery('t');
+    $obj->source = @$this->RequestHandler->request->getQuery('source');
 
-    $obj->page = @$this->RequestHandler->request->query['page'];
+    $obj->page = @$this->RequestHandler->request->getQuery('page');
     $obj->results = null;
 
-    $obj->json = json_encode($this->RequestHandler->request->query);
+    $obj->json = json_encode($this->RequestHandler->request->getQueryParams());
 
     return $obj;
   }
 
-}
-
-class SearchQuery {
-  var $query;            // query, post-processed
-  var $raw_query;        // query as input by user
-
-  var $regex_search;     // use regular expressions?
-  var $search_lemma;     // should we search in lemma?
-  var $search_wordforms; // should we search in word forms?
-  var $search_gloss;     // should we search in English gloss?
-
-  var $pos;              // specify a POS
-  var $root_type;        // specify a root type/class
-  var $source;           // specify a source
-
-  var $page;             // Page offset for paging (starting from 1)
-  var $results;          // Total number of results for query (or null if unknown)
-
-  var $json;             // Query encoded as JSON, using in async loading
 }
