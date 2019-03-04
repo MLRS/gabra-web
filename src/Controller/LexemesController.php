@@ -7,14 +7,6 @@ use Cake\Http\Exception\NotFoundException;
 
 class LexemesController extends AppController {
 
-  public $paginate = array(
-    'fields' => array('wordforms'=>0), // wordforms are loaded asynchronously
-    'limit' => 20,
-    'order' => array(
-      'lemma' => 'ASC',
-    )
-  );
-
   public function beforeFilter(Event $event) {
     parent::beforeFilter($event);
     $this->Auth->allow(['search', 'random']);

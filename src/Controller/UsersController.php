@@ -36,7 +36,7 @@ class UsersController extends AppController {
 
   public function index() {
     $this->Users->recursive = 0;
-    $this->set('users', $this->paginate());
+    $this->set('users', $this->Users->find('all'));
   }
 
   public function view($id = null) {

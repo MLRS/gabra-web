@@ -6,7 +6,7 @@ use Cake\Http\Exception\NotFoundException;
 
 class RootsController extends AppController {
 
-  public function index($letter=null) {
+  public function index() {
     $queryObj = $this->Search->getQuery();
     $this->set('queryObj', $queryObj);
   }

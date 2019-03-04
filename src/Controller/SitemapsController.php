@@ -6,6 +6,7 @@ use Cake\Core\Configure;
 
 class SitemapsController extends AppController {
 
+  // TODO
   var $uses = array('Root', 'Lexeme');
 
   public function index() {

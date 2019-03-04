@@ -6,12 +6,6 @@ use Cake\Event\Event;
 
 class MessagesController extends AppController {
 
-  public $paginate = array(
-    'limit' => 20,
-    'order' => array(
-      'created' => 'DESC',
-    )
-  );
   public function beforeFilter(Event $event) {
     parent::beforeFilter($event);
     $this->Auth->deny(['index', 'add', 'edit']);
@@ -24,25 +18,24 @@ class MessagesController extends AppController {
     ));
     $this->set('queryObj', $queryObj);
     if ($queryObj->query) {
-      $this->set('messages', $this->paginate('Message', array(
-        '$or'=>array(
-          array('Message.type'=>$queryObj->query),
-          array('Message.key'=>array('$regex'=>$queryObj->query)),
-          array('Message.eng'=>array('$regex'=>$queryObj->query)),
-          array('Message.mlt'=>array('$regex'=>$queryObj->query)),
-        ))));
+      $this->set('messages', $this->Messages->find('all', [
+        'conditions' => [
+          '$or' => [
+            [ 'type' => $queryObj->query ],
+            [ 'key' => [ '$regex' => $queryObj->query ] ],
+            [ 'eng' => [ '$regex' => $queryObj->query ] ],
+            [ 'mlt' => [ '$regex' => $queryObj->query ] ],
+          ]
+        ]
+      ]));
     } else {
-      $this->set('messages', $this->paginate());
+      $this->set('messages', $this->Messages->find('all', [
+        'order' => [
+          'created' => 'DESC'
+        ]
+      ]));
     }
   }
-
-  // public function view($id = null) {
-  //   $this->Messages->id = $id;
-  //   if (!$this->Messages->exists()) {
-  //     throw new NotFoundException(__('Invalid ID'));
-  //   }
-  //   $this->set('message', $this->Messages->read(null, $id));
-  // }
 
   public function add() {
     if ($this->request->is('post')) {
