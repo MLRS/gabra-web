@@ -85,7 +85,11 @@ class UIHelper extends Helper {
     $opts = array_merge(array(
       'format' => 'Y-m-d H:i O',
     ), $options);
-   return $date ? date($opts['format'],$date->sec) : '';
+    if (is_a($date, 'DateTime')) {
+      return $date->format($opts['format']);
+    } else {
+      return date($opts['format'],$date->sec);
+    }
   }
 
   public function corpusLink($query) {
