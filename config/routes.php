@@ -102,3 +102,8 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+
+Router::scope('/sitemap.xml', function (RouteBuilder $routes) {
+    $routes->connect('/', ['controller' => 'Sitemaps', 'action' => 'index']); // for sitemap.xml
+    // $routes->setExtensions(['xml']);
+});

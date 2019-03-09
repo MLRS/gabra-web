@@ -168,7 +168,7 @@ class UIHelper extends Helper {
     if (!@$r) return '';
     $display = h($r['radicals']);
     if ($opts['include_variant'] && @$r['variant']){
-      $display .= $this->tag('sup', h($r['variant']));
+      $display .= $this->Html->tag('sup', h($r['variant']));
     }
     // $display = '√'.(strtoupper(str_replace('-','',$r['radicals'])));
     if ($opts['include_link']) {
