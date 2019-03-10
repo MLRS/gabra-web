@@ -12,22 +12,7 @@ This repository contains the source code for the Ġabra web site at
 - MongoDB (see <http://mlrs.research.um.edu.mt/resources/gabra-api/download> for data dumps you can use to get started).
 - **Ġabra API** web service running locally, see <https://github.com/MLRS/gabra-api>.
 
-In addition to the data obtainable above, you will also need the following collections:
-
-### `users`
-
-Example document:
-
-```
-{
-  "_id" : ObjectId("..."),
-  "password" : "...",
-  "role" : "admin",
-  "username" : "..."
-}
-```
-
-Where `password` is an SHA-1 hash of your salted password.
+In addition to the data obtainable above, you will also need the following collection:
 
 ### `messages`
 
@@ -40,8 +25,8 @@ Example documents:
     "key" : "",
     "eng" : "...",
     "mlt" : "...",
-    "created" : ISODate("..."),
-    "modified" : ISODate("..."),
+    "created" : ...,
+    "modified" : ...
 }
 
 {
@@ -57,9 +42,7 @@ Example documents:
     "type" : "web"
     "key" : "home.title",
     "eng" : "Ġabra: an open lexicon for Maltese",
-    "mlt" : "Ġabra lessikali għall-ilsien Malti",
-    "modified" : ISODate("..."),
-    "created" : ISODate("..."),
+    "mlt" : "Ġabra lessikali għall-ilsien Malti"
 }
 ```
 

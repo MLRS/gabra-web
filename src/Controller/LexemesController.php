@@ -9,7 +9,6 @@ class LexemesController extends AppController {
 
   public function beforeFilter(Event $event) {
     parent::beforeFilter($event);
-    $this->Auth->allow(['search', 'random']);
     $this->loadModel('Wordforms');
     $this->loadModel('Roots');
     $this->loadModel('Sources');

@@ -6,10 +6,10 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th><?php echo $this->Paginator->sort('key'); ?></th>
-      <th><?php echo $this->Paginator->sort('title'); ?></th>
-      <th><?php echo $this->Paginator->sort('author'); ?></th>
-      <th><?php echo $this->Paginator->sort('year'); ?></th>
+      <th><?php echo __('Key'); ?></th>
+      <th><?php echo __('Title'); ?></th>
+      <th><?php echo __('Author'); ?></th>
+      <th><?php echo __('Year'); ?></th>
       <th><?php echo __('Note'); ?></th>
     </tr>
     </thead>

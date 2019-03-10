@@ -47,10 +47,6 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
         $this->loadComponent('Search');
-        $this->loadComponent('Auth', [
-            'loginRedirect'  => '/',
-            'logoutRedirect' => '/',
-        ]);
 
         /*
          * Enable the following component for recommended CakePHP security settings.
@@ -109,11 +105,6 @@ class AppController extends Controller
             die("Ġabra is down for maintenance, please try again later.");
         }
 
-        // User
-        // $this->Auth->allow();
-        // $this->Auth->deny(['add', 'edit', 'delete']);
-        $this->Auth->allow(['index', 'view', 'display']);
-
         // Language
         if ($this->request->getQuery('lang')) {
             $this->request->getSession()->write('Config.language', $this->request->getQuery('lang'));
@@ -135,19 +126,8 @@ class AppController extends Controller
             'alphabet' => $this->alphabet,
             'consonants' => $this->consonants,
             'root_types' => $this->root_types,
-            'parts_of_speech' => $this->parts_of_speech,
-            'user' => $this->Auth->user(),
+            'parts_of_speech' => $this->parts_of_speech
         );
-        // Add dummy user if developing
-        // if (defined('DEVELOPMENT_MODE')) {
-        //   $common['user'] = array(
-        //     'created' => 0,
-        //     'modified' => 0,
-        //     'role' => 'admin',
-        //     'username' => 'DEVELOPMENT_MODE',
-        //     'id' => '52132fec66ccf715abd4827b' // same as john.camilleri
-        //   );
-        // }
         $this->set('common', $common);
     }
 

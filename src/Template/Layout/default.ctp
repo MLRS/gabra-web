@@ -35,7 +35,6 @@ use Cake\Routing\Router;
 
     <script type="text/javascript">
       Gabra = {
-        user : <?php echo @$common['user'] ? json_encode($common['user']) : 'null' ?>,
         base_url : "<?php echo $this->Url->build('/') ?>",
         api_url : "<?php echo API_URL ?>",
         minsel_url : "<?php echo MINSEL_URL ?>",
@@ -180,34 +179,13 @@ use Cake\Routing\Router;
                 <li><?php echo $this->Html->link(__('Sources'), '/sources') ?></li>
                 <li><?php echo $this->Html->link(__('Random entry'), '/lexemes/random') ?></li>
                 <li><?php echo $this->Html->link($this->UI->icon('transfer', __('API').' & '.__('Download')), API_URL, array('escape'=>false)); ?></li>
-
-                <?php if (!@$common['user']): ?>
-                <li class="divider"></li>
-                <li><?php echo $this->Html->link(__('Login'), '/users/login'); ?></li>
-                <?php endif ?>
               </ul>
             </li>
-
-            <!-- User menu -->
-            <?php if ($user = @$common['user']): ?>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <?php echo $this->UI->icon('user'); ?>
-                <?php echo h($user['username']); ?>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><?php echo $this->Html->link(__("Messages"), '/messages'); ?></li>
-                <li class="divider"></li>
-                <li><?php echo $this->Html->link($this->UI->icon('off').' '.__('Logout'), '/users/logout', array('escape'=>false)); ?></li>
-              </ul>
-            </li>
-            <?php endif ?>
-
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="language-switcher">
             <?php
+              // TODO sources/view/Spagnol2011
               if ($language=='eng') {
                 echo $this->Html->link(
                   __("bil-Malti"),
