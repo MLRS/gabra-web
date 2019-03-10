@@ -77,16 +77,6 @@
       <?php echo $this->UI->corpusLink($lexeme['lemma']); ?>
     </div>
 
-    <?php
-      if ($common['user']):
-        echo $this->UI->link(
-          $this->UI->icon('pencil').' '.__('Edit entry'),
-          (API_URL . 'lexemes/view/' . $lexeme['_id']),
-          //array('action'=>'edit', $lexeme['_id']),
-          array('class'=>'edit','escape'=>false)
-        );
-      endif;
-    ?>
   </div><!-- entry-meta -->
 
   <?php if (@$related): ?>

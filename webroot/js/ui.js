@@ -17,26 +17,7 @@ Gabra.UI.searchResult = function(result, match) {
                     .attr('href',link('view'))
                     .html( Gabra.UI.highlight(lexeme.lemma, match) ),' ',
                 Gabra.UI.alternatives(lexeme.alternatives)
-            ),
-            Gabra.user ? (
-                $('<div>').addClass('small').append(
-                    $('<a>')
-                        .attr('href',Gabra.base_url+'lexemes?s='+lexeme.lemma)
-                        .addClass('text-info text-nowrap')
-                        .append(Gabra.UI.icon('search'),' ','Search'),
-                    ' ',
-                    $('<a>')
-                        .attr('href',link_api('view'))
-                        .addClass('text-warning text-nowrap')
-                        .append(Gabra.UI.icon('pencil'),' ','Edit'),
-                    ' ',
-                    $('<a>')
-                        .attr('href',link('delete'))
-                        .addClass('text-danger text-nowrap')
-                        .append(Gabra.UI.icon('remove'),' ','Delete')
-                        .click(function(){return confirm('Are you sure you want to delete this entry?')})
-                )
-            ) : ''
+            )
         ),
         $('<div>').addClass('col-sm-2').append(
             Gabra.UI.posTag(lexeme.pos),' ',
