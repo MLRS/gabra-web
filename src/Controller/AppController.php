@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
 use Cake\Event\Event;
+use Cake\I18n\I18n;
 
 /**
  * Application Controller
@@ -107,14 +108,17 @@ class AppController extends Controller
 
         // Language
         if ($this->request->getQuery('lang')) {
+            // Changing language via query string
             $this->request->getSession()->write('Config.language', $this->request->getQuery('lang'));
         }
         if (!$this->request->getSession()->read('Config.language')) {
-            $this->request->getSession()->write('Config.language', 'eng'); // default is English
+            // No language set, resort to default
+            $this->request->getSession()->write('Config.language', 'en'); // default is English
         }
+        // Read current language from session
         $language = $this->request->getSession()->read('Config.language');
-        Configure::write('Config.language', $language);
-        $this->set('language',  $language);
+        I18n::setLocale($language); // for gettext
+        $this->set('language',  $language); // for templates
 
         // Localised web content
         $this->loadModel('Messages');

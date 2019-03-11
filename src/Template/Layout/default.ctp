@@ -9,7 +9,7 @@ if ($this->request->getRequestTarget() != '/') {
 use Cake\Routing\Router;
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo ($language=='eng')?'en':'mt' ?>">
+<html lang="<?php echo $language ?>">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,6 @@ use Cake\Routing\Router;
       '/img/favicon-bold.ico',
       array('type' => 'icon')
     );
-
     ?>
 
     <script type="text/javascript">
@@ -185,16 +184,16 @@ use Cake\Routing\Router;
           <ul class="nav navbar-nav navbar-right">
             <li class="language-switcher">
             <?php
-              // TODO sources/view/Spagnol2011
-              if ($language=='eng') {
+              // TODO e.g. sources/view/Spagnol2011
+              if ($language=='en') {
                 echo $this->Html->link(
                   __("bil-Malti"),
-                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'mlt']) ]
+                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'mt']) ]
                 );
               } else {
                 echo $this->Html->link(
                   __("in English"),
-                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'eng']) ]
+                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'en']) ]
                 );
               }
             ?>
