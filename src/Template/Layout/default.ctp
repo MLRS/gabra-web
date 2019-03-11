@@ -184,16 +184,15 @@ use Cake\Routing\Router;
           <ul class="nav navbar-nav navbar-right">
             <li class="language-switcher">
             <?php
-              // TODO e.g. sources/view/Spagnol2011
               if ($language=='en') {
                 echo $this->Html->link(
                   __("bil-Malti"),
-                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'mt']) ]
+                  $this->UI->hereWithQueryParams(['lang' => 'mt'])
                 );
               } else {
                 echo $this->Html->link(
                   __("in English"),
-                  [ '?' => array_merge($this->request->getQueryParams(), ['lang' => 'en']) ]
+                  $this->UI->hereWithQueryParams(['lang' => 'en'])
                 );
               }
             ?>

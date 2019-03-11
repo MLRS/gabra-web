@@ -92,6 +92,15 @@ class UIHelper extends Helper {
     }
   }
 
+  public function hereWithQueryParams($queryParams) {
+    $urlobj = [
+      'controller' => $this->request->getParam('controller'),
+      'action' => $this->request->getParam('action')
+    ];
+    $newqps = array_merge($this->request->getQueryParams(), $queryParams);
+    return array_merge($urlobj, $this->request->getParam('pass'), [ '?' => $newqps ]);
+  }
+
   public function corpusLink($query) {
     $base = CORPUS_URL;
     $urls = array(
