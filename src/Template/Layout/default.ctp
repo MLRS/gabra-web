@@ -67,7 +67,7 @@ use Cake\Routing\Router;
                 replacements = [replacements.toString()];
               }
               for (x in replacements) {
-                val = val.replace('%s', replacements[x]);
+                val = val.replace(/\%s|\{\d+\}/, replacements[x]);
               }
             }
 
@@ -86,7 +86,7 @@ use Cake\Routing\Router;
           suggest: {
             submit: "<?php echo h(__('Submit')); ?>",
             cancel: "<?php echo h(__('Cancel')); ?>",
-            link: "<?php echo h(__('Click here to suggest that %s is added to the database.')); ?>",
+            link: "<?php echo h(__('Click here to suggest that {0} is added to the database.')); ?>",
             dialog_title: "<?php echo h(__("Suggest a new entry")); ?>",
             lemma: "<?php echo h(__("Lemma")); ?>",
             lemma_help: "<?php echo h(__("Word in Maltese")); ?>",
