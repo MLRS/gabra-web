@@ -72,16 +72,7 @@ class PagesController extends AppController
     }
 
     public function home() {
-      // For stats
-      $this->loadModel('Roots');
-      $this->loadModel('Lexemes');
-      $this->loadModel('Wordforms');
       $this->loadModel('Messages');
-      $this->set('stats', array(
-        'lexemes' => $this->Lexemes->count(array('conditions'=>array('pending'=>array('$ne'=>true)))),
-        'roots' => $this->Roots->count(),
-        'wordforms' => $this->Wordforms->count(),
-      ));
       $this->set(
         'news',
         $this->Messages->find('all', array(

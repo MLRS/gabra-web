@@ -12,10 +12,7 @@ function __k($t, $k, $p=null, $o=array()) {
   <h1><?php echo $headline ?></h1>
 
   <p>
-    <?php echo __k($this, 'home.1', array(
-      '{lexemes}' => $this->Html->tag('span', number_format($stats['lexemes']), array('class'=>'label label-primary')),
-      '{wordforms}' => $this->Html->tag('span', number_format($stats['wordforms']), array('class'=>'label label-info'))
-    )) ?>
+    <?php echo __k($this, 'home.1') ?>
   </p>
 
   <p>
@@ -80,6 +77,6 @@ function __k($t, $k, $p=null, $o=array()) {
 </div><!-- /.col-sm-4 -->
 
 <?php
-  $this->Html->script('//www.google.com/jsapi', array('inline' => false, 'defer' => false));
-  $this->Html->script(array('log-chart'), array('inline' => false, 'defer' => false));
+  echo $this->Html->script('//www.google.com/jsapi', array('inline' => false, 'defer' => false));
+  echo $this->Html->script(array('home','log-chart'), array('inline' => false, 'defer' => false));
 ?>
