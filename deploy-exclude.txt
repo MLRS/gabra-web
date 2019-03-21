@@ -1,0 +1,6 @@
+.*
+config/app.php
+logs
+tmp
+webroot/files
+deploy*
