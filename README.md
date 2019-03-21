@@ -8,43 +8,10 @@ This repository contains the source code for the Ġabra web site at
 
 ## Requirements
 
-- PHP
+- PHP 7
 - MongoDB (see <http://mlrs.research.um.edu.mt/resources/gabra-api/download> for data dumps you can use to get started).
+  _This dependency will soon be removed._
 - **Ġabra API** web service running locally, see <https://github.com/MLRS/gabra-api>.
-
-In addition to the data obtainable above, you will also need the following collection:
-
-### `messages`
-
-Example documents:
-
-```
-{
-    "_id" : ObjectId("..."),
-    "type" : "news"
-    "key" : "",
-    "eng" : "...",
-    "mlt" : "...",
-    "created" : ...,
-    "modified" : ...
-}
-
-{
-    "_id" : ObjectId("..."),
-    "type" : "i18n",
-    "key" : "pos.ADJ",
-    "eng" : "adjective",
-    "mlt" : "aġġettiv"
-}
-
-{
-    "_id" : ObjectId("..."),
-    "type" : "web"
-    "key" : "home.title",
-    "eng" : "Ġabra: an open lexicon for Maltese",
-    "mlt" : "Ġabra lessikali għall-ilsien Malti"
-}
-```
 
 ## Installation
 
