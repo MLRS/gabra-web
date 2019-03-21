@@ -1,0 +1,364 @@
+---
+- key: pos.ADJ
+  en: adjective
+  mt: aġġettiv
+
+- key: pos.DET
+  en: determiner
+  mt: determinant
+
+- key: pos.PRON
+  en: pronoun
+  mt: pronom
+
+- key: pos.VERB
+  en: verb
+  mt: verb
+
+- key: frequency.uncommon
+  en: uncommon
+  mt: mhux komuni
+
+- key: hypothetical
+  en: hypothetical
+  mt: ipoteticu
+
+- key: pos.ADV
+  en: adverb
+  mt: avverb
+
+- key: modified
+  en: modified
+  mt: mibdul
+
+- key: onomastic_type.toponym
+  en: toponym
+  mt: toponom
+
+- key: pos.NOUN
+  en: noun
+  mt: nom
+
+- key: root
+  en: root
+  mt: għerq
+
+- key: pos.ADP
+  en: adposition
+  mt: adposizzjoni
+
+- key: pos
+  en: part of speech
+  mt: kategorija
+
+- key: surface_form
+  en: surface form
+  mt: forma miktuba
+
+- key: gender.f
+  en: feminine
+  mt: femminili
+
+- key: number.sgv
+  en: singulative
+  mt: singulattiv
+
+- key: number.pl_det
+  en: determinate plural
+  mt: plural definit
+
+- key: form.comparative
+  en: comparative
+  mt: komparattiv
+
+- key: form.verbalnoun
+  en: verbalnoun
+  mt: nom verbali
+
+- key: aspect.perf
+  en: perfective
+  mt: perfettiv
+
+- key: polarity
+  en: polarity
+  mt: polarità
+
+- key: type
+  en: type
+  mt: klassi
+
+- key: type.weak-final
+  en: weak final
+  mt: dgħajjef nieqes
+
+- key: pos.PUNCT
+  en: punctuation
+  mt: punteġġatura
+
+- key: derived_form
+  en: derived form
+  mt: forma mnissla
+
+- key: transitive
+  en: transitive
+  mt: transittiv
+
+- key: alternatives
+  en: alternatives
+  mt: alternattivi
+
+- key: pending
+  en: pending
+  mt: pendenti
+
+- key: onomastic_type.anthroponym
+  en: anthroponym
+  mt: antroponom
+
+- key: pattern
+  en: pattern
+  mt: mudell
+
+- key: number
+  en: number
+  mt: numru
+
+- key: number.sp
+  en: singular / plural
+  mt: singular / plural
+
+- key: plural_type
+  en: plural type
+  mt: tip ta' plural
+
+- key: form.diminutive
+  en: diminutive
+  mt: diminuttiv
+
+- key: dir_obj
+  en: direct object
+  mt: oġġett dirett
+
+- key: aspect.impf
+  en: imperfective
+  mt: imperfettiv
+
+- key: polarity.neg
+  en: negative
+  mt: negattiv
+
+- key: type.geminated
+  en: geminated
+  mt: trux
+
+- key: variant
+  en: variant
+  mt: varjant
+
+- key: pos.AUX
+  en: auxiliary verb
+  mt: verb awżiljarju
+
+- key: pos.NUM
+  en: numeral
+  mt: numru
+
+- key: pos.SCONJ
+  en: subordinating conjunction
+  mt: konġunzjoni subordinenti
+
+- key: frequency
+  en: frequency
+  mt: frekwenza
+
+- key: intransitive
+  en: intransitive
+  mt: intransittiv
+
+- key: gloss
+  en: gloss
+  mt: traduzzjoni
+
+- key: apertium_paradigm
+  en: Apertium paradigm
+  mt: ''
+
+- key: onomastic_type.cognomen
+  en: cognomen
+  mt: ''
+
+- key: gender
+  en: gender
+  mt: sess
+
+- key: number.sg
+  en: singular
+  mt: singular
+
+- key: number.pl
+  en: plural
+  mt: plural
+
+- key: possessive
+  en: possessive
+  mt: possessiv
+
+- key: form.interrogative
+  en: interrogative
+  mt: interrogattiv
+
+- key: pos.INTJ
+  en: interjection
+  mt: interġezzjoni
+
+- key: pos.CONJ
+  en: coordinating conjunction
+  mt: konġunzjoni koordinanti
+
+- key: pos.PROPN
+  en: proper noun
+  mt: nom proprju
+
+- key: pos.X
+  en: other
+  mt: oħrajn
+
+- key: pos.PART
+  en: particle
+  mt: partiklu
+
+- key: frequency.rare
+  en: rare
+  mt: rari
+
+- key: lemma
+  en: lemma
+  mt: kelma
+
+- key: pos.SYM
+  en: symbol
+  mt: simbolu
+
+- key: created
+  en: created
+  mt: kkreat
+
+- key: onomastic_type.organisation
+  en: organisation
+  mt: organizzazjoni
+
+- key: frequency.common
+  en: common
+  mt: komuni
+
+- key: phonetic
+  en: phonetic
+  mt: fonetiku
+
+- key: gender.mf
+  en: masculine / feminine
+  mt: maskili / femminili
+
+- key: ditransitive
+  en: ditransitive
+  mt: ditransittiv
+
+- key: number.coll
+  en: collective
+  mt: kollettiv
+
+- key: number.pl_pl
+  en: plural of plural
+  mt: plural ta' plural
+
+- key: sources
+  en: sources
+  mt: sorsijiet
+
+- key: form.superlative
+  en: superlative
+  mt: superlattiv
+
+- key: subject
+  en: subject
+  mt: suġġett
+
+- key: onomastic_type
+  en: onomastic type
+  mt: tip onomastiku
+
+- key: aspect.imp
+  en: imperative
+  mt: imperattiv
+
+- key: polarity.pos
+  en: positive
+  mt: posittiv
+
+- key: onomastic_type.other
+  en: other
+  mt: ''
+
+- key: type.strong
+  en: strong
+  mt: sħiħ
+
+- key: type.irregular
+  en: irregular
+  mt: irregolari
+
+- key: gender.m
+  en: masculine
+  mt: maskili
+
+- key: ind_obj
+  en: inddirect object
+  mt: oġġett indirett
+
+- key: number.dl
+  en: dual
+  mt: għadd mtenni
+
+- key: aspect.pastpart
+  en: past participle
+  mt: partiċipju passiv
+
+- key: number.pl_ind
+  en: indeterminate plural
+  mt: plural indefinit
+
+- key: generated
+  en: generated
+  mt: maħluq awtomatikament
+
+- key: form
+  en: form
+  mt: forma
+
+- key: type.weak-initial
+  en: weak initial
+  mt: dgħajjef assimilattiv
+
+- key: form.mimated
+  en: mimated
+  mt: mimmat
+
+- key: radicals
+  en: radicals
+  mt: konsonanti
+
+- key: aspect
+  en: aspect
+  mt: aspett
+
+- key: aspect.prespart
+  en: present participle
+  mt: partiċipju attiv
+
+- key: full
+  en: original entry
+  mt: entrata oriġinali
+
+- key: type.weak-medial
+  en: weak medial
+  mt: dgħajjef moħfi
