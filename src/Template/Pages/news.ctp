@@ -9,7 +9,7 @@
     <div class="col-sm-2">
       <p class="text-right">
         <strong>
-          <?php echo $message['created']->format('Y-m-d') ?>
+          <?php echo $message['date'] ?>
         </strong>
       </p>
     </div>

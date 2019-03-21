@@ -72,27 +72,20 @@ class PagesController extends AppController
     }
 
     public function home() {
-      $this->loadModel('Messages');
-      $this->set(
-        'news',
-        $this->Messages->find('all', array(
-          'conditions'=> array('type'=>'news'),
-          'order'=> array('created'=>'DESC'),
-          'limit'=> 3,
-        ))
-      );
+        $this->set('news', array_slice($this->getNews(), 0, 3));
     }
 
     public function news() {
-      $this->helpers[] = 'Tanuck/Markdown.Markdown';
-      $this->loadModel('Messages');
-      $this->set(
-        'news',
-        $this->Messages->find('all', array(
-          'conditions'=> array('type'=>'news'),
-          'order'=> array('created'=>'DESC'),
-        ))
-      );
+        $this->helpers[] = 'Tanuck/Markdown.Markdown';
+        $this->set('news', $this->getNews());
+    }
+
+    private function getNews() {
+        $news = yaml_parse_file(ROOT . '/data/news.yaml');
+        usort($news, function($a, $b) {
+            return $a['date'] < $b['date'];
+        });
+        return $news;
     }
 
 }

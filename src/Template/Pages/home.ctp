@@ -64,7 +64,7 @@ function __k($t, $k, $p=null, $o=array()) {
   <?php foreach($news as $message): ?>
   <?php if (@$message[$language]): ?>
   <h5>
-    <?php echo $message['created']->format('jS F Y') ?>
+    <?php echo $message['date'] ?>
   </h5>
   <?php echo $this->Markdown->transform($message[$language]) ?>
   <?php endif ?>
