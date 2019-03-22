@@ -6,14 +6,16 @@ use App\Controller\AppController;
 class SourcesController extends AppController {
 
   public function index() {
-    $this->set('sources', $this->paginate());
+    $sources = $this->Sources->getAll();
+    $this->set('sources', $sources);
   }
 
   public function view($key = null) {
-    $source = $this->Sources->find('first', array('conditions'=>array('key'=>$key)));
-    if (!$source) {
+    $source = $this->Sources->getByKey($key);
+    if (!$key || !$source) {
       $this->setMessageBad(__('Invalid ID'));
       $this->redirect(array('action'=>'index'));
+      return;
     }
     $this->set('source', $source);
   }

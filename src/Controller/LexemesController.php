@@ -26,7 +26,7 @@ class LexemesController extends AppController {
    * Advanced search
    */
   public function search() {
-    $this->set('sources', $this->Sources->options()); // for dropdown
+    $this->set('sources', $this->Sources->getList()); // for dropdown
     $this->render('advanced-search');
   }
 
