@@ -55,7 +55,6 @@ class Application extends BaseApplication
             $this->addPlugin(\DebugKit\Plugin::class);
         }
 
-        $this->addPlugin('Hayko/Mongodb');
         $this->addPlugin('Tanuck/Markdown');
     }
 
