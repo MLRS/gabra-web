@@ -18,12 +18,7 @@ class RootsController extends AppController {
       $this->redirect(array('action'=>'index'));
     }
     $this->loadModel('Lexemes');
-    $related = $this->Lexemes->find('all',array(
-      'conditions' => array(
-        'root.radicals' => $root['radicals'],
-        'root.variant' => @$root['variant'],
-      )
-    ));
+    $related = $this->Lexemes->getByRoot($root['radicals'], @$root['variant']);
     $this->set('root', $root);
     $this->set('related', $related);
   }

@@ -1,9 +1,35 @@
 <?php
 namespace App\Model\Table;
 
-use Hayko\Mongodb\ORM\Table;
+use Cake\ORM\Table;
 
 class LexemesTable extends Table {
+
+  public function getAll() {
+    $json = file_get_contents(API_SERVER_URL . 'lexemes/');
+    $lexemes = array_map(function ($obj) { return (array) $obj; }, json_decode($json));
+    return $lexemes;
+  }
+
+  public function getById($id) {
+    $json = file_get_contents(API_SERVER_URL . 'lexemes/' . $id);
+    $lexeme = (array) json_decode($json);
+    return $lexeme;
+  }
+
+  public function getByRoot($radicals, $variant=null) {
+    $url = API_SERVER_URL . 'roots/lexemes/' . urlencode($radicals);
+    if ($variant) $url .= '/' . $variant;
+    $json = file_get_contents($url);
+    $lexemes = array_map(function ($obj) { return (array) $obj; }, json_decode($json));
+    return $lexemes;
+  }
+
+  public function getRelated($id) {
+    $json = file_get_contents(API_SERVER_URL . 'lexemes/related/' . $id);
+    $lexemes = array_map(function ($obj) { return (array) $obj; }, json_decode($json));
+    return $lexemes;
+  }
 
   // Used for sorting word forms
   public function compareWordForms($a, $b, $fields) {

@@ -31,30 +31,16 @@ class LexemesController extends AppController {
   }
 
   /**
-   * Random
-   */
-  public function random() {
-    $all_ids = $this->Lexemes->find('list', array('fields'=> array('id')));
-    $random = array_rand($all_ids, 1);
-    $this->redirect(array('action'=>'view', $random));
-  }
-
-  /**
    * View
    */
   public function view($id) {
-    $_id = new \MongoDB\BSON\ObjectId($id);
-    $lexeme = $this->Lexemes->find('first', array(
-      'conditions' => array (
-        '_id' => $_id,
-      )
-    ));
+    $lexeme = $this->Lexemes->getById($id);
     if (!$lexeme) {
       throw new NotFoundException(__('Invalid ID'));
     }
 
     // Get, sort, add wordforms
-    $wordforms = $this->Wordforms->getForLexeme($_id);
+    $wordforms = $this->Wordforms->getForLexeme($id);
 
     $host = $this->Lexemes;
     usort($wordforms, function($a, $b) use ($host) {
@@ -63,18 +49,7 @@ class LexemesController extends AppController {
 
     // Get entries with same root (using root.radicals and root.variant)
     if (@$lexeme['root']) {
-      $conds = array(
-        'root.radicals'=>$lexeme['root']->radicals,
-        '_id'=>array('$ne'=>$lexeme['_id']),
-      );
-      if (@$lexeme['root']->variant) {
-        $conds['root.variant'] = $lexeme['root']->variant;
-      }
-      $related = $this->Lexemes->find('all', array(
-        'conditions' => $conds,
-        'fields' => array('lemma','pos','derived_form'),
-        'order' => array('pos'=>'ASC'),
-      ));
+      $related = $this->Lexemes->getRelated($id);
       $this->set('related', $related);
     }
 
