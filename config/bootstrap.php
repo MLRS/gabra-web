@@ -20,12 +20,14 @@ define('USE_CDN', true);
 // Constant used for selecting database configs, and other things
 if (@$_SERVER['SERVER_NAME']=='mlrs.research.um.edu.mt') {
 	define('PRODUCTION_MODE', true);
-	define('API_URL', 'http://mlrs.research.um.edu.mt/resources/gabra-api/');
+	define('API_URL', 'http://mlrs.research.um.edu.mt/resources/gabra-api/'); // client-side
+	define('API_SERVER_URL', 'http://localhost:3000/'); // server-side
 	define('MINSEL_URL', 'http://mlrs.research.um.edu.mt/resources/minsel/');
 	define('CORPUS_URL', 'http://mlrs.research.um.edu.mt/CQPweb/malti03/');
 } else {
 	define('DEVELOPMENT_MODE', true);
-	define('API_URL', 'http://localhost:3000/');
+	define('API_URL', 'http://localhost:3000/'); // client-side
+	define('API_SERVER_URL', 'http://localhost:3000/'); // server-side
 	define('MINSEL_URL', 'http://localhost:3001/');
 	define('CORPUS_URL', 'http://mlrs.research.um.edu.mt/CQPweb/malti03/');
 }
