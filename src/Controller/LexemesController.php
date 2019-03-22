@@ -54,12 +54,7 @@ class LexemesController extends AppController {
     }
 
     // Get, sort, add wordforms
-    $wordforms = $this->Wordforms->find('all', array(
-      'conditions' => array(
-        'lexeme_id' => $_id,
-        // 'dir_obj' => null, 'ind_obj' => null, 'polarity' => 'pos' // minimised table
-      ),
-    ));
+    $wordforms = $this->Wordforms->getForLexeme($_id);
 
     $host = $this->Lexemes;
     usort($wordforms, function($a, $b) use ($host) {

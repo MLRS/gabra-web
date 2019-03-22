@@ -270,7 +270,7 @@ class UIHelper extends Helper {
       foreach ($wordforms as $wf) {
         // $keys = array_keys($wf['Wordform']);
         $keys = array();
-        foreach ($wf->toArray() as $k=>$v) {
+        foreach ($wf as $k=>$v) {
           if ($v) $keys[] = $k;
         }
         // $cols += $keys; // array union
