@@ -23,7 +23,7 @@ class SourcesTable extends Table {
   }
 
   public function getByKey($key) {
-    $json = file_get_contents(API_URL . 'sources/' . $key);
+    $json = file_get_contents(API_URL . 'sources/' . urlencode($key));
     $source = (array) json_decode($json);
     return $source;
   }

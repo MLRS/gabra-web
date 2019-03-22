@@ -12,14 +12,10 @@ class RootsController extends AppController {
   }
 
   public function view($radicals=null, $variant=null) {
-    $root = $this->Roots->find('first', array(
-      'conditions' => array(
-        'radicals' => $radicals,
-        'variant' => $variant ? (int)$variant : null,
-      )
-    ));
+    $root = $this->Roots->getByRadicals($radicals, $variant);
     if (!$root) {
-      throw new NotFoundException(__('Invalid ID'));
+      $this->setMessageBad(__('Invalid ID'));
+      $this->redirect(array('action'=>'index'));
     }
     $this->loadModel('Lexemes');
     $related = $this->Lexemes->find('all',array(
