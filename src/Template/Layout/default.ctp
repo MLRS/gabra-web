@@ -221,7 +221,7 @@ use Cake\Routing\Router;
     <!-- end main -->
 
     <?php
-      echo $this->Html->script(array('common', 'ui', 'async', 'filter', 'cursor', 'edit'), array('defer' => true));
+      echo $this->Html->script(array('common', 'ui', 'async', 'filter', 'cursor'), array('defer' => true));
       echo $this->fetch('script');
     ?>
   </body>
