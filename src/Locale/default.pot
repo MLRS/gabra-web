@@ -5,6 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-03-25 20:30+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -105,925 +106,592 @@ msgstr ""
 msgid "irregular"
 msgstr ""
 
-#: Controller/LexemesController.php:68
-#: View/Layouts/default.ctp:200
-msgid "Pending"
-msgstr ""
-
-#: Controller/LexemesController.php:88;208;246;334;342;351
-#: Controller/MessagesController.php:57;74
-#: Controller/RootsController.php:29
-#: Controller/SourcesController.php:11
-#: Controller/UsersController.php:40;61;83
-#: Controller/WordformsController.php:69
+#: Controller/LexemesController.php:39
+#: Controller/RootsController.php:17
+#: Controller/SourcesController.php:16
 msgid "Invalid ID"
 msgstr ""
 
-#: Controller/LexemesController.php:193
-#: Controller/WordformsController.php:12
-msgid "Item saved"
-msgstr ""
-
-#: Controller/LexemesController.php:196;216;252;380;418
-#: Controller/MessagesController.php:49;64;79
-#: Controller/UsersController.php:52;68;89
-#: Controller/WordformsController.php:14;53
-msgid "Error"
-msgstr ""
-
-#: Controller/LexemesController.php:213
-#: Controller/MessagesController.php:46;61
-#: Controller/UsersController.php:49;65
-#: Controller/WordformsController.php:51
-msgid "Changes saved"
-msgstr ""
-
-#: Controller/LexemesController.php:250
-#: Controller/MessagesController.php:77
-#: Controller/WordformsController.php:73
-msgid "Entry deleted"
-msgstr ""
-
-#: Controller/LexemesController.php:318
-msgid "No duplicates found for: "
-msgstr ""
-
-#: Controller/LexemesController.php:376;416
-msgid "Entries merged"
-msgstr ""
-
-#: Controller/UsersController.php:24
-msgid "Invalid username or password, try again"
-msgstr ""
-
-#: Controller/UsersController.php:86
-msgid "User deleted"
-msgstr ""
-
-#: Controller/WordformsController.php:75
-msgid "Delete failed"
-msgstr ""
-
-#: View/Elements/navbar-search.ctp:12
+#: Template/Element/navbar-search.ctp:12
 msgid "Search all of Ġabra"
 msgstr ""
 
-#: View/Elements/navbar-search.ctp:15
+#: Template/Element/navbar-search.ctp:15
 msgid "Search for a word"
 msgstr ""
 
-#: View/Elements/root-search.ctp:26;75
+#: Template/Element/root-search.ctp:26;74
 msgid "Search roots"
 msgstr ""
 
-#: View/Elements/root-search.ctp:34
+#: Template/Element/root-search.ctp:34
 msgid "or"
 msgstr ""
 
-#: View/Elements/root-search.ctp:40
+#: Template/Element/root-search.ctp:40
 msgid "j/w"
 msgstr ""
 
-#: View/Elements/root-search.ctp:46
+#: Template/Element/root-search.ctp:46
 msgid "none"
 msgstr ""
 
-#: View/Elements/root-search.ctp:48
-#: View/Roots/index.ctp:21
+#: Template/Element/root-search.ctp:48
+#: Template/Roots/index.ctp:21
 msgid "Radicals"
 msgstr ""
 
-#: View/Elements/root-search.ctp:55
-#: View/Roots/view.ctp:16
+#: Template/Element/root-search.ctp:54
+#: Template/Roots/view.ctp:15
 msgid "Class"
 msgstr ""
 
-#: View/Elements/root-search.ctp:81
+#: Template/Element/root-search.ctp:80
 msgid "Help"
 msgstr ""
 
-#: View/Elements/root-search.ctp:98
+#: Template/Element/root-search.ctp:96
 msgid "Legend"
 msgstr ""
 
-#: View/Elements/root-search.ctp:101
-msgid "Superscript numbers %s beside roots indicate multiple meanings"
+#: Template/Element/root-search.ctp:99
+msgid "Superscript numbers {0} beside roots indicate multiple meanings"
 msgstr ""
 
-#: View/Elements/root-search.ctp:102
-msgid "Entries in %s(parenthesis)%s indicate variants"
+#: Template/Element/root-search.ctp:100
+msgid "Entries in {0}(parenthesis){1} indicate variants"
 msgstr ""
 
-#: View/Elements/root-search.ctp:103
-msgid "Items in %sred%s are hypothetical, unused or obsolete forms listed in dictionaries"
+#: Template/Element/root-search.ctp:101
+msgid "Items in {0}red{1} are hypothetical, unused or obsolete forms listed in dictionaries"
 msgstr ""
 
-#: View/Elements/root-search.ctp:106
-#: View/Layouts/default.ctp:173
-#: View/Roots/index.ctp:1
+#: Template/Element/root-search.ctp:104
+#: Template/Layout/default.ctp:172
+#: Template/Roots/index.ctp:1
 msgid "Root search"
 msgstr ""
 
-#: View/Elements/root-search.ctp:109
+#: Template/Element/root-search.ctp:107
 msgid "Use the root search when you want to filter the roots by some specific criteria."
 msgstr ""
 
-#: View/Elements/root-search.ctp:110
+#: Template/Element/root-search.ctp:108
 msgid "It acts as a convenient shortcut for the more advanced search syntax (below)."
 msgstr ""
 
-#: View/Elements/root-search.ctp:112
+#: Template/Element/root-search.ctp:110
 msgid "Selecting nothing from a dropdown will match anything in that position."
 msgstr ""
 
-#: View/Elements/root-search.ctp:113
-msgid "Select %s to match either a <em>j</em> or a <em>w</em>"
+#: Template/Element/root-search.ctp:111
+msgid "Select {0} to match either a <em>j</em> or a <em>w</em>"
 msgstr ""
 
-#: View/Elements/root-search.ctp:114
-msgid "The apostrophe %s indicates a missing radical, in irregular roots."
+#: Template/Element/root-search.ctp:112
+msgid "The apostrophe {0} indicates a missing radical, in irregular roots."
 msgstr ""
 
-#: View/Elements/root-search.ctp:119
-#: View/Lexemes/advanced-search.ctp:115
+#: Template/Element/root-search.ctp:117
+#: Template/Lexemes/advanced_search.ctp:109
 msgid "Advanced search syntax"
 msgstr ""
 
-#: View/Elements/root-search.ctp:121
-#: View/Lexemes/advanced-search.ctp:117
+#: Template/Element/root-search.ctp:119
+#: Template/Lexemes/advanced_search.ctp:111
 msgid "Queries follow regular expression syntax:"
 msgstr ""
 
-#: View/Elements/root-search.ctp:123
-#: View/Lexemes/advanced-search.ctp:119
-msgid "%s matches any single letter (including <em>ie</em> and <em>għ</em>)"
+#: Template/Element/root-search.ctp:121
+#: Template/Lexemes/advanced_search.ctp:113
+msgid "{0} matches any single letter (including <em>ie</em> and <em>għ</em>)"
 msgstr ""
 
-#: View/Elements/root-search.ctp:124
-#: View/Lexemes/advanced-search.ctp:120
-msgid "%s matches beginning of string"
+#: Template/Element/root-search.ctp:122
+#: Template/Lexemes/advanced_search.ctp:114
+msgid "{0} matches beginning of string"
 msgstr ""
 
-#: View/Elements/root-search.ctp:125
-#: View/Lexemes/advanced-search.ctp:121
-msgid "%s matches the end of string"
+#: Template/Element/root-search.ctp:123
+#: Template/Lexemes/advanced_search.ctp:115
+msgid "{0} matches the end of string"
 msgstr ""
 
-#: View/Elements/root-search.ctp:126
-#: View/Lexemes/advanced-search.ctp:122
-msgid "%s matches 1 or more repetitions of the previous expression"
+#: Template/Element/root-search.ctp:124
+#: Template/Lexemes/advanced_search.ctp:116
+msgid "{0} matches 1 or more repetitions of the previous expression"
 msgstr ""
 
-#: View/Elements/root-search.ctp:127
-#: View/Lexemes/advanced-search.ctp:123
-msgid "%s matches 0 or more repetitions of the previous expression"
+#: Template/Element/root-search.ctp:125
+#: Template/Lexemes/advanced_search.ctp:117
+msgid "{0} matches 0 or more repetitions of the previous expression"
 msgstr ""
 
-#: View/Elements/root-search.ctp:128
-#: View/Lexemes/advanced-search.ctp:124
-msgid "%s matches 0 or 1 occurances of the previous expression"
+#: Template/Element/root-search.ctp:126
+#: Template/Lexemes/advanced_search.ctp:118
+msgid "{0} matches 0 or 1 occurances of the previous expression"
 msgstr ""
 
-#: View/Elements/root-search.ctp:129
-#: View/Lexemes/advanced-search.ctp:125
-msgid "Character classes can be enclosed in %s"
+#: Template/Element/root-search.ctp:127
+#: Template/Lexemes/advanced_search.ctp:119
+msgid "Character classes can be enclosed in {0}"
 msgstr ""
 
-#: View/Elements/root-search.ctp:132
-#: View/Lexemes/advanced-search.ctp:128
+#: Template/Element/root-search.ctp:130
+#: Template/Lexemes/advanced_search.ctp:122
 msgid "Examples"
 msgstr ""
 
-#: View/Elements/root-search.ctp:138
-#: View/Lexemes/advanced-search.ctp:134
+#: Template/Element/root-search.ctp:136
+#: Template/Lexemes/advanced_search.ctp:128
 msgid "%s matches <em>k</em> as first radical and <em>b</em> as third radical"
 msgstr ""
 
-#: View/Elements/root-search.ctp:139
-#: View/Lexemes/advanced-search.ctp:135
+#: Template/Element/root-search.ctp:137
+#: Template/Lexemes/advanced_search.ctp:129
 msgid "%s matches any weak-final root"
 msgstr ""
 
-#: View/Elements/root-search.ctp:140;144
-#: View/Lexemes/advanced-search.ctp:136;140
+#: Template/Element/root-search.ctp:138;142
+#: Template/Lexemes/advanced_search.ctp:130;134
 msgid "%s matches any item beginning with <em>għar</em>"
 msgstr ""
 
-#: View/Elements/root-search.ctp:145
-#: View/Lexemes/advanced-search.ctp:141
+#: Template/Element/root-search.ctp:143
+#: Template/Lexemes/advanced_search.ctp:135
 msgid "%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
 msgstr ""
 
-#: View/Elements/root-search.ctp:146
-#: View/Lexemes/advanced-search.ctp:142
+#: Template/Element/root-search.ctp:144
+#: Template/Lexemes/advanced_search.ctp:136
 msgid "%s matches both <em>sama'</em> and <em>sema'</em>"
 msgstr ""
 
-#: View/Helper/CustomPaginatorHelper.php:19
-#: View/Lexemes/duplicates.ctp:57
-msgid "first"
-msgstr ""
-
-#: View/Helper/CustomPaginatorHelper.php:25
-#: View/Lexemes/duplicates.ctp:66
-msgid "previous"
-msgstr ""
-
-#: View/Helper/CustomPaginatorHelper.php:35
-#: View/Lexemes/duplicates.ctp:87
-msgid "next"
-msgstr ""
-
-#: View/Helper/CustomPaginatorHelper.php:41
-#: View/Lexemes/duplicates.ctp:96
-msgid "last"
-msgstr ""
-
-#: View/Helper/CustomPaginatorHelper.php:48
-msgid "Page {:page} of {:pages}, showing records {:start} to {:end} out of {:count} total."
-msgstr ""
-
-#: View/Helper/UIHelper.php:26;281
-#: View/Lexemes/edit.ctp:123
-msgid "Surface form"
-msgstr ""
-
-#: View/Helper/UIHelper.php:27
-#: View/Lexemes/edit.ctp:125
-msgid "Gender"
-msgstr ""
-
-#: View/Helper/UIHelper.php:28
-#: View/Lexemes/edit.ctp:124
-msgid "Number"
-msgstr ""
-
-#: View/Helper/UIHelper.php:29
-msgid "Phonetic"
-msgstr ""
-
-#: View/Helper/UIHelper.php:30
-msgid "Pattern"
-msgstr ""
-
-#: View/Helper/UIHelper.php:31
-msgid "Derived form"
-msgstr ""
-
-#: View/Helper/UIHelper.php:32
-#: View/Lexemes/edit.ctp:126
-msgid "Form"
-msgstr ""
-
-#: View/Helper/UIHelper.php:33
-msgid "Aspect"
-msgstr ""
-
-#: View/Helper/UIHelper.php:34
-msgid "Subject"
-msgstr ""
-
-#: View/Helper/UIHelper.php:37
-msgid "Direct Object"
-msgstr ""
-
-#: View/Helper/UIHelper.php:38
-msgid "Indirect Object"
-msgstr ""
-
-#: View/Helper/UIHelper.php:39
-msgid "Polarity"
-msgstr ""
-
-#: View/Helper/UIHelper.php:44
-#: View/Lexemes/edit.ctp:212
-msgid "Masc"
-msgstr ""
-
-#: View/Helper/UIHelper.php:45
-#: View/Lexemes/edit.ctp:213
-msgid "Fem"
-msgstr ""
-
-#: View/Helper/UIHelper.php:46
-#: View/Lexemes/edit.ctp:214
-msgid "Masc/Fem"
-msgstr ""
-
-#: View/Helper/UIHelper.php:47
-#: View/Lexemes/edit.ctp:199
-msgid "Singular"
-msgstr ""
-
-#: View/Helper/UIHelper.php:48
-#: View/Lexemes/edit.ctp:200
-msgid "Dual"
-msgstr ""
-
-#: View/Helper/UIHelper.php:49
-#: View/Lexemes/edit.ctp:201
-msgid "Plural"
-msgstr ""
-
-#: View/Helper/UIHelper.php:50
-msgid "Singular/Plural"
-msgstr ""
-
-#: View/Helper/UIHelper.php:51
-#: View/Lexemes/edit.ctp:202
-msgid "Singulative"
-msgstr ""
-
-#: View/Helper/UIHelper.php:52
-#: View/Lexemes/edit.ctp:203
-msgid "Collective"
-msgstr ""
-
-#: View/Helper/UIHelper.php:53
-msgid "Perfective"
-msgstr ""
-
-#: View/Helper/UIHelper.php:54
-msgid "Imperfective"
-msgstr ""
-
-#: View/Helper/UIHelper.php:55
-msgid "Imperative"
-msgstr ""
-
-#: View/Helper/UIHelper.php:56
-msgid "Past Participle"
-msgstr ""
-
-#: View/Helper/UIHelper.php:57
-msgid "Present Participle"
-msgstr ""
-
-#: View/Helper/UIHelper.php:58
-msgid "Positive"
-msgstr ""
-
-#: View/Helper/UIHelper.php:59
-msgid "Negative"
-msgstr ""
-
-#: View/Helper/UIHelper.php:60
-#: View/Lexemes/edit.ctp:223
-msgid "Diminutive"
-msgstr ""
-
-#: View/Helper/UIHelper.php:61
-#: View/Lexemes/edit.ctp:224
-msgid "Comparative"
-msgstr ""
-
-#: View/Helper/UIHelper.php:62
-#: View/Lexemes/edit.ctp:225
-msgid "Superlative"
-msgstr ""
-
-#: View/Helper/UIHelper.php:112
-msgid "Look up in corpus"
-msgstr ""
-
-#: View/Layouts/default.ctp:77
+#: Template/Layout/default.ctp:76
 msgid "Updates"
 msgstr ""
 
-#: View/Layouts/default.ctp:78
+#: Template/Layout/default.ctp:77
 msgid "e.g."
 msgstr ""
 
-#: View/Layouts/default.ctp:79
-msgid "%s more matches"
+#: Template/Layout/default.ctp:78
+msgid "{0} more matches"
 msgstr ""
 
-#: View/Layouts/default.ctp:80
+#: Template/Layout/default.ctp:79
 msgid "This item has been marked as incorrect"
 msgstr ""
 
-#: View/Layouts/default.ctp:82
+#: Template/Layout/default.ctp:81
 msgid "You must select at least one entry to merge"
 msgstr ""
 
-#: View/Layouts/default.ctp:83
+#: Template/Layout/default.ctp:82
 msgid "This will ONLY merge glosses into this entry. Continue?"
 msgstr ""
 
-#: View/Layouts/default.ctp:85
-#: View/Lexemes/admin-index.ctp:60
-#: View/Lexemes/duplicates.ctp:160
-#: View/Lexemes/edit.ctp:66
+#: Template/Layout/default.ctp:84
 msgid "Are you sure you want to delete this entry?"
 msgstr ""
 
-#: View/Layouts/default.ctp:86
+#: Template/Layout/default.ctp:85
 msgid "Did you mean:"
 msgstr ""
 
-#: View/Layouts/default.ctp:88
+#: Template/Layout/default.ctp:87
 msgid "Submit"
 msgstr ""
 
-#: View/Layouts/default.ctp:89
-#: View/Messages/add.ctp:31
-#: View/Messages/edit.ctp:31
-#: View/Users/edit.ctp:23
+#: Template/Layout/default.ctp:88
 msgid "Cancel"
 msgstr ""
 
-#: View/Layouts/default.ctp:90
-msgid "Click here to suggest that %s is added to the database."
+#: Template/Layout/default.ctp:89
+msgid "Click here to suggest that {0} is added to the database."
 msgstr ""
 
-#: View/Layouts/default.ctp:91
+#: Template/Layout/default.ctp:90
 msgid "Suggest a new entry"
 msgstr ""
 
-#: View/Layouts/default.ctp:92
-#: View/Lexemes/duplicates.ctp:123
-#: View/Lexemes/merge.ctp:91
+#: Template/Layout/default.ctp:91
 msgid "Lemma"
 msgstr ""
 
-#: View/Layouts/default.ctp:93
+#: Template/Layout/default.ctp:92
 msgid "Word in Maltese"
 msgstr ""
 
-#: View/Layouts/default.ctp:94
+#: Template/Layout/default.ctp:93
 msgid "Gloss"
 msgstr ""
 
-#: View/Layouts/default.ctp:95
+#: Template/Layout/default.ctp:94
 msgid "Translation in English"
 msgstr ""
 
-#: View/Layouts/default.ctp:96
-#: View/Lexemes/advanced-search.ctp:74
-#: View/Lexemes/view.ctp:25
+#: Template/Layout/default.ctp:95
+#: Template/Lexemes/advanced_search.ctp:68
+#: Template/Lexemes/view.ctp:24
 msgid "Part of speech"
 msgstr ""
 
-#: View/Layouts/default.ctp:97
+#: Template/Layout/default.ctp:96
 msgid "Noun, verb, adjective or other"
 msgstr ""
 
-#: View/Layouts/default.ctp:98
+#: Template/Layout/default.ctp:97
 msgid "Your suggestion has been added."
 msgstr ""
 
-#: View/Layouts/default.ctp:101
-msgid "Occurs in %s languages, grouped into %s senses"
+#: Template/Layout/default.ctp:100
+msgid "Occurs in {0} languages, grouped into {1} senses"
 msgstr ""
 
-#: View/Layouts/default.ctp:102
-msgid "See the full etymological information at <a href=\"%s\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>"
+#: Template/Layout/default.ctp:101
+msgid "See the full etymological information at <a href=\"{0}\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>"
 msgstr ""
 
-#: View/Layouts/default.ctp:104
+#: Template/Layout/default.ctp:103
 msgid "An error occurred"
 msgstr ""
 
-#: View/Layouts/default.ctp:108
+#: Template/Layout/default.ctp:107
 msgid "Any"
 msgstr ""
 
-#: View/Layouts/default.ctp:109
+#: Template/Layout/default.ctp:108
 msgid "Empty"
 msgstr ""
 
-#: View/Layouts/default.ctp:158
+#: Template/Layout/default.ctp:157
 msgid "Toggle navigation"
 msgstr ""
 
-#: View/Layouts/default.ctp:170
-#: View/Lexemes/advanced-search.ctp:1;4
+#: Template/Layout/default.ctp:169
+#: Template/Lexemes/advanced_search.ctp:1;4
 msgid "Advanced search"
 msgstr ""
 
-#: View/Layouts/default.ctp:177
+#: Template/Layout/default.ctp:176
 msgid "More"
 msgstr ""
 
-#: View/Layouts/default.ctp:179
-#: View/Sources/index.ctp:1;4
-#: View/Sources/view.ctp:1
+#: Template/Layout/default.ctp:178
+#: Template/Sources/index.ctp:1;4
+#: Template/Sources/view.ctp:1
 msgid "Sources"
 msgstr ""
 
-#: View/Layouts/default.ctp:180
-msgid "Random entry"
-msgstr ""
-
-#: View/Layouts/default.ctp:181
+#: Template/Layout/default.ctp:179
 msgid "API"
 msgstr ""
 
-#: View/Layouts/default.ctp:181
+#: Template/Layout/default.ctp:179
 msgid "Download"
 msgstr ""
 
-#: View/Layouts/default.ctp:185
-#: View/Users/login.ctp:1;4;22
-msgid "Login"
-msgstr ""
-
-#: View/Layouts/default.ctp:199
-#: View/Messages/index.ctp:4
-msgid "Messages"
-msgstr ""
-
-#: View/Layouts/default.ctp:201
-#: View/Lexemes/duplicates.ctp:1;5
-msgid "Duplicates"
-msgstr ""
-
-#: View/Layouts/default.ctp:203
-msgid "Logout"
-msgstr ""
-
-#: View/Layouts/default.ctp:214
+#: Template/Layout/default.ctp:188
 msgid "bil-Malti"
 msgstr ""
 
-#: View/Layouts/default.ctp:219
+#: Template/Layout/default.ctp:193
 msgid "in English"
 msgstr ""
 
-#: View/Lexemes/add.ctp:6;10
-msgid "Add lexeme"
+#: Template/Layout/error.ctp:35
+#: Template/Error/error400.ctp:36
+#: Template/Error/error500.ctp:41
+msgid "Error"
 msgstr ""
 
-#: View/Lexemes/add.ctp:19
-#: View/Lexemes/edit.ctp:25
-msgid "Use commas to separate multiple alternatives"
+#: Template/Layout/error.ctp:43
+msgid "Back"
 msgstr ""
 
-#: View/Lexemes/add.ctp:28
-#: View/Lexemes/edit.ctp:39
-#: View/Lexemes/merge.ctp:27
-#: View/Lexemes/view.ctp:38
-#: View/Roots/view.ctp:2;6
-msgid "Root"
-msgstr ""
-
-#: View/Lexemes/add.ctp:48
-#: View/Lexemes/edit.ctp:103
-msgid "New field with name:"
-msgstr ""
-
-#: View/Lexemes/add.ctp:50
-#: View/Lexemes/edit.ctp:105;231
-#: View/Messages/add.ctp:29
-msgid "Add"
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:13
-#: View/Lexemes/index.ctp:12
-msgid "Use the field above to search"
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:19
-msgid "No results found."
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:20
-msgid "%s to let us know that \"%s\" should be added to the database."
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:20
-msgid "Click here"
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:44
-#: View/Lexemes/advanced-search.ctp:25;93
-#: View/Lexemes/index.ctp:3;5
+#: Template/Lexemes/advanced_search.ctp:25;87
+#: Template/Lexemes/index.ctp:3;5
 msgid "Search"
 msgstr ""
 
-#: View/Lexemes/admin-index.ctp:50
-#: View/Lexemes/duplicates.ctp:151
-#: View/Messages/index.ctp:43
-#: View/Users/index.ctp:26
-msgid "Edit"
-msgstr ""
-
-#: View/Lexemes/admin-index.ctp:57
-#: View/Lexemes/duplicates.ctp:157
-#: View/Lexemes/edit.ctp:63
-#: View/Messages/index.ctp:44
-#: View/Users/index.ctp:27
-msgid "Delete"
-msgstr ""
-
-#: View/Lexemes/advanced-search.ctp:36
+#: Template/Lexemes/advanced_search.ctp:34
 msgid "Search lemmas"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:46
+#: Template/Lexemes/advanced_search.ctp:42
 msgid "Search wordforms"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:66
+#: Template/Lexemes/advanced_search.ctp:60
 msgid "Search in English glosses"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:75;85
+#: Template/Lexemes/advanced_search.ctp:69;79
 msgid "All"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:84
-#: View/Sources/view.ctp:5
+#: Template/Lexemes/advanced_search.ctp:78
+#: Template/Sources/view.ctp:5
 msgid "Source"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:103
+#: Template/Lexemes/advanced_search.ctp:97
 msgid "Search help"
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:106
-msgid "The search is sensitive to Maltese characters. This means that %s is not the same as %s."
+#: Template/Lexemes/advanced_search.ctp:100
+msgid "The search is sensitive to Maltese characters. This means that {0} is not the same as {1}."
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:107
+#: Template/Lexemes/advanced_search.ctp:101
 msgid "Use the buttons to the right of the search to insert Maltese characters into the search box."
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:108
+#: Template/Lexemes/advanced_search.ctp:102
 msgid "To search by English translation, check the <strong>Search in English glosses</strong> box."
 msgstr ""
 
-#: View/Lexemes/advanced-search.ctp:109
-msgid "Currently, one can only search by substring from the start of a word. This means that %s will not match %s."
+#: Template/Lexemes/advanced_search.ctp:103
+msgid "Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}."
 msgstr ""
 
-#: View/Lexemes/duplicates.ctp:12
-msgid "%d entries for this lemma"
+#: Template/Lexemes/index.ctp:12
+msgid "Use the field above to search"
 msgstr ""
 
-#: View/Lexemes/duplicates.ctp:18
-msgid "%s lemmas found with multiple entries"
+#: Template/Lexemes/index.ctp:19
+#: Template/Roots/index.ctp:13
+msgid "Results: {0}"
 msgstr ""
 
-#: View/Lexemes/duplicates.ctp:19
-msgid "%s lemmas total"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:25
-msgid "Search as lexeme"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:110
-msgid "Search in duplicates"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:124
-#: View/Lexemes/view.ctp:42
-msgid "Features"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:125
-#: View/Lexemes/merge.ctp:1
-msgid "Merge"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:126
-#: View/Messages/index.ctp:31
-#: View/Users/index.ctp:13
-msgid "Actions"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:144
-msgid "merge this"
-msgstr ""
-
-#: View/Lexemes/duplicates.ctp:146
-msgid "into this"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:6
-msgid "Edit lexeme"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:10
-msgid "Lexeme"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:56
-msgid "Use commas to separate multiple sources"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:69
-#: View/Users/index.ctp:25
-msgid "View"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:116
-#: View/Lexemes/merge.ctp:101
-msgid "Wordforms"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:152
-msgid "Are your sure you want to delete this wordform?"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:160
-msgid "Save wordforms"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:164
-msgid "No manual wordforms"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:169
-msgid "Add wordform"
-msgstr ""
-
-#: View/Lexemes/edit.ctp:171
-msgid "Copy lemma"
-msgstr ""
-
-#: View/Lexemes/index.ctp:19
-#: View/Roots/index.ctp:13
-msgid "Results: %s"
-msgstr ""
-
-#: View/Lexemes/index.ctp:42
-#: View/Roots/index.ctp:44
+#: Template/Lexemes/index.ctp:42
+#: Template/Roots/index.ctp:44
 msgid "Load more results"
 msgstr ""
 
-#: View/Lexemes/merge.ctp:6
-msgid "Merge into (keep this entry):"
-msgstr ""
-
-#: View/Lexemes/merge.ctp:57
-msgid "Swap"
-msgstr ""
-
-#: View/Lexemes/merge.ctp:88
-msgid "Merge from (delete this entry):"
-msgstr ""
-
-#: View/Lexemes/merge.ctp:102
-msgid "On merging, these will be associated with the remaining entry"
-msgstr ""
-
-#: View/Lexemes/view.ctp:20
+#: Template/Lexemes/view.ctp:19
 msgid "This entry has been flagged and may contain errors."
 msgstr ""
 
-#: View/Lexemes/view.ctp:33
+#: Template/Lexemes/view.ctp:32
 msgid "English gloss"
 msgstr ""
 
-#: View/Lexemes/view.ctp:54
-#: View/Roots/view.ctp:26
+#: Template/Lexemes/view.ctp:37
+#: Template/Roots/view.ctp:1;5
+msgid "Root"
+msgstr ""
+
+#: Template/Lexemes/view.ctp:41
+msgid "Features"
+msgstr ""
+
+#: Template/Lexemes/view.ctp:53
+#: Template/Roots/view.ctp:27
 msgid "Source(s)"
 msgstr ""
 
-#: View/Lexemes/view.ctp:65
-#: View/Users/view.ctp:17
+#: Template/Lexemes/view.ctp:64
 msgid "Created"
 msgstr ""
 
-#: View/Lexemes/view.ctp:69
-#: View/Users/view.ctp:21
+#: Template/Lexemes/view.ctp:68
 msgid "Modified"
 msgstr ""
 
-#: View/Lexemes/view.ctp:84
-msgid "Edit entry"
-msgstr ""
-
-#: View/Lexemes/view.ctp:94
+#: Template/Lexemes/view.ctp:83
 msgid "Related entries"
 msgstr ""
 
-#: View/Lexemes/view.ctp:116
+#: Template/Lexemes/view.ctp:105
 msgid "Word forms"
 msgstr ""
 
-#: View/Lexemes/view.ctp:146
+#: Template/Lexemes/view.ctp:135
 msgid "Show all forms"
 msgstr ""
 
-#: View/Messages/add.ctp:4
-msgid "Add message"
-msgstr ""
-
-#: View/Messages/edit.ctp:4
-msgid "Edit message"
-msgstr ""
-
-#: View/Messages/edit.ctp:29
-msgid "Save"
-msgstr ""
-
-#: View/Messages/index.ctp:5
-msgid "New message"
-msgstr ""
-
-#: View/Messages/index.ctp:11
-msgid "Search messages"
-msgstr ""
-
-#: View/Messages/index.ctp:29
-msgid "English"
-msgstr ""
-
-#: View/Messages/index.ctp:30
-msgid "Maltese"
-msgstr ""
-
-#: View/Messages/index.ctp:44
-#: View/Users/index.ctp:27
-msgid "Are you sure you want to delete # %s?"
-msgstr ""
-
-#: View/Pages/news.ctp:1;2
+#: Template/Pages/news.ctp:1;2
 msgid "News"
 msgstr ""
 
-#: View/Roots/index.ctp:22
+#: Template/Roots/index.ctp:22
 msgid "Type"
 msgstr ""
 
-#: View/Roots/view.ctp:20
+#: Template/Roots/view.ctp:20
 msgid "Quad."
 msgstr ""
 
-#: View/Roots/view.ctp:20
+#: Template/Roots/view.ctp:20
 msgid "Tri."
 msgstr ""
 
-#: View/Roots/view.ctp:36
+#: Template/Roots/view.ctp:37
 msgid "Related"
 msgstr ""
 
-#: View/Sources/index.ctp:13
-#: View/Sources/view.ctp:19
-msgid "Note"
+#: Template/Sources/index.ctp:9
+msgid "Key"
 msgstr ""
 
-#: View/Sources/view.ctp:10
+#: Template/Sources/index.ctp:10
+#: Template/Sources/view.ctp:10
 msgid "Title"
 msgstr ""
 
-#: View/Sources/view.ctp:13
-msgid "Authors"
+#: Template/Sources/index.ctp:11
+msgid "Author"
 msgstr ""
 
-#: View/Sources/view.ctp:16
+#: Template/Sources/index.ctp:12
+#: Template/Sources/view.ctp:16
 msgid "Year"
 msgstr ""
 
-#: View/Users/add.ctp:1;5
-msgid "Add user"
+#: Template/Sources/index.ctp:13
+#: Template/Sources/view.ctp:19
+msgid "Note"
 msgstr ""
 
-#: View/Users/edit.ctp:1;5
-msgid "Edit user"
+#: Template/Sources/view.ctp:13
+msgid "Authors"
 msgstr ""
 
-#: View/Users/index.ctp:1;4
-msgid "Users"
+#: View/Helper/UIHelper.php:32;300
+msgid "Surface form"
 msgstr ""
 
-#: View/Users/login.ctp:6
-msgid "Please enter your username and password"
+#: View/Helper/UIHelper.php:33
+msgid "Gender"
 msgstr ""
 
-#: View/Users/login.ctp:12
-#: View/Users/view.ctp:9
-msgid "Username"
+#: View/Helper/UIHelper.php:34
+msgid "Number"
 msgstr ""
 
-#: View/Users/login.ctp:19
-msgid "Password"
+#: View/Helper/UIHelper.php:35
+msgid "Phonetic"
 msgstr ""
 
-#: View/Users/view.ctp:1;3
-msgid "User"
+#: View/Helper/UIHelper.php:36
+msgid "Pattern"
 msgstr ""
 
-#: View/Users/view.ctp:5
-msgid "ID"
+#: View/Helper/UIHelper.php:37
+msgid "Derived form"
 msgstr ""
 
-#: View/Users/view.ctp:13
-msgid "Role"
+#: View/Helper/UIHelper.php:38
+msgid "Form"
 msgstr ""
 
-#: Model/User.php:validation for field username
-msgid "A username is required"
+#: View/Helper/UIHelper.php:39
+msgid "Aspect"
 msgstr ""
 
-#: Model/User.php:validation for field password
-msgid "A password is required"
+#: View/Helper/UIHelper.php:40
+msgid "Subject"
 msgstr ""
 
-#: Model/User.php:validation for field role
-msgid "Please enter a valid role"
+#: View/Helper/UIHelper.php:43
+msgid "Direct Object"
+msgstr ""
+
+#: View/Helper/UIHelper.php:44
+msgid "Indirect Object"
+msgstr ""
+
+#: View/Helper/UIHelper.php:45
+msgid "Polarity"
+msgstr ""
+
+#: View/Helper/UIHelper.php:50
+msgid "Masc"
+msgstr ""
+
+#: View/Helper/UIHelper.php:51
+msgid "Fem"
+msgstr ""
+
+#: View/Helper/UIHelper.php:52
+msgid "Masc/Fem"
+msgstr ""
+
+#: View/Helper/UIHelper.php:53
+msgid "Singular"
+msgstr ""
+
+#: View/Helper/UIHelper.php:54
+msgid "Dual"
+msgstr ""
+
+#: View/Helper/UIHelper.php:55
+msgid "Plural"
+msgstr ""
+
+#: View/Helper/UIHelper.php:56
+msgid "Singular/Plural"
+msgstr ""
+
+#: View/Helper/UIHelper.php:57
+msgid "Singulative"
+msgstr ""
+
+#: View/Helper/UIHelper.php:58
+msgid "Collective"
+msgstr ""
+
+#: View/Helper/UIHelper.php:59
+msgid "Perfective"
+msgstr ""
+
+#: View/Helper/UIHelper.php:60
+msgid "Imperfective"
+msgstr ""
+
+#: View/Helper/UIHelper.php:61
+msgid "Imperative"
+msgstr ""
+
+#: View/Helper/UIHelper.php:62
+msgid "Past Participle"
+msgstr ""
+
+#: View/Helper/UIHelper.php:63
+msgid "Present Participle"
+msgstr ""
+
+#: View/Helper/UIHelper.php:64
+msgid "Positive"
+msgstr ""
+
+#: View/Helper/UIHelper.php:65
+msgid "Negative"
+msgstr ""
+
+#: View/Helper/UIHelper.php:66
+msgid "Diminutive"
+msgstr ""
+
+#: View/Helper/UIHelper.php:67
+msgid "Comparative"
+msgstr ""
+
+#: View/Helper/UIHelper.php:68
+msgid "Superlative"
+msgstr ""
+
+#: View/Helper/UIHelper.php:131
+msgid "Look up in corpus"
+msgstr ""
+
+#: Template/Error/error400.ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
 msgstr ""
 
