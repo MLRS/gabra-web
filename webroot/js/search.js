@@ -52,7 +52,7 @@ return function() {
           elem.remove() // no [more] results
           if (data.query.page === 1) {
             $('#result-count').text("0")
-            var msg = Gabra.i18n.suggest.link.replace('%s', '<em>'+term+'</em>')
+            var msg = Gabra.i18n.localise('suggest.link', '<em>'+term+'</em>')
             var anchor = $('<a>').attr({'href': '#'}).html(msg)
             anchor.insertAfter('#search-suggestions')
             var form = $('<div>').addClass('').append(
