@@ -77,6 +77,6 @@ function __k($t, $k, $p=null, $o=array()) {
 </div><!-- /.col-sm-4 -->
 
 <?php
-  echo $this->Html->script('//www.google.com/jsapi', array('inline' => false, 'defer' => false));
+  echo $this->Html->script('https://www.gstatic.com/charts/loader.js', array('inline' => false, 'defer' => false));
   echo $this->Html->script(array('home','log-chart'), array('inline' => false, 'defer' => false));
 ?>

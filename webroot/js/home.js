@@ -3,7 +3,7 @@ $(document).ready(function () {
   function setCount (key, clas, count) {
     var p = $('.jumbotron p:first')
     var l = $('<div>').addClass('label label-' + clas).text(count)
-    p.html(p.html().replace(key, l.prop('outerHTML')))
+    if (p) { p.html(p.html().replace(key, l.prop('outerHTML'))) }
   }
   $.ajax({
     method: 'GET',
