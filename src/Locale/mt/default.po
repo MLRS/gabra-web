@@ -239,7 +239,7 @@ msgstr ""
 #: Template/Lexemes/advanced_search.ctp:118
 msgid "{0} matches 0 or 1 occurances of the previous expression"
 msgstr ""
-"{0}{ jfisser repetizzjoni ta' 0 jew darba waħda mill-espressjoni preċedenti"
+"{0} jfisser repetizzjoni ta' 0 jew darba waħda mill-espressjoni preċedenti"
 
 #: Template/Element/root-search.ctp:127
 #: Template/Lexemes/advanced_search.ctp:119
