@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ġabra\n"
-"POT-Creation-Date: 2019-03-25 20:30+0000\n"
+"POT-Creation-Date: 2019-03-26 07:07+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: John J. Camilleri <john@johnjcamilleri.com>\n"
 "Language-Team: \n"
@@ -200,86 +200,71 @@ msgstr ""
 "irregolari."
 
 #: Template/Element/root-search.ctp:117
-#: Template/Lexemes/advanced_search.ctp:109
 msgid "Advanced search syntax"
 msgstr "Sintassi tat-tfittxija avvanzata"
 
 #: Template/Element/root-search.ctp:119
-#: Template/Lexemes/advanced_search.ctp:111
 msgid "Queries follow regular expression syntax:"
 msgstr "Tfittxiet jużaw sintassi ta' <em>regular expressions</em>:"
 
 #: Template/Element/root-search.ctp:121
-#: Template/Lexemes/advanced_search.ctp:113
 msgid "{0} matches any single letter (including <em>ie</em> and <em>għ</em>)"
 msgstr "{0} jsib ittra waħedha (tinkludi <em>ie</em> u <em>għ</em>)"
 
 #: Template/Element/root-search.ctp:122
-#: Template/Lexemes/advanced_search.ctp:114
 msgid "{0} matches beginning of string"
 msgstr "{0} jfisser il-bidu tal-kelma"
 
 #: Template/Element/root-search.ctp:123
-#: Template/Lexemes/advanced_search.ctp:115
 msgid "{0} matches the end of string"
 msgstr "{0} jfisser it-tarf tal-kelma"
 
 #: Template/Element/root-search.ctp:124
-#: Template/Lexemes/advanced_search.ctp:116
 msgid "{0} matches 1 or more repetitions of the previous expression"
 msgstr "{0} jfisser repetizzjoni ta' l-inqas darba mill-espressjoni preċedenti"
 
 #: Template/Element/root-search.ctp:125
-#: Template/Lexemes/advanced_search.ctp:117
 msgid "{0} matches 0 or more repetitions of the previous expression"
 msgstr ""
 "{0} jfisser repetizzjoni ta' żero jew iktar drabi mill-espressjoni preċedenti"
 
 #: Template/Element/root-search.ctp:126
-#: Template/Lexemes/advanced_search.ctp:118
 msgid "{0} matches 0 or 1 occurances of the previous expression"
 msgstr ""
 "{0} jfisser repetizzjoni ta' 0 jew darba waħda mill-espressjoni preċedenti"
 
 #: Template/Element/root-search.ctp:127
-#: Template/Lexemes/advanced_search.ctp:119
 msgid "Character classes can be enclosed in {0}"
 msgstr "Settijiet ta' karattri għandhom jkunu mdawrin bi {0}"
 
 #: Template/Element/root-search.ctp:130
-#: Template/Lexemes/advanced_search.ctp:122
 msgid "Examples"
 msgstr "Eżempji"
 
 #: Template/Element/root-search.ctp:136
-#: Template/Lexemes/advanced_search.ctp:128
-msgid "%s matches <em>k</em> as first radical and <em>b</em> as third radical"
+msgid "{0} matches <em>k</em> as first radical and <em>b</em> as third radical"
 msgstr ""
-"%s jsib kull għerq bl-ittra <em>k</em> bħala l-ewwel radikali u <em>b</em> "
+"{0} jsib kull għerq bl-ittra <em>k</em> bħala l-ewwel radikali u <em>b</em> "
 "bħala t-tielet radikali"
 
 #: Template/Element/root-search.ctp:137
-#: Template/Lexemes/advanced_search.ctp:129
-msgid "%s matches any weak-final root"
+msgid "{0} matches any weak-final root"
 msgstr "{0} jsib l-għeruq neqsin kollha"
 
 #: Template/Element/root-search.ctp:138;142
-#: Template/Lexemes/advanced_search.ctp:130;134
-msgid "%s matches any item beginning with <em>għar</em>"
+msgid "{0} matches any item beginning with <em>għar</em>"
 msgstr "{0} jsib kull ħaġa li tibda bis-sekwenza <em>għar</em>"
 
 #: Template/Element/root-search.ctp:143
-#: Template/Lexemes/advanced_search.ctp:135
 msgid ""
-"%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
+"{0} matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
 msgstr ""
-"%s jsib kull entrata li tibda bis-sekwenza <em>kit</em> u li tispiċċa bi "
+"{0} jsib kull entrata li tibda bis-sekwenza <em>kit</em> u li tispiċċa bi "
 "<em>hom</em>"
 
 #: Template/Element/root-search.ctp:144
-#: Template/Lexemes/advanced_search.ctp:136
-msgid "%s matches both <em>sama'</em> and <em>sema'</em>"
-msgstr "{0} jirritorna kemm <em>sama'</em> kif ukoll <em>sema'</em>"
+msgid "{0} matches both <em>sama'</em> and <em>sema'</em>"
+msgstr "{0} jsib kemm <em>sama'</em> kif ukoll <em>sema'</em>"
 
 #: Template/Layout/default.ctp:76
 msgid "Updates"
@@ -400,12 +385,8 @@ msgid "Sources"
 msgstr "Sorsi"
 
 #: Template/Layout/default.ctp:179
-msgid "API"
-msgstr "API"
-
-#: Template/Layout/default.ctp:179
-msgid "Download"
-msgstr "Niżżel"
+msgid "API & Downloads"
+msgstr "API u Tniżżil tal-Ġabradata"
 
 #: Template/Layout/default.ctp:188
 msgid "bil-Malti"
@@ -415,8 +396,7 @@ msgstr "bil-Malti"
 msgid "in English"
 msgstr "in English"
 
-#: Template/Layout/error.ctp:35 Template/Error/error400.ctp:36
-#: Template/Error/error500.ctp:41
+#: Template/Layout/error.ctp:35
 msgid "Error"
 msgstr "Problema"
 
@@ -706,13 +686,14 @@ msgstr "Superlattiv"
 msgid "Look up in corpus"
 msgstr "Fittex fil-korpus"
 
-#: Template/Error/error400.ctp:37
-msgid "The requested address {0} was not found on this server."
-msgstr "Il-paġna {0} ma teżistix."
+#~ msgid "API"
+#~ msgstr "API"
 
-#: Template/Error/error500.ctp:39
-msgid "An Internal Error Has Occurred"
-msgstr "Xi ħaġa ma ħadmitx"
+#~ msgid "The requested address {0} was not found on this server."
+#~ msgstr "Il-paġna {0} ma teżistix."
+
+#~ msgid "An Internal Error Has Occurred"
+#~ msgstr "Xi ħaġa ma ħadmitx"
 
 #~ msgid "Pending"
 #~ msgstr "Pendenti"

@@ -91,7 +91,7 @@ JS
 echo $this->Form->end();
 ?>
 
-<div id="search-help" style="display:none">
+<div id="search-help" <?php if ($queryObj->query): ?>style="display:none"<?php endif ?>>
 <div class="col-sm-6">
   <h3><?php echo __('Legend'); ?></h3>
   <p>
@@ -133,26 +133,22 @@ echo $this->Form->end();
       <?php
       if ($this->request->getParam('controller') == 'roots') {
         $search_suggestions = array(
-          'k-.-b' => __('%s matches <em>k</em> as first radical and <em>b</em> as third radical'),
-          '-[wj]$' => __('%s matches any weak-final root'),
-          '^għar.*' => __('%s matches any item beginning with <em>għar</em>')
+          'k-.-b' => __('{0} matches <em>k</em> as first radical and <em>b</em> as third radical'),
+          '-[wj]$' => __('{0} matches any weak-final root'),
+          '^għar.*' => __('{0} matches any item beginning with <em>għar</em>')
         );
       } else {
         $search_suggestions = array(
-          '^għar' => __('%s matches any item beginning with <em>għar</em>'),
-          'kit.*hom$' => __('%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>'),
-          's[ae]ma\'' => __('%s matches both <em>sama\'</em> and <em>sema\'</em>')
+          '^għar' => __('{0} matches any item beginning with <em>għar</em>'),
+          'kit.*hom$' => __('{0} matches any item beginning with <em>kit</em> and ending with <em>hom</em>'),
+          's[ae]ma\'' => __('{0} matches both <em>sama\'</em> and <em>sema\'</em>')
         );
       }
       foreach ($search_suggestions as $k=>$v):
+        $link = $this->Html->tag('code', $this->Html->link($k, ['?' => ['s' => $k,'r' => '1']]));
         echo $this->Html->tag(
           'li',
-          $this->Html->tag('code',
-                           $this->Html->link(
-                             $k,
-                             array('?'=>array('s'=>$k, 'r'=>'1'))
-                           )
-          ).substr($v, 2)
+          str_replace('{0}', $link, $v)
         );
       endforeach;
 ?>

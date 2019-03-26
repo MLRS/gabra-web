@@ -55,6 +55,12 @@ body {
     border-bottom: 1px dotted #ccc;
 }
 
+/* --- Spacing ------------------------------------------------------------ */
+
+.mt {
+  margin-top: 1em;
+}
+
 /* --- Keyboard element --------------------------------------------------- */
 
 .keyboard ul {

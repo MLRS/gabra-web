@@ -85,7 +85,7 @@ echo $this->Form->input('source', array(
 // Search
 echo $this->Form->button(
   $this->UI->icon('search', __('Search')),
-  array("class" => "btn btn-primary")
+  array("class" => "btn btn-primary mt")
 );
 
 echo $this->Form->end();
@@ -103,58 +103,5 @@ echo $this->Form->end();
       <li><?php echo __('Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}.', '<code>itbet</code>', '<em>kitbet</em>'); ?></li>
     </ul>
   </p>
-
-  <!--
-
-  <h3><?php echo __('Advanced search syntax'); ?></h3>
-  <p>
-    <?php echo __('Queries follow regular expression syntax:'); ?>
-    <ul>
-      <li><?php echo __('{0} matches any single letter (including <em>ie</em> and <em>għ</em>)', '<code>.</code>'); ?></li>
-      <li><?php echo __('{0} matches beginning of string', '<code>^</code>'); ?></li>
-      <li><?php echo __('{0} matches the end of string', '<code>$</code>'); ?></li>
-      <li><?php echo __('{0} matches 1 or more repetitions of the previous expression', '<code>+</code>'); ?></li>
-      <li><?php echo __('{0} matches 0 or more repetitions of the previous expression', '<code>*</code>'); ?></li>
-      <li><?php echo __('{0} matches 0 or 1 occurances of the previous expression', '<code>?</code>'); ?></li>
-      <li><?php echo __('Character classes can be enclosed in {0}', '<code>[]</code>'); ?></li>
-    </ul>
-  </p>
-  <h3><?php echo __('Examples'); ?></h3>
-  <p>
-    <ul>
-      <?php
-      if ($this->request->getParam('controller') == 'roots') {
-        $search_suggestions = array(
-          'k-.-b' => __('%s matches <em>k</em> as first radical and <em>b</em> as third radical'),
-          '-[wj]$' => __('%s matches any weak-final root'),
-          '^għar.*' => __('%s matches any item beginning with <em>għar</em>')
-        );
-      } else {
-        $search_suggestions = array(
-          '^għar' => __('%s matches any item beginning with <em>għar</em>'),
-          'kit.*hom$' => __('%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>'),
-          's[ae]ma\'' => __('%s matches both <em>sama\'</em> and <em>sema\'</em>')
-        );
-      }
-      foreach ($search_suggestions as $k=>$v):
-        echo $this->Html->tag(
-          'li',
-          $this->Html->tag(
-            'code',
-            $this->Html->link(
-              $k,
-              array(
-                'action'=>'index',
-                '?'=>array('s'=>$k, 'r'=>'1')
-              )
-            )
-          ).substr($v, 2)
-        );
-      endforeach;
-      ?>
-    </ul>
-  </p>
-
-  -->
 
 </div><!-- col-md-6 -->

@@ -176,7 +176,7 @@ use Cake\Routing\Router;
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo __('More') ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><?php echo $this->Html->link(__('Sources'), '/sources') ?></li>
-                <li><?php echo $this->Html->link($this->UI->icon('transfer', __('API').' & '.__('Download')), API_URL, array('escape'=>false)); ?></li>
+                <li><?php echo $this->Html->link($this->UI->icon('transfer', __('API & Downloads')), API_URL, array('escape'=>false)); ?></li>
               </ul>
             </li>
           </ul>

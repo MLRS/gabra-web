@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-03-25 20:30+0000\n"
+"POT-Creation-Date: 2019-03-26 07:07+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -193,78 +193,63 @@ msgid "The apostrophe {0} indicates a missing radical, in irregular roots."
 msgstr ""
 
 #: Template/Element/root-search.ctp:117
-#: Template/Lexemes/advanced_search.ctp:109
 msgid "Advanced search syntax"
 msgstr ""
 
 #: Template/Element/root-search.ctp:119
-#: Template/Lexemes/advanced_search.ctp:111
 msgid "Queries follow regular expression syntax:"
 msgstr ""
 
 #: Template/Element/root-search.ctp:121
-#: Template/Lexemes/advanced_search.ctp:113
 msgid "{0} matches any single letter (including <em>ie</em> and <em>għ</em>)"
 msgstr ""
 
 #: Template/Element/root-search.ctp:122
-#: Template/Lexemes/advanced_search.ctp:114
 msgid "{0} matches beginning of string"
 msgstr ""
 
 #: Template/Element/root-search.ctp:123
-#: Template/Lexemes/advanced_search.ctp:115
 msgid "{0} matches the end of string"
 msgstr ""
 
 #: Template/Element/root-search.ctp:124
-#: Template/Lexemes/advanced_search.ctp:116
 msgid "{0} matches 1 or more repetitions of the previous expression"
 msgstr ""
 
 #: Template/Element/root-search.ctp:125
-#: Template/Lexemes/advanced_search.ctp:117
 msgid "{0} matches 0 or more repetitions of the previous expression"
 msgstr ""
 
 #: Template/Element/root-search.ctp:126
-#: Template/Lexemes/advanced_search.ctp:118
 msgid "{0} matches 0 or 1 occurances of the previous expression"
 msgstr ""
 
 #: Template/Element/root-search.ctp:127
-#: Template/Lexemes/advanced_search.ctp:119
 msgid "Character classes can be enclosed in {0}"
 msgstr ""
 
 #: Template/Element/root-search.ctp:130
-#: Template/Lexemes/advanced_search.ctp:122
 msgid "Examples"
 msgstr ""
 
 #: Template/Element/root-search.ctp:136
-#: Template/Lexemes/advanced_search.ctp:128
-msgid "%s matches <em>k</em> as first radical and <em>b</em> as third radical"
+msgid "{0} matches <em>k</em> as first radical and <em>b</em> as third radical"
 msgstr ""
 
 #: Template/Element/root-search.ctp:137
-#: Template/Lexemes/advanced_search.ctp:129
-msgid "%s matches any weak-final root"
+msgid "{0} matches any weak-final root"
 msgstr ""
 
 #: Template/Element/root-search.ctp:138;142
-#: Template/Lexemes/advanced_search.ctp:130;134
-msgid "%s matches any item beginning with <em>għar</em>"
+msgid "{0} matches any item beginning with <em>għar</em>"
 msgstr ""
 
 #: Template/Element/root-search.ctp:143
-#: Template/Lexemes/advanced_search.ctp:135
-msgid "%s matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
+msgid "{0} matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
 msgstr ""
 
 #: Template/Element/root-search.ctp:144
-#: Template/Lexemes/advanced_search.ctp:136
-msgid "%s matches both <em>sama'</em> and <em>sema'</em>"
+msgid "{0} matches both <em>sama'</em> and <em>sema'</em>"
 msgstr ""
 
 #: Template/Layout/default.ctp:76
@@ -385,11 +370,7 @@ msgid "Sources"
 msgstr ""
 
 #: Template/Layout/default.ctp:179
-msgid "API"
-msgstr ""
-
-#: Template/Layout/default.ctp:179
-msgid "Download"
+msgid "API & Downloads"
 msgstr ""
 
 #: Template/Layout/default.ctp:188
@@ -401,8 +382,6 @@ msgid "in English"
 msgstr ""
 
 #: Template/Layout/error.ctp:35
-#: Template/Error/error400.ctp:36
-#: Template/Error/error500.ctp:41
 msgid "Error"
 msgstr ""
 
@@ -685,13 +664,5 @@ msgstr ""
 
 #: View/Helper/UIHelper.php:131
 msgid "Look up in corpus"
-msgstr ""
-
-#: Template/Error/error400.ctp:37
-msgid "The requested address {0} was not found on this server."
-msgstr ""
-
-#: Template/Error/error500.ctp:39
-msgid "An Internal Error Has Occurred"
 msgstr ""
 
