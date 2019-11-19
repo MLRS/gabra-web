@@ -11,10 +11,17 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto">
-
           <router-link to="/search" class="nav-item nav-link">Advanced search</router-link>
           <router-link to="/root-search" class="nav-item nav-link">Root search</router-link>
           <router-link to="/sources" class="nav-item nav-link">Sources</router-link>
+        </div>
+
+        <button type="button" class="btn btn-link pr-0 text-red" v-show="language != 'en'" @click="setLanguage('en')">
+          in English
+        </button>
+        <button type="button" class="btn btn-link pr-0 text-red" v-show="language != 'mt'" @click="setLanguage('mt')">
+          bil-Malti
+        </button>
 
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +34,6 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
-        </div>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -37,7 +43,7 @@
     </nav>
 
     <main class="container pt-3">
-      <router-view/>
+      <router-view :language="language"/>
     </main>
 
     <footer class="container">
@@ -45,6 +51,31 @@
 
   </div>
 </template>
+
+<script lang="ts">
+// import Vue from 'vue'
+import mixins from 'vue-typed-mixins'
+import I18N from '@/components/I18N.vue'
+
+interface Data {
+  language: Language
+}
+
+type Language = 'en' | 'mt'
+
+export default mixins(I18N).extend({
+  data (): Data {
+    return {
+      language: 'en'
+    }
+  },
+  methods: {
+    setLanguage: function (lang: Language) {
+      this.language = lang
+    }
+  }
+})
+</script>
 
 <style lang="scss">
 @import 'assets/custom.scss';
