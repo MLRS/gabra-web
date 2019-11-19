@@ -1,12 +1,10 @@
 <template>
-  <div id="home">
+  <div id="home" class="row">
 
     <div class="jumbotron">
       <h1>{{ __('home.title') }}</h1>
 
-      <p>
-        {{ __('home.1') }}
-      </p>
+      <p v-html="__('home.1')"></p>
 
       <form role="search" class="" action="PHP echo $this->Url->build('/lexemes') ">
         <div class="input-group input-group-lg">
@@ -28,16 +26,13 @@
 
     <div class="col-sm-8">
 
-      PHP $img = $this->UI->icon('comment')
-      <p>{{ __('home.mistakes') }} , array('{img}' => $img), array('markdown' => true)) </p>
+      <div v-html="__m('home.mistakes')"></div>
 
-      PHP echo $this->UI->content('home.about', null, array('markdown'=>true));
+      <div v-html="__m('home.about')"></div>
 
-      <p>{{ __('home.citing') }}</p>
+      <p v-html="__('home.citing')"></p>
 
-      <p class="text-muted">
-        {{ __('home.license') }}
-      </p>
+      <p class="text-muted" v-html="__('home.license')"></p>
 
     </div><!-- /.col-sm-8 -->
 
@@ -58,15 +53,15 @@
       PHP endif
       PHP endforeach
 
-      <p class="text-right">
+      <!-- <p class="text-right">
         PHP echo $this->Html->link(__k($this,'home.news.see_all'), '/pages/news')
-      </p>
+      </p> -->
 
     </div><!-- /.col-sm-4 -->
 
-    PHP
+    <!-- PHP
       echo $this->Html->script('https://www.gstatic.com/charts/loader.js', array('inline' => false, 'defer' => false));
-      echo $this->Html->script(array('home','log-chart'), array('inline' => false, 'defer' => false));
+      echo $this->Html->script(array('home','log-chart'), array('inline' => false, 'defer' => false)); -->
 
   </div>
 </template>
@@ -78,9 +73,6 @@ import mixins from 'vue-typed-mixins'
 export default mixins(I18N).extend({
   name: 'home',
   components: {
-  },
-  mixins: {
-    I18N
   }
 })
 </script>

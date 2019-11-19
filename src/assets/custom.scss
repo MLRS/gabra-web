@@ -3,3 +3,11 @@
 .navbar-brand {
   color: firebrick!important;
 }
+
+.well {
+  @extend .card-body, .bg-light;
+}
+
+.generated {
+  border-bottom: 1px dashed #666;
+}

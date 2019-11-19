@@ -23,13 +23,13 @@
 - key: home.mistakes
   en: "### Mistakes/missing information\n\nMany of the word forms in the database
     are <span class=\"generated\">automatically generated</span>, and may contain
-    errors.\nIf you come across a mistake, click on **{img} Provide feedback** and
+    errors.\nIf you come across a mistake, click on **Provide feedback** and
     let us know that it is incorrect. It will then be checked and corrected manually
     later.\nIf you search for a word which is not found in the database, you may
     also suggest that it is added to the collection by clicking the provided link."
   mt: "### Żbalji/informazzjoni nieqsa\n\nĦafna mill-forom f'din id-_database_
     nħolqu <span class=\"generated\">b'mod automatiku</span>, u jistgħu jinkludu xi
-    żbalji.\nJekk issib żball f'xi entrata, ikklikkja fuq **{img} Ħalli kumment**
+    żbalji.\nJekk issib żball f'xi entrata, ikklikkja fuq **Ħalli kumment**
     biex timmarkaha bħala ħażina. Hekk nkunu nistgħu nikkoreġuha manwalment.\nJekk
     tfittex għal kelma li ma teżistix fil-Ġabra, tista' ukoll tinformana biex inżiduha
     billi tikklikka fuq il-ħolqa li titla'."
@@ -65,7 +65,7 @@
 
 - key: home.about
   en: "### About Ġabra\n\n_Ġabra_ was originally built in 2013 as part of a [master's
-    thesis project](http://academic.johnjcamilleri.com/papers/msc2013.pdf), starting
+    thesis project](https://johnjcamilleri.com/academic/publications/msc2013.pdf), starting
     out as a collection of various different resources combined into a single database.\nIts
     contents vary in detail and completeness, which is why it cannot yet be called
     a proper lexicon or dictionary for Maltese.\n\nUp until recently, the database
@@ -75,7 +75,7 @@
     on reviewing the database and making considerable contributions to its content,
     such that it will eventually become a full lexicon for Maltese."
   mt: "### Dwar Ġabra\n\n_Ġabra_ oriġinarjament inbniet fl-2013 għal [proġett
-    tal-masters](http://academic.johnjcamilleri.com/papers/msc2013.pdf), bħala kollezzjoni
+    tal-masters](https://johnjcamilleri.com/academic/publications/msc2013.pdf), bħala kollezzjoni
     ta' risorsi lessikali tal-Malti differenti, miġburin f'_database_ waħda.\nIl-kontenut
     ivarja fil-livell ta' dettal u m'huwiex komplut, għalhekk għadna ma nistgħux nsejħulu
     lessiku jew dizzjonarju propju tal-Malti.\n\nMinn Settembru tal-2015, kisibna
