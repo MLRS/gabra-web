@@ -1,0 +1,88 @@
+---
+- key: home.title
+  en: 'Ġabra: an open lexicon for Maltese'
+  mt: Ġabra lessikali għall-ilsien Malti
+
+- key: home.1
+  en: "<em>Ġabra</em> is a free, open lexicon for Maltese, built by collecting various
+    different lexical resources into one common database. While it is not yet a complete
+    dictionary for Maltese, it already contains {lexemes} entries and {wordforms}
+    inflectional word forms. Many of these are linked by root, include translations
+    in English, and are marked for various morphological features."
+  mt: "<em>Ġabra</em> hija kollezzjoni miftuħa ta' risorsi lessikali bil-Malti, miġburin
+    f'<em>database</em> waħda. Għalkemm għada m'hijiex dizzjunarju komplut, diġà nġabru
+    {lexemes} entrati u magħhom {wordforms} forom verbali. Ma' ħafna minn dawn l-entrati
+    hemm ukoll mniżżel l-għerq u traduzzjoni bl-Ingliż, kif ukoll informazzjoni morfoloġiku."
+
+- key: home.2
+  en: The database is still growing, and will hopefully become a comprehensive digital
+    lexicon for Maltese.
+  mt: Id-<em>database</em> għadha qed tikber, u nittamaw li eventwalment issir lessiku
+    diġitali komplut tal-Malti.
+
+- key: home.mistakes
+  en: "### Mistakes/missing information\n\nMany of the word forms in the database
+    are <span class=\"generated\">automatically generated</span>, and may contain
+    errors.\nIf you come across a mistake, click on **{img} Provide feedback** and
+    let us know that it is incorrect. It will then be checked and corrected manually
+    later.\nIf you search for a word which is not found in the database, you may
+    also suggest that it is added to the collection by clicking the provided link."
+  mt: "### Żbalji/informazzjoni nieqsa\n\nĦafna mill-forom f'din id-_database_
+    nħolqu <span class=\"generated\">b'mod automatiku</span>, u jistgħu jinkludu xi
+    żbalji.\nJekk issib żball f'xi entrata, ikklikkja fuq **{img} Ħalli kumment**
+    biex timmarkaha bħala ħażina. Hekk nkunu nistgħu nikkoreġuha manwalment.\nJekk
+    tfittex għal kelma li ma teżistix fil-Ġabra, tista' ukoll tinformana biex inżiduha
+    billi tikklikka fuq il-ħolqa li titla'."
+
+- key: home.news.see_all
+  en: See all news
+  mt: Aqra l-aħbarijiet kollha
+
+- key: home.citing
+  en: "To cite this resource, please use the following reference.\n<div class=\"well\">\nJohn
+    J. Camilleri. <em>\"A Computational Grammar and Lexicon for Maltese\"</em>, M.Sc.
+    Thesis. Chalmers University of Technology. Gothenburg, Sweden, September 2013.\n</div>"
+  mt: "Biex tirreferi għall dan ir-risors, jekk jogħġbok uża din ir-referenza.\n<div
+    class=\"well\">\nJohn J. Camilleri. <em>\"A Computational Grammar and Lexicon
+    for Maltese\"</em>, M.Sc. Thesis. Chalmers University of Technology. Gothenburg,
+    Sweden, September 2013.\n</div>"
+
+- key: home.license
+  en: "The contents of <span xmlns:dct=\"http://purl.org/dc/terms/\" href=\"http://purl.org/dc/dcmitype/Text\"
+    property=\"dct:title\" rel=\"dct:type\">Ġabra</span> are licensed under a <a rel=\"license\"
+    href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution
+    4.0 International License</a>.\n<br/>\nThe source code for this site is available
+    under an MIT license at <a href=\"https://github.com/johnjcamilleri/gabra-web\">GitHub</a>."
+  mt: "Il-kontenut tal-<span xmlns:dct=\"http://purl.org/dc/terms/\" href=\"http://purl.org/dc/dcmitype/Text\"
+    property=\"dct:title\" rel=\"dct:type\">Ġabra</span> huwa lliċenzjat taħt liċenzja
+    <em><a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative
+    Commons Attribution 4.0 International License</a></em>.\n<br/>\nIs-<em>source
+    code</em> ta' dan is-sit huwa aċċessibbli taħt liċenzja MIT fuq <a href=\"https://github.com/johnjcamilleri/gabra-web\">GitHub</a>."
+
+- key: home.search.placeholder
+  en: Search in Maltese or English, e.g. "{maltese}" or "{english}"
+  mt: Fittex bil-Malti jew bl-Ingliż, eż. "{maltese}" jew "{english}"
+
+- key: home.about
+  en: "### About Ġabra\n\n_Ġabra_ was originally built in 2013 as part of a [master's
+    thesis project](http://academic.johnjcamilleri.com/papers/msc2013.pdf), starting
+    out as a collection of various different resources combined into a single database.\nIts
+    contents vary in detail and completeness, which is why it cannot yet be called
+    a proper lexicon or dictionary for Maltese.\n\nUp until recently, the database
+    has mostly been maintained as a hobby project and was not frequently updated.\nAs
+    of September 2015 however, Ġabra has begun to receive support from the Council
+    for the Maltese Language and the University of Malta.\nThere is ongoing work
+    on reviewing the database and making considerable contributions to its content,
+    such that it will eventually become a full lexicon for Maltese."
+  mt: "### Dwar Ġabra\n\n_Ġabra_ oriġinarjament inbniet fl-2013 għal [proġett
+    tal-masters](http://academic.johnjcamilleri.com/papers/msc2013.pdf), bħala kollezzjoni
+    ta' risorsi lessikali tal-Malti differenti, miġburin f'_database_ waħda.\nIl-kontenut
+    ivarja fil-livell ta' dettal u m'huwiex komplut, għalhekk għadna ma nistgħux nsejħulu
+    lessiku jew dizzjonarju propju tal-Malti.\n\nMinn Settembru tal-2015, kisibna
+    l-appoġġ tal-Kunsill Nazzjonali tal-Ilsien Malti kif ukoll l-Università ta' Malta.\nHemm
+    bħalissa għaddej xogħol ta' ċċekjar tal-kontenut tad-_database_, u qed isiru kontribuzzjonijiet
+    kbar, sabiex il-Ġabra tkun eventwalment lessiku komplut għall-ilsien Malti."
+
+- key: home.activity.title
+  en: Recent activity
+  mt: Aġġornamenti riċenti
