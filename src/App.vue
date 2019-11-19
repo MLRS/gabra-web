@@ -70,7 +70,7 @@ export default mixins(I18N).extend({
     }
   },
   methods: {
-    setLanguage: function (lang: Language) {
+    setLanguage: function (lang: Language): void {
       this.language = lang
     }
   }

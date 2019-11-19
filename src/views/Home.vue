@@ -79,7 +79,7 @@ export default mixins(I18N).extend({
     }
   },
   computed: {
-    latestNews: function () {
+    latestNews: function (): {date: string, en: string, mt: string}[] {
       return this.news.slice(-3).reverse()
     }
   }
