@@ -7,7 +7,7 @@ This repository contains the source code for the Ġabra web site at
 <http://mlrs.research.um.edu.mt/resources/gabra/>
 
 This repository begins in early 2019 with a rewritten version of the site for CakePHP 3 and PHP 7.
-The previous version of the site, using CakePHP 2 and PHP 5, can be found in [this archived repository](https://github.com/MLRS/gabra-web-old).
+The previous version of the site, using CakePHP 2 and PHP 5, can be found in the [`v1` branch](https://github.com/MLRS/gabra-web/tree/v1).
 
 ## Requirements
 
