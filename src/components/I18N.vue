@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-const md = require('markdown-it')({
+const MarkdownIt = require('markdown-it')({
   html: true
 })
 
@@ -13,14 +13,21 @@ interface Entry {
   mt: string
 }
 
+export type Language = 'en' | 'mt'
+
+// The component mixing-in this mixin must have a language property
+// which is read directly from inside the __ function
+interface Mixer {
+  language: Language
+}
+
 export default Vue.extend({
   methods: {
     // Get text for key
-    __: function (key: string, replacements?: {[key:string]: string}) {
+    __: function (this: Mixer, key: string, replacements?: {[key:string]: string}): string {
       let f = web.find((x: Entry) => x.key === key)
       if (f) {
-        let lang = 'en' // TODO
-        let s = f[lang]
+        let s = f[this.language] // from mixed-in component
         if (replacements) {
           for (let key in replacements) {
             s = s.replace(`{${key}}`, replacements[key])
@@ -32,8 +39,8 @@ export default Vue.extend({
       }
     },
     // Render as Markdown
-    __m: function (key: string, replacements?: {[key:string]: string}) {
-      return md.render(this.__(key, replacements))
+    markdown: function (md: string): string {
+      return MarkdownIt.render(md)
     }
   }
 })

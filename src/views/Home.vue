@@ -22,9 +22,9 @@
 
     <div class="col-sm-8">
 
-      <div v-html="__m('home.mistakes')"></div>
+      <div v-html="markdown(__('home.mistakes'))"></div>
 
-      <div v-html="__m('home.about')"></div>
+      <div v-html="markdown(__('home.about'))"></div>
 
       <p v-html="__('home.citing')"></p>
 
@@ -44,7 +44,7 @@
         <h4 class="h6 mb-1">
           {{ item.date }}
         </h4>
-        {{ item[language] }}
+        <div v-html="markdown(item[language])"></div>
       </div>
 
     </div><!-- /.col-sm-4 -->

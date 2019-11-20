@@ -55,13 +55,11 @@
 <script lang="ts">
 // import Vue from 'vue'
 import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.vue'
+import I18N, { Language } from '@/components/I18N.vue'
 
 interface Data {
   language: Language
 }
-
-type Language = 'en' | 'mt'
 
 export default mixins(I18N).extend({
   data (): Data {
