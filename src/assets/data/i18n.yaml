@@ -362,3 +362,872 @@
 - key: type.weak-medial
   en: weak medial
   mt: dgħajjef moħfi
+
+# ---------------------------------------------------------------------------
+
+- en: adjective
+  mt: aġġettiv
+
+- en: adposition
+  mt: apposizzjoni
+
+- en: adverb
+  mt: avverb
+
+- en: auxiliary verb
+  mt: verb awżiljarju
+
+- en: coordinating conjunction
+  mt: konġunzjoni koordinanti
+
+- en: determiner
+  mt: determinant
+
+- en: interjection
+  mt: inteġrezzjoni
+
+- en: noun
+  mt: nom
+
+- en: numeral
+  mt: numeral
+
+- en: particle
+  mt: partiċipju
+
+- en: pronoun
+  mt: pronom
+
+- en: proper noun
+  mt: nom propju
+
+- en: punctuation
+  mt: punteġġatura
+
+- en: subordinating conjunction
+  mt: konġunzjoni subordinenti
+
+- en: symbol
+  mt: simbolu
+
+- en: verb
+  mt: verb
+
+- en: other
+  mt: oħrajn
+
+- en: strong
+  mt: sħiħ
+
+- en: geminated
+  mt: trux
+
+- en: weak initial
+  mt: dgħajjef assimilattiv
+
+- en: weak medial
+  mt: dgħajjef moħfi
+
+- en: weak final
+  mt: dgħajjef nieqes
+
+- en: irregular
+  mt: irregolari
+
+- en: Invalid ID
+  mt: ID ħażin
+
+- en: Search all of Ġabra
+  mt: Fittex f'Ġabra kollha
+
+- en: Search for a word
+  mt: Fittex kelma
+
+- en: Search roots
+  mt: Fittex fl-għeruq
+
+- en: or
+  mt: jew
+
+- en: j/w
+  mt: j/w
+
+- en: none
+  mt: ebda
+
+- en: Radicals
+  mt: Radikali
+
+- en: Class
+  mt: Klassi
+
+- en: Help
+  mt: Għajnuna
+
+- en: Legend
+  mt: Spjegazzjoni
+
+- en: Superscript numbers {0} beside roots indicate multiple meanings
+  mt: Numri f'sopraskritt {0} ħdejn l-għeruq jindikaw iktar minn tifsira waħda
+
+- en: Entries in {0}(parenthesis){1} indicate variants
+  mt: Affarjiet ġo {0}(parenteżi){1} juru varjanti
+
+- en: Items in {0}red{1} are hypothetical, unused or obsolete forms listed in dictionaries
+  mt: Affarijiet mmarkati {0}bl-aħmar{1} huma dawk li għandhom jitqiesu bħala ipotetiċi, jew m'għadhomx jintużaw
+
+- en: Root search
+  mt: Fittex fl-għeruq
+
+- en: Use the root search when you want to filter the roots by some specific criteria.
+  mt: Fittex fost l-għeruq meta għandek ċerti kriterji speċifiċi.
+
+- en: It acts as a convenient shortcut for the more advanced search syntax (below).
+  mt: Tista' tużaha bħala alternattiva konvenjenti għas-sintassi avvanzata (ara iktar 'l isfel)
+
+- en: Selecting nothing from a dropdown will match anything in that position.
+  mt: Fejn ma tagħżel l-ebda għażla, tgħodd bħala kull possibiltà f'dik il-posizzjoni.
+
+- en: Select {0} to match either a <em>j</em> or a <em>w</em>
+  mt: Għażel {0} biex ssib jew <em>j</em> inkella <em>w</em>
+
+- en: The apostrophe {0} indicates a missing radical, in irregular roots.
+  mt: L'apostrofu {0} jissimboliza radikali nieqes, bħalma nsibu fl-għeruq irregolari.
+
+- en: Advanced search syntax
+  mt: Sintassi tat-tfittxija avvanzata
+
+- en: "Queries follow regular expression syntax:"
+  mt: "Tfittxiet jużaw sintassi ta' <em>regular expressions</em>:"
+
+- en: "{0} matches any single letter (including <em>ie</em> and <em>għ</em>)"
+  mt: "{0} jsib ittra waħedha (tinkludi <em>ie</em> u <em>għ</em>)"
+
+- en: "{0} matches beginning of string"
+  mt: "{0} jfisser il-bidu tal-kelma"
+
+- en: "{0} matches the end of string"
+  mt: "{0} jfisser it-tarf tal-kelma"
+
+- en: "{0} matches 1 or more repetitions of the previous expression"
+  mt: "{0} jfisser repetizzjoni ta' l-inqas darba mill-espressjoni preċedenti"
+
+- en: "{0} matches 0 or more repetitions of the previous expression"
+  mt: "{0} jfisser repetizzjoni ta' żero jew iktar drabi mill-espressjoni preċedenti"
+
+- en: "{0} matches 0 or 1 occurances of the previous expression"
+  mt: "{0} jfisser repetizzjoni ta' 0 jew darba waħda mill-espressjoni preċedenti"
+
+- en: Character classes can be enclosed in {0}
+  mt: Settijiet ta' karattri għandhom jkunu mdawrin bi {0}
+
+- en: Examples
+  mt: Eżempji
+
+- en: "{0} matches <em>k</em> as first radical and <em>b</em> as third radical"
+  mt: "{0} jsib kull għerq bl-ittra <em>k</em> bħala l-ewwel radikali u <em>b</em> bħala t-tielet radikali"
+
+- en: "{0} matches any weak-final root"
+  mt: "{0} jsib l-għeruq neqsin kollha"
+
+- en: "{0} matches any item beginning with <em>għar</em>"
+  mt: "{0} jsib kull ħaġa li tibda bis-sekwenza <em>għar</em>"
+
+- en: "{0} matches any item beginning with <em>kit</em> and ending with <em>hom</em>"
+  mt: "{0} jsib kull entrata li tibda bis-sekwenza <em>kit</em> u li tispiċċa bi <em>hom</em>"
+
+- en: "{0} matches both <em>sama'</em> and <em>sema'</em>"
+  mt: "{0} jsib kemm <em>sama'</em> kif ukoll <em>sema'</em>"
+
+- en: Updates
+  mt: Aġġornamenti
+
+- en: e.g.
+  mt: eż.
+
+- en: "{0} more matches"
+  mt: "{0} risultati oħra"
+
+- en: This item has been marked as incorrect
+  mt: Din l-entrata ġiet immarkata ħażina
+
+- en: You must select at least one entry to merge
+  mt: Agħżel mill-inqas entrata waħda biex tgħaqqadhom
+
+- en: This will ONLY merge glosses into this entry. Continue?
+  mt: Hekk ħa tgħaqqad biss it-traduzzjonijiet. Trid tkompli?
+
+- en: Are you sure you want to delete this entry?
+  mt: Ċert li trid tħassar din l-entrata?
+
+- en: "Did you mean:"
+  mt: "Forsi ridt tfisser:"
+
+- en: Submit
+  mt: Issottometti
+
+- en: Cancel
+  mt: Ikkanċella
+
+- en: Click here to suggest that {0} is added to the database.
+  mt: Ikklikja hawn biex tissuġġerixxi li nżidu {0} fil-ġabradata.
+
+- en: Suggest a new entry
+  mt: Suġġeriment għal entrata ġdida
+
+- en: Lemma
+  mt: Kelma
+
+- en: Word in Maltese
+  mt: Kelma bil-Malti
+
+- en: Gloss
+  mt: Traduzzjoni
+
+- en: Translation in English
+  mt: Traduzzjoni bl-Ingliż
+
+- en: Part of speech
+  mt: Kategorija
+
+- en: Noun, verb, adjective or other
+  mt: Nom, verb, aġġettiv jew xi ħaġa oħra
+
+- en: Your suggestion has been added.
+  mt: Is-suġġeriment tiegħek ġie rrekordjat.
+
+- en: Occurs in {0} languages, grouped into {1} senses
+  mt: Tintuża f’{0} lingwi, b’{1} sensi differenti
+
+- en: "See the full etymological information at <a href=\"{0}\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>"
+  mt: "Ara l-etimoloġija sħiħa fuq <a href=\"{0}\" target=\"_blank\">Minsel <span class=\"glyphicon glyphicon-new-window\"></span></a>"
+
+- en: An error occurred
+  mt: Xi ħaġa ma ħadmitx
+
+- en: Any
+  mt: Kollha
+
+- en: Empty
+  mt: Vojt
+
+- en: Toggle navigation
+  mt: Ara/aħbi l-menu
+
+- en: Advanced search
+  mt: Tfittxija avvanzata
+
+- en: More
+  mt: Iktar
+
+- en: Sources
+  mt: Sorsi
+
+- en: API & Downloads
+  mt: API u Tniżżil tad-data
+
+- en: Error
+  mt: Problema
+
+- en: Back
+  mt: Lura
+
+- en: Search
+  mt: Fittex
+
+- en: Search lemmas
+  mt: Fittex fil-lessemi
+
+- en: Search wordforms
+  mt: Fittex fili-forom verbali
+
+- en: Search in English glosses
+  mt: Fittex fit-traduzzjonijiet bl-Ingliż
+
+- en: All
+  mt: Kollha
+
+- en: Source
+  mt: Sors
+
+- en: Search help
+  mt: Għajnuna biex tfittex
+
+- en: "The search is sensitive to Maltese characters. This means that {0} is not the same as {1}."
+  mt: "Ara li tuża l-karattri propji tal-Malti. Dan ifisser li {0} m'huwiex l-istess bħal {1}."
+
+- en: "Use the buttons to the right of the search to insert Maltese characters into the search box."
+  mt: "Uża l-buttuni ħdejn il-kaxxa tat-tfittix biex iddaħħal ittri Maltin."
+
+- en: "To search by English translation, check the <strong>Search in English glosses</strong> box."
+  mt: "Biex tfittex fit-traduzzjonijiet bl-Ingliż, immarka l-kaxxa <strong>Fittex fit-traduzzjonijiet</strong>."
+
+- en: "Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}."
+  mt: "Bħalissa tista' tfittex biss għall-bidu ta' kelma. Dan ifisser li {0} m'hix ħa tirritornalek {1}."
+
+- en: Use the field above to search
+  mt: Fittex permezz tal-kaxxa t'hawn fuq
+
+- en: "Results: {0}"
+  mt: "Riżultati: {0}"
+
+- en: Load more results
+  mt: Ara iktar resultati
+
+- en: This entry has been flagged and may contain errors.
+  mt: Din l-entrata hija mmarkata bħala ħażina u tista' tinkludi xi żbalji.
+
+- en: English gloss
+  mt: Traduzzjoni bl-Ingliż
+
+- en: Root
+  mt: Għerq
+
+- en: Features
+  mt: Karatteristiċi
+
+- en: Source(s)
+  mt: Sors(i)
+
+- en: Created
+  mt: Kkreat
+
+- en: Modified
+  mt: Mibdul
+
+- en: Related entries
+  mt: Entrati relatati
+
+- en: Word forms
+  mt: Forom verbali
+
+- en: Show all forms
+  mt: Ara l-forom kollha
+
+- en: News
+  mt: Aħbarijiet
+
+- en: Type
+  mt: Klassi
+
+- en: Quad.
+  mt: Kwad.
+
+- en: Tri.
+  mt: Tri.
+
+- en: Related
+  mt: Relatati
+
+- en: Key
+  mt: Kod
+
+- en: Title
+  mt: Titlu
+
+- en: Author
+  mt: Awtur
+
+- en: Year
+  mt: Sena
+
+- en: Note
+  mt: Noti
+
+- en: Authors
+  mt: Awturi
+
+- en: Surface form
+  mt: Forma miktuba
+
+- en: Gender
+  mt: Sess
+
+- en: Number
+  mt: Numru
+
+- en: Phonetic
+  mt: Fonetiku
+
+- en: Pattern
+  mt: Mudell
+
+- en: Derived form
+  mt: Forma mnissla
+
+- en: Form
+  mt: Forma
+
+- en: Aspect
+  mt: Aspett
+
+- en: Subject
+  mt: Suġġett
+
+- en: Direct Object
+  mt: Oġġett dirett
+
+- en: Indirect Object
+  mt: Oġġett indirett
+
+- en: Polarity
+  mt: Polarità
+
+- en: Masc
+  mt: Mask
+
+- en: Fem
+  mt: Fem
+
+- en: Masc/Fem
+  mt: Mask/Fem
+
+- en: Singular
+  mt: Singular
+
+- en: Dual
+  mt: Doppju
+
+- en: Plural
+  mt: Plural
+
+- en: Singular/Plural
+  mt: Singular/Plural
+
+- en: Singulative
+  mt: Singulattiv
+
+- en: Collective
+  mt: Kollettiv
+
+- en: Perfective
+  mt: Perfett
+
+- en: Imperfective
+  mt: Imperfett
+
+- en: Imperative
+  mt: Imperattiv
+
+- en: Past Participle
+  mt: Partiċipju passiv
+
+- en: Present Participle
+  mt: Partiċipju attiv
+
+- en: Positive
+  mt: Posittiv
+
+- en: Negative
+  mt: Negattiv
+
+- en: Diminutive
+  mt: Diminuttiv
+
+- en: Comparative
+  mt: Komparattiv
+
+- en: Superlative
+  mt: Superlattiv
+
+- en: Look up in corpus
+  mt: Fittex fil-korpus
+
+# ---------------------------------------------------------------------------
+# Known to be deprecated
+
+# - en: API
+#   mt: API
+#
+# - en: The requested address {0} was not found on this server.
+#   mt: Il-paġna {0} ma teżistix.
+#
+# - en: An Internal Error Has Occurred
+#   mt: Xi ħaġa ma ħadmitx
+#
+# - en: Pending
+#   mt: Pendenti
+#
+# - en: Item saved
+#   mt: L-entrata ġiet issejvjata
+#
+# - en: Changes saved
+#   mt: Tibdiliet ssejvjati
+#
+# - en: Entry deleted
+#   mt: L-entrata tħassret
+#
+# - en: "No duplicates found for:"
+#   mt: "L-ebda entrata doppja għal:"
+#
+# - en: Entries merged
+#   mt: Entrati magħqudin
+#
+# - en: Invalid username or password, try again
+#   mt: Username jew password ħażina, erġa' prova.
+#
+# - en: User deleted
+#   mt: Il-user tħassar
+#
+# - en: Delete failed
+#   mt: It-tħassir ma rnexxiex
+#
+# - en: first
+#   mt: tal-ewwel
+#
+# - en: previous
+#   mt: ta' qabel
+#
+# - en: next
+#   mt: li jmiss
+#
+# - en: last
+#   mt: tal-aħħar
+#
+# - en: "Page {:page} of {:pages}, showing records {:start} to {:end} out of {:count} total."
+#   mt: "Paġna {:page} minn {:pages}, entrati {:start} sa {:end} minn total ta' {:count}."
+#
+# - en: Random entry
+#   mt: Sib kelma għall-għarrieda
+#
+# - en: Login
+#   mt: Idħol fil-Kont
+#
+# - en: Messages
+#   mt: Messaġġi
+#
+# - en: Duplicates
+#   mt: Entrati doppji
+#
+# - en: Logout
+#   mt: Oħroġ mill-kont
+#
+# - en: Add lexeme
+#   mt: Żid entrata
+#
+# - en: Use commas to separate multiple alternatives
+#   mt: Uża komma biex tissepara l-alternattivi
+#
+# - en: "New field with name:"
+#   mt: "Dettal ġdid bl-isem:"
+#
+# - en: Add
+#   mt: Żid
+#
+# - en: No results found.
+#   mt: Ma nstab l-ebda rizultat.
+#
+# - en: "{0} to let us know that \"%s\" should be added to the database."
+#   mt: "{0} biex nżidu \"%s\" fil-ġabradata."
+#
+# - en: Click here
+#   mt: Ikklikkja hawn
+#
+# - en: Edit
+#   mt: Biddel
+#
+# - en: Delete
+#   mt: Ħassar
+#
+# - en: "{0} entries for this lemma"
+#   mt: "{0} entrati għal din il-lemma"
+#
+# - en: "{0} lemmas found with multiple entries"
+#   mt: "{0} lemmas b'iktar minn entrata waħda"
+#
+# - en: "{0} lemmas total"
+#   mt: "{0} b'kollox"
+#
+# - en: Search as lexeme
+#   mt: Fittex bħala lessimu
+#
+# - en: Search in duplicates
+#   mt: Fittex fl-entrati doppji
+#
+# - en: Merge
+#   mt: Għaqqad
+#
+# - en: Actions
+#   mt: Għażliet
+#
+# - en: merge this
+#   mt: għaqqad din
+#
+# - en: into this
+#   mt: ma' din
+#
+# - en: Edit lexeme
+#   mt: Mmodifika kelma
+#
+# - en: Lexeme
+#   mt: Lessimu
+#
+# - en: Use commas to separate multiple sources
+#   mt: Uża komma biex tissepara s-sorsijiet
+#
+# - en: View
+#   mt: Ara
+#
+# - en: Wordforms
+#   mt: Forom verbali
+#
+# - en: Are your sure you want to delete this wordform?
+#   mt: Ħassar din il-forma verbali?
+#
+# - en: Save wordforms
+#   mt: Issejvja forom verbali
+#
+# - en: No manual wordforms
+#   mt: Ebda forma manwali
+#
+# - en: Add wordform
+#   mt: Żid forma verbali
+#
+# - en: Copy lemma
+#   mt: Ikkopja l-lemma
+#
+# - en: "Merge into (keep this entry):"
+#   mt: "Żomm din l-entrata:"
+#
+# - en: Swap
+#   mt: Eqleb l-ordni
+#
+# - en: "Merge from (delete this entry):"
+#   mt: "Ħassar din l-entrata:"
+#
+# - en: On merging, these will be associated with the remaining entry
+#   mt: Meta tgħaqqad l-entrati, dawn jiġu assoċjati mal-entrata l-oħra
+#
+# - en: Edit entry
+#   mt: Biddel entrata
+#
+# - en: Add message
+#   mt: Messaġġ ġdid
+#
+# - en: Edit message
+#   mt: Biddel il-messaġġ
+#
+# - en: Save
+#   mt: Issejvja
+#
+# - en: New message
+#   mt: Messaġġ ġdid
+#
+# - en: Search messages
+#   mt: Fittex fil-messaġġi
+#
+# - en: English
+#   mt: Ingliż
+#
+# - en: Maltese
+#   mt: Malti
+#
+# - en: Are you sure you want to delete # {0}?
+#   mt: Ċert li trid tħassar # {0}?
+#
+# - en: Add user
+#   mt: Żid user
+#
+# - en: Edit user
+#   mt: Biddel dan il-user
+#
+# - en: Users
+#   mt: Users
+#
+# - en: Please enter your username and password
+#   mt: Daħħal il-username u password tiegħek
+#
+# - en: Username
+#   mt: Username
+#
+# - en: Password
+#   mt: Password
+#
+# - en: User
+#   mt: User
+#
+# - en: ID
+#   mt: ID
+#
+# - en: Role
+#   mt: Rwol
+#
+# - en: A username is required
+#   mt: Jeħtieġ username
+#
+# - en: A password is required
+#   mt: Jeħtieġ password
+#
+# - en: Please enter a valid role
+#   mt: Agħżel rwol validu
+#
+# - en: Flagged
+#   mt: Entrati mmarkati
+#
+# - en: Invalid message
+#   mt: Messaġġ ħażin
+#
+# - en: Thank you, we have received your feedback
+#   mt: Grazzi, il-kummenti tiegħek ġew irrekordjati
+#
+# - en: Feedback cleared
+#   mt: Il-kummenti tneħħew
+#
+# - en: Entry marked as non-duplicate
+#   mt: Entrata ġiet mmarkata li m'hix doppja
+#
+# - en: What is wrong with this entry?
+#   mt: X'hemm ħażin f'din l-entrata?
+#
+# - en: Clear feedback
+#   mt: Neħħi l-kummenti
+#
+# - en: Clear feedback for this entry?
+#   mt: Neħħi l-kummenti għal din l-entrata?
+#
+# - en: Not duplicate
+#   mt: M'hix doppja
+#
+# - en: Provide feedback about this entry
+#   mt: Ħalli kumment fuq din l-entrata
+#
+# - en: Etymology
+#   mt: Etimoloġija
+#
+# - en: Corpus
+#   mt: Korpus
+#
+# - en: Empty query
+#   mt: Query vojt
+#
+# - en: This page is only available in English.
+#   mt: Din il-paġna teżisti biss bl-Ingliż.
+#
+# - en: About
+#   mt: Dwar dan is-sit
+#
+# - en: Schema
+#   mt: Skema
+#
+# - en: Regex search in wordforms (slow)
+#   mt: Fittex bir-regular expressions (tieħu iktar ħin)
+#
+# - en: File name
+#   mt: Isem il-fajl
+#
+# - en: Size
+#   mt: Daqs
+#
+# - en: Latest
+#   mt: Ta' l-aħħar
+#
+# - en: See all
+#   mt: Kollha
+#
+# - en: Statistics
+#   mt: Statistika
+#
+# - en: Roots
+#   mt: Għeruq
+#
+# - en: Lexeme entries
+#   mt: Kliem
+#
+# - en: Database schema
+#   mt: Skema tal-ġabradata
+#
+# - en: Lemma (Maltese)
+#   mt: Kelma (bil-Malti)
+#
+# - en: Gloss (English)
+#   mt: Traduzzjoni bl-Ingliż
+
+# ---------------------------------------------------------------------------
+
+- key: home.title
+  en: 'Ġabra: an open lexicon for Maltese'
+  mt: Ġabra lessikali għall-ilsien Malti
+
+- key: home.1
+  en: "<em>Ġabra</em> is a free, open lexicon for Maltese, built by collecting various
+    different lexical resources into one common database. While it is not yet a complete
+    dictionary for Maltese, it already contains {lexemes} entries and {wordforms}
+    inflectional word forms. Many of these are linked by root, include translations
+    in English, and are marked for various morphological features."
+  mt: "<em>Ġabra</em> hija kollezzjoni miftuħa ta' risorsi lessikali bil-Malti, miġburin
+    f'<em>database</em> waħda. Għalkemm għada m'hijiex dizzjunarju komplut, diġà nġabru
+    {lexemes} entrati u magħhom {wordforms} forom verbali. Ma' ħafna minn dawn l-entrati
+    hemm ukoll mniżżel l-għerq u traduzzjoni bl-Ingliż, kif ukoll informazzjoni morfoloġiku."
+
+- key: home.2
+  en: The database is still growing, and will hopefully become a comprehensive digital
+    lexicon for Maltese.
+  mt: Id-<em>database</em> għadha qed tikber, u nittamaw li eventwalment issir lessiku
+    diġitali komplut tal-Malti.
+
+- key: home.mistakes
+  en: "### Mistakes/missing information\n\nMany of the word forms in the database
+    are <span class=\"generated\">automatically generated</span>, and may contain
+    errors.\nIf you come across a mistake, click on **Provide feedback** and
+    let us know that it is incorrect. It will then be checked and corrected manually
+    later.\nIf you search for a word which is not found in the database, you may
+    also suggest that it is added to the collection by clicking the provided link."
+  mt: "### Żbalji/informazzjoni nieqsa\n\nĦafna mill-forom f'din id-_database_
+    nħolqu <span class=\"generated\">b'mod automatiku</span>, u jistgħu jinkludu xi
+    żbalji.\nJekk issib żball f'xi entrata, ikklikkja fuq **Ħalli kumment**
+    biex timmarkaha bħala ħażina. Hekk nkunu nistgħu nikkoreġuha manwalment.\nJekk
+    tfittex għal kelma li ma teżistix fil-Ġabra, tista' ukoll tinformana biex inżiduha
+    billi tikklikka fuq il-ħolqa li titla'."
+
+- key: home.news.see_all
+  en: See all news
+  mt: Aqra l-aħbarijiet kollha
+
+- key: home.citing
+  en: "To cite this resource, please use the following reference.\n<div class=\"well\">\nJohn
+    J. Camilleri. <em>\"A Computational Grammar and Lexicon for Maltese\"</em>, M.Sc.
+    Thesis. Chalmers University of Technology. Gothenburg, Sweden, September 2013.\n</div>"
+  mt: "Biex tirreferi għall dan ir-risors, jekk jogħġbok uża din ir-referenza.\n<div
+    class=\"well\">\nJohn J. Camilleri. <em>\"A Computational Grammar and Lexicon
+    for Maltese\"</em>, M.Sc. Thesis. Chalmers University of Technology. Gothenburg,
+    Sweden, September 2013.\n</div>"
+
+- key: home.license
+  en: "The contents of <span xmlns:dct=\"http://purl.org/dc/terms/\" href=\"http://purl.org/dc/dcmitype/Text\"
+    property=\"dct:title\" rel=\"dct:type\">Ġabra</span> are licensed under a <a rel=\"license\"
+    href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution
+    4.0 International License</a>.\n<br/>\nThe source code for this site is available
+    under an MIT license at <a href=\"https://github.com/MLRS/gabra-web\">GitHub</a>."
+  mt: "Il-kontenut tal-<span xmlns:dct=\"http://purl.org/dc/terms/\" href=\"http://purl.org/dc/dcmitype/Text\"
+    property=\"dct:title\" rel=\"dct:type\">Ġabra</span> huwa lliċenzjat taħt liċenzja
+    <em><a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative
+    Commons Attribution 4.0 International License</a></em>.\n<br/>\nIs-<em>source
+    code</em> ta' dan is-sit huwa aċċessibbli taħt liċenzja MIT fuq <a href=\"https://github.com/MLRS/gabra-web\">GitHub</a>."
+
+- key: home.search.placeholder
+  en: Search in Maltese or English, e.g. "{maltese}" or "{english}"
+  mt: Fittex bil-Malti jew bl-Ingliż, eż. "{maltese}" jew "{english}"
+
+- key: home.about
+  en: "### About Ġabra\n\n_Ġabra_ was originally built in 2013 as part of a [master's
+    thesis project](https://johnjcamilleri.com/academic/publications/msc2013.pdf), starting
+    out as a collection of various different resources combined into a single database.\nIts
+    contents vary in detail and completeness, which is why it cannot yet be called
+    a proper lexicon or dictionary for Maltese.\n\nUp until recently, the database
+    has mostly been maintained as a hobby project and was not frequently updated.\nAs
+    of September 2015 however, Ġabra has begun to receive support from the Council
+    for the Maltese Language and the University of Malta.\nThere is ongoing work
+    on reviewing the database and making considerable contributions to its content,
+    such that it will eventually become a full lexicon for Maltese."
+  mt: "### Dwar Ġabra\n\n_Ġabra_ oriġinarjament inbniet fl-2013 għal [proġett
+    tal-masters](https://johnjcamilleri.com/academic/publications/msc2013.pdf), bħala kollezzjoni
+    ta' risorsi lessikali tal-Malti differenti, miġburin f'_database_ waħda.\nIl-kontenut
+    ivarja fil-livell ta' dettal u m'huwiex komplut, għalhekk għadna ma nistgħux nsejħulu
+    lessiku jew dizzjonarju propju tal-Malti.\n\nMinn Settembru tal-2015, kisibna
+    l-appoġġ tal-Kunsill Nazzjonali tal-Ilsien Malti kif ukoll l-Università ta' Malta.\nHemm
+    bħalissa għaddej xogħol ta' ċċekjar tal-kontenut tad-_database_, u qed isiru kontribuzzjonijiet
+    kbar, sabiex il-Ġabra tkun eventwalment lessiku komplut għall-ilsien Malti."
+
+- key: home.activity.title
+  en: Recent activity
+  mt: Aġġornamenti riċenti

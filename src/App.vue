@@ -11,9 +11,9 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto">
-          <router-link to="/search" class="nav-item nav-link">Advanced search</router-link>
-          <router-link to="/root-search" class="nav-item nav-link">Root search</router-link>
-          <router-link to="/sources" class="nav-item nav-link">Sources</router-link>
+          <router-link to="/lexemes" class="nav-item nav-link">{{ __('Advanced search') }}</router-link>
+          <router-link to="/roots" class="nav-item nav-link">{{ __('Root search') }}</router-link>
+          <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
         </div>
 
         <button type="button" class="btn btn-link pr-0 text-red" v-show="language != 'en'" @click="setLanguage('en')">
@@ -61,10 +61,18 @@ interface Data {
   language: Language
 }
 
+function preferredLanguage () : Language {
+  if (window && window.navigator && window.navigator.language.startsWith('mt')) {
+    return 'mt'
+  } else {
+    return 'en'
+  }
+}
+
 export default mixins(I18N).extend({
   data (): Data {
     return {
-      language: 'en'
+      language: preferredLanguage()
     }
   },
   methods: {

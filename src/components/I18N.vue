@@ -5,10 +5,10 @@ const MarkdownIt = require('markdown-it')({
   html: true
 })
 
-const web = require('@/assets/data/web.yaml')
+const terms = require('@/assets/data/i18n.yaml')
 
 interface Entry {
-  key: string
+  key?: string
   en: string
   mt: string
 }
@@ -25,7 +25,13 @@ export default Vue.extend({
   methods: {
     // Get text for key
     __: function (this: Mixer, key: string, replacements?: {[key:string]: string}): string {
-      let f = web.find((x: Entry) => x.key === key)
+      let f = terms.find((x: Entry) => {
+        if (x.key) {
+          return x.key === key
+        } else {
+          return x.en === key
+        }
+      })
       if (f) {
         let s = f[this.language] // from mixed-in component
         if (replacements) {
