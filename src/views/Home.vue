@@ -6,10 +6,14 @@
 
       <p class="lead" v-html="__('home.1')"></p>
 
-      <form role="search" class="" action="PHP echo $this->Url->build('/lexemes') ">
+      <form role="search" action="" @submit.prevent="submitSearch">
         <div class="input-group input-group-lg">
           <Keyboard></Keyboard>
-          <input type="search" id="home-search" name="s" class="form-control" autofocus="true" :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})" />
+          <input type="search" name="s" class="form-control" autofocus="true"
+            :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})"
+            @keydown.enter="$event.stopPropagation()"
+            v-model="term"
+            />
           <div class="input-group-append">
             <button type="submit" class="btn btn-primary">
               <i class="fas fa-search"></i>
@@ -63,6 +67,7 @@ import Keyboard from '@/components/Keyboard.vue'
 
 interface Data {
   news: {date: string, en: string, mt: string}[]
+  term: string
 }
 
 export default mixins(I18N).extend({
@@ -75,12 +80,20 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
-      news: require('@/assets/data/news.yaml')
+      news: require('@/assets/data/news.yaml'),
+      term: ''
     }
   },
   computed: {
     latestNews: function (): {date: string, en: string, mt: string}[] {
       return this.news.slice(-3).reverse()
+    }
+  },
+  methods: {
+    submitSearch: function (): void {
+      if (this.term) {
+        this.$router.push({ name: 'lexemes', query: { s: this.term } })
+      }
     }
   }
 })

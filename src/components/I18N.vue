@@ -47,6 +47,10 @@ export default Vue.extend({
     // Render as Markdown
     markdown: function (md: string): string {
       return MarkdownIt.render(md)
+    },
+    // Render as Markdown
+    markdownInline: function (md: string): string {
+      return MarkdownIt.renderInline(md)
     }
   }
 })

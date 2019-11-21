@@ -650,25 +650,31 @@
 - en: Source
   mt: Sors
 
-- en: Search help
+- key: search.help.title
+  en: Search help
   mt: Għajnuna biex tfittex
 
-- en: "The search is sensitive to Maltese characters. This means that {0} is not the same as {1}."
+- key: search.help.1
+  en: "The search is sensitive to Maltese characters. This means that {0} is not the same as {1}."
   mt: "Ara li tuża l-karattri propji tal-Malti. Dan ifisser li {0} m'huwiex l-istess bħal {1}."
 
-- en: "Use the buttons to the right of the search to insert Maltese characters into the search box."
+- key: search.help.2
+  en: "Use the buttons to the right of the search to insert Maltese characters into the search box."
   mt: "Uża l-buttuni ħdejn il-kaxxa tat-tfittix biex iddaħħal ittri Maltin."
 
-- en: "To search by English translation, check the <strong>Search in English glosses</strong> box."
+- key: search.help.3
+  en: "To search by English translation, check the <strong>Search in English glosses</strong> box."
   mt: "Biex tfittex fit-traduzzjonijiet bl-Ingliż, immarka l-kaxxa <strong>Fittex fit-traduzzjonijiet</strong>."
 
-- en: "Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}."
+- key: search.help.4
+  en: "Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}."
   mt: "Bħalissa tista' tfittex biss għall-bidu ta' kelma. Dan ifisser li {0} m'hix ħa tirritornalek {1}."
 
 - en: Use the field above to search
   mt: Fittex permezz tal-kaxxa t'hawn fuq
 
-- en: "Results: {0}"
+- key: results
+  en: "Results: {0}"
   mt: "Riżultati: {0}"
 
 - en: Load more results
