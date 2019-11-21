@@ -655,7 +655,7 @@
   mt: Għajnuna biex tfittex
 
 - key: search.help.1
-  en: "The search is sensitive to Maltese characters. This means that {0} is not the same as {1}."
+  en: "The search is sensitive to Maltese characters. This means that _{0}_ is not the same as _{1}_."
   mt: "Ara li tuża l-karattri propji tal-Malti. Dan ifisser li {0} m'huwiex l-istess bħal {1}."
 
 - key: search.help.2
@@ -663,12 +663,12 @@
   mt: "Uża l-buttuni ħdejn il-kaxxa tat-tfittix biex iddaħħal ittri Maltin."
 
 - key: search.help.3
-  en: "To search by English translation, check the <strong>Search in English glosses</strong> box."
-  mt: "Biex tfittex fit-traduzzjonijiet bl-Ingliż, immarka l-kaxxa <strong>Fittex fit-traduzzjonijiet</strong>."
+  en: "To search by English translation, check the **Search in English glosses** box."
+  mt: "Biex tfittex fit-traduzzjonijiet bl-Ingliż, immarka l-kaxxa **Fittex fit-traduzzjonijiet**."
 
 - key: search.help.4
-  en: "Currently, one can only search by substring from the start of a word. This means that {0} will not match {1}."
-  mt: "Bħalissa tista' tfittex biss għall-bidu ta' kelma. Dan ifisser li {0} m'hix ħa tirritornalek {1}."
+  en: "Currently, one can only search by substring from the start of a word. This means that _{0}_ will not match _{1}_."
+  mt: "Bħalissa tista' tfittex biss għall-bidu ta' kelma. Dan ifisser li _{0}_ m'hix ħa tirritornalek _{1}_."
 
 - en: Use the field above to search
   mt: Fittex permezz tal-kaxxa t'hawn fuq

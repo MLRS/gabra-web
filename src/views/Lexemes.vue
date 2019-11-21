@@ -58,10 +58,10 @@
       <div class="col-md-6">
         <h4>{{ __('search.help.title') }}</h4>
         <ul>
-          <li>{{ __('search.help.1') }}</li>
-          <li>{{ __('search.help.2') }}</li>
+          <li v-html="markdownInline(__('search.help.1', ['hareg', 'ħareġ']))"></li>
+          <li v-html="markdownInline(__('search.help.2'))"></li>
           <li v-html="markdownInline(__('search.help.3'))"></li>
-          <li>{{ __('search.help.4') }}</li>
+          <li v-html="markdownInline(__('search.help.4', ['itbet', 'kitbet']))"></li>
         </ul>
       </div>
 

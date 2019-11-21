@@ -24,7 +24,7 @@ interface Mixer {
 export default Vue.extend({
   methods: {
     // Get text for key
-    __: function (this: Mixer, key: string, replacements?: {[key:string]: string}): string {
+    __: function (this: Mixer, key: string, replacements?: {[key:string]: string} | string[]): string {
       let f = terms.find((x: Entry) => {
         if (x.key) {
           return x.key === key
@@ -35,7 +35,7 @@ export default Vue.extend({
       if (f) {
         let s = f[this.language] // from mixed-in component
         if (replacements) {
-          for (let key in replacements) {
+          for (let key in replacements) { // works for both key-values and arrays
             s = s.replace(`{${key}}`, replacements[key])
           }
         }

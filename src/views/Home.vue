@@ -2,7 +2,7 @@
   <div id="home" class="row">
 
     <div class="jumbotron py-5">
-      <h1 class="display-4">{{ __('home.title') }}</h1>
+      <h1 class="display-4 font-weight-normal">{{ __('home.title') }}</h1>
 
       <p class="lead" v-html="__('home.1')"></p>
 
