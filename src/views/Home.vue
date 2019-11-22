@@ -7,19 +7,11 @@
       <p class="lead" v-html="__('home.1')"></p>
 
       <form role="search" action="" @submit.prevent="submitSearch">
-        <div class="input-group input-group-lg">
-          <Keyboard></Keyboard>
-          <input type="search" name="s" class="form-control" autofocus="true"
-            :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})"
-            @keydown.enter="$event.stopPropagation()"
-            v-model="term"
-            />
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-primary">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div><!-- input-group -->
+        <SearchInput
+          :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})"
+          :showSubmit="true"
+          class="input-group-lg"
+        ></SearchInput>
       </form>
 
     </div><!-- jumbotron -->
@@ -63,7 +55,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.vue'
-import Keyboard from '@/components/Keyboard.vue'
+import SearchInput from '@/components/SearchInput.vue'
 
 interface Data {
   news: {date: string, en: string, mt: string}[]
@@ -73,7 +65,7 @@ interface Data {
 export default mixins(I18N).extend({
   name: 'home',
   components: {
-    Keyboard
+    SearchInput
   },
   props: {
     language: String

@@ -36,7 +36,7 @@ export default Vue.extend({
         let s = f[this.language] // from mixed-in component
         if (replacements) {
           for (let key in replacements) { // works for both key-values and arrays
-            s = s.replace(`{${key}}`, replacements[key])
+            s = s.replace(`{${key}}`, (replacements as {[key:string]:string})[key])
           }
         }
         return s

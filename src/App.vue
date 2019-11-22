@@ -1,9 +1,16 @@
 <template>
   <div id="app">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-2">
       <div class="container">
       <router-link to="/" class="navbar-brand">Ġabra</router-link>
+
+      <form role="search" action="" @submit.prevent="submitSearch" v-show="$route.name != 'home'" class="mx-2">
+        <SearchInput
+          :placeholder="__('Search for a word')"
+          :showSubmit="true"
+        ></SearchInput>
+      </form>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,9 +60,9 @@
 </template>
 
 <script lang="ts">
-// import Vue from 'vue'
 import mixins from 'vue-typed-mixins'
 import I18N, { Language } from '@/components/I18N.vue'
+import SearchInput from '@/components/SearchInput.vue'
 
 interface Data {
   language: Language
@@ -70,6 +77,9 @@ function preferredLanguage () : Language {
 }
 
 export default mixins(I18N).extend({
+  components: {
+    SearchInput
+  },
   data (): Data {
     return {
       language: preferredLanguage()
@@ -84,6 +94,6 @@ export default mixins(I18N).extend({
 </script>
 
 <style lang="scss">
-@import 'assets/custom.scss';
+@import '@/assets/custom.scss';
 
 </style>
