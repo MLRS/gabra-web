@@ -10,6 +10,7 @@
           <SearchInput
           :placeholder="__('Search')"
           :showSubmit="false"
+          @update="(s) => { search.s = s }"
           class="my-4"
           ></SearchInput>
 
@@ -139,17 +140,13 @@ export default mixins(I18N).extend({
           pos: this.$route.query.pos as string || null,
           source: this.$route.query.source as string || null
         }
-        // this.search = JSON.parse(JSON.stringify(this.$route.query))
       },
       immediate: true
     }
   },
   computed: {
-    // term: function (): string | null {
-    //   return this.$route.query.s as string || null
-    // },
     isSearching: function (): boolean {
-      return this.search.s && this.search.s.length > 0 // TODO weak
+      return this.$route.query.s !== undefined && this.$route.query.s !== null && this.$route.query.s !== ''
     }
   },
   methods: {

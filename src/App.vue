@@ -9,6 +9,7 @@
         <SearchInput
           :placeholder="__('Search for a word')"
           :showSubmit="true"
+          @update="(s) => { term = s }"
         ></SearchInput>
       </form>
 
@@ -65,7 +66,8 @@ import I18N, { Language } from '@/components/I18N.vue'
 import SearchInput from '@/components/SearchInput.vue'
 
 interface Data {
-  language: Language
+  language: Language,
+  term: string
 }
 
 function preferredLanguage () : Language {
@@ -82,12 +84,18 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
-      language: preferredLanguage()
+      language: preferredLanguage(),
+      term: this.$route.query.s as string
     }
   },
   methods: {
     setLanguage: function (lang: Language): void {
       this.language = lang
+    },
+    submitSearch: function (): void {
+      if (this.term) {
+        this.$router.push({ name: 'lexemes', query: { s: this.term } })
+      }
     }
   }
 })

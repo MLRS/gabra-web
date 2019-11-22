@@ -11,6 +11,7 @@
           :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})"
           :showSubmit="true"
           class="input-group-lg"
+          @update="(s) => { term = s }"
         ></SearchInput>
       </form>
 

@@ -43,7 +43,7 @@ export default Vue.extend({
   },
   data (): Data {
     return {
-      term: '',
+      term: this.$route.query.s as string,
       showKeyboard: false,
       position: 0
     }
@@ -53,11 +53,21 @@ export default Vue.extend({
       this.showKeyboard = !this.showKeyboard
     },
     // Update cursor position on input
-    updatePosition (e): void {
-      this.position = e.target.selectionStart
+    updatePosition (e: Event): void {
+      if (e.target) {
+        this.position = (e.target as HTMLInputElement).selectionStart || 0
+      }
     },
     insert (letter: string): void {
       this.term = this.term.slice(0, this.position) + letter + this.term.slice(this.position)
+    }
+  },
+  watch: {
+    term: {
+      // inform parent that contents of input has changed
+      handler (): void {
+        this.$emit('update', this.term)
+      }
     }
   }
 })
