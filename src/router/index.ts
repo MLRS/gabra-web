@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Lexemes from '../views/Lexemes.vue'
+import LexemeView from '../views/LexemeView.vue'
 import Roots from '../views/Roots.vue'
 import Sources from '../views/Sources.vue'
 
@@ -16,8 +17,12 @@ const routes = [
   {
     path: '/lexemes',
     name: 'lexemes',
-    component: Lexemes,
-    props: true
+    component: Lexemes
+  },
+  {
+    path: '/lexemes/view/:id',
+    name: 'lexeme',
+    component: LexemeView
   },
   {
     path: '/roots',

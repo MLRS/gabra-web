@@ -8,3 +8,13 @@ declare module '@/assets/data/i18n.yaml' {
   var es: Entry[]
   export default es
 }
+
+interface Lexeme {
+  _id: string
+  lemma: string
+  pos: string
+}
+
+interface Wordform {
+  surface_form: string // eslint-disable-line camelcase
+}

@@ -158,16 +158,6 @@ interface Result {
   wordforms: Wordform[]
 }
 
-interface Lexeme {
-  _id: string
-  lemma: string
-  pos: string
-}
-
-interface Wordform {
-  surface_form: string // eslint-disable-line camelcase
-}
-
 export default mixins(I18N).extend({
   components: {
     SearchInput
