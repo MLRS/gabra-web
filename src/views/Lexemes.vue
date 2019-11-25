@@ -66,10 +66,22 @@
     <div v-if="isSearching">
       <h3>{{ __('results', [results ? results.length : '...']) }}</h3>
 
-      <div v-for="item,ix in results" :key="ix">
-        {{ item }}
-      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr v-for="item,ix in results" :key="ix">
+            <th>{{ item.lexeme.lemma }}</th>
+            <td>{{ item.lexeme.pos }}</td>
+            <td>{{ item.lexeme.gloss }}</td>
+            <td>{{ item }}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div><!-- search reuslts -->
+
+    <div class="text-center text-danger" v-show="working">
+      <i class="fas fa-circle-notch fa-2x fa-spin"></i>
+    </div>
 
   </div>
 </template>
@@ -78,6 +90,7 @@
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
+import axios from 'axios'
 
 function query2bool (val: any, def: boolean = true): boolean {
   if (val !== undefined) {
@@ -92,6 +105,8 @@ function bool2query (val: boolean): string {
 }
 
 interface Data {
+  pos: string[] // for dropdown
+  sources: string[] // for dropdown
   search: {
     s: string
     l: boolean
@@ -100,9 +115,9 @@ interface Data {
     pos: string | null
     source: string | null
   },
+  page: number // last page retrieved
+  working: boolean
   results: null | any[]
-  pos: string[]
-  sources: string[]
 }
 
 export default mixins(I18N).extend({
@@ -114,6 +129,8 @@ export default mixins(I18N).extend({
   },
   data: function (): Data {
     return {
+      pos: ['ADJ', 'ADP', 'ADV', 'AUX', 'CONJ', 'DET', 'INTJ', 'NOUN', 'NUM', 'PART', 'PRON', 'PROPN', 'PUNCT', 'SCONJ', 'SYM', 'VERB', 'X'],
+      sources: ['Spagnol2011', 'Ellul2013', 'Mayer2013', 'Falzon2013', 'Camilleri2013', 'UserFeedback', 'KelmaKelma', 'KelmetilMalti', 'Apertium2014', 'DM2015', 'IATE2016'], // TODO
       search: {
         // These default values are overwritten by watch below
         s: '',
@@ -123,9 +140,9 @@ export default mixins(I18N).extend({
         pos: null,
         source: null
       },
-      results: null,
-      pos: ['ADJ', 'ADP', 'ADV', 'AUX', 'CONJ', 'DET', 'INTJ', 'NOUN', 'NUM', 'PART', 'PRON', 'PROPN', 'PUNCT', 'SCONJ', 'SYM', 'VERB', 'X'],
-      sources: ['Spagnol2011', 'Ellul2013', 'Mayer2013', 'Falzon2013', 'Camilleri2013', 'UserFeedback', 'KelmaKelma', 'KelmetilMalti', 'Apertium2014', 'DM2015', 'IATE2016']
+      page: 1,
+      working: false,
+      results: null
     }
   },
   watch: {
@@ -140,6 +157,9 @@ export default mixins(I18N).extend({
           pos: this.$route.query.pos as string || null,
           source: this.$route.query.source as string || null
         }
+        if (this.isSearching) {
+          this.loadResults()
+        }
       },
       immediate: true
     }
@@ -150,6 +170,7 @@ export default mixins(I18N).extend({
     }
   },
   methods: {
+    // the form is submitted
     submitSearch: function (): void {
       this.$router.push({
         query: {
@@ -161,7 +182,27 @@ export default mixins(I18N).extend({
           source: this.search.source
         }
       })
+    },
+    // get results
+    loadResults: function (): void {
+      this.working = true // TODO might need to wait for browser render
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
+        params: {
+          s: this.search.s
+        } })
+        .then(response => {
+          this.results = response.data.results
+          // TODO response.data.page page_size etc
+        })
+        .catch(error => {
+          console.error(error)
+        })
+        .then(() => {
+          this.working = false
+        })
     }
+  },
+  mounted: function () {
   }
 })
 </script>
