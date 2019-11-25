@@ -18,3 +18,12 @@ interface Lexeme {
 interface Wordform {
   surface_form: string // eslint-disable-line camelcase
 }
+
+interface Root {
+  radicals: string
+  variant?: number
+}
+
+interface Source {
+  key: string
+}

@@ -82,7 +82,6 @@ export default mixins(I18N).extend({
     }
   },
   watch: {
-    // Populate local search object whenever URL changes
     '$route.query': {
       handler: function (): void {
         this.loadLexeme()

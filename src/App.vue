@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light border-bottom mb-2">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-light border-bottom mb-2">
       <div class="container">
       <router-link to="/" class="navbar-brand">Ġabra</router-link>
 
