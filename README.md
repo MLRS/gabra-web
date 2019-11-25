@@ -17,23 +17,41 @@ Previous versions of the Ġabra site are available in these branches:
 ## Requirements
 
 - Node.js
+- Access to **Ġabra API** web service, either locally or live. See <https://github.com/MLRS/gabra-api>.
+
+The path to the API is specified in the `.env*` files.
+For documentation about these, see [here](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables).
 
 ## Project setup
+
+Install all depedencies needed for building app.
 ```
 npm install
 ```
 
-### Compile and hot-reloads for development
+### Compile with hot-reload for development
 ```
 npm run serve
 ```
+Then open  `http://localhost:8080` in a browser.
 
 ### Compile and minifies for production
 ```
 npm run build
 ```
+The contents of `dist` can then be served statically.
 
 ### Lint and fix files
 ```
 npm run lint
 ```
+
+## TODO
+
+- [ ] Stats, chart on homepage
+- [ ] Working search
+- [ ] View lexeme page
+- [ ] Root search
+- [ ] Sources page
+- [ ] Responsiveness
+- [ ] Editing UI

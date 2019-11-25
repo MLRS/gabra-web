@@ -1156,12 +1156,12 @@
 
 - key: home.1
   en: "<em>Ġabra</em> is a free, open lexicon for Maltese, built by collecting various
-    different lexical resources into one common database. While it is not yet a complete
-    dictionary for Maltese, it already contains {lexemes} entries and {wordforms}
+    different lexical resources into one common database. While it is not a complete
+    dictionary for Maltese, it contains {lexemes} entries and {wordforms}
     inflectional word forms. Many of these are linked by root, include translations
     in English, and are marked for various morphological features."
   mt: "<em>Ġabra</em> hija kollezzjoni miftuħa ta' risorsi lessikali bil-Malti, miġburin
-    f'<em>database</em> waħda. Għalkemm għada m'hijiex dizzjunarju komplut, diġà nġabru
+    f'<em>database</em> waħda. Għalkemm m'hijiex dizzjunarju komplut, diġà nġabru
     {lexemes} entrati u magħhom {wordforms} forom verbali. Ma' ħafna minn dawn l-entrati
     hemm ukoll mniżżel l-għerq u traduzzjoni bl-Ingliż, kif ukoll informazzjoni morfoloġiku."
 

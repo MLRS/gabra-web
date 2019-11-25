@@ -1,14 +1,14 @@
 <template>
   <div id="home" class="row">
 
-    <div class="jumbotron py-5">
+    <div class="jumbotron py-5 px-5">
       <h1 class="display-4 font-weight-normal">{{ __('home.title') }}</h1>
 
-      <p class="lead" v-html="__('home.1')"></p>
+      <p class="lead" v-html="__('home.1', {lexemes: stats.lexemes, wordforms: stats.wordforms})"></p>
 
       <form role="search" action="" @submit.prevent="submitSearch">
         <SearchInput
-          :placeholder="__('home.search.placeholder', { maltese: 'ħarġa', english: 'outing'})"
+          :placeholder="__('home.search.placeholder', {maltese: 'ħarġa', english: 'outing'})"
           :showSubmit="true"
           class="input-group-lg"
           @update="(s) => { term = s }"
@@ -57,8 +57,14 @@
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.vue'
 import SearchInput from '@/components/SearchInput.vue'
+import axios from 'axios'
 
 interface Data {
+  stats: {
+    lexemes: string
+    wordforms: string
+    // TODO log
+  }
   news: {date: string, en: string, mt: string}[]
   term: string
 }
@@ -73,6 +79,10 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
+      stats: {
+        lexemes: '…',
+        wordforms: '…'
+      },
       news: require('@/assets/data/news.yaml'),
       term: ''
     }
@@ -88,6 +98,22 @@ export default mixins(I18N).extend({
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
       }
     }
+  },
+  mounted (): void {
+    axios.get(`${process.env.VUE_APP_API_URL}/lexemes/count`)
+      .then(response => {
+        this.stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
+      })
+      .catch(error => {
+        console.error(error)
+      })
+    axios.get(`${process.env.VUE_APP_API_URL}/wordforms/count`)
+      .then(response => {
+        this.stats.wordforms = `<span class="badge badge-secondary">${response.data.toLocaleString()}</span>`
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
 })
 </script>
