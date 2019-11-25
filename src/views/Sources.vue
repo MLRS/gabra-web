@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.vue'
+import I18N from '@/components/I18N.ts'
 
 interface Data {
 }

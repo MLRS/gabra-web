@@ -1,4 +1,3 @@
-<script lang="ts">
 import Vue from 'vue'
 
 const MarkdownIt = require('markdown-it')({
@@ -54,4 +53,3 @@ export default Vue.extend({
     }
   }
 })
-</script>
