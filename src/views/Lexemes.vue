@@ -64,28 +64,56 @@
     </div><!-- search form -->
 
     <div v-if="isSearching">
-      <h3>{{ __('results', [results ? results.length : '...']) }}</h3>
+      <h3>{{ __('results', [results.length, resultCount]) }}</h3>
 
       <table class="table table-striped mt-3">
         <tbody>
           <tr v-for="item,ix in results" :key="ix">
-            <th>{{ item.lexeme.lemma }}</th>
-            <td>{{ __(`pos.${item.lexeme.pos }`) }}</td>
+            <td class="text-black-50">{{ ix+1 }}</td>
+            <th>
+              <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }" class="surface_form">
+                {{ item.lexeme.lemma }}
+              </router-link>
+            </th>
+            <td>
+              <!-- TODO when fields don't exist -->
+              {{ __(`pos.${item.lexeme.pos }`) }}
+              <span v-if="item.lexeme.root">
+                <router-link :to="{ path: 'roots/' + item.lexeme.root.radicals }" class="text-nowrap">
+                  {{ item.lexeme.root.radicals }}
+                  {{ item.lexeme.root.variant }}
+                </router-link>
+              </span>
+            </td>
             <td>
               <div v-for="g,ix in item.lexeme.glosses" :key="ix">
                 {{ g.gloss }}
               </div>
             </td>
-            <td>{{ item }}</td>
+            <td>
+              <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
+                <span class="surface_form">
+                  {{ wf.surface_form }}
+                </span>
+              </div>
+              <div v-if="item.wordforms.length > 5">
+                <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
+                  {{ __('search.more.matches', [item.wordforms.length - 5]) }}…
+                </router-link>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
 
-    </div><!-- search reuslts -->
+      <div class="text-center mb-5">
+        <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
+        <button class="btn btn-primary" @click="loadResults()" v-show="!working && moreResults">
+          {{ __('Load more results') }}
+        </button>
+      </div>
 
-    <div class="text-center text-danger" v-show="working">
-      <i class="fas fa-circle-notch fa-2x fa-spin"></i>
-    </div>
+    </div><!-- search reuslts -->
 
   </div>
 </template>
@@ -121,7 +149,23 @@ interface Data {
   },
   page: number // last page retrieved
   working: boolean
-  results: null | any[]
+  results: Result[]
+  resultCount: number // as reported by server, only equal to resuls.length when all results loaded
+}
+
+interface Result {
+  lexeme: Lexeme
+  wordforms: Wordform[]
+}
+
+interface Lexeme {
+  _id: string
+  lemma: string
+  pos: string
+}
+
+interface Wordform {
+  surface_form: string // eslint-disable-line camelcase
 }
 
 export default mixins(I18N).extend({
@@ -144,9 +188,10 @@ export default mixins(I18N).extend({
         pos: null,
         source: null
       },
-      page: 1,
+      page: 0,
       working: false,
-      results: null
+      results: [],
+      resultCount: 0
     }
   },
   watch: {
@@ -162,6 +207,9 @@ export default mixins(I18N).extend({
           source: this.$route.query.source as string || null
         }
         if (this.isSearching) {
+          this.results = []
+          this.resultCount = 0
+          this.page = 0
           this.loadResults()
         }
       },
@@ -171,6 +219,9 @@ export default mixins(I18N).extend({
   computed: {
     isSearching: function (): boolean {
       return this.$route.query.s !== undefined && this.$route.query.s !== null && this.$route.query.s !== ''
+    },
+    moreResults: function (): boolean {
+      return this.results.length < this.resultCount
     }
   },
   methods: {
@@ -192,11 +243,19 @@ export default mixins(I18N).extend({
       this.working = true // TODO might need to wait for browser render
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {
-          s: this.search.s
+          s: this.search.s,
+          page: ++this.page
         } })
         .then(response => {
-          this.results = response.data.results
-          // TODO response.data.page page_size etc
+          response.data.results.forEach((r: Result) => {
+            r.wordforms = []
+            this.results.push(r)
+            axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
+              .then(resp => {
+                r.wordforms = resp.data
+              })
+          })
+          this.resultCount = response.data.query.result_count
         })
         .catch(error => {
           console.error(error)

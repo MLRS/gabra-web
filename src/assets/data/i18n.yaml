@@ -545,7 +545,8 @@
 - en: e.g.
   mt: eż.
 
-- en: "{0} more matches"
+- key: search.more.matches
+  en: "{0} more matches"
   mt: "{0} risultati oħra"
 
 - en: This item has been marked as incorrect
@@ -674,8 +675,8 @@
   mt: Fittex permezz tal-kaxxa t'hawn fuq
 
 - key: results
-  en: "Results: {0}"
-  mt: "Riżultati: {0}"
+  en: "Results: {0} of {1}"
+  mt: "Riżultati: {0} minn {1}"
 
 - en: Load more results
   mt: Ara iktar resultati
