@@ -97,9 +97,10 @@
                 </span>
               </div>
               <div v-if="item.wordforms.length > 5">
-                <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
+                …
+                <!-- <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
                   {{ __('search.more.matches', [item.wordforms.length - 5]) }}…
-                </router-link>
+                </router-link> -->
               </div>
             </td>
           </tr>

@@ -48,10 +48,10 @@ npm run lint
 
 ## TODO
 
-- [ ] Stats, chart on homepage
-- [ ] Working search
-- [ ] View lexeme page
-- [ ] Root search
-- [ ] Sources page
-- [ ] Responsiveness
-- [ ] Editing UI
+- Chart & logs on homepage
+- Formatting of search results
+- Formatting of view lexeme page
+- Error handling
+- Root search
+- Responsiveness
+- Admin section

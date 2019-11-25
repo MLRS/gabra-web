@@ -43,7 +43,7 @@ export default Vue.extend({
   },
   data (): Data {
     return {
-      term: this.$route.query.s as string,
+      term: '', // updated by watch
       showKeyboard: false,
       position: 0
     }
@@ -63,6 +63,16 @@ export default Vue.extend({
     }
   },
   watch: {
+    '$route.query.s': {
+      handler: function (): void {
+        if (this.$route.name === 'lexemes') {
+          this.term = this.$route.query.s as string || ''
+        } else {
+          this.term = ''
+        }
+      },
+      immediate: true
+    },
     term: {
       // inform parent that contents of input has changed
       handler (): void {
