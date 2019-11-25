@@ -1,16 +1,9 @@
 import Vue from 'vue'
+import terms from '@/assets/data/i18n.yaml'
 
 const MarkdownIt = require('markdown-it')({
   html: true
 })
-
-const terms = require('@/assets/data/i18n.yaml')
-
-interface Entry {
-  key?: string
-  en: string
-  mt: string
-}
 
 export type Language = 'en' | 'mt'
 
