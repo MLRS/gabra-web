@@ -95,6 +95,7 @@ export default mixins(I18N).extend({
     submitSearch: function (): void {
       if (this.term) {
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
+          .catch((_) => { })
       }
     }
   }
