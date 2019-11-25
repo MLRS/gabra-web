@@ -66,12 +66,16 @@
     <div v-if="isSearching">
       <h3>{{ __('results', [results ? results.length : '...']) }}</h3>
 
-      <table class="table table-striped">
+      <table class="table table-striped mt-3">
         <tbody>
           <tr v-for="item,ix in results" :key="ix">
             <th>{{ item.lexeme.lemma }}</th>
-            <td>{{ item.lexeme.pos }}</td>
-            <td>{{ item.lexeme.gloss }}</td>
+            <td>{{ __(`pos.${item.lexeme.pos }`) }}</td>
+            <td>
+              <div v-for="g,ix in item.lexeme.glosses" :key="ix">
+                {{ g.gloss }}
+              </div>
+            </td>
             <td>{{ item }}</td>
           </tr>
         </tbody>
