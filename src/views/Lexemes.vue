@@ -4,7 +4,7 @@
     <div class="row" v-show="!isSearching">
 
       <div class="col-md-6">
-        <h3>{{ __('Advanced search') }}</h3>
+        <h1 class="h3">{{ __('Advanced search') }}</h1>
 
         <form @submit.prevent="submitSearch">
           <SearchInput
@@ -52,7 +52,7 @@
         </form>
       </div>
       <div class="col-md-6">
-        <h4>{{ __('search.help.title') }}</h4>
+        <h2 class="h4">{{ __('search.help.title') }}</h2>
         <ul>
           <li v-html="markdownInline(__('search.help.1', ['hareg', 'ħareġ']))"></li>
           <li v-html="markdownInline(__('search.help.2'))"></li>
@@ -81,7 +81,7 @@
           <tr v-for="item,ix in results" :key="ix">
             <td class="text-lighter text-center">{{ ix+1 }}.</td>
             <th class="font-weight-normal surface_form">
-              <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }" class="">
+              <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="">
                 {{ item.lexeme.lemma }}
               </router-link>
               <div v-if="item.lexeme.alternatives" class="text-muted">
@@ -135,7 +135,7 @@
                   </span>
                 </div>
                 <div v-if="item.wordforms.length > 5">
-                  <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
+                  <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }">
                   ⋮
                   </router-link>
                 </div>

@@ -55,5 +55,7 @@ npm run lint
 - Error handling
 - Submitting additions
 - Root search
+- Accessibility
+- SEO
 - Responsiveness
 - Admin section

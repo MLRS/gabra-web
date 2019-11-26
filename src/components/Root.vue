@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ path: 'roots/' + root.radicals + (root.variant ? `/${root.variant}` : '') }" class="text-nowrap" v-if="root">
+  <router-link :to="{ name: 'root', params: { radicals: root.radicals, variant: root.variant } }" class="text-nowrap" v-if="root">
     {{ root.radicals }}
     <sup class="text-muted" v-if="root.variant">
       {{ root.variant }}

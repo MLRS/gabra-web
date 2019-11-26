@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 v-show="results === null">{{ __('Root search') }}</h3>
+    <h1 class="h3" v-show="results === null">{{ __('Root search') }}</h1>
   </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
   <div>
 
-    <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
+    <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="lexeme === null"></i>
 
-    <div class="row" v-if="lexeme">
+    <div class="row" v-if="lexeme !== null && lexeme.lemma">
 
       <div class="col-12">
         <h1 class="surface_form mb-3">{{ lexeme.lemma }}</h1>
@@ -38,6 +38,8 @@
       <!-- wordforms -->
       <div class="col-md-8">
 
+        <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
+
         <table class="table table-sm">
           <tbody>
             <tr v-for="wf,ix in wordforms" :key="ix">
@@ -62,8 +64,7 @@ import axios from 'axios'
 
 interface Data {
   lexeme: Lexeme | null
-  wordforms: Wordform[]
-  working: boolean
+  wordforms: Wordform[] | null
 }
 
 export default mixins(I18N).extend({
@@ -76,14 +77,13 @@ export default mixins(I18N).extend({
   data: function (): Data {
     return {
       lexeme: null,
-      wordforms: [],
-      working: false
+      wordforms: null
     }
   },
   watch: {
     '$route.query': {
       handler: function (): void {
-        this.loadLexeme()
+        this.load()
       },
       immediate: true
     }
@@ -92,21 +92,22 @@ export default mixins(I18N).extend({
   },
   methods: {
     // get lexeme and wordforms
-    loadLexeme: function (): void {
-      this.working = true // TODO might need to wait for browser render
+    load: function (): void {
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/${this.$route.params.id}`)
         .then(response => {
           this.lexeme = response.data
-          axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${(this.lexeme as Lexeme)._id}`)
-            .then(resp => {
-              this.wordforms = resp.data
-            })
         })
         .catch(error => {
           console.error(error)
+          this.lexeme = {} as Lexeme
         })
-        .then(() => {
-          this.working = false
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}`)
+        .then(response => {
+          this.wordforms = response.data
+        })
+        .catch(error => {
+          console.error(error)
+          this.wordforms = []
         })
     }
   },

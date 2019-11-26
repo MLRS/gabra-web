@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>{{ __('Sources') }}</h3>
+    <h1 class="h3">{{ __('Sources') }}</h1>
 
     <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
 

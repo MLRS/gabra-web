@@ -641,7 +641,7 @@
   mt: Fittex fil-lessemi
 
 - en: Search wordforms
-  mt: Fittex fili-forom verbali
+  mt: Fittex fil-forom verbali
 
 - en: Search in English glosses
   mt: Fittex fit-traduzzjonijiet bl-Ingliż
@@ -688,7 +688,8 @@
 - en: English gloss
   mt: Traduzzjoni bl-Ingliż
 
-- en: Root
+- key: root.title
+  en: Root
   mt: Għerq
 
 - en: Features
