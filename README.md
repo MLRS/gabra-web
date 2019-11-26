@@ -51,7 +51,9 @@ npm run lint
 - Chart & logs on homepage
 - Formatting of search results
 - Formatting of view lexeme page
+- Highlighting of search term
 - Error handling
+- Submitting additions
 - Root search
 - Responsiveness
 - Admin section

@@ -76,19 +76,32 @@
         </router-link>
       </p>
 
-      <table class="table table-striped mt-3">
+      <table class="table mt-3">
         <tbody>
           <tr v-for="item,ix in results" :key="ix">
-            <td class="text-black-50">{{ ix+1 }}</td>
-            <th>
-              <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }" class="surface_form">
+            <td class="text-lighter text-center">{{ ix+1 }}.</td>
+            <th class="font-weight-normal surface_form">
+              <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }" class="">
                 {{ item.lexeme.lemma }}
               </router-link>
+              <span v-if="item.lexeme.alternatives" class="text-black-50">
+                ({{ item.lexeme.alternatives.join(', ') }})
+              </span>
             </th>
             <td>
               <!-- TODO when fields don't exist -->
-              <div>{{ __(`pos.${item.lexeme.pos }`) }}</div>
-              <Root :root="item.lexeme.root"></Root>
+              <div v-if="item.lexeme.pos">
+                {{ __(`pos.${item.lexeme.pos }`) }}
+                {{ derivedForm(item.lexeme.derived_form) }}
+              </div>
+              <Root :root="item.lexeme.root" class="d-block"></Root>
+              <div>
+                {{ item.lexeme.transitive ? __('trans.') : '' }}
+                {{ item.lexeme.intransitive ? __('intrans.') : '' }}
+                {{ item.lexeme.ditransitive ? __('ditrans.') : '' }}
+                {{ item.lexeme.hypothetical ? __('hyp.') : '' }}
+                {{ item.lexeme.frequency }}
+              </div>
             </td>
             <td>
               <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
@@ -132,9 +145,12 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
+
 import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 import Root from '@/components/Root.vue'
+import * as UI from '@/helpers/UI.ts'
+
 import axios from 'axios'
 
 function query2bool (val: any, def: boolean = true): boolean {
@@ -287,7 +303,8 @@ export default mixins(I18N).extend({
         .catch(error => {
           console.error(error)
         })
-    }
+    },
+    derivedForm: UI.derivedForm
   },
   mounted: function () {
   }
