@@ -22,6 +22,7 @@ interface Wordform {
 interface Root {
   radicals: string
   variant?: number
+  type: string
 }
 
 interface Source {

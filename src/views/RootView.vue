@@ -13,6 +13,10 @@
             <sup class="text-muted" v-if="root.variant">
               {{ root.variant }}
             </sup>
+
+            <span v-if="root.alternatives" class="text-muted">
+              ({{ root.alternatives }})
+            </span>
           </span>
         </h1>
       </div>
@@ -22,11 +26,13 @@
         <dl>
 
           <dt>{{ __('Class') }}</dt>
-          <dd>...</dd>
+          <dd>{{ rootClass }}</dd>
 
           <dt>{{ __('Source(s)') }}</dt>
           <dd>
-            ...
+            <router-link v-for="s,ix in root.sources" :key="ix" :to="{ name: 'sources' }" class="">
+              {{ s }}
+            </router-link>
           </dd>
 
         </dl>
@@ -42,10 +48,12 @@
         <table class="table table-sm">
           <tbody>
             <tr v-for="lexeme,ix in lexemes" :key="ix">
-              <td class="surface_form">
-                <router-link :to="{ name: 'lexeme', params: { id: lexeme._id } }" class="">
-                  {{ lexeme.lemma }}
-                </router-link>
+              <td class="">
+                <router-link :to="{ name: 'lexeme', params: { id: lexeme._id } }" class="surface_form">{{ lexeme.lemma }}</router-link>
+                <span class="text-lighter ml-1">
+                  {{ __(`pos.${lexeme.pos }`) }}
+                  {{ derivedForm(lexeme.derived_form) }}
+                </span>
               </td>
             </tr>
           </tbody>
@@ -60,6 +68,8 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.ts'
+import * as UI from '@/helpers/UI.ts'
+
 import axios from 'axios'
 
 interface Data {
@@ -88,6 +98,16 @@ export default mixins(I18N).extend({
     }
   },
   computed: {
+    rootClass: function (this: any): string {
+      if (!this.root) return ''
+      let out = ''
+      if (this.root.type !== 'irregular') {
+        let radicalCount = this.root.radicals.split('-').length
+        out += radicalCount === 4 ? this.__('Quad.') : this.__('Tri.')
+      }
+      out += ' ' + this.__(`type.${this.root.type}`)
+      return out
+    }
   },
   methods: {
     // get root and lexemes
@@ -109,7 +129,9 @@ export default mixins(I18N).extend({
           console.error(error)
           this.lexemes = []
         })
-    }
+    },
+    // Making helper functions available to template
+    derivedForm: UI.derivedForm
   },
   mounted: function () {
   }
