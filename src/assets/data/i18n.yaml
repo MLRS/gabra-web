@@ -561,8 +561,9 @@
 - en: Are you sure you want to delete this entry?
   mt: Ċert li trid tħassar din l-entrata?
 
-- en: "Did you mean:"
-  mt: "Forsi ridt tfisser:"
+- key: search.suggestion
+  en: "Did you mean:"
+  mt: "Ridt tfittex għal:"
 
 - en: Submit
   mt: Issottometti
@@ -674,9 +675,9 @@
 - en: Use the field above to search
   mt: Fittex permezz tal-kaxxa t'hawn fuq
 
-- key: results
-  en: "Results: {0} of {1}"
-  mt: "Riżultati: {0} minn {1}"
+- key: results.title
+  en: "Results for {term}: {showing} of {total}"
+  mt: "Riżultati għal {term}: {showing} minn {total}"
 
 - en: Load more results
   mt: Ara iktar resultati

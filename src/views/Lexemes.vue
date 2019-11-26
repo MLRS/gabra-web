@@ -64,7 +64,13 @@
     </div><!-- search form -->
 
     <div v-if="isSearching">
-      <h3>{{ __('results', [results.length, resultCount]) }}</h3>
+      <h3 class="h4" v-html="__('results.title', { term: `<span class='text-red'>${search.s}</span>`, showing: results.length, total: resultCount })"></h3>
+      <p class="text-muted" v-show="searchSuggestions.length > 0">
+        {{ __('search.suggestion') }}
+        <router-link v-for="s,ix in searchSuggestions" :key="ix" :to="{ query: { s: s } }" class="">
+          {{ s }}
+        </router-link>
+      </p>
 
       <table class="table table-striped mt-3">
         <tbody>
@@ -77,12 +83,15 @@
             </th>
             <td>
               <!-- TODO when fields don't exist -->
-              {{ __(`pos.${item.lexeme.pos }`) }}
+              <div>{{ __(`pos.${item.lexeme.pos }`) }}</div>
               <Root :root="item.lexeme.root"></Root>
             </td>
             <td>
-              <div v-for="g,ix in item.lexeme.glosses" :key="ix">
+              <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
                 {{ g.gloss }}
+              </div>
+              <div v-if="item.lexeme.glosses > 5">
+                …
               </div>
             </td>
             <td>
@@ -148,6 +157,7 @@ interface Data {
   working: boolean
   results: Result[]
   resultCount: number // as reported by server, only equal to resuls.length when all results loaded
+  searchSuggestions: string[]
 }
 
 interface Result {
@@ -179,7 +189,8 @@ export default mixins(I18N).extend({
       page: 0,
       working: false,
       results: [],
-      resultCount: 0
+      resultCount: 0,
+      searchSuggestions: []
     }
   },
   watch: {
@@ -199,6 +210,7 @@ export default mixins(I18N).extend({
           this.resultCount = 0
           this.page = 0
           this.loadResults()
+          this.searchSuggest()
         }
       },
       immediate: true
@@ -250,6 +262,19 @@ export default mixins(I18N).extend({
         })
         .then(() => {
           this.working = false
+        })
+    },
+    // search suggestions
+    searchSuggest: function (): void {
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search_suggest`, {
+        params: {
+          s: this.search.s
+        } })
+        .then(response => {
+          this.searchSuggestions = response.data.results.map((r: Lexeme) => r.lemma)
+        })
+        .catch(error => {
+          console.error(error)
         })
     }
   },
