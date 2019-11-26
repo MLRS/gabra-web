@@ -64,7 +64,11 @@
     </div><!-- search form -->
 
     <div v-if="isSearching">
-      <h3 class="h4" v-html="__('results.title', { term: `<span class='text-red'>${search.s}</span>`, showing: results.length, total: resultCount })"></h3>
+      <h3 class="h4" v-html="__('results.title', {
+        term: `<span class='text-red'>${search.s}</span>`,
+        showing: working ? '…' : results.length,
+        total: working ? '…' : resultCount
+        })"></h3>
       <p class="text-muted" v-show="searchSuggestions.length > 0">
         {{ __('search.suggestion') }}
         <router-link v-for="s,ix in searchSuggestions" :key="ix" :to="{ query: { s: s } }" class="">
@@ -95,17 +99,20 @@
               </div>
             </td>
             <td>
-              <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
-                <span class="surface_form">
-                  {{ wf.surface_form }}
-                </span>
-              </div>
-              <div v-if="item.wordforms.length > 5">
-                …
-                <!-- <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
+              <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
+              <template v-if="item.wordforms !== null">
+                <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
+                  <span class="surface_form">
+                    {{ wf.surface_form }}
+                  </span>
+                </div>
+                <div v-if="item.wordforms.length > 5">
+                  …
+                  <!-- <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
                   {{ __('search.more.matches', [item.wordforms.length - 5]) }}…
                 </router-link> -->
               </div>
+              </template>
             </td>
           </tr>
         </tbody>
@@ -162,7 +169,7 @@ interface Data {
 
 interface Result {
   lexeme: Lexeme
-  wordforms: Wordform[]
+  wordforms: Wordform[] | null
 }
 
 export default mixins(I18N).extend({
@@ -248,11 +255,15 @@ export default mixins(I18N).extend({
         } })
         .then(response => {
           response.data.results.forEach((r: Result) => {
-            r.wordforms = []
+            r.wordforms = null // not loaded
             this.results.push(r)
             axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
               .then(resp => {
                 r.wordforms = resp.data
+              })
+              .catch(error => {
+                console.error(error)
+                r.wordforms = []
               })
           })
           this.resultCount = response.data.query.result_count
