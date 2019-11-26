@@ -13,3 +13,14 @@ export function derivedForm (dform: number): string {
     default: return ''
   }
 }
+
+export function agr (item: any, field: string): string {
+  let out = ''
+  if (item[field]) {
+    let agr = item[field]
+    if (agr.person) out += agr.person + ' '
+    if (agr.gender) out += agr.gender + '. '
+    if (agr.number) out += agr.number + '. '
+  }
+  return out
+}

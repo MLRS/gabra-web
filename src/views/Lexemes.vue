@@ -84,12 +84,11 @@
               <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }" class="">
                 {{ item.lexeme.lemma }}
               </router-link>
-              <span v-if="item.lexeme.alternatives" class="text-black-50">
+              <div v-if="item.lexeme.alternatives" class="text-muted">
                 ({{ item.lexeme.alternatives.join(', ') }})
-              </span>
+              </div>
             </th>
             <td>
-              <!-- TODO when fields don't exist -->
               <div v-if="item.lexeme.pos">
                 {{ __(`pos.${item.lexeme.pos }`) }}
                 {{ derivedForm(item.lexeme.derived_form) }}
@@ -100,6 +99,8 @@
                 {{ item.lexeme.intransitive ? __('intrans.') : '' }}
                 {{ item.lexeme.ditransitive ? __('ditrans.') : '' }}
                 {{ item.lexeme.hypothetical ? __('hyp.') : '' }}
+              </div>
+              <div>
                 {{ item.lexeme.frequency }}
               </div>
             </td>
@@ -108,7 +109,7 @@
                 {{ g.gloss }}
               </div>
               <div v-if="item.lexeme.glosses > 5">
-                …
+                ⋮
               </div>
             </td>
             <td>
@@ -118,13 +119,26 @@
                   <span class="surface_form">
                     {{ wf.surface_form }}
                   </span>
+                  <span class="text-lighter">
+                    <!-- Noun -->
+                    {{ wf.number ? `${wf.number}.` : '' }}
+                    {{ wf.gender ? `${wf.gender}.` : '' }}
+                    {{ wf.phonetic ? `/${wf.phonetic}/` : '' }}
+                    {{ wf.pattern }}
+
+                    <!-- Verb -->
+                    {{ wf.aspect }}
+                    {{ agr(wf, 'subject') }}
+                    {{ wf.dir_obj ? `&middot; dir: `+agr(wf, 'dir_obj') : '' }}
+                    {{ wf.ind_obj ? `&middot; ind: `+agr(wf, 'ind_obj') : '' }}
+                    {{ wf.polarity ? `&middot; ${wf.polarity}` : '' }}
+                  </span>
                 </div>
                 <div v-if="item.wordforms.length > 5">
-                  …
-                  <!-- <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
-                  {{ __('search.more.matches', [item.wordforms.length - 5]) }}…
-                </router-link> -->
-              </div>
+                  <router-link :to="{ path: 'lexemes/view/' + item.lexeme._id }">
+                  ⋮
+                  </router-link>
+                </div>
               </template>
             </td>
           </tr>
@@ -304,7 +318,9 @@ export default mixins(I18N).extend({
           console.error(error)
         })
     },
-    derivedForm: UI.derivedForm
+    // Making helper functions available to template
+    derivedForm: UI.derivedForm,
+    agr: UI.agr
   },
   mounted: function () {
   }
