@@ -210,10 +210,10 @@ export default mixins(I18N).extend({
   props: {
     language: String
   },
-  data: function (): Data {
+  data (): Data {
     return {
       pos: ['ADJ', 'ADP', 'ADV', 'AUX', 'CONJ', 'DET', 'INTJ', 'NOUN', 'NUM', 'PART', 'PRON', 'PROPN', 'PUNCT', 'SCONJ', 'SYM', 'VERB', 'X'],
-      sources: ['Spagnol2011', 'Ellul2013', 'Mayer2013', 'Falzon2013', 'Camilleri2013', 'UserFeedback', 'KelmaKelma', 'KelmetilMalti', 'Apertium2014', 'DM2015', 'IATE2016'], // TODO
+      sources: [], // loaded async
       search: {
         // These default values are overwritten by watch below
         s: '',
@@ -323,6 +323,13 @@ export default mixins(I18N).extend({
     agr: UI.agr
   },
   mounted: function () {
+    axios.get(`${process.env.VUE_APP_API_URL}/sources`)
+      .then(response => {
+        this.sources = response.data.map((s: Source) => s.key)
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
 })
 </script>
