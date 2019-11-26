@@ -51,7 +51,7 @@
     </nav>
 
     <main class="container pt-3">
-      <router-view :language="language"/>
+      <router-view :language="language" @setTitle="setTitle"></router-view>
     </main>
 
     <footer class="container">
@@ -66,11 +66,12 @@ import I18N, { Language } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 
 interface Data {
-  language: Language,
+  language: Language, // current UI language for whole app
   term: string
 }
 
-function preferredLanguage () : Language {
+// TODO untested
+function preferredLanguage (): Language {
   if (window && window.navigator && window.navigator.language.startsWith('mt')) {
     return 'mt'
   } else {
@@ -89,6 +90,9 @@ export default mixins(I18N).extend({
     }
   },
   methods: {
+    setTitle: function (t?: string): void {
+      document.title = t ? `${t} · Ġabra` : 'Ġabra'
+    },
     setLanguage: function (lang: Language): void {
       this.language = lang
     },

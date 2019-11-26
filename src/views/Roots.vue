@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.ts'
+import I18N, { __l, Language } from '@/components/I18N.ts'
 
 interface Data {
   results: null | any[]
@@ -18,10 +18,13 @@ export default mixins(I18N).extend({
   props: {
     language: String
   },
-  data: function (): Data {
+  data (): Data {
     return {
       results: null
     }
+  },
+  mounted (): void {
+    this.$emit('setTitle', __l(this.language as Language, 'Root search'))
   }
 })
 </script>

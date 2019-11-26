@@ -40,6 +40,8 @@
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
 
+        <h2 class="h6">{{ __('Word forms') }}</h2>
+
         <table class="table table-sm">
           <tbody>
             <tr v-for="wf,ix in wordforms" :key="ix">
@@ -58,7 +60,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.ts'
+import I18N, { __l, Language } from '@/components/I18N.ts'
 import Root from '@/components/Root.vue'
 import axios from 'axios'
 
@@ -74,7 +76,7 @@ export default mixins(I18N).extend({
   props: {
     language: String
   },
-  data: function (): Data {
+  data (): Data {
     return {
       lexeme: null,
       wordforms: null
@@ -82,7 +84,7 @@ export default mixins(I18N).extend({
   },
   watch: {
     '$route.query': {
-      handler: function (): void {
+      handler (): void {
         this.load()
       },
       immediate: true
@@ -92,10 +94,11 @@ export default mixins(I18N).extend({
   },
   methods: {
     // get lexeme and wordforms
-    load: function (): void {
+    load (): void {
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/${this.$route.params.id}`)
         .then(response => {
           this.lexeme = response.data
+          this.$emit('setTitle', (this.lexeme as Lexeme).lemma)
         })
         .catch(error => {
           console.error(error)
@@ -111,7 +114,8 @@ export default mixins(I18N).extend({
         })
     }
   },
-  mounted: function () {
+  mounted (): void {
+    this.$emit('setTitle', __l(this.language as Language, 'Lexeme'))
   }
 })
 </script>

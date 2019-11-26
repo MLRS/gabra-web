@@ -67,7 +67,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.ts'
+import I18N, { __l, Language } from '@/components/I18N.ts'
 import * as UI from '@/helpers/UI.ts'
 
 import axios from 'axios'
@@ -83,16 +83,25 @@ export default mixins(I18N).extend({
   props: {
     language: String
   },
-  data: function (): Data {
+  data (): Data {
     return {
       root: null,
       lexemes: []
     }
   },
   watch: {
-    '$route.query': {
-      handler: function (): void {
+    '$route.params': {
+      handler (): void {
         this.load()
+        let title = this.$route.params.radicals
+        switch (this.$route.params.variant) {
+          case '1': title += ' ¹'; break
+          case '2': title += ' ²'; break
+          case '3': title += ' ³'; break
+          case '4': title += ' ⁴'; break
+          case '5': title += ' ⁵'; break
+        }
+        this.$emit('setTitle', title)
       },
       immediate: true
     }
@@ -111,7 +120,7 @@ export default mixins(I18N).extend({
   },
   methods: {
     // get root and lexemes
-    load: function (): void {
+    load (): void {
       let path = this.$route.params.variant ? `${this.$route.params.radicals}/${this.$route.params.variant}` : `${this.$route.params.radicals}`
       axios.get(`${process.env.VUE_APP_API_URL}/roots/${path}`)
         .then(response => {
@@ -133,7 +142,7 @@ export default mixins(I18N).extend({
     // Making helper functions available to template
     derivedForm: UI.derivedForm
   },
-  mounted: function () {
+  mounted (): void {
   }
 })
 </script>

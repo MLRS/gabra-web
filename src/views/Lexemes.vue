@@ -160,7 +160,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 
-import I18N from '@/components/I18N.ts'
+import I18N, { __l, Language } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 import Root from '@/components/Root.vue'
 import * as UI from '@/helpers/UI.ts'
@@ -233,7 +233,7 @@ export default mixins(I18N).extend({
   watch: {
     // Populate local search object whenever URL changes
     '$route.query': {
-      handler: function (): void {
+      handler (): void {
         this.search = {
           s: this.$route.query.s as string || '',
           l: query2bool(this.$route.query.l),
@@ -248,22 +248,23 @@ export default mixins(I18N).extend({
           this.page = 0
           this.loadResults()
           this.searchSuggest()
+          this.$emit('setTitle', __l(this.language as Language, 'title.search', [this.search.s]))
         }
       },
       immediate: true
     }
   },
   computed: {
-    isSearching: function (): boolean {
+    isSearching (): boolean {
       return this.$route.query.s !== undefined && this.$route.query.s !== null && this.$route.query.s !== ''
     },
-    moreResults: function (): boolean {
+    moreResults (): boolean {
       return this.results.length < this.resultCount
     }
   },
   methods: {
     // the form is submitted
-    submitSearch: function (): void {
+    submitSearch (): void {
       this.$router.push({
         query: {
           s: this.search.s,
@@ -276,7 +277,7 @@ export default mixins(I18N).extend({
       })
     },
     // get results
-    loadResults: function (): void {
+    loadResults (): void {
       this.working = true // TODO might need to wait for browser render
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {
@@ -306,7 +307,7 @@ export default mixins(I18N).extend({
         })
     },
     // search suggestions
-    searchSuggest: function (): void {
+    searchSuggest (): void {
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search_suggest`, {
         params: {
           s: this.search.s
@@ -323,6 +324,8 @@ export default mixins(I18N).extend({
     agr: UI.agr
   },
   mounted: function () {
+    this.$emit('setTitle', __l(this.language as Language, 'Advanced search'))
+
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)
       .then(response => {
         this.sources = response.data.map((s: Source) => s.key)

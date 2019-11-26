@@ -88,18 +88,20 @@ export default mixins(I18N).extend({
     }
   },
   computed: {
-    latestNews: function (): {date: string, en: string, mt: string}[] {
+    latestNews (): {date: string, en: string, mt: string}[] {
       return this.news.slice(-3).reverse()
     }
   },
   methods: {
-    submitSearch: function (): void {
+    submitSearch (): void {
       if (this.term) {
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
       }
     }
   },
   mounted (): void {
+    this.$emit('setTitle', '')
+
     axios.get(`${process.env.VUE_APP_API_URL}/lexemes/count`)
       .then(response => {
         this.stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
