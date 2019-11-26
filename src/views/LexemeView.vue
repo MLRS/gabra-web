@@ -6,7 +6,7 @@
     <div class="row" v-if="lexeme">
 
       <div class="col-12">
-        <h1 class="surface_form">{{ lexeme.lemma }}</h1>
+        <h1 class="surface_form mb-3">{{ lexeme.lemma }}</h1>
       </div>
 
       <!-- lexeme -->
@@ -14,7 +14,7 @@
         <dl>
 
           <dt>{{ __('Part of speech') }}</dt>
-          <dd>{{ lexeme.pos }}</dd>
+          <dd>{{ __(`pos.${lexeme.pos }`) }}</dd>
 
           <dt>{{ __('Gloss') }}</dt>
           <dd>
@@ -28,10 +28,7 @@
           <template v-if="lexeme.root">
             <dt>{{ __('Root') }}</dt>
             <dd>
-              <router-link :to="{ path: 'roots/' + lexeme.root.radicals }" class="text-nowrap">
-                {{ lexeme.root.radicals }}
-                {{ lexeme.root.variant }}
-              </router-link>
+              <Root :root="lexeme.root"></Root>
             </dd>
           </template>
 
@@ -60,6 +57,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.ts'
+import Root from '@/components/Root.vue'
 import axios from 'axios'
 
 interface Data {
@@ -70,6 +68,7 @@ interface Data {
 
 export default mixins(I18N).extend({
   components: {
+    Root
   },
   props: {
     language: String

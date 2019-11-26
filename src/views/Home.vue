@@ -117,3 +117,11 @@ export default mixins(I18N).extend({
   }
 })
 </script>
+
+<style lang="scss">
+@import '@/assets/custom.scss';
+
+.well {
+  @extend .card-body, .bg-light, .rounded, .mt-3, .text-muted;
+}
+</style>

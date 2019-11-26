@@ -78,12 +78,7 @@
             <td>
               <!-- TODO when fields don't exist -->
               {{ __(`pos.${item.lexeme.pos }`) }}
-              <span v-if="item.lexeme.root">
-                <router-link :to="{ path: 'roots/' + item.lexeme.root.radicals }" class="text-nowrap">
-                  {{ item.lexeme.root.radicals }}
-                  {{ item.lexeme.root.variant }}
-                </router-link>
-              </span>
+              <Root :root="item.lexeme.root"></Root>
             </td>
             <td>
               <div v-for="g,ix in item.lexeme.glosses" :key="ix">
@@ -123,6 +118,7 @@
 import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
+import Root from '@/components/Root.vue'
 import axios from 'axios'
 
 function query2bool (val: any, def: boolean = true): boolean {
@@ -161,7 +157,8 @@ interface Result {
 
 export default mixins(I18N).extend({
   components: {
-    SearchInput
+    SearchInput,
+    Root
   },
   props: {
     language: String
