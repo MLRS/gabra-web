@@ -48,13 +48,12 @@ npm run lint
 
 ## TODO
 
+- Auto load more results on scroll
 - Chart & logs on homepage
-- Formatting of search results
 - Formatting of view lexeme page
 - Highlighting of search term
 - Error handling
 - Submitting additions
-- Root search
 - Accessibility
 - SEO
 - Responsiveness

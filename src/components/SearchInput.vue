@@ -64,7 +64,7 @@ export default Vue.extend({
   },
   watch: {
     '$route.query.s': {
-      handler: function (): void {
+      handler (): void {
         if (this.$route.name === 'lexemes') {
           this.term = this.$route.query.s as string || ''
         } else {

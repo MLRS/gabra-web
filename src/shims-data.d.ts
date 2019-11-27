@@ -1,4 +1,6 @@
-interface Entry {
+/* eslint-disable camelcase */
+
+ interface Entry {
   key?: string
   en: string
   mt: string
@@ -13,10 +15,11 @@ interface Lexeme {
   _id: string
   lemma: string
   pos: string
+  derived_form?: number
 }
 
 interface Wordform {
-  surface_form: string // eslint-disable-line camelcase
+  surface_form: string
 }
 
 interface Root {

@@ -90,13 +90,13 @@ export default mixins(I18N).extend({
     }
   },
   methods: {
-    setTitle: function (t?: string): void {
+    setTitle (t?: string): void {
       document.title = t ? `${t} · Ġabra` : 'Ġabra'
     },
-    setLanguage: function (lang: Language): void {
+    setLanguage (lang: Language): void {
       this.language = lang
     },
-    submitSearch: function (): void {
+    submitSearch (): void {
       if (this.term) {
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
           .catch((_) => { })

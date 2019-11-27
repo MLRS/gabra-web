@@ -94,7 +94,7 @@
                 {{ derivedForm(item.lexeme.derived_form) }}
               </div>
               <Root :root="item.lexeme.root" class="d-block"></Root>
-              <div>
+              <div class="text-lighter">
                 {{ item.lexeme.transitive ? __('transitive') : '' }}
                 {{ item.lexeme.intransitive ? __('intransitive') : '' }}
                 {{ item.lexeme.ditransitive ? __('ditransitive') : '' }}
@@ -105,12 +105,14 @@
               </div>
             </td>
             <td>
-              <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
-                {{ g.gloss }}
-              </div>
-              <div v-if="item.lexeme.glosses > 5">
-                ⋮
-              </div>
+              <template v-if="item.lexeme.glosses">
+                <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
+                  {{ g.gloss }}
+                </div>
+                <div v-if="item.lexeme.glosses > 5">
+                  ⋮
+                </div>
+              </template>
             </td>
             <td>
               <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
@@ -249,6 +251,8 @@ export default mixins(I18N).extend({
           this.loadResults()
           this.searchSuggest()
           this.$emit('setTitle', __l(this.language as Language, 'title.search', [this.search.s]))
+        } else {
+          this.$emit('setTitle', __l(this.language as Language, 'Advanced search'))
         }
       },
       immediate: true
@@ -278,7 +282,7 @@ export default mixins(I18N).extend({
     },
     // get results
     loadResults (): void {
-      this.working = true // TODO might need to wait for browser render
+      this.working = true
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {
           s: this.search.s,
@@ -323,9 +327,7 @@ export default mixins(I18N).extend({
     derivedForm: UI.derivedForm,
     agr: UI.agr
   },
-  mounted: function () {
-    this.$emit('setTitle', __l(this.language as Language, 'Advanced search'))
-
+  mounted (): void {
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)
       .then(response => {
         this.sources = response.data.map((s: Source) => s.key)

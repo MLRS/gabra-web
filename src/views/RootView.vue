@@ -107,7 +107,7 @@ export default mixins(I18N).extend({
     }
   },
   computed: {
-    rootClass: function (this: any): string {
+    rootClass (this: any): string {
       if (!this.root) return ''
       let out = ''
       if (this.root.type !== 'irregular') {
