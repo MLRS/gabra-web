@@ -7,7 +7,7 @@
 
       <form role="search" action="" @submit.prevent="submitSearch" v-show="$route.name != 'home'" class="mx-2">
         <SearchInput
-          :placeholder="__('Search for a word')"
+          :placeholder="__('search.placeholder')"
           :showSubmit="true"
           @update="(s) => { term = s }"
         ></SearchInput>

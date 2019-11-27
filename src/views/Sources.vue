@@ -4,20 +4,11 @@
 
     <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
 
-    <table class="table table-striped mt-3">
-      <thead>
-        <tr>
-          <th>{{ __('Key') }}</th>
-          <th>{{ __('Title') }}</th>
-          <th>{{ __('Author') }}</th>
-          <th>{{ __('Year') }}</th>
-          <th>{{ __('Note') }}</th>
-        </tr>
-      </thead>
+    <table class="table mt-3">
       <tbody>
         <tr v-for="s,ix in sources" :key="ix">
-          <td>{{ s.key }}</td>
-          <td>{{ s.title }}</td>
+          <th>{{ s.key }}</th>
+          <td>{{ s.title }}<td>
           <td>{{ s.author }}</td>
           <td>{{ s.year }}</td>
           <td>{{ s.note }}</td>

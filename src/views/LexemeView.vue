@@ -13,10 +13,10 @@
       <div class="col-md-4">
         <dl>
 
-          <dt>{{ __('Part of speech') }}</dt>
+          <dt>{{ __('part of speech') }}</dt>
           <dd>{{ __(`pos.${lexeme.pos }`) }}</dd>
 
-          <dt>{{ __('Gloss') }}</dt>
+          <dt>{{ __('gloss') }}</dt>
           <dd>
             <ul class="pl-4">
               <li v-for="g,ix in lexeme.glosses" :key="ix">
@@ -26,11 +26,18 @@
           </dd>
 
           <template v-if="lexeme.root">
-            <dt>{{ __('Root') }}</dt>
+            <dt>{{ __('root') }}</dt>
             <dd>
               <Root :root="lexeme.root"></Root>
             </dd>
           </template>
+
+          <dt>{{ __('source') }}</dt>
+          <dd>
+            <router-link v-for="s,ix in lexeme.sources" :key="ix" :to="{ name: 'sources' }" class="">
+              {{ s }}
+            </router-link>
+          </dd>
 
         </dl>
       </div>
@@ -40,7 +47,7 @@
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
 
-        <h2 class="h6">{{ __('Word forms') }}</h2>
+        <h2 class="h6 text-capitalize">{{ __('word forms') }}</h2>
 
         <table class="table table-sm">
           <tbody>
@@ -115,7 +122,15 @@ export default mixins(I18N).extend({
     }
   },
   mounted (): void {
-    this.$emit('setTitle', __l(this.language as Language, 'Lexeme'))
+    this.$emit('setTitle', __l(this.language as Language, 'title.lexeme'))
   }
 })
 </script>
+
+<style lang="scss">
+@import '@/assets/custom.scss';
+
+dt {
+  @extend .text-capitalize;
+}
+</style>

@@ -25,6 +25,7 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
     return s
   } else {
+    console.error(`Cannot find localisation of: ${key}`)
     return key
   }
 }

@@ -8,7 +8,7 @@
 
         <form @submit.prevent="submitSearch">
           <SearchInput
-          :placeholder="__('Search')"
+          :placeholder="__('search.placeholder')"
           :showSubmit="false"
           @update="(s) => { search.s = s }"
           class="my-4"
@@ -16,38 +16,38 @@
 
           <div class="form-group form-check mb-0">
             <input type="checkbox" class="form-check-input" v-model="search.l" id="LexemeL"/>
-            <label for="LexemeL">{{ __('Search lemmas') }}</label>
+            <label for="LexemeL">{{ __('search.option.lemmas') }}</label>
           </div>
 
           <div class="form-group form-check mb-0">
             <input type="checkbox" class="form-check-input" v-model="search.wf" id="LexemeWf"/>
-            <label for="LexemeWf">{{ __('Search wordforms') }}</label>
+            <label for="LexemeWf">{{ __('search.option.wordforms') }}</label>
           </div>
 
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" v-model="search.g" id="LexemeG"/>
-            <label for="LexemeG">{{ __('Search in English glosses') }}</label>
+            <label for="LexemeG">{{ __('search.option.glosses') }}</label>
           </div>
 
           <div class="form-group">
-            <label for="LexemePos">{{ __('Part of speech') }}</label>
+            <label for="LexemePos">{{ __('search.option.pos') }}</label>
             <select v-model="search.pos" class="form-control" id="LexemePos">
-              <option value="">{{ __('All') }}</option>
+              <option value=""></option>
               <option v-for="p in pos" :key="p" :value="p">{{ __(`pos.${p}`) }}</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="LexemeSource">{{ __('Source') }}</label>
+            <label for="LexemeSource">{{ __('search.option.source') }}</label>
             <select v-model="search.source" class="form-control" id="LexemeSource">
-              <option value="">{{ __('All') }}</option>
+              <option value=""></option>
               <option v-for="s in sources" :key="s" :value="s">{{ s }}</option>
             </select>
           </div>
 
           <button class="btn btn-primary" type="submit">
             <i class="fas fa-search mr-1"></i>
-            {{ __('Search') }}
+            {{ __('search.button') }}
           </button>
         </form>
       </div>
@@ -95,10 +95,10 @@
               </div>
               <Root :root="item.lexeme.root" class="d-block"></Root>
               <div>
-                {{ item.lexeme.transitive ? __('trans.') : '' }}
-                {{ item.lexeme.intransitive ? __('intrans.') : '' }}
-                {{ item.lexeme.ditransitive ? __('ditrans.') : '' }}
-                {{ item.lexeme.hypothetical ? __('hyp.') : '' }}
+                {{ item.lexeme.transitive ? __('transitive') : '' }}
+                {{ item.lexeme.intransitive ? __('intransitive') : '' }}
+                {{ item.lexeme.ditransitive ? __('ditransitive') : '' }}
+                {{ item.lexeme.hypothetical ? __('hypothetical') : '' }}
               </div>
               <div>
                 {{ item.lexeme.frequency }}
@@ -148,7 +148,7 @@
       <div class="text-center mb-5">
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
         <button class="btn btn-primary" @click="loadResults()" v-show="!working && moreResults">
-          {{ __('Load more results') }}
+          {{ __('search.button.more_results') }}
         </button>
       </div>
 

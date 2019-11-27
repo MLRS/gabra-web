@@ -25,10 +25,10 @@
       <div class="col-md-4">
         <dl>
 
-          <dt>{{ __('Class') }}</dt>
+          <dt>{{ __('root.type') }}</dt>
           <dd>{{ rootClass }}</dd>
 
-          <dt>{{ __('Source(s)') }}</dt>
+          <dt>{{ __('source') }}</dt>
           <dd>
             <router-link v-for="s,ix in root.sources" :key="ix" :to="{ name: 'sources' }" class="">
               {{ s }}
@@ -41,7 +41,7 @@
       <!-- lexemes -->
       <div class="col-md-8">
 
-        <h2 class="h6">{{ __('Lexemes') }}</h2>
+        <h2 class="h6 text-capitalize">{{ __('lexemes') }}</h2>
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="lexemes === null"></i>
 
@@ -112,9 +112,9 @@ export default mixins(I18N).extend({
       let out = ''
       if (this.root.type !== 'irregular') {
         let radicalCount = this.root.radicals.split('-').length
-        out += radicalCount === 4 ? this.__('Quad.') : this.__('Tri.')
+        out += radicalCount === 4 ? this.__('root.quad') : this.__('root.tri')
       }
-      out += ' ' + this.__(`type.${this.root.type}`)
+      out += ' ' + this.__(`root.type.${this.root.type}`)
       return out
     }
   },
@@ -146,3 +146,11 @@ export default mixins(I18N).extend({
   }
 })
 </script>
+
+<style lang="scss">
+@import '@/assets/custom.scss';
+
+dt {
+  @extend .text-capitalize;
+}
+</style>
