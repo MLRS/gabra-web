@@ -84,7 +84,7 @@
               <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="">
                 {{ item.lexeme.lemma }}
               </router-link>
-              <div v-if="item.lexeme.alternatives" class="text-muted">
+              <div v-if="item.lexeme.alternatives" class="alternative">
                 ({{ item.lexeme.alternatives.join(', ') }})
               </div>
             </th>

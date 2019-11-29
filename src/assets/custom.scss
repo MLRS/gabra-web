@@ -14,6 +14,10 @@
   font-weight: normal;
 }
 
+.alternative {
+  @extend .text-lighter;
+}
+
 .text-lighter {
   color: rgba(0,0,0,0.3);
 }

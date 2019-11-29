@@ -14,7 +14,7 @@
               {{ root.variant }}
             </sup>
 
-            <span v-if="root.alternatives" class="text-muted">
+            <span v-if="root.alternatives" class="alternative">
               ({{ root.alternatives }})
             </span>
           </span>

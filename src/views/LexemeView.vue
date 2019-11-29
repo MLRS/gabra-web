@@ -6,7 +6,12 @@
     <div class="row" v-if="lexeme !== null && lexeme.lemma">
 
       <div class="col-12">
-        <h1 class="surface_form mb-3">{{ lexeme.lemma }}</h1>
+        <h1 class="surface_form mb-3">
+          {{ lexeme.lemma }}
+          <small v-if="lexeme.alternatives" class="alternative">
+            ({{ lexeme.alternatives.join(', ') }})
+          </small>
+        </h1>
       </div>
 
       <!-- lexeme -->
@@ -14,9 +19,12 @@
         <dl>
 
           <dt>{{ __('part of speech') }}</dt>
-          <dd>{{ __(`pos.${lexeme.pos }`) }}</dd>
+          <dd>
+            {{ __(`pos.${lexeme.pos }`) }}
+            {{ derivedForm(lexeme.derived_form) }}
+          </dd>
 
-          <dt>{{ __('gloss') }}</dt>
+          <dt>{{ __('english_gloss') }}</dt>
           <dd>
             <ul class="pl-4">
               <li v-for="g,ix in lexeme.glosses" :key="ix">
@@ -67,8 +75,11 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
+
 import I18N, { __l, Language } from '@/components/I18N.ts'
 import Root from '@/components/Root.vue'
+import * as UI from '@/helpers/UI.ts'
+
 import axios from 'axios'
 
 interface Data {
@@ -119,7 +130,10 @@ export default mixins(I18N).extend({
           console.error(error)
           this.wordforms = []
         })
-    }
+    },
+    // Making helper functions available to template
+    derivedForm: UI.derivedForm,
+    agr: UI.agr
   },
   mounted (): void {
     this.$emit('setTitle', __l(this.language as Language, 'title.lexeme'))
