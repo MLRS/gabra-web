@@ -1,7 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-brand, .text-red {
-  color: firebrick!important;
+.navbar-brand {
+  @extend .text-red;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .generated {
@@ -18,6 +19,14 @@
   @extend .text-lighter;
 }
 
+.text-red {
+  color: firebrick!important;
+}
+
 .text-lighter {
   color: rgba(0,0,0,0.3);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px #ccc;
 }
