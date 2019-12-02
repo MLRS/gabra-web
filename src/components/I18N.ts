@@ -7,7 +7,7 @@ const MarkdownIt = require('markdown-it')({
 
 export type Language = 'en' | 'mt'
 
-// Standalone i18n function
+// Standalone i18n function with explicit language
 export function __l (lang: Language, key: string, replacements?: {[key:string]: string} | string[]): string {
   let f = terms.find((x: Entry) => {
     if (x.key) {
@@ -25,23 +25,17 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
     return s
   } else {
-    console.error(`Cannot find localisation of: ${key}`)
+    console.error(`Cannot find localisation of: ${key}`) // eslint-disable-line no-console
     return key
   }
-}
-
-// The component mixing-in this mixin must have a language property
-// which is read directly from inside the __ function
-interface Mixer {
-  language: Language
 }
 
 export default Vue.extend({
   methods: {
 
     // Get text for key
-    __: function (this: Mixer, key: string, replacements?: {[key:string]: string} | string[]): string {
-      return __l(this.language, key, replacements)
+    __: function (key: string, replacements?: {[key:string]: string} | string[]): string {
+      return __l(this.$store.state.language, key, replacements)
     },
 
     // Render as Markdown

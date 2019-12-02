@@ -32,9 +32,6 @@ interface Data {
 export default mixins(I18N).extend({
   components: {
   },
-  props: {
-    language: String
-  },
   data (): Data {
     return {
       sources: [],
@@ -42,7 +39,7 @@ export default mixins(I18N).extend({
     }
   },
   mounted (): void {
-    this.$emit('setTitle', __l(this.language as Language, 'Sources'))
+    this.$emit('setTitle', __l(this.$store.state.language, 'Sources'))
 
     this.working = true // TODO might need to wait for browser render
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)

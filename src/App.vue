@@ -24,10 +24,10 @@
           <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
         </div>
 
-        <button type="button" class="btn btn-link pr-0 text-red" v-show="language != 'en'" @click="setLanguage('en')">
+        <button type="button" class="btn btn-link pr-0 text-red" v-show="$store.state.language != 'en'" @click="$store.dispatch('setLanguage', 'en')">
           in English
         </button>
-        <button type="button" class="btn btn-link pr-0 text-red" v-show="language != 'mt'" @click="setLanguage('mt')">
+        <button type="button" class="btn btn-link pr-0 text-red" v-show="$store.state.language != 'mt'" @click="$store.dispatch('setLanguage', 'mt')">
           bil-Malti
         </button>
 
@@ -51,7 +51,7 @@
     </nav>
 
     <main class="container pt-3">
-      <router-view :language="language" @setTitle="setTitle"></router-view>
+      <router-view @setTitle="setTitle"></router-view>
     </main>
 
     <footer class="container">
@@ -66,17 +66,7 @@ import I18N, { Language } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 
 interface Data {
-  language: Language, // current UI language for whole app
   term: string
-}
-
-// TODO untested
-function preferredLanguage (): Language {
-  if (window && window.navigator && window.navigator.language.startsWith('mt')) {
-    return 'mt'
-  } else {
-    return 'en'
-  }
 }
 
 export default mixins(I18N).extend({
@@ -85,16 +75,12 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
-      language: preferredLanguage(),
       term: this.$route.query.s as string
     }
   },
   methods: {
     setTitle (t?: string): void {
       document.title = t ? `${t} · Ġabra` : 'Ġabra'
-    },
-    setLanguage (lang: Language): void {
-      this.language = lang
     },
     submitSearch (): void {
       if (this.term) {

@@ -80,9 +80,6 @@ interface Data {
 export default mixins(I18N).extend({
   components: {
   },
-  props: {
-    language: String
-  },
   data (): Data {
     return {
       root: null,

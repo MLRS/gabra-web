@@ -209,9 +209,6 @@ export default mixins(I18N).extend({
     SearchInput,
     Root
   },
-  props: {
-    language: String
-  },
   data (): Data {
     return {
       pos: ['ADJ', 'ADP', 'ADV', 'AUX', 'CONJ', 'DET', 'INTJ', 'NOUN', 'NUM', 'PART', 'PRON', 'PROPN', 'PUNCT', 'SCONJ', 'SYM', 'VERB', 'X'],
@@ -250,9 +247,9 @@ export default mixins(I18N).extend({
           this.page = 0
           this.loadResults()
           this.searchSuggest()
-          this.$emit('setTitle', __l(this.language as Language, 'title.search', [this.search.s]))
+          this.$emit('setTitle', __l(this.$store.state.language, 'title.search', [this.search.s]))
         } else {
-          this.$emit('setTitle', __l(this.language as Language, 'Advanced search'))
+          this.$emit('setTitle', __l(this.$store.state.language, 'Advanced search'))
         }
       },
       immediate: true

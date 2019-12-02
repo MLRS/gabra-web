@@ -91,9 +91,6 @@ export default mixins(I18N).extend({
   components: {
     Root
   },
-  props: {
-    language: String
-  },
   data (): Data {
     return {
       lexeme: null,
@@ -136,7 +133,7 @@ export default mixins(I18N).extend({
     agr: UI.agr
   },
   mounted (): void {
-    this.$emit('setTitle', __l(this.language as Language, 'title.lexeme'))
+    this.$emit('setTitle', __l(this.$store.state.language, 'title.lexeme'))
   }
 })
 </script>

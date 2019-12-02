@@ -211,9 +211,6 @@ export default mixins(I18N).extend({
     SearchInput,
     Root
   },
-  props: {
-    language: String
-  },
   data (): Data {
     return {
       types: ['strong', 'geminated', 'weak-initial', 'weak-medial', 'weak-final', 'irregular'],
@@ -253,7 +250,7 @@ export default mixins(I18N).extend({
           this.loadResults()
           this.term = null
         } else {
-          this.$emit('setTitle', __l(this.language as Language, 'Root search'))
+          this.$emit('setTitle', __l(this.$store.state.language, 'Root search'))
         }
       },
       immediate: true
@@ -261,7 +258,7 @@ export default mixins(I18N).extend({
     term: {
       handler (): void {
         if (this.term !== null) {
-          this.$emit('setTitle', __l(this.language as Language, 'title.search', [this.term]))
+          this.$emit('setTitle', __l(this.$store.state.language, 'title.search', [this.term]))
         }
       },
       immediate: true

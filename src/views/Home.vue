@@ -41,7 +41,7 @@
         <h4 class="h6 mb-1">
           {{ item.date }}
         </h4>
-        <div v-html="markdown(item[language])"></div>
+        <div v-html="markdown(item[$store.state.language])"></div>
       </div>
 
     </div><!-- /.col-sm-4 -->
@@ -73,9 +73,6 @@ export default mixins(I18N).extend({
   name: 'home',
   components: {
     SearchInput
-  },
-  props: {
-    language: String
   },
   data (): Data {
     return {
