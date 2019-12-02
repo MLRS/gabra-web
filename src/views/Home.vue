@@ -19,9 +19,9 @@
 
     <div class="col-sm-8">
 
-      <div v-html="__md('home.mistakes')"></div>
+      <div v-html="markdown(__('home.mistakes'))"></div>
 
-      <div v-html="__md('home.about')"></div>
+      <div v-html="markdown(__('home.about'))"></div>
 
       <p v-html="__('home.citing')"></p>
 

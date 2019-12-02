@@ -17,7 +17,11 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
   })
   if (f) {
-    let s = f[lang] // from mixed-in component
+    let s = f[lang]
+    if (!s) {
+      console.error(`No localisation of key '${key}' in language '${lang}'`) // eslint-disable-line no-console
+      return key
+    }
     if (replacements) {
       for (let key in replacements) { // works for both key-values and arrays
         s = s.replace(`{${key}}`, (replacements as {[key:string]:string})[key])
@@ -25,7 +29,7 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
     return s
   } else {
-    console.error(`Cannot find localisation of: ${key}`) // eslint-disable-line no-console
+    console.error(`No localisation of key '${key}'`) // eslint-disable-line no-console
     return key
   }
 }
@@ -37,12 +41,6 @@ export default Vue.extend({
     // Can only be called from within component
     __: function (key: string, replacements?: {[key:string]: string} | string[]): string {
       return __l(this.$store.state.language, key, replacements)
-    },
-
-    //
-    __md: function (key: string, replacements?: {[key:string]: string} | string[]): string {
-      let md = __l(this.$store.state.language, key, replacements)
-      return MarkdownIt.render(md)
     },
 
     // Render as Markdown

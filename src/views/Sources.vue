@@ -41,7 +41,7 @@ export default mixins(I18N).extend({
   mounted (): void {
     this.$store.dispatch('setTitle', { key: 'Sources' })
 
-    this.working = true // TODO might need to wait for browser render
+    this.working = true
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)
       .then(response => {
         this.sources = response.data

@@ -39,12 +39,11 @@ export default new Vuex.Store({
   mutations: {
     SET_LANGUAGE (state: State, lang: Language): void {
       state.language = lang
-      // TODO translate page title
     },
     SET_TITLE (state: State, title?: Title): void {
       if (title) {
         state.title = title
-        let t = 'ok' // __l(state.language, title.key, title.replacements || [])
+        let t = __l(state.language, title.key, title.replacements)
         document.title = `${t} · Ġabra`
       } else {
         state.title = null
@@ -55,12 +54,13 @@ export default new Vuex.Store({
   actions: {
     setLanguage (context, lang: Language): void {
       context.commit('SET_LANGUAGE', lang)
+      context.commit('SET_TITLE', context.state.title)
     },
     clearTitle (context): void {
-      context.commit('SET_LANGUAGE')
+      context.commit('SET_TITLE')
     },
     setTitle (context, title: Title): void {
-      context.commit('SET_LANGUAGE', title)
+      context.commit('SET_TITLE', title)
     }
   },
   modules: {
