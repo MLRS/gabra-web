@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N, { __l, Language } from '@/components/I18N.ts'
+import I18N from '@/components/I18N.ts'
 import axios from 'axios'
 
 interface Data {
@@ -39,7 +39,7 @@ export default mixins(I18N).extend({
     }
   },
   mounted (): void {
-    this.$emit('setTitle', __l(this.$store.state.language, 'Sources'))
+    this.$store.dispatch('setTitle', { key: 'Sources' })
 
     this.working = true // TODO might need to wait for browser render
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)

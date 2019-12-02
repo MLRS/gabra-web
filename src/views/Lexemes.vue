@@ -162,7 +162,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 
-import I18N, { __l, Language } from '@/components/I18N.ts'
+import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 import Root from '@/components/Root.vue'
 import * as UI from '@/helpers/UI.ts'
@@ -247,9 +247,9 @@ export default mixins(I18N).extend({
           this.page = 0
           this.loadResults()
           this.searchSuggest()
-          this.$emit('setTitle', __l(this.$store.state.language, 'title.search', [this.search.s]))
+          this.$store.dispatch('setTitle', { key: 'title.search', replacements: [this.search.s] })
         } else {
-          this.$emit('setTitle', __l(this.$store.state.language, 'Advanced search'))
+          this.$store.dispatch('setTitle', { key: 'Advanced search' })
         }
       },
       immediate: true

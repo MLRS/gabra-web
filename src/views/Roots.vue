@@ -161,7 +161,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 
-import I18N, { __l, Language } from '@/components/I18N.ts'
+import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 import Root from '@/components/Root.vue'
 
@@ -250,7 +250,7 @@ export default mixins(I18N).extend({
           this.loadResults()
           this.term = null
         } else {
-          this.$emit('setTitle', __l(this.$store.state.language, 'Root search'))
+          this.$store.dispatch('setTitle', { key: 'Root search' })
         }
       },
       immediate: true
@@ -258,7 +258,7 @@ export default mixins(I18N).extend({
     term: {
       handler (): void {
         if (this.term !== null) {
-          this.$emit('setTitle', __l(this.$store.state.language, 'title.search', [this.term]))
+          this.$store.dispatch('setTitle', { key: 'title.search', replacements: [this.term] })
         }
       },
       immediate: true

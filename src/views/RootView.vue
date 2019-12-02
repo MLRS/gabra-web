@@ -67,7 +67,7 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import I18N, { __l, Language } from '@/components/I18N.ts'
+import I18N from '@/components/I18N.ts'
 import * as UI from '@/helpers/UI.ts'
 
 import axios from 'axios'
@@ -98,7 +98,7 @@ export default mixins(I18N).extend({
           case '4': title += ' ⁴'; break
           case '5': title += ' ⁵'; break
         }
-        this.$emit('setTitle', title)
+        this.$store.dispatch('setTitle', { key: title })
       },
       immediate: true
     }

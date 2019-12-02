@@ -34,8 +34,15 @@ export default Vue.extend({
   methods: {
 
     // Get text for key
+    // Can only be called from within component
     __: function (key: string, replacements?: {[key:string]: string} | string[]): string {
       return __l(this.$store.state.language, key, replacements)
+    },
+
+    //
+    __md: function (key: string, replacements?: {[key:string]: string} | string[]): string {
+      let md = __l(this.$store.state.language, key, replacements)
+      return MarkdownIt.render(md)
     },
 
     // Render as Markdown

@@ -51,7 +51,7 @@
     </nav>
 
     <main class="container pt-3">
-      <router-view @setTitle="setTitle"></router-view>
+      <router-view></router-view>
     </main>
 
     <footer class="container">
@@ -79,9 +79,6 @@ export default mixins(I18N).extend({
     }
   },
   methods: {
-    setTitle (t?: string): void {
-      document.title = t ? `${t} · Ġabra` : 'Ġabra'
-    },
     submitSearch (): void {
       if (this.term) {
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
