@@ -51,6 +51,10 @@
     </nav>
 
     <main class="container pt-3">
+      <div v-for="m,ix in $store.state.messages" :key="ix" class="alert" :class="'alert-'+m.type">
+        {{ m.text }}
+      </div>
+
       <router-view></router-view>
     </main>
 
@@ -76,6 +80,14 @@ export default mixins(I18N).extend({
   data (): Data {
     return {
       term: this.$route.query.s as string
+    }
+  },
+  watch: {
+    // Clear any errors when route changes
+    '$route': {
+      handler (): void {
+        this.$store.dispatch('clearMessages')
+      }
     }
   },
   methods: {

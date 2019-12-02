@@ -280,6 +280,7 @@ export default mixins(I18N).extend({
     // get results
     loadResults (): void {
       this.working = true
+      this.$store.dispatch('clearMessages')
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {
           s: this.search.s,
@@ -294,14 +295,14 @@ export default mixins(I18N).extend({
                 r.wordforms = resp.data
               })
               .catch(error => {
-                console.error(error)
+                this.$store.dispatch('addError', error)
                 r.wordforms = []
               })
           })
           this.resultCount = response.data.query.result_count
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
         })
         .then(() => {
           this.working = false

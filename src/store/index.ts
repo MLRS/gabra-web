@@ -11,12 +11,18 @@ interface Title {
   replacements: {[key:string]: string} | string[]
 }
 
+interface Message {
+  text: string
+  type: MessageType
+}
+
+type MessageType = 'success' | 'info' | 'warning' | 'danger'
+
 interface State {
   language: Language
   title: Title | null
-  // TODO: page title
+  messages: Message[]
   // TODO: loading spinnner
-  // TODO: messages
 }
 
 // Get preferred language from browser settings
@@ -34,7 +40,8 @@ export default new Vuex.Store({
     title: {
       key: '',
       replacements: {}
-    }
+    },
+    messages: []
   },
   mutations: {
     SET_LANGUAGE (state: State, lang: Language): void {
@@ -49,6 +56,12 @@ export default new Vuex.Store({
         state.title = null
         document.title = 'Ġabra'
       }
+    },
+    ADD_MESSAGE (state: State, message: Message): void {
+      state.messages.push(message)
+    },
+    CLEAR_MESSAGES (state: State): void {
+      state.messages = []
     }
   },
   actions: {
@@ -61,7 +74,14 @@ export default new Vuex.Store({
     },
     setTitle (context, title: Title): void {
       context.commit('SET_TITLE', title)
+    },
+    addError (context, message: string): void {
+      context.commit('ADD_MESSAGE', { type: 'danger', text: message })
+    },
+    clearMessages (context): void {
+      context.commit('CLEAR_MESSAGES')
     }
+
   },
   modules: {
   },
