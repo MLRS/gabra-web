@@ -60,6 +60,7 @@ export default Vue.extend({
     },
     insert (letter: string): void {
       this.term = this.term.slice(0, this.position) + letter + this.term.slice(this.position)
+      this.position += letter.length
     }
   },
   watch: {
