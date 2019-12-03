@@ -83,7 +83,6 @@
 
     <div v-if="isSearching">
       <router-link :to="{ name: 'roots' }" class="btn btn-link float-right">
-        <!-- <i class="fas fa-chevron-left mr-1"></i> -->
         {{ __('search.new') }}
       </router-link>
 
@@ -307,7 +306,7 @@ export default mixins(I18N).extend({
           this.resultCount = response.data.query.result_count
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
         })
         .then(() => {
           this.working = false

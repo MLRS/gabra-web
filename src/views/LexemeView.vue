@@ -116,7 +116,7 @@ export default mixins(I18N).extend({
           this.$emit('setTitle', (this.lexeme as Lexeme).lemma)
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
           this.lexeme = {} as Lexeme
         })
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}`)
@@ -124,7 +124,7 @@ export default mixins(I18N).extend({
           this.wordforms = response.data
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
           this.wordforms = []
         })
     },

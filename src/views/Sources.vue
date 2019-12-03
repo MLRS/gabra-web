@@ -47,7 +47,7 @@ export default mixins(I18N).extend({
         this.sources = response.data
       })
       .catch(error => {
-        console.error(error)
+        this.$store.dispatch('addError', error)
       })
       .then(() => {
         this.working = false

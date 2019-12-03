@@ -124,7 +124,7 @@ export default mixins(I18N).extend({
           this.root = response.data
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
           this.root = {} as Root
         })
       axios.get(`${process.env.VUE_APP_API_URL}/roots/lexemes/${path}`)
@@ -132,7 +132,7 @@ export default mixins(I18N).extend({
           this.lexemes = response.data
         })
         .catch(error => {
-          console.error(error)
+          this.$store.dispatch('addError', error)
           this.lexemes = []
         })
     },
