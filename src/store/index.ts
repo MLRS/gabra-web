@@ -5,8 +5,7 @@ import { __l, Language } from '@/components/I18N.ts'
 
 Vue.use(Vuex)
 
-// TODO more general name like "LocalisationUnit"
-interface Title {
+interface I18NString {
   key: string,
   replacements: {[key:string]: string} | string[]
 }
@@ -20,7 +19,7 @@ type MessageType = 'success' | 'info' | 'warning' | 'danger'
 
 interface State {
   language: Language
-  title: Title | null
+  title: I18NString | string
   messages: Message[]
   // TODO: loading spinnner
 }
@@ -47,13 +46,18 @@ export default new Vuex.Store({
     SET_LANGUAGE (state: State, lang: Language): void {
       state.language = lang
     },
-    SET_TITLE (state: State, title?: Title): void {
+    SET_TITLE (state: State, title?: I18NString | string): void {
       if (title) {
         state.title = title
-        let t = __l(state.language, title.key, title.replacements)
+        let t: string
+        if (typeof title === 'string') {
+          t = title as string
+        } else {
+          t = __l(state.language, title.key, title.replacements)
+        }
         document.title = `${t} · Ġabra`
       } else {
-        state.title = null
+        state.title = ''
         document.title = 'Ġabra'
       }
     },
@@ -72,7 +76,7 @@ export default new Vuex.Store({
     clearTitle (context): void {
       context.commit('SET_TITLE')
     },
-    setTitle (context, title: Title): void {
+    setTitle (context, title: I18NString | string): void {
       context.commit('SET_TITLE', title)
     },
     addError (context, message: string): void {

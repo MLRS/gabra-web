@@ -98,7 +98,7 @@ export default mixins(I18N).extend({
           case '4': title += ' ⁴'; break
           case '5': title += ' ⁵'; break
         }
-        this.$store.dispatch('setTitle', { key: title })
+        this.$store.dispatch('setTitle', title)
       },
       immediate: true
     }
