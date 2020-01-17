@@ -30,9 +30,12 @@
 
           <dt>{{ __('source') }}</dt>
           <dd>
-            <router-link v-for="s,ix in root.sources" :key="ix" :to="{ name: 'sources' }" class="">
-              {{ s }}
-            </router-link>
+            <template v-for="s,ix in root.sources">
+              <router-link :to="{ name: 'sources' }" class="" :key="ix">
+                {{ s }}
+              </router-link>
+              <span v-if="ix < root.sources.length - 1" :key="ix">,</span>
+            </template>
           </dd>
 
         </dl>

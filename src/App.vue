@@ -58,7 +58,7 @@
       <router-view></router-view>
     </main>
 
-    <footer class="container">
+    <footer class="container mb-5">
     </footer>
 
   </div>

@@ -674,6 +674,13 @@
   en: English gloss
   mt: Tifsira bl-Ingliż
 
+- en: features
+  mt: karatteristiki
+  
+- key: related_entries
+  en: Related
+  mt: Relatati
+
 - en: root
   mt: għerq
 
@@ -871,9 +878,6 @@
 #   en: Root
 #   mt: Għerq
 #
-# - en: Features
-#   mt: Karatteristiċi
-
 # - en: Created
 #   mt: Kkreat
 #
@@ -897,9 +901,6 @@
 #
 # - en: Tri.
 #   mt: Tri.
-#
-# - en: Related
-#   mt: Relatati
 #
 # - en: Key
 #   mt: Kod

@@ -40,11 +40,34 @@
             </dd>
           </template>
 
+          <dt>{{ __('features') }}</dt>
+          <dd>
+            <div>{{ lexeme.frequency }}</div>
+            <div>{{ lexeme.onomastic_type }}</div>
+            <div>{{ lexeme.transitive ? __('transitive') : '' }}</div>
+            <div>{{ lexeme.intransitive ? __('intransitive') : '' }}</div>
+            <div>{{ lexeme.ditransitive ? __('ditransitive') : '' }}</div>
+            <div>{{ lexeme.hypothetical ? __('hypothetical') : '' }}</div>
+          </dd>
+
           <dt>{{ __('source') }}</dt>
           <dd>
-            <router-link v-for="s,ix in lexeme.sources" :key="ix" :to="{ name: 'sources' }" class="">
-              {{ s }}
-            </router-link>
+            <template v-for="s,ix in lexeme.sources">
+              <router-link :to="{ name: 'sources' }" class="" :key="ix">{{ s }}</router-link>
+              <span v-if="ix < lexeme.sources.length - 1" :key="ix+'comma'">, </span>
+            </template>
+          </dd>
+
+          <dt>{{ __('related_entries') }}</dt>
+
+          <dd>
+            <div v-for="r,ix in related" :key="ix">
+            <router-link :to="{ name: 'lexeme', params: { id: r._id } }" class="surface_form">{{ r.lemma }}</router-link>
+            <span class="text-lighter ml-1">
+              {{ __(`pos.${r.pos }`) }}
+              {{ derivedForm(r.derived_form) }}
+            </span>
+          </div>
           </dd>
 
         </dl>
@@ -55,7 +78,7 @@
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
 
-        <h2 class="h6 text-capitalize">{{ __('word forms') }}</h2>
+        <h2 class="h6 text-capitalize font-weight-bold">{{ __('word forms') }}</h2>
 
         <table class="table table-sm">
           <tbody>
@@ -85,6 +108,7 @@ import axios from 'axios'
 interface Data {
   lexeme: Lexeme | null
   wordforms: Wordform[] | null
+  related: Lexeme[] | null
 }
 
 export default mixins(I18N).extend({
@@ -94,7 +118,8 @@ export default mixins(I18N).extend({
   data (): Data {
     return {
       lexeme: null,
-      wordforms: null
+      wordforms: null,
+      related: null
     }
   },
   watch: {
@@ -126,6 +151,14 @@ export default mixins(I18N).extend({
         .catch(error => {
           this.$store.dispatch('addError', error)
           this.wordforms = []
+        })
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/related/${this.$route.params.id}`)
+        .then(response => {
+          this.related = response.data
+        })
+        .catch(error => {
+          this.$store.dispatch('addError', error)
+          this.related = []
         })
     },
     // Making helper functions available to template
