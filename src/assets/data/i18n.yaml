@@ -318,10 +318,6 @@
 #   en: root
 #   mt: għerq
 #
-# - key: surface_form
-#   en: surface form
-#   mt: forma miktuba
-#
 # - key: derived_form
 #   en: derived form
 #   mt: forma mnissla
@@ -341,10 +337,6 @@
 # - key: plural_type
 #   en: plural type
 #   mt: tip ta' plural
-#
-# - key: dir_obj
-#   en: direct object
-#   mt: oġġett dirett
 #
 # - key: variant
 #   en: variant
@@ -377,18 +369,6 @@
 # - key: sources
 #   en: sources
 #   mt: sorsijiet
-#
-# - key: subject
-#   en: subject
-#   mt: suġġett
-#
-# - key: ind_obj
-#   en: inddirect object
-#   mt: oġġett indirett
-#
-# - key: generated
-#   en: generated
-#   mt: maħluq awtomatikament
 #
 # - key: full
 #   en: original entry
@@ -664,7 +644,8 @@
 - en: lexeme
   mt: lessima
 
-- en: part of speech
+- key: part_of_speech
+  en: part of speech
   mt: kategorija
 
 - en: gloss
@@ -684,10 +665,35 @@
 - en: root
   mt: għerq
 
-- en: word forms
+- key: word_forms
+  en: word forms
   mt: forom verbali
 
- # ---------------------------------------------------------------------------
+- key: surface_form
+  en: surface form
+  mt: forma miktuba
+  
+- key: subject
+  en: subject
+  mt: suġġett
+  
+- key: dir_obj
+  en: direct object
+  mt: oġġett dirett
+
+- key: ind_obj
+  en: indirect object
+  mt: oġġett indirett
+
+- key: generated
+  en: generated
+  mt: maħluq awtomatikament
+
+- en: phonetic
+  mt: fonetiku
+
+
+# ---------------------------------------------------------------------------
 # Staging for removal
 #
 # - en: adjective
@@ -928,9 +934,6 @@
 #
 # - en: Number
 #   mt: Numru
-#
-# - en: Phonetic
-#   mt: Fonetiku
 #
 # - en: Pattern
 #   mt: Mudell

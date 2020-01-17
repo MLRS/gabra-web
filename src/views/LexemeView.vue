@@ -18,7 +18,7 @@
       <div class="col-md-4">
         <dl>
 
-          <dt>{{ __('part of speech') }}</dt>
+          <dt>{{ __('part_of_speech') }}</dt>
           <dd>
             {{ __(`pos.${lexeme.pos }`) }}
             {{ derivedForm(lexeme.derived_form) }}
@@ -78,17 +78,9 @@
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
 
-        <h2 class="h6 text-capitalize font-weight-bold">{{ __('word forms') }}</h2>
+        <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2>
 
-        <table class="table table-sm">
-          <tbody>
-            <tr v-for="wf,ix in wordforms" :key="ix">
-              <td class="surface_form">
-                  {{ wf.surface_form }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <wordforms-table :wordforms="wordforms"></wordforms-table>
 
       </div>
 
@@ -101,6 +93,7 @@ import mixins from 'vue-typed-mixins'
 
 import I18N from '@/components/I18N.ts'
 import Root from '@/components/Root.vue'
+import WordformsTable from '@/components/WordformsTable.vue'
 import * as UI from '@/helpers/UI.ts'
 
 import axios from 'axios'
@@ -113,7 +106,8 @@ interface Data {
 
 export default mixins(I18N).extend({
   components: {
-    Root
+    Root,
+    WordformsTable
   },
   data (): Data {
     return {
@@ -144,7 +138,7 @@ export default mixins(I18N).extend({
           this.$store.dispatch('addError', error)
           this.lexeme = {} as Lexeme
         })
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}`)
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}?pending=1`)
         .then(response => {
           this.wordforms = response.data
         })
