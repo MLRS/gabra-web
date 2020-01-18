@@ -21,7 +21,6 @@
           <dt>{{ __('part_of_speech') }}</dt>
           <dd>
             {{ __(`pos.${lexeme.pos }`) }}
-            {{ derivedForm(lexeme.derived_form) }}
           </dd>
 
           <dt>{{ __('english_gloss') }}</dt>
@@ -42,6 +41,7 @@
 
           <dt>{{ __('features') }}</dt>
           <dd>
+            <div>{{ lexeme.derived_form ? __('derived_form') + ' ' + derivedForm(lexeme.derived_form) : '' }}</div>
             <div>{{ lexeme.frequency }}</div>
             <div>{{ lexeme.onomastic_type }}</div>
             <div>{{ lexeme.transitive ? __('transitive') : '' }}</div>
@@ -78,9 +78,9 @@
 
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
 
-        <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2>
+        <!-- <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2> -->
 
-        <wordforms-table :wordforms="wordforms"></wordforms-table>
+        <wordforms-table :lexeme="lexeme" :wordforms="wordforms"></wordforms-table>
 
       </div>
 

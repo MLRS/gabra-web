@@ -91,15 +91,15 @@
             <td>
               <div v-if="item.lexeme.pos">
                 {{ __(`pos.${item.lexeme.pos }`) }}
-                {{ derivedForm(item.lexeme.derived_form) }}
+                <!-- {{ derivedForm(item.lexeme.derived_form) }} -->
               </div>
               <Root :root="item.lexeme.root" class="d-block"></Root>
-              <div class="text-lighter">
+              <!-- <div class="text-lighter">
                 {{ item.lexeme.transitive ? __('transitive') : '' }}
                 {{ item.lexeme.intransitive ? __('intransitive') : '' }}
                 {{ item.lexeme.ditransitive ? __('ditransitive') : '' }}
                 {{ item.lexeme.hypothetical ? __('hypothetical') : '' }}
-              </div>
+              </div> -->
               <div>
                 {{ item.lexeme.frequency }}
               </div>

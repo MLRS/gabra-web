@@ -19,7 +19,9 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
   if (f) {
     let s = f[lang]
     if (!s) {
-      console.error(`No localisation of key '${key}' in language '${lang}'`) // eslint-disable-line no-console
+      if (process.env.NODE_ENV === 'development') {
+        console.error(`No localisation of key '${key}' in language '${lang}'`) // eslint-disable-line no-console
+      }
       return key
     }
     if (replacements) {
@@ -29,7 +31,9 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
     return s
   } else {
-    console.error(`No localisation of key '${key}'`) // eslint-disable-line no-console
+    if (process.env.NODE_ENV === 'development') {
+      console.error(`No localisation of key '${key}'`) // eslint-disable-line no-console
+    }
     return key
   }
 }

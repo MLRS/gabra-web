@@ -308,6 +308,10 @@
   en: hypothetical
   mt: ipoteticu
 
+- key: derived_form
+  en: derived form
+  mt: forma mnissla
+
 # ---
 
 # - key: modified
@@ -317,10 +321,6 @@
 # - key: root
 #   en: root
 #   mt: għerq
-#
-# - key: derived_form
-#   en: derived form
-#   mt: forma mnissla
 #
 # - key: alternatives
 #   en: alternatives
