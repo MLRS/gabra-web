@@ -32,6 +32,7 @@ import I18N from '@/components/I18N.ts'
 interface Data {
 }
 
+// Fields to ignore from table
 const ignoreFields = new Set([
   'surface_form', // included manually
   'alternatives', // included manually
@@ -45,14 +46,34 @@ const ignoreFields = new Set([
   'pending'
 ])
 
-const agrFields = [
+// Enforce this order, all unknown fields come after
+const knownFields = [
+  'surface_form',
+  'gender',
+  'number',
+  'phonetic',
+  'pattern',
+  'derived_form',
+  'form',
+  'aspect',
   'subject',
   'dir_obj',
-  'ind_obj'
+  'ind_obj',
+  'polarity'
 ]
+
+// TODO
+const filterFields = {
+  'VERB': [
+    'dir_obj',
+    'ind_obj',
+    'polarity'
+  ]
+}
 
 export default mixins(I18N).extend({
   props: {
+    lexeme: Object,
     wordforms: Array
   },
   data (): Data {
@@ -70,19 +91,37 @@ export default mixins(I18N).extend({
           }
         }
       }
-      return Array.from(fields)
+      return Array.from(fields).sort((a, b) => {
+        // Sort by order in knownFields
+        let xa = knownFields.indexOf(a)
+        let xb = knownFields.indexOf(b)
+        if (xa > -1 && xb > -1) return xa - xb
+        else if (xa === -1 && xb > -1) return 1
+        else if (xa > -1 && xb === -1) return -1
+        else {
+          if (a < b) return -1
+          else if (b > a) return 1
+          else return 0
+        }
+      })
     }
   },
   methods: {
     format (field, value): string {
-      if (agrFields.includes(field) && value) {
-        let s = ''
-        s += value.person + ' '
-        s += value.number + ' '
-        if (value.gender) s += this.__(`gender.${value.gender}`)
-        return s
-      } else {
-        return value
+      switch (field) {
+        case 'subject':
+        case 'dir_obj':
+        case 'ind_obj':
+          if (value) {
+            let s = ''
+            s += value.person + ' '
+            s += value.number + ' '
+            if (value.gender) s += this.__(`gender.${value.gender}`)
+            return s
+          }
+          break
+        default:
+          return value
       }
     }
   }
