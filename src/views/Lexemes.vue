@@ -76,76 +76,72 @@
         </router-link>
       </p>
 
-      <table class="table mt-3">
-        <tbody>
-          <tr v-for="item,ix in results" :key="ix">
-            <td class="text-lighter text-center">{{ ix+1 }}.</td>
-            <th class="font-weight-normal surface_form">
-              <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="">
-                {{ item.lexeme.lemma }}
-              </router-link>
-              <div v-if="item.lexeme.alternatives" class="alternative">
-                ({{ item.lexeme.alternatives.join(', ') }})
+      <div class="mt-3">
+        <div v-for="item,ix in results" :key="ix" class="row mt-2 pt-2" :class="{ 'border-top': ix > 0 }">
+          <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
+          <div class=" col-2 font-weight-normal surface_form">
+            <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
+              {{ item.lexeme.lemma }}
+            </router-link>
+            <div v-if="item.lexeme.alternatives" class="alternative">
+              ({{ item.lexeme.alternatives.join(', ') }})
+            </div>
+          </div>
+          <div class="col-1">
+            <div v-if="item.lexeme.pos">
+              {{ __(`pos.${item.lexeme.pos }`) }}
+              <!-- {{ derivedForm(item.lexeme.derived_form) }} -->
+            </div>
+            <Root :root="item.lexeme.root" class="d-block"></Root>
+            <!-- <div class="text-lighter">
+              {{ item.lexeme.transitive ? __('transitive') : '' }}
+              {{ item.lexeme.intransitive ? __('intransitive') : '' }}
+              {{ item.lexeme.ditransitive ? __('ditransitive') : '' }}
+              {{ item.lexeme.hypothetical ? __('hypothetical') : '' }}
+            </div> -->
+            <div>
+              {{ item.lexeme.frequency }}
+            </div>
+          </div>
+          <div class="col-3">
+            <template v-if="item.lexeme.glosses">
+              <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
+                {{ g.gloss }}
               </div>
-            </th>
-            <td>
-              <div v-if="item.lexeme.pos">
-                {{ __(`pos.${item.lexeme.pos }`) }}
-                <!-- {{ derivedForm(item.lexeme.derived_form) }} -->
+              <div v-if="item.lexeme.glosses > 5">
+                ⋮
               </div>
-              <Root :root="item.lexeme.root" class="d-block"></Root>
-              <!-- <div class="text-lighter">
-                {{ item.lexeme.transitive ? __('transitive') : '' }}
-                {{ item.lexeme.intransitive ? __('intransitive') : '' }}
-                {{ item.lexeme.ditransitive ? __('ditransitive') : '' }}
-                {{ item.lexeme.hypothetical ? __('hypothetical') : '' }}
-              </div> -->
-              <div>
-                {{ item.lexeme.frequency }}
-              </div>
-            </td>
-            <td>
-              <template v-if="item.lexeme.glosses">
-                <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
-                  {{ g.gloss }}
-                </div>
-                <div v-if="item.lexeme.glosses > 5">
-                  ⋮
-                </div>
-              </template>
-            </td>
-            <td>
-              <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
-              <template v-if="item.wordforms !== null">
-                <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
-                  <span class="surface_form">
-                    {{ wf.surface_form }}
-                  </span>
-                  <span class="text-lighter">
-                    <!-- Noun -->
-                    {{ wf.number ? `${wf.number}.` : '' }}
-                    {{ wf.gender ? `${wf.gender}.` : '' }}
-                    {{ wf.phonetic ? `/${wf.phonetic}/` : '' }}
-                    {{ wf.pattern }}
+            </template>
+          </div>
+          <div class="col-5">
+            <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
+            <template v-if="item.wordforms !== null">
+              <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
+                <span class="surface_form mr-2">
+                  {{ wf.surface_form }}
+                </span>
+                <span class="text-lighter">
+                  <!-- Noun -->
+                  {{ wf.number ? `${wf.number}.` : '' }}
+                  {{ wf.gender ? `${wf.gender}.` : '' }}
 
-                    <!-- Verb -->
-                    {{ wf.aspect }}
-                    {{ agr(wf, 'subject') }}
-                    {{ wf.dir_obj ? `&middot; dir: `+agr(wf, 'dir_obj') : '' }}
-                    {{ wf.ind_obj ? `&middot; ind: `+agr(wf, 'ind_obj') : '' }}
-                    {{ wf.polarity ? `&middot; ${wf.polarity}` : '' }}
-                  </span>
-                </div>
-                <div v-if="item.wordforms.length > 5">
-                  <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }">
-                  ⋮
-                  </router-link>
-                </div>
-              </template>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  <!-- Verb -->
+                  {{ wf.aspect }}
+                  {{ wf.subject ? agr(wf['subject']) : '' }}
+                  {{ wf.dir_obj ? `&middot; dir: `+agr(wf['dir_obj']) : '' }}
+                  {{ wf.ind_obj ? `&middot; ind: `+agr(wf['ind_obj']) : '' }}
+                  {{ wf.polarity ? `&middot; ${wf.polarity}` : '' }}
+                </span>
+              </div>
+              <div v-if="item.wordforms.length > 5" class="small">
+                <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }">
+                  {{ __('more_word_forms') }}…
+                </router-link>
+              </div>
+            </template>
+          </div>
+        </div><!-- row -->
+      </div>
 
       <div class="text-center mb-5">
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>

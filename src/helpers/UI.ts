@@ -14,13 +14,10 @@ export function derivedForm (dform: number): string {
   }
 }
 
-export function agr (item: any, field: string): string {
+export function agr (obj: {person?: string, number?: string, gender?: string}): string {
   let out = ''
-  if (item[field]) {
-    let agr = item[field]
-    if (agr.person) out += agr.person + ' '
-    if (agr.gender) out += agr.gender + '. '
-    if (agr.number) out += agr.number + '. '
-  }
-  return out
+  if (obj.person) out += obj.person + ' '
+  if (obj.number) out += obj.number + ' '
+  if (obj.gender) out += obj.gender // TODO localise gender?
+  return out.trim()
 }

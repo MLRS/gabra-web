@@ -6,7 +6,7 @@
     <div class="row" v-if="lexeme !== null && lexeme.lemma">
 
       <div class="col-12">
-        <h1 class="surface_form mb-3">
+        <h1 class="surface_form text-shadow mb-3">
           {{ lexeme.lemma }}
           <small v-if="lexeme.alternatives" class="alternative">
             ({{ lexeme.alternatives.join(', ') }})
@@ -17,6 +17,13 @@
       <!-- lexeme -->
       <div class="col-md-4">
         <dl>
+
+          <template v-if="lexeme.phonetic">
+            <dt>{{ __('phonetic') }}</dt>
+            <dd>
+              /{{ lexeme.phonetic }}/
+            </dd>
+          </template>
 
           <dt>{{ __('part_of_speech') }}</dt>
           <dd>
