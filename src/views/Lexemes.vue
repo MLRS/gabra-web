@@ -69,12 +69,32 @@
         showing: working ? '…' : results.length,
         total: working ? '…' : resultCount
         })"></h3>
+
       <p class="text-muted" v-show="searchSuggestions.length > 0">
         {{ __('search.suggestion') }}
         <router-link v-for="s,ix in searchSuggestions" :key="ix" :to="{ query: { s: s } }" class="">
           {{ s }}
         </router-link>
       </p>
+
+      <button
+        class="btn btn-link p-0"
+        v-show="!working && results.length === 0 && !suggest.show && !suggest.done"
+        @click="suggest.show = true">
+        {{ __('suggest.link', [search.s]) }}
+      </button>
+
+      <p v-show="suggest.done">
+        {{ __('suggest.done') }}
+      </p>
+
+      <div class="border shadow my-3 p-3 rounded-lg" v-show="suggest.show">
+        <suggest
+          :word="search.s"
+          :pos_options="pos"
+          @hide="suggest.show = false; $store.dispatch('clearMessages')"
+          @done="suggest.done = true"></suggest>
+      </div>
 
       <div class="mt-3">
         <div v-for="item,ix in results" :key="ix" class="row mt-2 pt-2" :class="{ 'border-top': ix > 0 }">
@@ -160,6 +180,7 @@ import mixins from 'vue-typed-mixins'
 
 import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
+import Suggest from '@/components/Suggest.vue'
 import Root from '@/components/Root.vue'
 import * as UI from '@/helpers/UI.ts'
 
@@ -193,6 +214,10 @@ interface Data {
   results: Result[]
   resultCount: number // as reported by server, only equal to resuls.length when all results loaded
   searchSuggestions: string[]
+  suggest: {
+    show: boolean // is suggest modal showing
+    done: boolean // successfully submitted
+  }
 }
 
 interface Result {
@@ -203,6 +228,7 @@ interface Result {
 export default mixins(I18N).extend({
   components: {
     SearchInput,
+    Suggest,
     Root
   },
   data (): Data {
@@ -222,7 +248,11 @@ export default mixins(I18N).extend({
       working: false,
       results: [],
       resultCount: 0,
-      searchSuggestions: []
+      searchSuggestions: [],
+      suggest: {
+        show: false,
+        done: false
+      }
     }
   },
   watch: {
@@ -276,6 +306,8 @@ export default mixins(I18N).extend({
     // get results
     loadResults (): void {
       this.working = true
+      this.suggest.show = false
+      this.suggest.done = false
       this.$store.dispatch('clearMessages')
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {

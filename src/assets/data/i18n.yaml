@@ -626,6 +626,56 @@
        - `^għar.*` jsib kull ħaġa li tibda bis-sekwenza _għar_\n
       "
 
+# ---
+
+- key: suggest.submit
+  en: Submit
+  mt: Issottometti
+
+- key: suggest.cancel
+  en: Cancel
+  mt: Ikkanċella
+
+- key: suggest.link
+  en: Click here if you think that "{0}" should be added to the database
+  mt: Ikklikja hawn jekk taħseb li l-kelma "{0}" għandha tiġi nkluża fid-database
+
+- key: suggest.title
+  en: Suggest a new entry
+  mt: Suġġeriment għal entrata ġdida
+
+- key: suggest.lemma.label
+  en: Lemma
+  mt: Lemma
+
+- key: suggest.lemma.description
+  en: Word in Maltese
+  mt: Kelma bil-Malti
+
+- key: suggest.gloss.label
+  en: Gloss
+  mt: Tifsira
+
+- key: suggest.gloss.description
+  en: Translation in English
+  mt: Traduzzjoni bl-Ingliż
+
+- key: suggest.pos.label
+  en: Part of speech
+  mt: Kategorija
+
+- key: suggest.pos.description
+  en: Noun, verb, adjective or other
+  mt: Nom, verb, aġġettiv jew xi ħaġa oħra
+
+- key: suggest.done
+  en: Your suggestion has been added.
+  mt: Is-suġġeriment tiegħek ġie rrekordjat.
+
+- key: suggest.invalid
+  en: Please fill in all fields.
+  mt: Jekk jgħoġbok imla l-informazzjoni kollha.
+
 # ---------------------------------------------------------------------------
 # Unsorted, generic
 
@@ -806,39 +856,6 @@
 #
 # - en: Are you sure you want to delete this entry?
 #   mt: Ċert li trid tħassar din l-entrata?
-#
-# - en: Submit
-#   mt: Issottometti
-#
-# - en: Cancel
-#   mt: Ikkanċella
-#
-# - en: Click here to suggest that {0} is added to the database.
-#   mt: Ikklikja hawn biex tissuġġerixxi li nżidu {0} fil-ġabradata.
-#
-# - en: Suggest a new entry
-#   mt: Suġġeriment għal entrata ġdida
-#
-# - en: Lemma
-#   mt: Kelma
-#
-# - en: Word in Maltese
-#   mt: Kelma bil-Malti
-#
-# - en: Gloss
-#   mt: Traduzzjoni
-#
-# - en: Translation in English
-#   mt: Traduzzjoni bl-Ingliż
-#
-# - en: Part of speech
-#   mt: Kategorija
-#
-# - en: Noun, verb, adjective or other
-#   mt: Nom, verb, aġġettiv jew xi ħaġa oħra
-#
-# - en: Your suggestion has been added.
-#   mt: Is-suġġeriment tiegħek ġie rrekordjat.
 #
 # - en: Occurs in {0} languages, grouped into {1} senses
 #   mt: Tintuża f’{0} lingwi, b’{1} sensi differenti
@@ -1107,9 +1124,6 @@
 #
 # - en: No results found.
 #   mt: Ma nstab l-ebda rizultat.
-#
-# - en: "{0} to let us know that \"%s\" should be added to the database."
-#   mt: "{0} biex nżidu \"%s\" fil-ġabradata."
 #
 # - en: Click here
 #   mt: Ikklikkja hawn

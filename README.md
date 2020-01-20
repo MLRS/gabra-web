@@ -49,7 +49,6 @@ npm run lint
 ## TODO
 
 - Highlighting of search term
-- Submitting additions
 - SEO, robots.txt
 - Accessibility
 - Chart & logs on homepage
