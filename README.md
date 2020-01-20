@@ -48,7 +48,6 @@ npm run lint
 
 ## TODO
 
-- Auto load more results on scroll
 - Highlighting of search term
 - Submitting additions
 - SEO, robots.txt

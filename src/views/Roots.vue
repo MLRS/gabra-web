@@ -317,6 +317,13 @@ export default mixins(I18N).extend({
     }
   },
   mounted (): void {
+    // https://renatello.com/check-if-a-user-has-scrolled-to-the-bottom-in-vue-js/
+    window.onscroll = () => {
+      let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+      if (bottomOfWindow && !this.working && this.moreResults) {
+        this.loadResults()
+      }
+    }
   }
 })
 </script>

@@ -322,6 +322,14 @@ export default mixins(I18N).extend({
     agr: UI.agr
   },
   mounted (): void {
+    // https://renatello.com/check-if-a-user-has-scrolled-to-the-bottom-in-vue-js/
+    window.onscroll = () => {
+      let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+      if (bottomOfWindow && !this.working && this.moreResults) {
+        this.loadResults()
+      }
+    }
+
     axios.get(`${process.env.VUE_APP_API_URL}/sources`)
       .then(response => {
         this.sources = response.data.map((s: Source) => s.key)
