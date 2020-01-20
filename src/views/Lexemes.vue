@@ -79,7 +79,7 @@
       <div class="mt-3">
         <div v-for="item,ix in results" :key="ix" class="row mt-2 pt-2" :class="{ 'border-top': ix > 0 }">
           <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
-          <div class=" col-2 font-weight-normal surface_form">
+          <div class="col-11 col-sm-2 font-weight-normal surface_form">
             <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
               {{ item.lexeme.lemma }}
             </router-link>
@@ -87,7 +87,7 @@
               ({{ item.lexeme.alternatives.join(', ') }})
             </div>
           </div>
-          <div class="col-1">
+          <div class="col-11 offset-1 col-sm-2 offset-sm-0">
             <div v-if="item.lexeme.pos">
               {{ __(`pos.${item.lexeme.pos }`) }}
               <!-- {{ derivedForm(item.lexeme.derived_form) }} -->
@@ -103,7 +103,7 @@
               {{ item.lexeme.frequency }}
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-11 offset-1 col-sm-3 offset-sm-0 my-2 my-sm-0">
             <template v-if="item.lexeme.glosses">
               <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
                 {{ g.gloss }}
@@ -113,7 +113,7 @@
               </div>
             </template>
           </div>
-          <div class="col-5">
+          <div class="col-11 offset-1 col-sm-4 offset-sm-0">
             <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
             <template v-if="item.wordforms !== null">
               <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
@@ -143,7 +143,7 @@
         </div><!-- row -->
       </div>
 
-      <div class="text-center mb-5">
+      <div class="text-center my-5">
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
         <button class="btn btn-primary" @click="loadResults()" v-show="!working && moreResults">
           {{ __('search.button.more_results') }}

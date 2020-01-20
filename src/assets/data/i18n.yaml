@@ -505,8 +505,8 @@
     code</em> ta' dan is-sit huwa aċċessibbli taħt liċenzja MIT fuq <a href=\"https://github.com/MLRS/gabra-web\">GitHub</a>."
 
 - key: home.search.placeholder
-  en: Search in Maltese or English, e.g. "{maltese}" or "{english}"
-  mt: Fittex bil-Malti jew bl-Ingliż, eż. "{maltese}" jew "{english}"
+  en: Search in Maltese or English
+  mt: Fittex bil-Malti jew bl-Ingliż
 
 - key: home.about
   en: "### About Ġabra\n

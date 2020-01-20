@@ -8,7 +8,7 @@
 
       <form role="search" action="" @submit.prevent="submitSearch">
         <SearchInput
-          :placeholder="__('home.search.placeholder', {maltese: 'ħarġa', english: 'outing'})"
+          :placeholder="__('home.search.placeholder')"
           :showSubmit="true"
           class="input-group-lg"
           @update="(s) => { term = s }"

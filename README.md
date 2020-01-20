@@ -52,7 +52,6 @@ npm run lint
 - Highlighting of search term
 - Submitting additions
 - SEO, robots.txt
-- Responsiveness
 - Accessibility
 - Chart & logs on homepage
 

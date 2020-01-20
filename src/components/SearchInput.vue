@@ -89,7 +89,6 @@ export default Vue.extend({
 
 .keyboard button {
   @extend .border;
-  background: #e9ecef;
-  color: #666;
+  @extend .btn-outline-secondary;
 }
 </style>
