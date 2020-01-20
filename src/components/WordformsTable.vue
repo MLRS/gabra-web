@@ -7,7 +7,7 @@
           {{ __(f) }}
         </th>
       </tr>
-      <tr>
+      <tr v-if="Object.keys(filterFields).length > 0">
         <th></th>
         <th v-for="f,ix in showFields" :key="ix">
           <select v-if="isFilterField(f)" v-model="filters[f]">
@@ -98,11 +98,25 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
-      filters: {
-        'dir_obj': '',
-        'ind_obj': '',
-        'polarity': 'pos'
-      }
+      filters: {} // populated whenever lexeme changes, below
+    }
+  },
+  watch: {
+    lexeme: {
+      handler (): void {
+        let fs = {}
+        switch (this.lexeme.pos) {
+          case 'VERB':
+            fs = {
+              'dir_obj': '',
+              'ind_obj': '',
+              'polarity': 'pos'
+            }
+            break
+        }
+        this.filters = fs
+      },
+      immediate: true
     }
   },
   computed: {

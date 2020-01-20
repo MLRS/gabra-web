@@ -6,8 +6,8 @@
     <div class="row" v-if="lexeme !== null && lexeme.lemma">
 
       <div class="col-12">
-        <h1 class="surface_form text-shadow mb-3">
-          {{ lexeme.lemma }}
+        <h1 class="surface_form mb-3">
+          <span class="text-shadow">{{ lexeme.lemma }}</span>
           <small v-if="lexeme.alternatives" class="alternative">
             ({{ lexeme.alternatives.join(', ') }})
           </small>
@@ -139,7 +139,7 @@ export default mixins(I18N).extend({
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/${this.$route.params.id}`)
         .then(response => {
           this.lexeme = response.data
-          this.$emit('setTitle', (this.lexeme as Lexeme).lemma)
+          this.$store.dispatch('setTitle', (this.lexeme as Lexeme).lemma)
         })
         .catch(error => {
           this.$store.dispatch('addError', error)

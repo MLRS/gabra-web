@@ -311,6 +311,10 @@
 - key: derived_form
   en: derived form
   mt: forma mnissla
+  
+- key: plural_form
+  en: plural type
+  mt: tip ta' plural
 
 # ---
 
@@ -333,10 +337,6 @@
 # - key: pattern
 #   en: pattern
 #   mt: mudell
-#
-# - key: plural_type
-#   en: plural type
-#   mt: tip ta' plural
 #
 # - key: variant
 #   en: variant
@@ -696,6 +696,10 @@
 - en: phonetic
   mt: fonetiku
 
+- en: pattern
+  mt: mudell
+
+
 
 # ---------------------------------------------------------------------------
 # Staging for removal
@@ -938,9 +942,6 @@
 #
 # - en: Number
 #   mt: Numru
-#
-# - en: Pattern
-#   mt: Mudell
 #
 # - en: Derived form
 #   mt: Forma mnissla
