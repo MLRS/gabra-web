@@ -3,7 +3,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-light border-bottom mb-2">
     <div class="container">
-      <router-link to="/" class="navbar-brand mr-4">Ġabra</router-link>
+      <router-link to="/" class="navbar-brand text-red mr-4">Ġabra</router-link>
 
       <form role="search" action="" @submit.prevent="submitSearch" v-show="$route.name != 'home'" class="mr-auto">
         <SearchInput

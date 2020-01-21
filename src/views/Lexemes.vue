@@ -142,8 +142,8 @@
                 </span>
                 <span class="text-lighter">
                   <!-- Noun -->
-                  {{ wf.number ? `${wf.number}.` : '' }}
-                  {{ wf.gender ? `${wf.gender}.` : '' }}
+                  {{ wf.number }}
+                  {{ wf.gender }}
 
                   <!-- Verb -->
                   {{ wf.aspect }}
