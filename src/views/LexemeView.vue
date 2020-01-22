@@ -87,7 +87,7 @@
 
         <!-- <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2> -->
 
-        <wordforms-table :lexeme="lexeme" :wordforms="wordforms"></wordforms-table>
+        <wordforms-table :lexeme="lexeme" :wordforms="wordforms" v-if="wordforms !== null && wordforms.length > 0"></wordforms-table>
 
       </div>
 
