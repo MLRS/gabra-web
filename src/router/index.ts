@@ -6,6 +6,7 @@ import LexemeView from '../views/LexemeView.vue'
 import Roots from '../views/Roots.vue'
 import RootView from '../views/RootView.vue'
 import Sources from '../views/Sources.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -39,10 +40,16 @@ const routes = [
     path: '/sources',
     name: 'sources',
     component: Sources
+  },
+  // catch-all, see https://router.vuejs.org/guide/essentials/history-mode.html#caveat
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
   scrollBehavior (_to, _from, savedPosition) {
     if (savedPosition) {

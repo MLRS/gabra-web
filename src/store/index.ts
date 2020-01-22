@@ -21,7 +21,6 @@ interface State {
   language: Language
   title: I18NString | string
   messages: Message[]
-  // TODO: loading spinnner
 }
 
 // Get preferred language from browser settings

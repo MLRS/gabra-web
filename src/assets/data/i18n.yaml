@@ -675,6 +675,16 @@
 - key: suggest.invalid
   en: Please fill in all fields.
   mt: Jekk jgħoġbok imla l-informazzjoni kollha.
+  
+# ---
+
+- key: not_found.title
+  en: Not found
+  mt: Paġna ma teżistix
+
+- key: not_found
+  en: That page does not exist, please check your URL.
+  mt: Il-paġna ma teżistix. Jekk jgħoġbok iċċekkja l-indirizz.
 
 # ---------------------------------------------------------------------------
 # Unsorted, generic
@@ -748,8 +758,6 @@
 
 - en: pattern
   mt: mudell
-
-
 
 # ---------------------------------------------------------------------------
 # Staging for removal
@@ -1046,9 +1054,6 @@
 
 # - en: API
 #   mt: API
-#
-# - en: The requested address {0} was not found on this server.
-#   mt: Il-paġna {0} ma teżistix.
 #
 # - en: An Internal Error Has Occurred
 #   mt: Xi ħaġa ma ħadmitx

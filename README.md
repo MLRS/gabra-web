@@ -48,8 +48,8 @@ npm run lint
 
 ## TODO
 
+- UI language persisted in cookie (or browser storage)
 - Highlighting of search term
-- SEO, robots.txt
 - Accessibility
 - Chart & logs on homepage
 
