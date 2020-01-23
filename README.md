@@ -45,11 +45,3 @@ The contents of `dist` can then be served statically.
 ```
 npm run lint
 ```
-
-## TODO
-
-- UI language persisted in cookie (or browser storage)
-- Highlighting of search term
-- Accessibility
-- Chart & logs on homepage
-
