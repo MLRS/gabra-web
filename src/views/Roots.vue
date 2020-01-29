@@ -111,7 +111,7 @@
         <tbody>
           <tr v-for="item,ix in results" :key="ix">
             <td>
-              <Root :root="item.root"></Root>
+              <Root :root="item.root" :match="term"></Root>
             </td>
             <td>{{ __(`root.type.${item.root.type}`) }}</td>
             <td v-for="form in [1,2,3,5,6,7,8,9,10]" :key="form">

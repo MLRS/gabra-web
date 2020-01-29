@@ -101,10 +101,10 @@
           <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
           <div class="col-11 col-sm-2 font-weight-normal surface_form">
             <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
-              {{ item.lexeme.lemma }}
+              <highlight :text="item.lexeme.lemma" :match="search.s" />
             </router-link>
             <div v-if="item.lexeme.alternatives" class="alternative">
-              ({{ item.lexeme.alternatives.join(', ') }})
+              (<highlight :text="item.lexeme.alternatives.join(', ')" :match="search.s" />)
             </div>
           </div>
           <div class="col-11 offset-1 col-sm-2 offset-sm-0">
@@ -126,7 +126,7 @@
           <div class="col-11 offset-1 col-sm-3 offset-sm-0 my-2 my-sm-0">
             <template v-if="item.lexeme.glosses">
               <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
-                {{ g.gloss }}
+                <highlight :text="g.gloss" :match="search.s" />
               </div>
               <div v-if="item.lexeme.glosses > 5">
                 ⋮
@@ -138,7 +138,7 @@
             <template v-if="item.wordforms !== null">
               <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
                 <span class="surface_form mr-2">
-                  {{ wf.surface_form }}
+                  <highlight :text="wf.surface_form" :match="search.s" />
                 </span>
                 <span class="text-lighter">
                   <!-- Noun -->
@@ -182,6 +182,7 @@ import I18N from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 import Suggest from '@/components/Suggest.vue'
 import Root from '@/components/Root.vue'
+import Highlight from '@/components/Highlight.vue'
 import * as UI from '@/helpers/UI.ts'
 
 import axios from 'axios'
@@ -229,7 +230,8 @@ export default mixins(I18N).extend({
   components: {
     SearchInput,
     Suggest,
-    Root
+    Root,
+    Highlight
   },
   data (): Data {
     return {

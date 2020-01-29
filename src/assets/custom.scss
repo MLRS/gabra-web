@@ -29,3 +29,8 @@
 .text-shadow {
   text-shadow: 1px 1px 1px #ccc;
 }
+
+.highlight {
+  @extend .rounded;
+  background-color: transparentize($info, 0.8);
+}
