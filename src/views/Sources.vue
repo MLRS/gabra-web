@@ -4,17 +4,15 @@
 
     <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="working"></i>
 
-    <table class="table mt-3">
-      <tbody>
-        <tr v-for="s,ix in sources" :key="ix">
-          <th>{{ s.key }}</th>
-          <td>{{ s.title }}<td>
-          <td>{{ s.author }}</td>
-          <td>{{ s.year }}</td>
-          <td>{{ s.note }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mt-3">
+      <div class="row border-top py-2" v-for="s,ix in sources" :key="ix">
+        <div class="col-md-2 font-weight-bold">{{ s.key }}</div>
+        <div class="col-md-3">{{ s.title }}</div>
+        <div class="col-md-2">{{ s.author }}</div>
+        <div class="col-md-1">{{ s.year }}</div>
+        <div class="col-md-4" style="word-wrap: break-word">{{ s.note }}</div>
+      </div>
+    </div>
 
   </div>
 </template>
