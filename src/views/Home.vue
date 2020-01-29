@@ -21,9 +21,11 @@
 
       <div v-html="markdown(__('home.about'))"></div>
 
-      <p v-html="__('home.citing')"></p>
+      <div v-html="markdown(__('home.using'))"></div>
 
-      <p class="text-muted" v-html="__('home.license')"></p>
+      <div v-html="markdown(__('home.citing'))"></div>
+
+      <div class="text-muted" v-html="__('home.license')"></div>
 
     </div><!-- /.col-sm-8 -->
 
@@ -119,6 +121,6 @@ export default mixins(I18N).extend({
 @import '@/assets/custom.scss';
 
 .well {
-  @extend .card-body, .bg-light, .rounded, .mt-3, .text-muted;
+  @extend .card-body, .bg-light, .rounded, .my-3, .text-muted;
 }
 </style>

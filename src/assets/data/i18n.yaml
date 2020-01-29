@@ -464,6 +464,10 @@
   en: The database is still growing, and will hopefully become a comprehensive digital lexicon for Maltese.
   mt: Id-<em>database</em> għadha qed tikber, u nittamaw li eventwalment issir lessiku diġitali komplut tal-Malti.
 
+- key: home.search.placeholder
+  en: Search in Maltese or English
+  mt: Fittex bil-Malti jew bl-Ingliż
+
 - key: home.mistakes
   en: "### Mistakes/missing information\n
     Many of the word forms in the database are <span class=\"generated\">automatically generated</span>, and may contain errors.
@@ -476,12 +480,38 @@
     Hekk nkunu nistgħu nikkoreġuha manwalment.
     Jekk tfittex għal kelma li ma teżistix fil-Ġabra, tista' ukoll tinformana biex inżiduha billi tikklikka fuq il-ħolqa li titla'."
 
-- key: home.news.see_all
-  en: See all news
-  mt: Aqra l-aħbarijiet kollha
+- key: home.about
+  en: "#### About Ġabra\n
+    _Ġabra_ was originally built in 2013 as part of a [master's thesis project](https://johnjcamilleri.com/academic/publications/msc2013.pdf),
+    starting out as a collection of various different resources combined into a single database.
+    Its contents vary in detail and completeness, which is why it cannot yet be called a proper lexicon or dictionary for Maltese.
+    \n\n
+    Initially, the database has mostly been maintained as a hobby project and was not frequently updated.
+    As of September 2015, Ġabra has begun to receive support from the National Council for the Maltese Language and the University of Malta.
+    There is ongoing work on reviewing the database and making considerable contributions to its content, such that it will eventually become a full lexicon for Maltese."
+  mt: "### Dwar il-Ġabra\n\n
+    _Ġabra_ oriġinarjament inbniet fl-2013 għal [proġett tal-masters](https://johnjcamilleri.com/academic/publications/msc2013.pdf),
+    bħala kollezzjoni ta' risorsi lessikali tal-Malti differenti, miġburin f'_database_ waħda.
+    Il-kontenut ivarja fil-livell ta' dettal u m'huwiex komplut, għalhekk għadna ma nistgħux nsejħulu lessiku jew dizzjonarju propju tal-Malti.
+    \n\n
+    Minn Settembru tal-2015, kisibna l-appoġġ tal-Kunsill Nazzjonali tal-Ilsien Malti kif ukoll l-Università ta' Malta.
+    Bħalissa għaddej xogħol ta' ċċekjar tal-kontenut tad-_database_, u qed isiru kontribuzzjonijiet kbar,
+    sabiex il-Ġabra tkun eventwalment lessiku komplut għall-ilsien Malti."
+
+- key: home.using
+  en: "#### Using this resource\n
+    - The simplest way to use Ġabra is to search using the input above. \n
+    - There is a [fully documented API](http://mlrs.research.um.edu.mt/resources/gabra-api) and [database schema](http://mlrs.research.um.edu.mt/resources/gabra-api/schema) for developers. \n
+    - A complete dump of the database is also [available for download](http://mlrs.research.um.edu.mt/resources/gabra-api/download).
+    "
+  mt: "#### Kif tuża dan ir-resors\n
+    - L-eħfef mod biex tuża l-Ġabra huwa li tfittex fil-kaxxa t'hawn fuq. \n
+    - Għal min hu programmatur, hemm [API ddokumentat](http://mlrs.research.um.edu.mt/resources/gabra-api) kif ukoll [skema tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/schema).\n
+    - Tista' ukoll tniżżel [stampa sħiħa tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/download)."
 
 - key: home.citing
-  en: "To cite this resource, please use the following reference.\n
+  en: "
+    To cite this resource, please use the following reference.\n
     <div class=\"well\">\n
     John J. Camilleri. <em>\"A Computational Grammar and Lexicon for Maltese\"</em>,
     M.Sc. Thesis. Chalmers University of Technology. Gothenburg, Sweden, September 2013.\n
@@ -503,28 +533,6 @@
     <em><a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative
     Commons Attribution 4.0 International License</a></em>.\n<br/>\nIs-<em>source
     code</em> ta' dan is-sit huwa aċċessibbli taħt liċenzja MIT fuq <a href=\"https://github.com/MLRS/gabra-web\">GitHub</a>."
-
-- key: home.search.placeholder
-  en: Search in Maltese or English
-  mt: Fittex bil-Malti jew bl-Ingliż
-
-- key: home.about
-  en: "### About Ġabra\n
-    _Ġabra_ was originally built in 2013 as part of a [master's thesis project](https://johnjcamilleri.com/academic/publications/msc2013.pdf),
-    starting out as a collection of various different resources combined into a single database.
-    Its contents vary in detail and completeness, which is why it cannot yet be called a proper lexicon or dictionary for Maltese.
-    \n\n
-    Initially, the database has mostly been maintained as a hobby project and was not frequently updated.
-    As of September 2015, Ġabra has begun to receive support from the National Council for the Maltese Language and the University of Malta.
-    There is ongoing work on reviewing the database and making considerable contributions to its content, such that it will eventually become a full lexicon for Maltese."
-  mt: "### Dwar Ġabra\n\n
-    _Ġabra_ oriġinarjament inbniet fl-2013 għal [proġett tal-masters](https://johnjcamilleri.com/academic/publications/msc2013.pdf),
-    bħala kollezzjoni ta' risorsi lessikali tal-Malti differenti, miġburin f'_database_ waħda.
-    Il-kontenut ivarja fil-livell ta' dettal u m'huwiex komplut, għalhekk għadna ma nistgħux nsejħulu lessiku jew dizzjonarju propju tal-Malti.
-    \n\n
-    Minn Settembru tal-2015, kisibna l-appoġġ tal-Kunsill Nazzjonali tal-Ilsien Malti kif ukoll l-Università ta' Malta.
-    Bħalissa għaddej xogħol ta' ċċekjar tal-kontenut tad-_database_, u qed isiru kontribuzzjonijiet kbar,
-    sabiex il-Ġabra tkun eventwalment lessiku komplut għall-ilsien Malti."
 
 - key: home.activity.title
   en: Recent activity
