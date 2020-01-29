@@ -1,9 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
 
 import { __l, Language } from '@/components/I18N.ts'
 
 Vue.use(Vuex)
+
+const vuexLocal = new VuexPersistence<State>({
+  storage: window.localStorage,
+  reducer: (state: State): PersistentState => {
+    return {
+      language: state.language
+    }
+  }
+})
 
 interface I18NString {
   key: string,
@@ -21,6 +31,10 @@ interface State {
   language: Language
   title: I18NString | string
   messages: Message[]
+}
+
+interface PersistentState {
+  language: Language
 }
 
 // Get preferred language from browser settings
@@ -89,6 +103,6 @@ export default new Vuex.Store({
   modules: {
   },
   getters: {
-
-  }
+  },
+  plugins: [vuexLocal.plugin]
 })
