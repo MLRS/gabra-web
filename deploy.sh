@@ -9,16 +9,20 @@ FLAGS="--recursive --checksum --compress --verbose --exclude-from=deploy-exclude
 
 set -e
 
-echo "Build Ġabra Web"
-npm run build
-
-echo "Deploy Ġabra Web"
 if [ "$1" = "-wet" ]; then
-  echo "(For real)"
+  echo "Build Ġabra Web"
+  npm run build
+
+  echo "Deploy Ġabra Web (For real)"
   rsync ${FLAGS} ${LOCALDIR} ${HOST}:${REMOTEDIR}
+elif [ "$1" = "-delete" ]; then
+  echo "Cleanup Ġabra Web (Potentially dangerous!)"
+  rsync --delete ${FLAGS} ${LOCALDIR} ${HOST}:${REMOTEDIR}
 else
-  echo "(Dry-run)"
+  echo "Deploy Ġabra Web (Dry-run)"
   rsync --dry-run --delete ${FLAGS} ${LOCALDIR} ${HOST}:${REMOTEDIR}
   echo
-  echo "### This was just a dry-run. To push for real, use the flag '-wet' ###"
+  echo "### This was just a dry-run. ###"
+  echo "To delete extra files from server, use the flag '-delete' (potentially dangerous)"
+  echo "To build & push for real, use the flag '-wet'"
 fi
