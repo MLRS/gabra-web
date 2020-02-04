@@ -10,7 +10,7 @@
           <SearchInput
           :placeholder="__('search.placeholder.root')"
           :showSubmit="false"
-          @update="(s) => { search.s = s }"
+          @update="(s) => { if (!isSearching) search.s = s }"
           class="my-4"
           ></SearchInput>
 
@@ -181,15 +181,15 @@ function bool2query (val: boolean): string {
 interface Data {
   types: string[] // for dropdown
   consonants: string[] // for dropdown
-  search: {
-    s: string
-    c1: string
+  search: { // linked to inputs
+    s: string // free input query
+    c1: string // consonant drop-downs
     c2: string
     c3: string
     c4: string
     t: string // type
   },
-  term: string | null
+  term: string | null // actual term computed and returned from API
   page: number // last page retrieved
   working: boolean
   results: Result[]
@@ -223,7 +223,7 @@ export default mixins(I18N).extend({
         c4: '',
         t: ''
       },
-      term: null, // actual term computed and returned from API
+      term: null,
       page: 0,
       working: false,
       results: [],
