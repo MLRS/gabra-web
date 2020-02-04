@@ -32,5 +32,8 @@
 
 .highlight {
   @extend .rounded;
-  background-color: transparentize($info, 0.8);
+  background-color: transparentize($info, .8);
+  $p: .1rem;
+  padding: 0 $p;
+  margin: 0 -$p;
 }

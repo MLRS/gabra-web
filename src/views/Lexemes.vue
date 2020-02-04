@@ -65,7 +65,7 @@
 
     <div v-if="isSearching">
       <h3 class="h4" v-html="__('results.title', {
-        term: `<span class='text-red'>${search.s}</span>`,
+        term: `<span class='highlight'>${search.s}</span>`,
         showing: working ? '…' : results.length,
         total: working ? '…' : resultCount
         })"></h3>

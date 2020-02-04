@@ -82,12 +82,12 @@
     </div><!-- search form -->
 
     <div v-if="isSearching">
-      <router-link :to="{ name: 'roots' }" class="btn btn-link float-right">
+      <router-link :to="{ name: 'roots' }" class="btn btn-secondary float-right">
         {{ __('search.new') }}
       </router-link>
 
       <h3 class="h4" v-html="__('results.title', {
-        term: `<span class='text-red'>${working ? '…' : term}</span>`,
+        term: `<span class='highlight'>${working ? '…' : term}</span>`,
         showing: working ? '…' : results.length,
         total: working ? '…' : resultCount
         })"></h3>
