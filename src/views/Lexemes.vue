@@ -3,7 +3,7 @@
 
     <div class="row" v-show="!isSearching">
 
-      <div class="col-md-6">
+      <div class="col-md-6 mb-4">
         <h1 class="h3">{{ __('Advanced search') }}</h1>
 
         <form @submit.prevent="submitSearch">

@@ -13,8 +13,8 @@
         ></SearchInput>
       </form>
 
-      <div class="collapse navbar-collapse ml-2">
-        <div class="navbar-nav mr-auto">
+      <div class="collapse navbar-collapse ml-2 d-flex">
+        <div class="navbar-nav mr-auto flex-row">
           <router-link to="/lexemes" class="nav-item nav-link">{{ __('Advanced search') }}</router-link>
           <router-link to="/roots" class="nav-item nav-link">{{ __('Root search') }}</router-link>
           <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
@@ -83,4 +83,7 @@ export default mixins(I18N).extend({
 <style lang="scss">
 @import '@/assets/custom.scss';
 
+.navbar-nav a {
+  @extend .mr-3;
+}
 </style>
