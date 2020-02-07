@@ -45,6 +45,11 @@
             </select>
           </div>
 
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" v-model="search.pending" id="LexemePending"/>
+            <label for="LexemePending">{{ __('search.option.pending') }}</label>
+          </div>
+
           <button class="btn btn-primary" type="submit">
             <i class="fas fa-search mr-1"></i>
             {{ __('search.button') }}
@@ -209,6 +214,7 @@ interface Data {
     g: boolean
     pos: string | null
     source: string | null
+    pending: boolean
   },
   page: number // last page retrieved
   working: boolean
@@ -244,7 +250,8 @@ export default mixins(I18N).extend({
         wf: true,
         g: true,
         pos: null,
-        source: null
+        source: null,
+        pending: false
       },
       page: 0,
       working: false,
@@ -263,11 +270,12 @@ export default mixins(I18N).extend({
       handler (): void {
         this.search = {
           s: this.$route.query.s as string || '',
-          l: query2bool(this.$route.query.l),
-          wf: query2bool(this.$route.query.wf),
-          g: query2bool(this.$route.query.g),
+          l: query2bool(this.$route.query.l, true),
+          wf: query2bool(this.$route.query.wf, true),
+          g: query2bool(this.$route.query.g, true),
           pos: this.$route.query.pos as string || null,
-          source: this.$route.query.source as string || null
+          source: this.$route.query.source as string || null,
+          pending: query2bool(this.$route.query.pending, false)
         }
         if (this.isSearching) {
           this.results = []
@@ -301,7 +309,8 @@ export default mixins(I18N).extend({
           wf: bool2query(this.search.wf),
           g: bool2query(this.search.g),
           pos: this.search.pos,
-          source: this.search.source
+          source: this.search.source,
+          pending: bool2query(this.search.pending)
         }
       })
     },
@@ -314,6 +323,12 @@ export default mixins(I18N).extend({
       axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
         params: {
           s: this.search.s,
+          l: bool2query(this.search.l),
+          wf: bool2query(this.search.wf),
+          g: bool2query(this.search.g),
+          pos: this.search.pos,
+          source: this.search.source,
+          pending: bool2query(this.search.pending),
           page: ++this.page
         } })
         .then(response => {

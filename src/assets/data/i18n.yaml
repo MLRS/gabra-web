@@ -429,6 +429,10 @@
   en: Source
   mt: Sors
 
+- key: search.option.pending
+  en: Include pending entries
+  mt: Inkludi wkoll entrati pendenti
+
 - key: search.button
   en: Search
   mt: Fittex
