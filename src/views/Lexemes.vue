@@ -106,10 +106,10 @@
           <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
           <div class="col-11 col-sm-2 font-weight-normal surface_form">
             <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
-              <highlight :text="item.lexeme.lemma" :match="search.s" />
+              <highlight :text="item.lexeme.lemma" :match="search.l ? search.s : null" />
             </router-link>
             <div v-if="item.lexeme.alternatives" class="alternative">
-              (<highlight :text="item.lexeme.alternatives.join(', ')" :match="search.s" />)
+              (<highlight :text="item.lexeme.alternatives.join(', ')" :match="search.l ? search.s : null" />)
             </div>
           </div>
           <div class="col-11 offset-1 col-sm-2 offset-sm-0">
@@ -131,7 +131,7 @@
           <div class="col-11 offset-1 col-sm-3 offset-sm-0 my-2 my-sm-0">
             <template v-if="item.lexeme.glosses">
               <div v-for="g,ix in item.lexeme.glosses.slice(0,5)" :key="ix">
-                <highlight :text="g.gloss" :match="search.s" />
+                <highlight :text="g.gloss" :match="search.g ? search.s : null" />
               </div>
               <div v-if="item.lexeme.glosses > 5">
                 ⋮
@@ -143,7 +143,7 @@
             <template v-if="item.wordforms !== null">
               <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
                 <span class="surface_form mr-2">
-                  <highlight :text="wf.surface_form" :match="search.s" />
+                  <highlight :text="wf.surface_form" :match="search.wf ? search.s : null" />
                 </span>
                 <span class="text-lighter">
                   <!-- Noun -->
