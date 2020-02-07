@@ -1,7 +1,7 @@
 <template>
   <div id="home" class="row">
 
-    <div class="jumbotron py-5 px-5">
+    <div class="jumbotron bg-light shadow-sm py-5 px-5">
       <h1 class="display-4 font-weight-normal text-shadow">{{ __('home.title') }}</h1>
 
       <p class="lead" v-html="__('home.1', {lexemes: stats.lexemes, wordforms: stats.wordforms})"></p>
