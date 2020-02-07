@@ -16,6 +16,13 @@ interface Lexeme {
   lemma: string
   pos: string
   derived_form?: number
+  glosses?: {
+    gloss: string,
+    examples: {
+      example: string,
+      type: 'full' | 'short'
+    }[]
+  }[]
 }
 
 interface Wordform {

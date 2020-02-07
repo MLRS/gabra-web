@@ -137,7 +137,7 @@ export default mixins(I18N).extend({
   },
   computed: {
     examples (): string[] {
-      if (!this.lexeme) return []
+      if (!this.lexeme || !this.lexeme.glosses) return []
       let egs = []
       for (let g of this.lexeme.glosses) {
         for (let e of g.examples || []) {
