@@ -6,6 +6,11 @@
   en: part of speech
   mt: kategorija
 
+# a little catch for the unexpected
+- key: pos.undefined
+  en: ''
+  mt: ''
+
 - key: pos.ADJ
   en: adjective
   mt: aġġettiv
