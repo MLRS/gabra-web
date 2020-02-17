@@ -38,6 +38,9 @@
     </main>
 
     <footer class="container mb-5">
+      <button class="btn btn-link text-dark position-fixed" style="opacity:0.1; bottom: 0; right: 0;" :title="__('random.button')" @click="clickRandom">
+        <i class="fas fa-2x" :class="[randomWorking ? 'fa-circle-notch fa-spin' : 'fa-dice']" />
+      </button>
     </footer>
 
   </div>
@@ -48,8 +51,11 @@ import mixins from 'vue-typed-mixins'
 import I18N, { Language } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
 
+import axios from 'axios'
+
 interface Data {
   term: string
+  randomWorking: boolean
 }
 
 export default mixins(I18N).extend({
@@ -58,7 +64,8 @@ export default mixins(I18N).extend({
   },
   data (): Data {
     return {
-      term: this.$route.query.s as string
+      term: this.$route.query.s as string,
+      randomWorking: false
     }
   },
   watch: {
@@ -75,6 +82,21 @@ export default mixins(I18N).extend({
         this.$router.push({ name: 'lexemes', query: { s: this.term } })
           .catch((_) => { })
       }
+    },
+    clickRandom (): void {
+      this.randomWorking = true
+      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/random`)
+        .then(response => {
+          this.$router.push({
+            name: 'lexeme',
+            params: {
+              'id': response.data._id
+            }
+          })
+        })
+        .then(() => {
+          this.randomWorking = false
+        })
     }
   }
 })

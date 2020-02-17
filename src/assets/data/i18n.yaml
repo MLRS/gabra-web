@@ -697,6 +697,10 @@
 - key: not_found
   en: That page does not exist, please check your URL.
   mt: Il-paġna ma teżistix. Jekk jgħoġbok iċċekkja l-indirizz.
+  
+- key: random.button
+  en: Random entry
+  mt: Entrata li tkun
 
 # ---------------------------------------------------------------------------
 # Unsorted, generic
