@@ -510,13 +510,13 @@
 - key: home.using
   en: "#### Using this resource\n
     - The simplest way to use Ġabra is to search using the input above. \n
-    - There is a [fully documented API](http://mlrs.research.um.edu.mt/resources/gabra-api) and [database schema](http://mlrs.research.um.edu.mt/resources/gabra-api/schema) for developers. \n
-    - A complete dump of the database is also [available for download](http://mlrs.research.um.edu.mt/resources/gabra-api/download).
+    - There is a [fully documented API](http://mlrs.research.um.edu.mt/resources/gabra-api) and [database schema](http://mlrs.research.um.edu.mt/resources/gabra-api/p/schema) for developers. \n
+    - A complete dump of the database is also [available for download](http://mlrs.research.um.edu.mt/resources/gabra-api/p/download).
     "
   mt: "#### Kif tuża dan ir-resors\n
     - L-eħfef mod biex tuża l-Ġabra huwa li tfittex fil-kaxxa t'hawn fuq. \n
-    - Għal min hu programmatur, hemm [API ddokumentat](http://mlrs.research.um.edu.mt/resources/gabra-api) kif ukoll [skema tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/schema).\n
-    - Tista' ukoll tniżżel [stampa sħiħa tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/download)."
+    - Għal min hu programmatur, hemm [API ddokumentat](http://mlrs.research.um.edu.mt/resources/gabra-api) kif ukoll [skema tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/p/schema).\n
+    - Tista' ukoll tniżżel [stampa sħiħa tad-_database_](http://mlrs.research.um.edu.mt/resources/gabra-api/p/download)."
 
 - key: home.citing
   en: "
