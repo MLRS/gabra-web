@@ -17,34 +17,23 @@
 
     </div><!-- jumbotron -->
 
-    <div class="col-sm-8">
+    <div class="col-sm-6">
 
       <div v-html="markdown(__('home.about'))"></div>
+
+      <div v-html="markdown(__('home.mistakes'))"></div>
+
+    </div><!-- /.col-sm-6 -->
+
+    <div class="col-sm-6">
 
       <div v-html="markdown(__('home.using'))"></div>
 
       <div v-html="markdown(__('home.citing'))"></div>
 
-      <div class="text-muted" v-html="__('home.license')"></div>
+      <div v-html="__('home.license')"></div>
 
-    </div><!-- /.col-sm-8 -->
-
-    <div class="col-sm-4">
-
-      <h3>
-        {{ __('home.activity.title') }}
-      </h3>
-
-      <div id="log-chart"></div>
-
-      <div v-for="item,x in latestNews" :key="x" class="mt-3">
-        <h4 class="h6 mb-1">
-          {{ item.date }}
-        </h4>
-        <div v-html="markdown(item[$store.state.language])"></div>
-      </div>
-
-    </div><!-- /.col-sm-4 -->
+    </div><!-- /.col-sm-6 -->
 
     <!-- PHP
       echo $this->Html->script('https://www.gstatic.com/charts/loader.js', array('inline' => false, 'defer' => false));
@@ -63,9 +52,7 @@ interface Data {
   stats: {
     lexemes: string
     wordforms: string
-    // TODO log
   }
-  news: {date: string, en: string, mt: string}[]
   term: string
 }
 
@@ -80,13 +67,7 @@ export default mixins(I18N).extend({
         lexemes: '…',
         wordforms: '…'
       },
-      news: require('@/assets/data/news.yaml'),
       term: ''
-    }
-  },
-  computed: {
-    latestNews (): {date: string, en: string, mt: string}[] {
-      return this.news.slice(-3).reverse()
     }
   },
   methods: {
