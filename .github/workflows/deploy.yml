@@ -35,7 +35,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
       
     - name: Run deploy script
-      run: ./deploy.sh
+      run: ./deploy.sh -wet
       
     - name: Close VPN
       if: always()

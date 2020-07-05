@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LOCALDIR=dist/
+LOCALDIR=./dist/
 # HOST=mlrs.research.um.edu.mt
 # REMOTEDIR=/var/www/resources/gabra/app/
 HOST=10.249.1.100
