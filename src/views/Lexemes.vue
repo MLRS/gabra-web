@@ -75,9 +75,9 @@
         total: working ? '…' : resultCount
         })"></h3>
 
-      <p class="text-muted" v-show="searchSuggestions.length > 0">
+      <p class="text-muted" v-show="searchSuggestionsFiltered.length > 0">
         {{ __('search.suggestion') }}
-        <router-link v-for="s,ix in searchSuggestions" :key="ix" :to="{ query: { s: s } }" class="">
+        <router-link v-for="s,ix in searchSuggestionsFiltered" :key="ix" :to="{ query: { s: s } }" class="">
           {{ s }}
         </router-link>
       </p>
@@ -297,6 +297,11 @@ export default mixins(I18N).extend({
     },
     moreResults (): boolean {
       return this.results.length < this.resultCount
+    },
+    searchSuggestionsFiltered (): string[] {
+      return this.searchSuggestions.filter((s: string) =>
+        !this.results.some((r: Result) => r.lexeme.lemma === s)
+      )
     }
   },
   methods: {
@@ -355,12 +360,31 @@ export default mixins(I18N).extend({
     },
     // search suggestions
     searchSuggest (): void {
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search_suggest`, {
+      this.searchSuggestions = []
+      // axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search_suggest`, {
+      //   params: {
+      //     s: this.search.s
+      //   } })
+      //   .then(response => {
+      //     response.data.results.forEach((r: {lexeme: Lexeme}) => {
+      //       if (!this.searchSuggestions.includes(r.lexeme.lemma)) {
+      //         this.searchSuggestions.push(r.lexeme.lemma)
+      //       }
+      //     })
+      //   })
+      //   .catch(error => {
+      //     console.error(error)
+      //   })
+      axios.get(`${process.env.VUE_APP_API_URL}/wordforms/search_suggest`, {
         params: {
           s: this.search.s
         } })
         .then(response => {
-          this.searchSuggestions = response.data.results.map((r: Lexeme) => r.lemma)
+          response.data.results.forEach((r: {wordform: Wordform}) => {
+            if (!this.searchSuggestions.includes(r.wordform.surface_form)) {
+              this.searchSuggestions.push(r.wordform.surface_form)
+            }
+          })
         })
         .catch(error => {
           console.error(error)

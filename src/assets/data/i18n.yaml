@@ -447,8 +447,8 @@
   mt: Ara iktar resultati
 
 - key: search.suggestion
-  en: "Did you mean:"
-  mt: "Ridt tfittex għal:"
+  en: "Perhaps you meant:"
+  mt: "Forsi ridt tfittex:"
 
 - key: search.new
   en: New search
