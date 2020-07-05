@@ -1,0 +1,3 @@
+Host 10.249.1.100
+    StrictHostKeyChecking no
+    User john

@@ -1,0 +1,42 @@
+name: Deploy to MLRS
+on:
+  push:
+    branches:
+      - production
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Open VPN
+      run: sudo apt-get install openvpn
+      
+    - name: Connect VPN
+      uses: golfzaptw/action-connect-ovpn@master
+      id: connect_vpn
+      with:
+        FILE_OVPN: '.github/vpn/config.ovpn'
+      env:
+        CA_CRT: ${{ secrets.CA_CRT }}
+        USER_CRT: ${{ secrets.USER_CRT }}
+        USER_KEY: ${{ secrets.USER_KEY }}
+        
+    - name: Check Connect VPN
+      run: echo ${{ steps.connect_vpn.outputs.STATUS }}
+      
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        cp .github/vpn/config.ssh ~/.ssh/config
+        chmod 600 ~/.ssh/config
+        cat > ~/.ssh/id_rsa <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+        chmod 600 ~/.ssh/id_rsa
+      
+    - name: Run deploy script
+      run: ./deploy.sh
+      
+    - name: Close VPN
+      if: always()
+      run: sudo killall openvpn
