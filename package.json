@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@types/markdown-it": "0.0.9",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.2",
     "json-loader": "^0.5.7",
