@@ -37,13 +37,22 @@ npm run serve
 
 Then open  `http://localhost:8080` in a browser.
 
-### Compile and minifies for production
+### Compile and minify for production
 
 ```sh
 npm run build
 ```
 
 The contents of `dist` can then be served statically.
+
+#### With Docker
+
+```sh
+./build-with-docker.sh
+```
+
+This will install requirements and build the app inside a Docker container,
+then copy the built app to the `dist` folder locally.
 
 ### Lint and fix files
 
