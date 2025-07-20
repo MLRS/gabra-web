@@ -1,3 +1,48 @@
+<script setup lang="ts">
+import { ref, reactive, onMounted } from 'vue'
+import { __, markdown } from '@/components/I18N.ts'
+import SearchInput from '@/components/SearchInput.vue'
+import axios from 'axios'
+
+import { useRootStore } from '@/stores/root'
+const store = useRootStore()
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const stats = reactive({
+  lexemes: '…',
+  wordforms: '…'
+})
+
+const term = ref('')
+
+function submitSearch (): void {
+  if (term.value) {
+    router.push({ name: 'lexemes', query: { s: term.value } })
+  }
+}
+
+onMounted(() => {
+  store.clearTitle()
+
+  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/count`)
+    .then(response => {
+      stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
+    })
+    .catch(error => {
+      console.error(error)
+    })
+  axios.get(`${process.env.VUE_APP_API_URL}/wordforms/count`)
+    .then(response => {
+      stats.wordforms = `<span class="badge badge-secondary">${response.data.toLocaleString()}</span>`
+    })
+    .catch(error => {
+      console.error(error)
+    })
+})
+</script>
+
 <template>
   <div id="home" class="row">
 
@@ -11,7 +56,7 @@
           :placeholder="__('home.search.placeholder')"
           :showSubmit="true"
           class="input-group-lg"
-          @update="(s) => { term = s }"
+          @update="(s: string) => { term = s }"
         ></SearchInput>
       </form>
 
@@ -35,68 +80,8 @@
 
     </div><!-- /.col-sm-6 -->
 
-    <!-- PHP
-      echo $this->Html->script('https://www.gstatic.com/charts/loader.js', array('inline' => false, 'defer' => false));
-      echo $this->Html->script(array('home','log-chart'), array('inline' => false, 'defer' => false)); -->
-
   </div>
 </template>
-
-<script lang="ts">
-import mixins from 'vue-typed-mixins'
-import I18N from '@/components/I18N.ts'
-import SearchInput from '@/components/SearchInput.vue'
-import axios from 'axios'
-
-interface Data {
-  stats: {
-    lexemes: string
-    wordforms: string
-  }
-  term: string
-}
-
-export default mixins(I18N).extend({
-  name: 'home',
-  components: {
-    SearchInput
-  },
-  data (): Data {
-    return {
-      stats: {
-        lexemes: '…',
-        wordforms: '…'
-      },
-      term: ''
-    }
-  },
-  methods: {
-    submitSearch (): void {
-      if (this.term) {
-        this.$router.push({ name: 'lexemes', query: { s: this.term } })
-      }
-    }
-  },
-  mounted (): void {
-    this.$store.dispatch('clearTitle')
-
-    axios.get(`${process.env.VUE_APP_API_URL}/lexemes/count`)
-      .then(response => {
-        this.stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
-      })
-      .catch(error => {
-        console.error(error)
-      })
-    axios.get(`${process.env.VUE_APP_API_URL}/wordforms/count`)
-      .then(response => {
-        this.stats.wordforms = `<span class="badge badge-secondary">${response.data.toLocaleString()}</span>`
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  }
-})
-</script>
 
 <style lang="scss">
 @import '@/assets/custom.scss';

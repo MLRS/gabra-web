@@ -1,3 +1,51 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { __ } from '@/components/I18N.ts'
+import SearchInput from '@/components/SearchInput.vue'
+
+import axios from 'axios'
+
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
+
+import { useRootStore } from '@/stores/root'
+const store = useRootStore()
+
+const term = ref(route.query.s)
+const randomWorking = ref(false)
+
+watch(
+  () => route.query.s,
+  () => {
+    store.clearMessages()
+  }
+)
+
+function submitSearch (): void {
+  if (term.value) {
+    router.push({ name: 'lexemes', query: { s: term.value } })
+      .catch(() => { })
+  }
+}
+
+function clickRandom (): void {
+  randomWorking.value = true
+  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/random`)
+    .then(response => {
+      router.push({
+        name: 'lexeme',
+        params: {
+          'id': response.data._id
+        }
+      })
+    })
+    .then(() => {
+      randomWorking.value = false
+    })
+}
+</script>
+
 <template>
   <div id="app">
 
@@ -9,7 +57,7 @@
         <SearchInput
           :placeholder="__('search.placeholder')"
           :showSubmit="true"
-          @update="(s) => { term = s }"
+          @update="(s: string) => { term = s }"
         ></SearchInput>
       </form>
 
@@ -19,10 +67,10 @@
           <router-link to="/roots" class="nav-item nav-link">{{ __('Root search') }}</router-link>
           <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
         </div>
-        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="$store.state.language != 'en'" @click="$store.dispatch('setLanguage', 'en')">
+        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="store.language != 'en'" @click="store.setLanguage('en')">
           in English
         </button>
-        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="$store.state.language != 'mt'" @click="$store.dispatch('setLanguage', 'mt')">
+        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="store.language != 'mt'" @click="store.setLanguage('mt')">
           bil-Malti
         </button>
       </div>
@@ -30,7 +78,7 @@
     </nav>
 
     <main class="container pt-3">
-      <div v-for="m,ix in $store.state.messages" :key="ix" class="alert" :class="'alert-'+m.type">
+      <div v-for="m,ix in store.messages" :key="ix" class="alert" :class="'alert-'+m.type">
         {{ m.text }}
       </div>
 
@@ -45,62 +93,6 @@
 
   </div>
 </template>
-
-<script lang="ts">
-import mixins from 'vue-typed-mixins'
-import I18N, { Language } from '@/components/I18N.ts'
-import SearchInput from '@/components/SearchInput.vue'
-
-import axios from 'axios'
-
-interface Data {
-  term: string
-  randomWorking: boolean
-}
-
-export default mixins(I18N).extend({
-  components: {
-    SearchInput
-  },
-  data (): Data {
-    return {
-      term: this.$route.query.s as string,
-      randomWorking: false
-    }
-  },
-  watch: {
-    // Clear any errors when route changes
-    '$route': {
-      handler (): void {
-        this.$store.dispatch('clearMessages')
-      }
-    }
-  },
-  methods: {
-    submitSearch (): void {
-      if (this.term) {
-        this.$router.push({ name: 'lexemes', query: { s: this.term } })
-          .catch((_) => { })
-      }
-    },
-    clickRandom (): void {
-      this.randomWorking = true
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/random`)
-        .then(response => {
-          this.$router.push({
-            name: 'lexeme',
-            params: {
-              'id': response.data._id
-            }
-          })
-        })
-        .then(() => {
-          this.randomWorking = false
-        })
-    }
-  }
-})
-</script>
 
 <style lang="scss">
 @import '@/assets/custom.scss';

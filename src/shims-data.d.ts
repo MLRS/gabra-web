@@ -1,13 +1,11 @@
-/* eslint-disable camelcase */
-
- interface Entry {
+interface Entry {
   key?: string
   en: string
   mt: string
 }
 
 declare module '@/assets/data/i18n.yaml' {
-  var es: Entry[]
+  const es: Entry[]
   export default es
 }
 
@@ -37,4 +35,8 @@ interface Root {
 
 interface Source {
   key: string
+  author: string
+  title: string
+  year: number
+  note: string
 }

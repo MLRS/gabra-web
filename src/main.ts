@@ -1,19 +1,20 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
 import router from './router'
-import store from './store'
 
-import VueGtag from 'vue-gtag'
+// import VueGtag from 'vue-gtag'
 
-Vue.use(VueGtag, {
-  config: { id: 'UA-34654961-2' },
-  enabled: process.env.NODE_ENV === 'production'
-}, router)
+// Vue.use(VueGtag, {
+//   config: { id: 'UA-34654961-2' },
+//   enabled: process.env.NODE_ENV === 'production'
+// }, router)
 
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const app = createApp(App)
+const pinia = createPinia()
+app.use(pinia)
+app.use(router)
+app.mount('#app')

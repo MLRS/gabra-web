@@ -10,7 +10,7 @@
           <SearchInput
           :placeholder="__('search.placeholder.root')"
           :showSubmit="false"
-          @update="(s) => { if (!isSearching) search.s = s }"
+          @update="(s: string) => { if (!isSearching) search.s = s }"
           class="my-4"
           ></SearchInput>
 

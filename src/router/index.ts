@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+
 import Home from '../views/Home.vue'
 import Lexemes from '../views/Lexemes.vue'
 import LexemeView from '../views/LexemeView.vue'
@@ -7,8 +7,6 @@ import Roots from '../views/Roots.vue'
 import RootView from '../views/RootView.vue'
 import Sources from '../views/Sources.vue'
 import NotFound from '../views/NotFound.vue'
-
-Vue.use(VueRouter)
 
 const routes = [
   {
@@ -48,17 +46,22 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  base: process.env.VUE_APP_BASE_URL,
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  scrollBehavior (_to, _from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
-  }
 })
+
+// const router = new VueRouter({
+//   base: process.env.VUE_APP_BASE_URL,
+//   mode: 'history',
+//   routes,
+//   scrollBehavior (_to, _from, savedPosition) {
+//     if (savedPosition) {
+//       return savedPosition
+//     } else {
+//       return { x: 0, y: 0 }
+//     }
+//   }
+// })
 
 export default router

@@ -192,7 +192,7 @@ import * as UI from '@/helpers/UI.ts'
 
 import axios from 'axios'
 
-function query2bool (val: any, def: boolean = true): boolean {
+function query2bool (val?: string, def: boolean = true): boolean {
   if (val !== undefined) {
     return val === '1' || val === 'true'
   } else {

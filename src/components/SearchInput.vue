@@ -1,3 +1,54 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+defineProps<{
+  placeholder: string,
+  showSubmit: boolean
+}>();
+
+const emit = defineEmits<{
+  (e: 'update', value: string): void
+}>()
+
+const term = ref('') // updated by watch
+const showKeyboard = ref(false)
+let position = 0
+
+function toggleKeyboard (): void {
+  showKeyboard.value = !showKeyboard.value
+}
+
+// Update cursor position on input
+function updatePosition (e: Event): void {
+  if (e.target) {
+    position = (e.target as HTMLInputElement).selectionStart || 0
+  }
+}
+
+function insert (letter: string): void {
+  term.value = term.value.slice(0, position) + letter + term.value.slice(position)
+  position += letter.length
+}
+
+watch(
+  () => route.query.s,
+  () => {
+    if (route.name === 'lexemes') {
+      term.value = route.query.s as string || ''
+    } else {
+      term.value = ''
+    }
+  },
+  { immediate: true }
+)
+
+watch(term, () => {
+  emit('update', term.value)
+})
+</script>
+
 <template>
   <div class="input-group">
     <div class="input-group-prepend keyboard">
@@ -26,63 +77,6 @@
     </div>
   </div><!-- input-group -->
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-interface Data {
-  term: string,
-  showKeyboard: boolean,
-  position: number
-}
-
-export default Vue.extend({
-  props: {
-    placeholder: String,
-    showSubmit: Boolean
-  },
-  data (): Data {
-    return {
-      term: '', // updated by watch
-      showKeyboard: false,
-      position: 0
-    }
-  },
-  methods: {
-    toggleKeyboard (): void {
-      this.showKeyboard = !this.showKeyboard
-    },
-    // Update cursor position on input
-    updatePosition (e: Event): void {
-      if (e.target) {
-        this.position = (e.target as HTMLInputElement).selectionStart || 0
-      }
-    },
-    insert (letter: string): void {
-      this.term = this.term.slice(0, this.position) + letter + this.term.slice(this.position)
-      this.position += letter.length
-    }
-  },
-  watch: {
-    '$route.query.s': {
-      handler (): void {
-        if (this.$route.name === 'lexemes') {
-          this.term = this.$route.query.s as string || ''
-        } else {
-          this.term = ''
-        }
-      },
-      immediate: true
-    },
-    term: {
-      // inform parent that contents of input has changed
-      handler (): void {
-        this.$emit('update', this.term)
-      }
-    }
-  }
-})
-</script>
 
 <style lang="scss">
 @import '@/assets/custom.scss';

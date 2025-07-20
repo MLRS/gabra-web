@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = defineProps<{
+    root: Root, // Root
+    match: string // Regex from search
+}>()
+
+const highlighted = computed(() => {
+  if (props.match) {
+    const re = new RegExp(`(${props.match})`)
+    return props.root.radicals.replace(re, '<span class="highlight">$1</span>')
+  } else {
+    return props.root.radicals
+  }
+})
+</script>
+
 <template>
   <router-link :to="{ name: 'root', params: { radicals: root.radicals, variant: root.variant } }" class="text-nowrap" v-if="root">
     <span v-html="highlighted"></span>
@@ -6,24 +24,3 @@
     </sup>
   </router-link>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    root: Object, // Root
-    match: String // Regex from search
-  },
-  computed: {
-    highlighted (): string {
-      if (this.match) {
-        let re = new RegExp(`(${this.match})`)
-        return this.root.radicals.replace(re, '<span class="highlight">$1</span>')
-      } else {
-        return this.root.radicals
-      }
-    }
-  }
-})
-</script>

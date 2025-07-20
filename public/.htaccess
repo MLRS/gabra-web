@@ -1,13 +1,2 @@
 # Sitemap is served by API app
 Redirect 301 /resources/gabra/sitemap.txt /resources/gabra-api/sitemap.gabra.txt
-
-# This is here for vue-router HTML5 history mode
-# https://router.vuejs.org/guide/essentials/history-mode.html
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /resources/gabra/
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . index.html [L]
-</IfModule>

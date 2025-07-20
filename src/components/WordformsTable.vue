@@ -38,8 +38,6 @@ import mixins from 'vue-typed-mixins'
 import I18N from '@/components/I18N.ts'
 import * as UI from '@/helpers/UI.ts'
 
-/* eslint-disable camelcase */
-
 // Fields to ignore from table
 const ignoreFields = new Set([
   'surface_form', // included manually

@@ -32,10 +32,10 @@ npm install
 ### Compile with hot-reload for development
 
 ```sh
-npm run serve
+npm run dev
 ```
 
-Then open  `http://localhost:8080` in a browser.
+Then open  `http://localhost:5173` in a browser.
 
 ### Compile and minify for production
 
