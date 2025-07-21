@@ -1,9 +1,9 @@
 import markdownit from 'markdown-it'
 
-import terms from '@/assets/data/i18n.yaml'
-
 import { useRootStore } from '@/stores/root'
 const store = useRootStore()
+
+import terms from '@/assets/data/i18n.yaml'
 
 const MarkdownIt = markdownit({
   html: true

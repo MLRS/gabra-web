@@ -28,3 +28,4 @@ Deleted (or completely overwritten) files:
 - Persistance of language (in state) to local storage
 - GTag
 - Use of process.env.NODE_ENV
+- SCSS, Bootstrap

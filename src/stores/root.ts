@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+
 import { __l, type Language } from '@/components/I18N.ts'
 
 interface I18NString {

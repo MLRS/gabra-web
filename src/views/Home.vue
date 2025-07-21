@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import axios from 'axios'
 import { ref, reactive, onMounted } from 'vue'
+
 import { __, markdown } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
-import axios from 'axios'
-
-import { useRootStore } from '@/stores/root'
-const store = useRootStore()
 
 import { useRouter } from 'vue-router'
 const router = useRouter()
+
+import { useRootStore } from '@/stores/root'
+const store = useRootStore()
 
 const stats = reactive({
   lexemes: '…',

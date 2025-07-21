@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
+
 import { __ } from '@/components/I18N.ts'
 
 import { useRootStore } from '@/stores/root'

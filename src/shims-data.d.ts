@@ -21,10 +21,31 @@ interface Lexeme {
       type: 'full' | 'short'
     }[]
   }[]
+  alternatives?: string[]
+  root?: Root
+  frequency?: string
 }
 
 interface Wordform {
   surface_form: string
+  generated?: boolean
+  alternatives?: string[]
+
+  number?: string
+  gender?: string
+  aspect?: string
+  subject?: Agreement
+  dir_obj?: Agreement
+  ind_obj?: Agreement
+  polarity?: Polarity
+}
+
+type Polarity = 'pos' | 'neg'
+
+interface Agreement {
+  person: 'p1' | 'p2' | 'p3'
+  number: 'sg' | 'pl'
+  gender?: 'm' | 'f'
 }
 
 interface Root {

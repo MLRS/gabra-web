@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import axios from 'axios'
 import { ref, watch } from 'vue'
+
 import { __ } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
-
-import axios from 'axios'
 
 import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()

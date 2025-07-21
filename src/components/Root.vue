@@ -2,8 +2,8 @@
 import { computed } from 'vue'
 
 const props = defineProps<{
-    root: Root, // Root
-    match: string // Regex from search
+  root: Root, // Root
+  match?: string // Regex from search
 }>()
 
 const highlighted = computed(() => {

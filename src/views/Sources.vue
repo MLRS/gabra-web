@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { __ } from '@/components/I18N.ts'
 import axios from 'axios'
+import { ref, onMounted } from 'vue'
+
+import { __ } from '@/components/I18N.ts'
 
 import { useRootStore } from '@/stores/root'
 const store = useRootStore()
