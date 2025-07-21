@@ -80,6 +80,20 @@ const data = reactive<Data>({
   }
 })
 
+const isSearching = computed<boolean>(() => {
+  return route.query.s !== undefined && route.query.s !== null && route.query.s !== ''
+})
+
+const moreResults = computed<boolean>(() => {
+  return data.results.length < data.resultCount
+})
+
+const searchSuggestionsFiltered = computed<string[]>(() => {
+  return data.searchSuggestions.filter((s: string) =>
+    !data.results.some((r: Result) => r.lexeme.lemma === s)
+  )
+})
+
 // Populate local search object whenever URL changes
 watch(
   () => route.query,
@@ -108,20 +122,6 @@ watch(
     immediate: true
   }
 )
-
-const isSearching = computed<boolean>(() => {
-  return route.query.s !== undefined && route.query.s !== null && route.query.s !== ''
-})
-
-const moreResults = computed<boolean>(() => {
-  return data.results.length < data.resultCount
-})
-
-const searchSuggestionsFiltered = computed<string[]>(() => {
-  return data.searchSuggestions.filter((s: string) =>
-    !data.results.some((r: Result) => r.lexeme.lemma === s)
-  )
-})
 
 // the form is submitted
 function submitSearch() {
@@ -337,7 +337,7 @@ onMounted(() => {
         <div v-for="item,ix in data.results" :key="ix" class="row mt-2 pt-2" :class="{ 'border-top': ix > 0 }">
           <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
           <div class="col-11 col-sm-2 fw-normal surface_form">
-            <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
+            <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }">
               <highlight :text="item.lexeme.lemma" :match="data.search.l ? data.search.s : null" />
             </router-link>
             <div v-if="item.lexeme.alternatives" class="alternative">

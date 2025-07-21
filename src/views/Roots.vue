@@ -60,6 +60,14 @@ const data = reactive<Data>({
   resultCount: 0
 })
 
+const isSearching = computed<boolean>(() => {
+  return is(route.query.s) || is(route.query.c1) || is(route.query.c2) || is(route.query.c3) || is(route.query.c4) || is(route.query.t)
+})
+
+const moreResults = computed<boolean>(() => {
+  return data.results.length < data.resultCount
+})
+
 // Populate local search object whenever URL changes
 watch(
   () => route.query,
@@ -98,14 +106,6 @@ watch(
     immediate: true
   }
 )
-
-const isSearching = computed<boolean>(() => {
-  return is(route.query.s) || is(route.query.c1) || is(route.query.c2) || is(route.query.c3) || is(route.query.c4) || is(route.query.t)
-})
-
-const moreResults = computed<boolean>(() => {
-  return data.results.length < data.resultCount
-})
 
 // the form is submitted
 function submitSearch() {

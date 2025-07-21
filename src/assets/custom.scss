@@ -14,10 +14,6 @@
   @extend .text-lighter;
 }
 
-.font-size-large {
-  font-size: large;
-}
-
 .text-red {
   color: firebrick!important;
 }
@@ -32,7 +28,8 @@
 
 .highlight {
   @extend .rounded;
-  // background-color: transparentize($info, .8);
+  --bs-bg-opacity: 0.2;
+  @extend .bg-info;
   $p: .1rem;
   padding: 0 $p;
   margin: 0 -$p;
