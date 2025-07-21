@@ -336,7 +336,7 @@ onMounted(() => {
       <div class="mt-3">
         <div v-for="item,ix in data.results" :key="ix" class="row mt-2 pt-2" :class="{ 'border-top': ix > 0 }">
           <div class="col-1 text-lighter text-center">{{ ix+1 }}.</div>
-          <div class="col-11 col-sm-2 font-weight-normal surface_form">
+          <div class="col-11 col-sm-2 fw-normal surface_form">
             <router-link :to="{ name: 'lexeme', params: { id: item.lexeme._id } }" class="font-size-large">
               <highlight :text="item.lexeme.lemma" :match="data.search.l ? data.search.s : null" />
             </router-link>

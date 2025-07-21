@@ -514,16 +514,16 @@
   en: "
     To cite this resource, please use the following reference.
     You can obtain a copy of the thesis [here](https://johnjcamilleri.com/academic/publications/msc2013.pdf).
-    <div class=\"well\">
+    <blockquote>
     John J. Camilleri. <em>\"A Computational Grammar and Lexicon for Maltese\"</em>,
     M.Sc. Thesis. Chalmers University of Technology. Gothenburg, Sweden, September 2013.
-    </div>"
+    </blockquote>"
   mt: "Biex tirreferi għall dan ir-risors, jekk jogħġbok uża ir-referenza t'hawn taħt.
     Tista' tniżzel kopja tat-teżi [hawnhekk](https://johnjcamilleri.com/academic/publications/msc2013.pdf).
-    <div class=\"well\">
+    <blockquote>
     John J. Camilleri. <em>\"A Computational Grammar and Lexicon for Maltese\"</em>,
     M.Sc. Thesis. Chalmers University of Technology. Gothenburg, Sweden, September 2013.
-    </div>"
+    </blockquote>"
 
 - key: home.license
   en: "The contents of <span xmlns:dct=\"http://purl.org/dc/terms/\" href=\"http://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">Ġabra</span> are licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>.
@@ -940,9 +940,6 @@
 #
 # - en: Show all forms
 #   mt: Ara l-forom kollha
-#
-# - en: News
-#   mt: Aħbarijiet
 #
 # - en: Type
 #   mt: Klassi

@@ -159,11 +159,11 @@ onMounted(() => {
       <div class="col-md-8">
         <!-- wordforms -->
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
-        <!-- <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2> -->
+        <!-- <h2 class="h6 text-capitalize fw-bold">{{ __('word_forms') }}</h2> -->
         <wordforms-table :lexeme="lexeme" :wordforms="wordforms" v-if="wordforms !== null && wordforms.length > 0"></wordforms-table>
 
         <!-- examples -->
-        <h2 v-if="examples.length > 0" class="h6 text-capitalize font-weight-bold">{{ __('examples') }}</h2>
+        <h2 v-if="examples.length > 0" class="h6 text-capitalize fw-bold">{{ __('examples') }}</h2>
         <ul>
           <li v-for="e, ix in examples" :key="ix" class="surface_form">
             “{{ e }}”
@@ -176,7 +176,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
 dt {
   @extend .text-capitalize;

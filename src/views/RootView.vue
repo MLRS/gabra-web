@@ -137,7 +137,7 @@ function load() {
 </template>
 
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
 dt {
   @extend .text-capitalize;

@@ -35,7 +35,7 @@ onMounted(() => {
 
     <div class="mt-3">
       <div class="row border-top py-2" v-for="s,ix in sources" :key="ix">
-        <div class="col-md-2 font-weight-bold">{{ s.key }}</div>
+        <div class="col-md-2 fw-bold">{{ s.key }}</div>
         <div class="col-md-3">{{ s.title }}</div>
         <div class="col-md-2">{{ s.author }}</div>
         <div class="col-md-1">{{ s.year }}</div>

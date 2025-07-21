@@ -207,8 +207,3 @@ function format(field: string, value: any): any {
     </tbody>
   </table>
 </template>
-
-<style lang="scss">
-@import '@/assets/custom.scss';
-
-</style>

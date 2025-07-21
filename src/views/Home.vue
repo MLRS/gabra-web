@@ -29,14 +29,14 @@ onMounted(() => {
 
   axios.get(`${import.meta.env.VITE_API_URL}/lexemes/count`)
     .then(response => {
-      stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
+      stats.lexemes = `<span class="badge bg-dark">${response.data.toLocaleString()}</span>`
     })
     .catch(error => {
       console.error(error)
     })
   axios.get(`${import.meta.env.VITE_API_URL}/wordforms/count`)
     .then(response => {
-      stats.wordforms = `<span class="badge badge-secondary">${response.data.toLocaleString()}</span>`
+      stats.wordforms = `<span class="badge bg-secondary">${response.data.toLocaleString()}</span>`
     })
     .catch(error => {
       console.error(error)
@@ -47,8 +47,8 @@ onMounted(() => {
 <template>
   <div id="home" class="row">
 
-    <div class="jumbotron bg-light shadow-sm py-5 px-5">
-      <h1 class="display-4 font-weight-normal text-shadow">{{ __('home.title') }}</h1>
+    <div class="rounded-3 bg-light shadow p-5 mb-5">
+      <h1 class="display-4 fw-normal text-shadow">{{ __('home.title') }}</h1>
 
       <p class="lead" v-html="__('home.1', {lexemes: stats.lexemes, wordforms: stats.wordforms})"></p>
 
@@ -85,9 +85,9 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
-.well {
-  @extend .card-body, .bg-light, .rounded, .my-3, .text-muted;
+blockquote {
+  @extend .card-body, .bg-light, .rounded, .my-3, .p-3, .text-muted;
 }
 </style>

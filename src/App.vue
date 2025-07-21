@@ -95,9 +95,9 @@ function clickRandom (): void {
 </template>
 
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
 .navbar-nav a {
-  @extend .mr-3;
+  @extend .me-3;
 }
 </style>

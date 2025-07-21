@@ -39,9 +39,8 @@ const routes = [
     name: 'sources',
     component: Sources
   },
-  // catch-all, see https://router.vuejs.org/guide/essentials/history-mode.html#caveat
   {
-    path: '*',
+    path: '/:pathMatch(.*)',
     component: NotFound
   }
 ]
@@ -51,10 +50,8 @@ const router = createRouter({
   routes,
 })
 
+// TODO scroll behaviour
 // const router = new VueRouter({
-//   base: process.env.VUE_APP_BASE_URL,
-//   mode: 'history',
-//   routes,
 //   scrollBehavior (_to, _from, savedPosition) {
 //     if (savedPosition) {
 //       return savedPosition

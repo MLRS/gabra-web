@@ -79,7 +79,7 @@ watch(term, () => {
 </template>
 
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
 .keyboard button {
   @extend .border;
