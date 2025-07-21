@@ -23,7 +23,14 @@ interface Lexeme {
   }[]
   alternatives?: string[]
   root?: Root
+  sources: string[]
   frequency?: string
+  transitive?: boolean
+  intransitive?: boolean
+  ditransitive?: boolean
+  hypothetical?: boolean
+  phonetic?: string
+  onomastic_type?: string
 }
 
 interface Wordform {
@@ -52,6 +59,8 @@ interface Root {
   radicals: string
   variant?: number
   type: string
+  alternatives?: string
+  sources: string[]
 }
 
 interface Source {
