@@ -14,7 +14,7 @@ onMounted(() => {
   store.setTitle({ key: 'Sources' })
 
   working.value = true
-  axios.get(`${process.env.VUE_APP_API_URL}/sources`)
+  axios.get(`${import.meta.env.VITE_API_URL}/sources`)
     .then(response => {
       sources.value = response.data
     })

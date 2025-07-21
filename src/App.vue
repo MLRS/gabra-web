@@ -31,7 +31,7 @@ function submitSearch (): void {
 
 function clickRandom (): void {
   randomWorking.value = true
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/random`)
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/random`)
     .then(response => {
       router.push({
         name: 'lexeme',

@@ -124,7 +124,7 @@ function submitSearch() {
 // get results
 function loadResults() {
   data.working = true
-  axios.get(`${process.env.VUE_APP_API_URL}/roots/search`, {
+  axios.get(`${import.meta.env.VITE_API_URL}/roots/search`, {
     params: {
       s: data.search.s,
       c1: data.search.c1,

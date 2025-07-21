@@ -26,7 +26,7 @@ function submitSuggestion (): void {
     return
   }
   working.value = true
-  axios.post(`${process.env.VUE_APP_API_URL}/feedback/suggest`, {
+  axios.post(`${import.meta.env.VITE_API_URL}/feedback/suggest`, {
     lemma: lemma.value,
     gloss: gloss.value,
     pos: pos.value

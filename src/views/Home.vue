@@ -27,14 +27,14 @@ function submitSearch (): void {
 onMounted(() => {
   store.clearTitle()
 
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/count`)
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/count`)
     .then(response => {
       stats.lexemes = `<span class="badge badge-dark">${response.data.toLocaleString()}</span>`
     })
     .catch(error => {
       console.error(error)
     })
-  axios.get(`${process.env.VUE_APP_API_URL}/wordforms/count`)
+  axios.get(`${import.meta.env.VITE_API_URL}/wordforms/count`)
     .then(response => {
       stats.wordforms = `<span class="badge badge-secondary">${response.data.toLocaleString()}</span>`
     })

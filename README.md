@@ -19,7 +19,7 @@ Previous versions of the Ġabra site are available in these branches:
 - Access to **Ġabra API** web service, either locally or live. See <https://github.com/MLRS/gabra-api>.
 
 The path to the API is specified in the `.env*` files.
-For documentation about these, see [Vue.js docs on environment variables](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables).
+For documentation about these, see [Vite docs on environment variables](https://vite.dev/guide/env-and-mode).
 
 ## Project setup
 

@@ -8,7 +8,7 @@ import router from './router'
 
 // Vue.use(VueGtag, {
 //   config: { id: 'UA-34654961-2' },
-//   enabled: process.env.NODE_ENV === 'production'
+//   enabled: import.meta.env.PROD,
 // }, router)
 
 // Vue.config.productionTip = false

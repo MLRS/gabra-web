@@ -144,7 +144,7 @@ function loadResults() {
   data.suggest.show = false
   data.suggest.done = false
   store.clearMessages()
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search`, {
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/search`, {
     params: {
       s: data.search.s,
       l: bool2query(data.search.l),
@@ -159,7 +159,7 @@ function loadResults() {
       response.data.results.forEach((r: Result) => {
         r.wordforms = null // not loaded
         data.results.push(r)
-        axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
           .then(resp => {
             r.wordforms = resp.data
           })
@@ -181,7 +181,7 @@ function loadResults() {
 // search suggestions
 function searchSuggest() {
   data.searchSuggestions = []
-  // axios.get(`${process.env.VUE_APP_API_URL}/lexemes/search_suggest`, {
+  // axios.get(`${import.meta.env.VITE_API_URL}/lexemes/search_suggest`, {
   //   params: {
   //     s: this.search.s
   //   } })
@@ -195,7 +195,7 @@ function searchSuggest() {
   //   .catch(error => {
   //     console.error(error)
   //   })
-  axios.get(`${process.env.VUE_APP_API_URL}/wordforms/search_suggest`, {
+  axios.get(`${import.meta.env.VITE_API_URL}/wordforms/search_suggest`, {
     params: {
       s: data.search.s
     } })
@@ -220,7 +220,7 @@ onMounted(() => {
     }
   }
 
-  axios.get(`${process.env.VUE_APP_API_URL}/sources`)
+  axios.get(`${import.meta.env.VITE_API_URL}/sources`)
     .then(response => {
       data.sources = response.data.map((s: Source) => s.key)
     })

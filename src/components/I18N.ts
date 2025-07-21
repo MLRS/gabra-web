@@ -23,7 +23,7 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
   if (f) {
     let s = f[lang]
     if (!s) {
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.error(`No localisation of key '${key}' in language '${lang}'`)
       }
       return key
@@ -35,7 +35,7 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
     }
     return s
   } else {
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error(`No localisation of key '${key}'`)
     }
     return key

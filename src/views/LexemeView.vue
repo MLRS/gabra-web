@@ -42,7 +42,7 @@ const examples = computed<string[]>(() => {
 
 // get lexeme and wordforms
 function load() {
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/${route.params.id}`)
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/${route.params.id}`)
     .then(response => {
       lexeme.value = response.data
       store.setTitle((lexeme.value as Lexeme).lemma)
@@ -51,7 +51,7 @@ function load() {
       store.addError(error)
       lexeme.value = {} as Lexeme
     })
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}?pending=1`)
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/wordforms/${route.params.id}?pending=1`)
     .then(response => {
       wordforms.value = response.data
     })
@@ -59,7 +59,7 @@ function load() {
       store.addError(error)
       wordforms.value = []
     })
-  axios.get(`${process.env.VUE_APP_API_URL}/lexemes/related/${route.params.id}`)
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/related/${route.params.id}`)
     .then(response => {
       related.value = response.data
     })

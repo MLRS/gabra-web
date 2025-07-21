@@ -47,7 +47,7 @@ const rootClass = computed<string>(() => {
 // get root and lexemes
 function load() {
   const path = route.params.variant ? `${route.params.radicals}/${route.params.variant}` : `${route.params.radicals}`
-  axios.get(`${process.env.VUE_APP_API_URL}/roots/${path}`)
+  axios.get(`${import.meta.env.VITE_API_URL}/roots/${path}`)
     .then(response => {
       root.value = response.data
     })
@@ -55,7 +55,7 @@ function load() {
       store.addError(error)
       root.value = {} as Root
     })
-  axios.get(`${process.env.VUE_APP_API_URL}/roots/lexemes/${path}`)
+  axios.get(`${import.meta.env.VITE_API_URL}/roots/lexemes/${path}`)
     .then(response => {
       lexemes.value = response.data
     })
