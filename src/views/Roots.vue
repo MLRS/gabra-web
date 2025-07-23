@@ -215,7 +215,7 @@ onMounted(() => {
           </div>
 
           <button class="btn btn-primary" type="submit">
-            <i class="fas fa-search mr-1"></i>
+            <i class="fas fa-search me-1"></i>
             {{ __('search.button') }}
           </button>
         </form>

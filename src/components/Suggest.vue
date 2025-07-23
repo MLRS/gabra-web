@@ -83,9 +83,9 @@ watch(
     </div>
     <div class="form-group row mb-1">
       <div class="col text-right">
-        <i class="fas fa-circle-notch fa-spin text-danger fa-2x mr-3 align-middle" v-show="working"></i>
+        <i class="fas fa-circle-notch fa-spin text-danger fa-2x me-3 align-middle" v-show="working"></i>
         <button type="submit" class="btn btn-primary">{{ __('suggest.submit') }}</button>
-        <button type="reset" class="btn btn-link ml-2" @click.prevent="$emit('hide')">{{ __('suggest.cancel') }}</button>
+        <button type="reset" class="btn btn-link ms-2" @click.prevent="$emit('hide')">{{ __('suggest.cancel') }}</button>
       </div>
     </div>
   </form>

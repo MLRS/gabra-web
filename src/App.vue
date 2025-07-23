@@ -51,9 +51,9 @@ function clickRandom (): void {
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-light border-bottom mb-2">
     <div class="container">
-      <router-link to="/" class="navbar-brand text-red mr-4">Ġabra</router-link>
+      <router-link to="/" class="navbar-brand text-red me-4">Ġabra</router-link>
 
-      <form role="search" action="" @submit.prevent="submitSearch" v-show="$route.name != 'home'" class="mr-auto">
+      <form role="search" action="" @submit.prevent="submitSearch" v-show="$route.name != 'home'" class="me-auto">
         <SearchInput
           :placeholder="__('search.placeholder')"
           :showSubmit="true"
@@ -61,16 +61,16 @@ function clickRandom (): void {
         ></SearchInput>
       </form>
 
-      <div class="collapse navbar-collapse ml-2 d-flex">
-        <div class="navbar-nav mr-auto flex-row">
+      <div class="collapse navbar-collapse ms-2 d-flex">
+        <div class="navbar-nav me-auto flex-row">
           <router-link to="/lexemes" class="nav-item nav-link">{{ __('Advanced search') }}</router-link>
           <router-link to="/roots" class="nav-item nav-link">{{ __('Root search') }}</router-link>
           <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
         </div>
-        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="store.language != 'en'" @click="store.setLanguage('en')">
+        <button type="button" class="btn btn-link text-black-50" v-show="store.language != 'en'" @click="store.setLanguage('en')">
           in English
         </button>
-        <button type="button" class="btn btn-link pr-0 text-black-50" v-show="store.language != 'mt'" @click="store.setLanguage('mt')">
+        <button type="button" class="btn btn-link text-black-50" v-show="store.language != 'mt'" @click="store.setLanguage('mt')">
           bil-Malti
         </button>
       </div>

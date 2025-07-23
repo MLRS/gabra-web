@@ -283,7 +283,7 @@ onMounted(() => {
           </div>
 
           <button class="btn btn-primary" type="submit">
-            <i class="fas fa-search mr-1"></i>
+            <i class="fas fa-search me-1"></i>
             {{ __('search.button') }}
           </button>
         </form>
@@ -374,7 +374,7 @@ onMounted(() => {
             <i class="fas fa-circle-notch fa-spin text-danger" v-show="item.wordforms === null"></i>
             <template v-if="item.wordforms !== null">
               <div v-for="wf,ix in item.wordforms.slice(0,5)" :key="ix">
-                <span class="surface_form mr-2">
+                <span class="surface_form me-2">
                   <highlight :text="wf.surface_form" :match="data.search.wf ? data.search.s : null" />
                 </span>
                 <span class="text-lighter">

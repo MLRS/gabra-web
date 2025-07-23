@@ -121,7 +121,7 @@ function load() {
             <tr v-for="lexeme,ix in lexemes" :key="ix">
               <td class="">
                 <router-link :to="{ name: 'lexeme', params: { id: lexeme._id } }" class="surface_form">{{ lexeme.lemma }}</router-link>
-                <span class="text-lighter ml-1">
+                <span class="text-lighter ms-1">
                   {{ __(`pos.${lexeme.pos }`) }}
                   {{ UI.derivedForm(lexeme.derived_form || 0) }}
                 </span>

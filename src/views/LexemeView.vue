@@ -146,7 +146,7 @@ onMounted(() => {
           <dd>
             <div v-for="r,ix in related" :key="ix">
             <router-link :to="{ name: 'lexeme', params: { id: r._id } }" class="surface_form">{{ r.lemma }}</router-link>
-            <span class="text-lighter ml-1">
+            <span class="text-lighter ms-1">
               {{ __(`pos.${r.pos }`) }}
               {{ UI.derivedForm(r.derived_form || 0) }}
             </span>

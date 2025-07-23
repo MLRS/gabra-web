@@ -51,18 +51,16 @@ watch(term, () => {
 
 <template>
   <div class="input-group">
-    <div class="input-group-prepend keyboard">
-      <button type="button" class="btn" v-if="!showKeyboard" @click="toggleKeyboard">
-        <i class="far fa-keyboard mr-2"></i>
-        <i class="fas fa-caret-right"></i>
-      </button>
-      <button type="button" class="btn btn-default" v-show="showKeyboard"
-        v-for="letter in ['ċ','ġ','ħ','ż']" :key="letter"
-        @click="insert(letter)"
-      >
-        {{ letter }}
-      </button>
-    </div>
+    <button type="button" class="btn btn-outline-secondary border" v-if="!showKeyboard" @click="toggleKeyboard">
+      <i class="far fa-keyboard me-2"></i>
+      <i class="fas fa-caret-right"></i>
+    </button>
+    <button type="button" class="btn btn-outline-secondary border" v-show="showKeyboard"
+      v-for="letter in ['ċ','ġ','ħ','ż']" :key="letter"
+      @click="insert(letter)"
+    >
+      {{ letter }}
+    </button>
     <input type="search" name="s" class="form-control" autofocus="true"
       :placeholder="placeholder"
       @keydown.enter="$event.stopPropagation()"
@@ -70,19 +68,9 @@ watch(term, () => {
       @click="updatePosition"
       v-model="term"
       />
-    <div class="input-group-append" v-if="showSubmit">
-      <button type="submit" class="btn btn-primary">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
+    <button type="submit" class="btn btn-primary" v-if="showSubmit">
+      <i class="fas fa-search"></i>
+    </button>
   </div><!-- input-group -->
 </template>
 
-<style lang="scss">
-@use '@/assets/custom.scss';
-
-.keyboard button {
-  @extend .border;
-  @extend .btn-outline-secondary;
-}
-</style>
