@@ -158,14 +158,14 @@ function loadResults() {
     .then(response => {
       response.data.results.forEach((r: Result) => {
         r.wordforms = null // not loaded
-        data.results.push(r)
+        const rIx = data.results.push(r) - 1
         axios.get(`${import.meta.env.VITE_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
           .then(resp => {
-            r.wordforms = resp.data // TODO this doesn't update reactively
+            data.results[rIx] = { ...data.results[rIx], wordforms: resp.data }
           })
           .catch(error => {
             store.addError(error)
-            r.wordforms = []
+            data.results[rIx] = { ...data.results[rIx], wordforms: [] }
           })
       })
       data.resultCount = response.data.query.result_count

@@ -1,8 +1,6 @@
 import markdownit from 'markdown-it'
 
-// TODO localise
-// import { useRootStore } from '@/stores/root'
-// const store = useRootStore()
+import { useRootStore } from '@/stores/root'
 
 import terms from '@/assets/data/i18n.yaml'
 
@@ -46,8 +44,8 @@ export function __l (lang: Language, key: string, replacements?: {[key:string]: 
 // Get text for key
 // Can only be called from within component
 export function __(key: string, replacements?: {[key:string]: string} | string[]): string {
-  // return __l(store.language, key, replacements)
-  return __l('en', key, replacements)
+  const store = useRootStore()
+  return __l(store.language, key, replacements)
 }
 
 // Render as Markdown
