@@ -1,15 +1,15 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { configure } from 'vue-gtag'
 
 import App from './App.vue'
 import router from './router'
 
-// TODO Google Gtag
-// import VueGtag from 'vue-gtag'
-// Vue.use(VueGtag, {
-//   config: { id: 'UA-34654961-2' },
-//   enabled: import.meta.env.PROD,
-// }, router)
+if (import.meta.env.PROD) {
+  configure({
+    tagId: 'UA-34654961-2'
+  })
+}
 
 const app = createApp(App)
 const pinia = createPinia()
