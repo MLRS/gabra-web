@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios'
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
 import { __ } from '@/components/I18N.ts'
 import SearchInput from '@/components/SearchInput.vue'
@@ -14,6 +14,7 @@ const store = useRootStore()
 
 const term = ref(route.query.s)
 const randomWorking = ref(false)
+const darkMode = ref(false)
 
 watch(
   () => route.query.s,
@@ -44,12 +45,22 @@ function clickRandom (): void {
       randomWorking.value = false
     })
 }
+
+onMounted(() => {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  darkMode.value = prefersDark
+})
+
+watch(darkMode, (newVal) => {
+  const html = document.documentElement
+  html.setAttribute('data-bs-theme', newVal ? 'dark' : 'light')
+})
 </script>
 
 <template>
   <div id="app">
 
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-light border-bottom mb-2">
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top bg-body-tertiary border-bottom mb-2">
     <div class="container">
       <router-link to="/" class="navbar-brand text-red me-4">Ġabra</router-link>
 
@@ -61,17 +72,23 @@ function clickRandom (): void {
         ></SearchInput>
       </form>
 
-      <div class="collapse navbar-collapse ms-2 d-flex">
-        <div class="navbar-nav me-auto flex-row">
+      <div class="collapse navbar-collapse ms-4">
+        <div class="navbar-nav me-auto gap-3">
           <router-link to="/lexemes" class="nav-item nav-link">{{ __('Advanced search') }}</router-link>
           <router-link to="/roots" class="nav-item nav-link">{{ __('Root search') }}</router-link>
           <router-link to="/sources" class="nav-item nav-link">{{ __('Sources') }}</router-link>
         </div>
-        <button type="button" class="btn btn-link text-black-50" v-show="store.language != 'en'" @click="store.setLanguage('en')">
+        <button type="button" class="btn btn-link text-body-secondary" v-show="store.language != 'en'" @click="store.setLanguage('en')">
           in English
         </button>
-        <button type="button" class="btn btn-link text-black-50" v-show="store.language != 'mt'" @click="store.setLanguage('mt')">
+        <button type="button" class="btn btn-link text-body-secondary" v-show="store.language != 'mt'" @click="store.setLanguage('mt')">
           bil-Malti
+        </button>
+        <button type="button" class="btn btn-link text-body-secondary" @click="darkMode = true" v-show="!darkMode">
+          <i class="fas fa-moon" />
+        </button>
+        <button type="button" class="btn btn-link text-body-secondary" @click="darkMode = false" v-show="darkMode">
+          <i class="fas fa-sun" />
         </button>
       </div>
     </div>
@@ -81,7 +98,6 @@ function clickRandom (): void {
       <div v-for="m,ix in store.messages" :key="ix" class="alert" :class="'alert-'+m.type">
         {{ m.text }}
       </div>
-
       <router-view></router-view>
     </main>
 
@@ -93,11 +109,3 @@ function clickRandom (): void {
 
   </div>
 </template>
-
-<style lang="scss">
-@use '@/assets/custom.scss';
-
-.navbar-nav a {
-  @extend .me-3;
-}
-</style>

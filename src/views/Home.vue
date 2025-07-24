@@ -47,7 +47,7 @@ onMounted(() => {
 <template>
   <div id="home" class="row">
 
-    <div class="rounded-3 bg-light shadow p-5 mb-5">
+    <div class="rounded-3 bg-body-tertiary shadow p-5 mt-md-4 mb-5">
       <h1 class="display-4 fw-normal text-shadow">{{ __('home.title') }}</h1>
 
       <p class="lead" v-html="__('home.1', {lexemes: stats.lexemes, wordforms: stats.wordforms})"></p>
@@ -88,6 +88,6 @@ onMounted(() => {
 @use '@/assets/custom.scss';
 
 blockquote {
-  @extend .card-body, .bg-light, .rounded, .my-3, .p-3, .text-muted;
+  @extend .card-body, .bg-body-tertiary, .rounded, .my-3, .p-3, .text-muted;
 }
 </style>

@@ -11,7 +11,7 @@
 }
 
 .alternative {
-  @extend .text-lighter;
+  @extend .text-body-tertiary;
 }
 
 .text-red {
@@ -19,7 +19,7 @@
 }
 
 .text-lighter {
-  color: rgba(0,0,0,0.3);
+  @extend .text-body-tertiary;
 }
 
 .text-shadow {

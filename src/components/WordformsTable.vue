@@ -186,7 +186,7 @@ function format(field: string, value: any): any {
       <tr v-if="Object.keys(filterFields).length > 0">
         <th></th>
         <th v-for="f,ix in showFields" :key="ix">
-          <select v-if="isFilterField(f)" v-model="filters[f]">
+          <select class="form-select-sm" v-if="isFilterField(f)" v-model="filters[f]">
             <option v-for="o,ix in filterFieldOptions(f)" :key="ix">{{ format(f, o) }}</option>
           </select>
         </th>

@@ -161,7 +161,7 @@ function loadResults() {
         data.results.push(r)
         axios.get(`${import.meta.env.VITE_API_URL}/lexemes/wordforms/${r.lexeme._id}`)
           .then(resp => {
-            r.wordforms = resp.data
+            r.wordforms = resp.data // TODO this doesn't update reactively
           })
           .catch(error => {
             store.addError(error)
@@ -246,38 +246,38 @@ onMounted(() => {
           class="my-4"
           ></SearchInput>
 
-          <div class="form-group form-check mb-0">
+          <div class="mb-3 form-check mb-0">
             <input type="checkbox" class="form-check-input" v-model="data.search.l" id="LexemeL"/>
             <label for="LexemeL">{{ __('search.option.lemmas') }}</label>
           </div>
 
-          <div class="form-group form-check mb-0">
+          <div class="mb-3 form-check mb-0">
             <input type="checkbox" class="form-check-input" v-model="data.search.wf" id="LexemeWf"/>
             <label for="LexemeWf">{{ __('search.option.wordforms') }}</label>
           </div>
 
-          <div class="form-group form-check">
+          <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" v-model="data.search.g" id="LexemeG"/>
             <label for="LexemeG">{{ __('search.option.glosses') }}</label>
           </div>
 
-          <div class="form-group">
-            <label for="LexemePos">{{ __('search.option.pos') }}</label>
-            <select v-model="data.search.pos" class="form-control" id="LexemePos">
+          <div class="mb-3">
+            <label class="mb-2" for="LexemePos">{{ __('search.option.pos') }}</label>
+            <select v-model="data.search.pos" class="form-select" id="LexemePos">
               <option value=""></option>
               <option v-for="p in data.pos" :key="p" :value="p">{{ __(`pos.${p}`) }}</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="LexemeSource">{{ __('search.option.source') }}</label>
-            <select v-model="data.search.source" class="form-control" id="LexemeSource">
+          <div class="mb-3">
+            <label class="mb-2" for="LexemeSource">{{ __('search.option.source') }}</label>
+            <select v-model="data.search.source" class="form-select" id="LexemeSource">
               <option value=""></option>
               <option v-for="s in data.sources" :key="s" :value="s">{{ s }}</option>
             </select>
           </div>
 
-          <div class="form-group form-check">
+          <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" v-model="data.search.pending" id="LexemePending"/>
             <label for="LexemePending">{{ __('search.option.pending') }}</label>
           </div>
@@ -325,7 +325,7 @@ onMounted(() => {
         {{ __('suggest.done') }}
       </p>
 
-      <div class="border shadow my-3 p-3 rounded-lg" v-show="data.suggest.show">
+      <div class="border shadow my-3 p-3 rounded-3" v-show="data.suggest.show">
         <suggest
           :word="data.search.s"
           :pos_options="data.pos"

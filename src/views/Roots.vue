@@ -184,31 +184,31 @@ onMounted(() => {
             <em>{{ __('or') }}</em>
           </div>
 
-          <div class="form-group">
-            <label class="text-capitalize">{{ __('root.radicals') }}</label>
-            <div class="row m-0">
-              <select v-model="data.search.c1" class="form-control col-3">
+          <div class="mb-3">
+            <label class="text-capitalize mb-2">{{ __('root.radicals') }}</label>
+            <div class="d-flex gap-1">
+              <select v-model="data.search.c1" class="form-select">
                 <option value=""></option>
                 <option v-for="c,ix in data.consonants" :key="ix" :value="c">{{ c }}</option>
               </select>
-              <select v-model="data.search.c2" class="form-control col-3">
+              <select v-model="data.search.c2" class="form-select">
                 <option value=""></option>
                 <option v-for="c,ix in data.consonants" :key="ix" :value="c">{{ c }}</option>
               </select>
-              <select v-model="data.search.c3" class="form-control col-3">
+              <select v-model="data.search.c3" class="form-select">
                 <option value=""></option>
                 <option v-for="c,ix in data.consonants" :key="ix" :value="c">{{ c }}</option>
               </select>
-              <select v-model="data.search.c4" class="form-control col-3">
+              <select v-model="data.search.c4" class="form-select">
                 <option value=""></option>
                 <option v-for="c,ix in data.consonants" :key="ix" :value="c">{{ c }}</option>
               </select>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="text-capitalize" for="RootClass">{{ __('root.type') }}</label>
-            <select v-model="data.search.t" class="form-control" id="RootClass">
+          <div class="mb-3">
+            <label class="text-capitalize mb-2" for="RootClass">{{ __('root.type') }}</label>
+            <select v-model="data.search.t" class="form-select" id="RootClass">
               <option value=""></option>
               <option v-for="p in data.types" :key="p" :value="p">{{ __(`root.type.${p}`) }}</option>
             </select>
@@ -248,7 +248,7 @@ onMounted(() => {
     </div><!-- search form -->
 
     <div v-if="isSearching">
-      <router-link :to="{ name: 'roots' }" class="btn btn-secondary float-right">
+      <router-link :to="{ name: 'roots' }" class="btn btn-secondary float-end">
         {{ __('search.new') }}
       </router-link>
 
