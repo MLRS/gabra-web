@@ -20,6 +20,6 @@ else
   rsync --dry-run --delete ${FLAGS} ${LOCALDIR} ${HOST}:${REMOTEDIR}
   echo
   echo "### This was just a dry-run. ###"
+  echo "To push for real, use the flag '-wet'"
   echo "To delete extra files from server, use the flag '-delete' (potentially dangerous)"
-  echo "To build & push for real, use the flag '-wet'"
 fi
