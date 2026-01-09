@@ -52,7 +52,7 @@ watch(term, () => {
 <template>
   <div class="input-group">
     <button type="button" class="btn btn-outline-secondary border" v-if="!showKeyboard" @click="toggleKeyboard">
-      <i class="far fa-keyboard me-2"></i>
+      <i class="fas fa-keyboard me-2"></i>
       <i class="fas fa-caret-right"></i>
     </button>
     <button type="button" class="btn btn-outline-secondary border" v-show="showKeyboard"
