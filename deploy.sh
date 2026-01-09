@@ -10,9 +10,6 @@ FLAGS="--recursive --checksum --compress --verbose --exclude-from=deploy-exclude
 set -e
 
 if [ "$1" = "-wet" ]; then
-  echo "Build Ġabra Web"
-  npm run build
-
   echo "Deploy Ġabra Web (For real)"
   rsync ${FLAGS} ${LOCALDIR} ${HOST}:${REMOTEDIR}
 elif [ "$1" = "-delete" ]; then
