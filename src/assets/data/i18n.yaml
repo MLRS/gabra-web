@@ -403,6 +403,14 @@
 - en: Sources
   mt: Sorsi
 
+- key: mode.light
+  en: Light mode
+  mt: Tema ċara
+
+- key: mode.dark
+  en: Dark mode
+  mt: Tema skura
+
 # ---------------------------------------------------------------------------
 # Component content
 

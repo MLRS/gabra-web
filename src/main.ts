@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { configure } from 'vue-gtag'
 
+import 'bootstrap/js/dist/collapse';
+
 import App from './App.vue'
 import router from './router'
 
