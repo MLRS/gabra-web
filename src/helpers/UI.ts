@@ -18,6 +18,6 @@ export function agr (obj: {person?: string, number?: string, gender?: string}): 
   let out = ''
   if (obj.person) out += obj.person + ' '
   if (obj.number) out += obj.number + ' '
-  if (obj.gender) out += obj.gender // TODO localise gender?
+  if (obj.gender) out += obj.gender
   return out.trim()
 }

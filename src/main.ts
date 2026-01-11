@@ -1,19 +1,20 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import { configure } from 'vue-gtag'
+
+import 'bootstrap/js/dist/collapse';
+
 import App from './App.vue'
 import router from './router'
-import store from './store'
 
-import VueGtag from 'vue-gtag'
+if (import.meta.env.PROD) {
+  configure({
+    tagId: 'UA-34654961-2'
+  })
+}
 
-Vue.use(VueGtag, {
-  config: { id: 'UA-34654961-2' },
-  enabled: process.env.NODE_ENV === 'production'
-}, router)
-
-Vue.config.productionTip = false
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const app = createApp(App)
+const pinia = createPinia()
+app.use(pinia)
+app.use(router)
+app.mount('#app')

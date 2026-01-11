@@ -1,3 +1,79 @@
+<script setup lang="ts">
+import axios from 'axios'
+import { computed, ref, onMounted, watch } from 'vue'
+
+import { __ } from '@/components/I18N.ts'
+import Root from '@/components/Root.vue'
+import WordformsTable from '@/components/WordformsTable.vue'
+import * as UI from '@/helpers/UI.ts'
+
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+import { useRootStore } from '@/stores/root'
+const store = useRootStore()
+
+const lexeme = ref<Lexeme | null>(null)
+const wordforms = ref<Wordform[] | null>(null)
+const related = ref<Lexeme[] | null>(null)
+
+watch(
+  () => route.query,
+  () => {
+    load()
+  },
+  {
+    immediate: true
+  }
+)
+
+const examples = computed<string[]>(() => {
+  if (!lexeme.value || !lexeme.value.glosses) return []
+  const egs = []
+  for (const g of lexeme.value.glosses) {
+    for (const e of g.examples || []) {
+      if (e.type === 'full') {
+        egs.push(e.example)
+      }
+    }
+  }
+  return egs
+})
+
+// get lexeme and wordforms
+function load() {
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/${route.params.id}`)
+    .then(response => {
+      lexeme.value = response.data
+      store.setTitle((lexeme.value as Lexeme).lemma)
+    })
+    .catch(error => {
+      store.addError(error)
+      lexeme.value = {} as Lexeme
+    })
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/wordforms/${route.params.id}?pending=1`)
+    .then(response => {
+      wordforms.value = response.data
+    })
+    .catch(error => {
+      store.addError(error)
+      wordforms.value = []
+    })
+  axios.get(`${import.meta.env.VITE_API_URL}/lexemes/related/${route.params.id}`)
+    .then(response => {
+      related.value = response.data
+    })
+    .catch(error => {
+      store.addError(error)
+      related.value = []
+    })
+}
+
+onMounted(() => {
+  store.setTitle({ key: 'title.lexeme' })
+})
+</script>
+
 <template>
   <div>
 
@@ -48,7 +124,7 @@
 
           <dt>{{ __('features') }}</dt>
           <dd>
-            <div>{{ lexeme.derived_form ? __('derived_form') + ' ' + derivedForm(lexeme.derived_form) : '' }}</div>
+            <div>{{ lexeme.derived_form ? __('derived_form') + ' ' + UI.derivedForm(lexeme.derived_form) : '' }}</div>
             <div>{{ lexeme.frequency }}</div>
             <div>{{ lexeme.onomastic_type }}</div>
             <div>{{ lexeme.transitive ? __('transitive') : '' }}</div>
@@ -59,8 +135,8 @@
 
           <dt>{{ __('source') }}</dt>
           <dd>
-            <template v-for="s,ix in lexeme.sources">
-              <router-link :to="{ name: 'sources' }" class="" :key="ix">{{ s }}</router-link>
+            <template v-for="s,ix in lexeme.sources" :key="ix">
+              <router-link :to="{ name: 'sources' }" class="">{{ s }}</router-link>
               <span v-if="ix < lexeme.sources.length - 1" :key="ix+'comma'">, </span>
             </template>
           </dd>
@@ -70,9 +146,9 @@
           <dd>
             <div v-for="r,ix in related" :key="ix">
             <router-link :to="{ name: 'lexeme', params: { id: r._id } }" class="surface_form">{{ r.lemma }}</router-link>
-            <span class="text-lighter ml-1">
+            <span class="text-lighter ms-1">
               {{ __(`pos.${r.pos }`) }}
-              {{ derivedForm(r.derived_form) }}
+              {{ UI.derivedForm(r.derived_form || 0) }}
             </span>
           </div>
           </dd>
@@ -83,11 +159,11 @@
       <div class="col-md-8">
         <!-- wordforms -->
         <i class="fas fa-circle-notch fa-2x fa-spin text-danger" v-show="wordforms === null"></i>
-        <!-- <h2 class="h6 text-capitalize font-weight-bold">{{ __('word_forms') }}</h2> -->
+        <!-- <h2 class="h6 text-capitalize fw-bold">{{ __('word_forms') }}</h2> -->
         <wordforms-table :lexeme="lexeme" :wordforms="wordforms" v-if="wordforms !== null && wordforms.length > 0"></wordforms-table>
 
         <!-- examples -->
-        <h2 v-if="examples.length > 0" class="h6 text-capitalize font-weight-bold">{{ __('examples') }}</h2>
+        <h2 v-if="examples.length > 0" class="h6 text-capitalize fw-bold">{{ __('examples') }}</h2>
         <ul>
           <li v-for="e, ix in examples" :key="ix" class="surface_form">
             “{{ e }}”
@@ -99,97 +175,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import mixins from 'vue-typed-mixins'
-
-import I18N from '@/components/I18N.ts'
-import Root from '@/components/Root.vue'
-import WordformsTable from '@/components/WordformsTable.vue'
-import * as UI from '@/helpers/UI.ts'
-
-import axios from 'axios'
-
-interface Data {
-  lexeme: Lexeme | null
-  wordforms: Wordform[] | null
-  related: Lexeme[] | null
-}
-
-export default mixins(I18N).extend({
-  components: {
-    Root,
-    WordformsTable
-  },
-  data (): Data {
-    return {
-      lexeme: null,
-      wordforms: null,
-      related: null
-    }
-  },
-  watch: {
-    '$route.query': {
-      handler (): void {
-        this.load()
-      },
-      immediate: true
-    }
-  },
-  computed: {
-    examples (): string[] {
-      if (!this.lexeme || !this.lexeme.glosses) return []
-      let egs = []
-      for (let g of this.lexeme.glosses) {
-        for (let e of g.examples || []) {
-          if (e.type === 'full') {
-            egs.push(e.example)
-          }
-        }
-      }
-      return egs
-    }
-  },
-  methods: {
-    // get lexeme and wordforms
-    load (): void {
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/${this.$route.params.id}`)
-        .then(response => {
-          this.lexeme = response.data
-          this.$store.dispatch('setTitle', (this.lexeme as Lexeme).lemma)
-        })
-        .catch(error => {
-          this.$store.dispatch('addError', error)
-          this.lexeme = {} as Lexeme
-        })
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/wordforms/${this.$route.params.id}?pending=1`)
-        .then(response => {
-          this.wordforms = response.data
-        })
-        .catch(error => {
-          this.$store.dispatch('addError', error)
-          this.wordforms = []
-        })
-      axios.get(`${process.env.VUE_APP_API_URL}/lexemes/related/${this.$route.params.id}`)
-        .then(response => {
-          this.related = response.data
-        })
-        .catch(error => {
-          this.$store.dispatch('addError', error)
-          this.related = []
-        })
-    },
-    // Making helper functions available to template
-    derivedForm: UI.derivedForm,
-    agr: UI.agr
-  },
-  mounted (): void {
-    this.$store.dispatch('setTitle', { key: 'title.lexeme' })
-  }
-})
-</script>
-
 <style lang="scss">
-@import '@/assets/custom.scss';
+@use '@/assets/custom.scss';
 
 dt {
   @extend .text-capitalize;

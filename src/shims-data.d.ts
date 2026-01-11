@@ -1,13 +1,11 @@
-/* eslint-disable camelcase */
-
- interface Entry {
+interface Entry {
   key?: string
   en: string
   mt: string
 }
 
 declare module '@/assets/data/i18n.yaml' {
-  var es: Entry[]
+  const es: Entry[]
   export default es
 }
 
@@ -23,18 +21,52 @@ interface Lexeme {
       type: 'full' | 'short'
     }[]
   }[]
+  alternatives?: string[]
+  root?: Root
+  sources: string[]
+  frequency?: string
+  transitive?: boolean
+  intransitive?: boolean
+  ditransitive?: boolean
+  hypothetical?: boolean
+  phonetic?: string
+  onomastic_type?: string
 }
 
 interface Wordform {
   surface_form: string
+  generated?: boolean
+  alternatives?: string[]
+
+  number?: string
+  gender?: string
+  aspect?: string
+  subject?: Agreement
+  dir_obj?: Agreement
+  ind_obj?: Agreement
+  polarity?: Polarity
+}
+
+type Polarity = 'pos' | 'neg'
+
+interface Agreement {
+  person: 'p1' | 'p2' | 'p3'
+  number: 'sg' | 'pl'
+  gender?: 'm' | 'f'
 }
 
 interface Root {
   radicals: string
   variant?: number
   type: string
+  alternatives?: string
+  sources: string[]
 }
 
 interface Source {
   key: string
+  author: string
+  title: string
+  year: number
+  note: string
 }

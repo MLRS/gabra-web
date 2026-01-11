@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+@use '~bootstrap/scss/bootstrap';
 
 .generated {
   border-bottom: 1px dashed #999;
@@ -11,11 +11,7 @@
 }
 
 .alternative {
-  @extend .text-lighter;
-}
-
-.font-size-large {
-  font-size: large;
+  @extend .text-body-tertiary;
 }
 
 .text-red {
@@ -23,7 +19,7 @@
 }
 
 .text-lighter {
-  color: rgba(0,0,0,0.3);
+  @extend .text-body-tertiary;
 }
 
 .text-shadow {
@@ -32,7 +28,8 @@
 
 .highlight {
   @extend .rounded;
-  background-color: transparentize($info, .8);
+  --bs-bg-opacity: 0.2;
+  @extend .bg-info;
   $p: .1rem;
   padding: 0 $p;
   margin: 0 -$p;
